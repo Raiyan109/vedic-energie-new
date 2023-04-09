@@ -12,8 +12,8 @@ const Header = () => {
 
     return (
 
-        <nav className="bg-white px-2 sm:px-4 py-2.5">
-            <div className="container flex flex-wrap justify-between items-center mx-auto">
+        <nav className="bg-white px-2 sm:px-4">
+            <div className="container flex flex-wrap justify-between items-center mx-auto fixed w-full h-[90px] z-10">
                 <Link className="flex items-center" to='/'>
                     {/* <img src={logo} className="mr-3 h-10 sm:h-9 text-[#F2921D]" alt="Hiking Logo" /> */}
 
@@ -33,15 +33,15 @@ const Header = () => {
                     <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
 
 
-                        <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold' to='/about'>About</Link></li>
+                        <li className='block py-2 pr-4 pl-3 '><Link className='text-xl font-bold text-green' to='/about'>About Us</Link></li>
 
-                        <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold' to='/services'>Services</Link></li>
+                        <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/services'>Services</Link></li>
 
-                        <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold' to='/blog'>Blog</Link></li>
+                        <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/blog'>Blog</Link></li>
 
-                        <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold' to='/contact'>Contact</Link></li>
+                        <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/contact'>Contact</Link></li>
 
-                        <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold' to='/about'>About</Link></li>
+                        <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/about'>About</Link></li>
 
 
 

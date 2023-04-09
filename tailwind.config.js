@@ -10,6 +10,9 @@ export default {
         Poppins: 'Poppins'
       }
     },
+    colors: {
+      green: '#1D6126',
+    },
   },
   plugins: [],
 }
