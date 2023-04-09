@@ -1,18 +1,14 @@
 import React from 'react';
-
 import Header from '../components/Header';
-import Banner from '../components/Banner';
 import Footer from '../components/Footer';
 
-
-const Home = () => {
+const EnergyCalculation = () => {
     return (
-        <div className='font-Poppins'>
+        <div>
             <Header />
-            <Banner />
             <Footer />
         </div>
     );
 };
 
-export default Home;
+export default EnergyCalculation;

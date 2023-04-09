@@ -12,6 +12,7 @@ export default {
     },
     colors: {
       green: '#1D6126',
+      lightGreen: '#75ed9d',
     },
   },
   plugins: [],
