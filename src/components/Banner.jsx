@@ -11,14 +11,14 @@ const Banner = () => {
                 }}
             >
                 <div
-                    className="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25 bg-blend-overlay"
+                    className="absolute inset-0  sm:bg-transparent sm:bg-gradient-to-r sm:from-black/95 sm:to-white/35 bg-blend-overlay"
                 ></div>
 
                 <div
                     className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
                 >
-                    <div className="max-w-xl text-center sm:text-left">
-                        <img src={curveImg} alt="" className='w-80 relative' />
+                    <div className="max-w-xl text-center sm:text-left w-full">
+                        <img src={curveImg} alt="" className='w-80 relative mix-blend-overlay' />
 
                         <h1 className="text-1xl font-extrabold sm:text-4xl absolute top-[230px] lg:top-[400px]">
                             <span className='text-yellow'>Responsible</span> Consumption
