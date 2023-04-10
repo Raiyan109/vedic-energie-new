@@ -4,15 +4,15 @@ import styled from 'styled-components';
 
 const Section = styled.div`
 height:100vh;
-background-color:#75ed9d;
+background-color:#FEFFCD;
 scroll-snap-align:center;
 `
-const Efficient = () => {
+const See = () => {
     return (
         <Section>
-            Efficient
+            see what we can do for you
         </Section>
     );
 };
 
-export default Efficient;
+export default See;

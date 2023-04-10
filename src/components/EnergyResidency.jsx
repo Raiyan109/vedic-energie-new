@@ -4,15 +4,15 @@ import styled from 'styled-components';
 
 const Section = styled.div`
 height:100vh;
-background-color:#75ed9d;
+background-color:#FFB951;
 scroll-snap-align:center;
 `
-const Efficient = () => {
+const EnergyResidency = () => {
     return (
         <Section>
-            Efficient
+            Energy Residency
         </Section>
     );
 };
 
-export default Efficient;
+export default EnergyResidency;

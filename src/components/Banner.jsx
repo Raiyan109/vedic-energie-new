@@ -1,14 +1,22 @@
 import React from 'react';
 import bg from '../assets/green-mountains-during-golden-sunset-tmr257zj070xgfry.jpg'
 import curveImg from '../assets/3d-fluency-recycling.png'
+import styled from 'styled-components';
+
+
+const Section = styled.div`
+height:100vh;
+background-image: url(${bg});
+scroll-snap-align:center;
+`
+
+
 const Banner = () => {
     return (
-        <div>
+        <Section>
             <section
                 className="relative bg-cover bg-center bg-no-repeat"
-                style={{
-                    backgroundImage: `url(${bg})`
-                }}
+
             >
                 <div
                     className="absolute inset-0  sm:bg-transparent sm:bg-gradient-to-r sm:from-black/95 sm:to-white/35 bg-blend-overlay"
@@ -18,7 +26,7 @@ const Banner = () => {
                     className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
                 >
                     <div className="max-w-xl text-center sm:text-left w-full">
-                        <img src={curveImg} alt="" className='w-80 relative mix-blend-overlay' />
+                        <img src={curveImg} alt="" className='w-80 relative ' />
 
                         <h1 className="text-1xl font-extrabold sm:text-4xl absolute top-[230px] lg:top-[400px]">
                             <span className='text-yellow'>Responsible</span> Consumption
@@ -35,7 +43,7 @@ const Banner = () => {
                 </div>
             </section>
 
-        </div>
+        </Section>
     );
 };
 

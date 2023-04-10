@@ -10,6 +10,17 @@ import EnergySupply from './pages/EnergySupply'
 import RenewableEnergy from './pages/RenewableEnergy'
 import ReduceEnergy from './pages/ReduceEnergy'
 import EnergySaving from './pages/EnergySaving'
+import styled from 'styled-components'
+
+const Container = styled.div`
+scroll-snap-type:y mandatory;
+scroll-behavior:smooth;
+overflow-y:auto;
+scrollbar-width:none;
+&::-webkit-scrollbar{
+  display:none;
+}
+`;
 
 function App() {
   const router = createBrowserRouter([
@@ -68,9 +79,9 @@ function App() {
   ])
 
   return (
-    <div>
+    <Container>
       <RouterProvider router={router} />
-    </div>
+    </Container>
   )
 }
 
