@@ -18,7 +18,8 @@ export default {
       white: '#ffff',
       blue: '#05386B',
       lightYellow: '#FEFFCD',
-      orange: '#FFB951'
+      orange: '#FFB951',
+      rgbaHeader: 'rgba(0,0,0,0.85)'
     },
   },
   plugins: [],
