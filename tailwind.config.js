@@ -15,7 +15,9 @@ export default {
       lightGreen: '#75ed9d',
       yellow: '#EBE667',
       black: '#100c08',
-      white: '#ffff'
+      white: '#ffff',
+      blue: '#05386B',
+      lightYellow: '#FEFFCD'
     },
   },
   plugins: [],
