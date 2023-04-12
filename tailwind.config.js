@@ -17,7 +17,8 @@ export default {
       black: '#100c08',
       white: '#ffff',
       blue: '#05386B',
-      lightYellow: '#FEFFCD'
+      lightYellow: '#FEFFCD',
+      orange: '#FFB951'
     },
   },
   plugins: [],
