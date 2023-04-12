@@ -9,6 +9,7 @@ import Upcoming from '../components/Upcoming';
 import Client from '../components/Client';
 import See from '../components/See';
 import Articles from '../components/Articles';
+import Brands from '../components/Brands';
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
             <EnergyResidency />
             <Upcoming />
             <Client />
+            <Brands />
             <See />
             <Articles />
             <Footer />
