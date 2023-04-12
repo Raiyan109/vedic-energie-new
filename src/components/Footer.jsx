@@ -1,0 +1,177 @@
+import React from 'react';
+import { BsFacebook, BsFillTelephoneFill } from 'react-icons/bs'
+import { AiOutlineInstagram, AiFillLinkedin } from 'react-icons/ai'
+import { FaTwitterSquare } from 'react-icons/fa'
+import { ImLocation2 } from 'react-icons/im'
+import { MdEmail } from 'react-icons/md'
+import { Link } from 'react-router-dom';
+
+
+const Footer = () => {
+    return (
+        <div>
+            <footer aria-label="Site Footer" className="bg-white">
+                <div
+                    className="max-w-screen-xl px-4 py-16 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
+                >
+                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                        <div>
+
+
+                            <p className="max-w-xs mt-4 text-gray-500">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non
+                                cupiditate quae nam molestias.
+                            </p>
+                            <h3 className='uppercase underline font-medium text-green mt-4'>Social Links</h3>
+                            <ul className="flex gap-6 mt-8">
+                                <li>
+                                    <a
+                                        href="/"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="text-gray-700 transition hover:opacity-75 text-xl"
+                                    >
+                                        <span className="sr-only">Facebook</span>
+                                        <BsFacebook />
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="/"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="text-gray-700 transition hover:opacity-75 text-xl"
+                                    >
+                                        <span className="sr-only">Instagram</span>
+
+                                        <AiOutlineInstagram />
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="/"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="text-gray-700 transition hover:opacity-75 text-xl"
+                                    >
+                                        <span className="sr-only">Twitter</span>
+
+
+                                        <FaTwitterSquare />
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="/"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="text-gray-700 transition hover:opacity-75 text-xl"
+                                    >
+                                        <span className="sr-only">Linkedin</span>
+
+                                        <AiFillLinkedin />
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+                        <div
+                            className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-3"
+                        >
+                            <div>
+                                <p className="font-medium text-green uppercase underline">Quick Link</p>
+
+                                <nav aria-label="Footer Navigation - Services" className="mt-6">
+                                    <ul className="space-y-4 text-sm">
+                                        <li className='py-2 pr-4 pl-3 '><Link className='text-sm text-green' to='/about'>About Us</Link></li>
+
+                                        <li className='py-2 pr-4 pl-3'><Link className='text-sm text-green' to='/services'>Services</Link></li>
+
+                                        <li className='py-2 pr-4 pl-3'><Link className='text-sm text-green' to='/blog'>Blog</Link></li>
+
+                                        <li className='py-2 pr-4 pl-3'><Link className='text-sm text-green' to='/contact'>Contact</Link></li>
+
+                                        <li className='py-2 pr-4 pl-3'><Link className='text-sm text-green' to='/about'>About</Link></li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <div>
+                                <p className="font-medium text-green uppercase underline">Services</p>
+
+                                <nav aria-label="Footer Navigation - Company" className="mt-6">
+                                    <ul className="space-y-4 text-sm">
+                                        <li>
+                                            <Link to='/energyCalc' className="text-green transition hover:opacity-75">
+                                                Energy Calculation
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/energyDemand' className="text-green transition hover:opacity-75">
+                                                Energy Demand Management
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/energySupply' className="text-green transition hover:opacity-75">
+                                                Energy Supply Solution
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/renewable' className="text-green transition hover:opacity-75">
+                                                Renewable Energy Solution
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/reduce' className="text-green transition hover:opacity-75">
+                                                Reduce Energy Bills
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/energySaving' className="text-green transition hover:opacity-75">
+                                                Energy Saving
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <div>
+                                <p className="font-medium text-green uppercase underline">Contact</p>
+
+                                <nav aria-label="Footer Navigation - Company" className="mt-6">
+                                    <div className='flex gap-2 py-2'>
+                                        <h3 className='text-xl text-green'><ImLocation2 /></h3>
+                                        <p className='text-green text-xs'>31 Steeplebush Ave Unit 1 Brampton, ON L6R 3B4</p>
+                                    </div>
+                                    <div className='flex gap-2 py-2'>
+                                        <h3 className='text-xl text-green'><MdEmail /></h3>
+                                        <p className='text-green text-xs'>contact@vedicenergie.com</p>
+                                    </div>
+                                    <div className='flex gap-2 py-2'>
+                                        <h3 className='text-xl text-green'><BsFillTelephoneFill /></h3>
+                                        <p className='text-green text-xs'>+91 98439 37773</p>
+                                    </div>
+                                </nav>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <footer className="flex justify-center items-center p-4 bg-lightGreen  text-xs">
+                <div>
+                    <p className='text-white-100'>COPYRIGHT © 2023 VEDIC ENERGIES | ALL RIGHTS RESERVED | PRIVACY | SITEMAP | LEGAL | COPYRIGHT | ACCESSIBILITY</p>
+                </div>
+            </footer>
+        </div>
+    );
+};
+
+export default Footer;
