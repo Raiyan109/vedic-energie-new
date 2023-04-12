@@ -40,7 +40,7 @@ const EnergyResidency = () => {
                     <section className="dark:bg-gray-800 dark:text-gray-100">
                         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
                             <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-                                <h1 className="text-5xl font-bold sm:text-6xl text-white">Energy Supply Solution For Residency.
+                                <h1 className="text-5xl font-bold sm:text-6xl text-white leading-8">Energy Supply Solution For Residency.
 
                                 </h1>
                                 <p className="mt-6 mb-8 text-lg sm:mb-12 text-green">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
@@ -58,9 +58,7 @@ const EnergyResidency = () => {
                 <SwiperSlide>Slide 4</SwiperSlide>
                 <SwiperSlide>Slide 5</SwiperSlide>
                 <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
+
             </Swiper>
         </Section>
     );
