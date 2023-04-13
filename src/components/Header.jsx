@@ -34,14 +34,14 @@ const Header = () => {
 
                     <button
                         onClick={() => setMenu(!menu)}
-                        className="inline-flex items-center p-2 ml-3  md:hidden"
+                        className=" items-center   md:hidden text-white text-2xl"
                     >
                         {menu ? <FaTimes /> : <FaBars />}
                         <span className="sr-only">Open main menu</span>
                     </button>
 
 
-                    <div className={`md:flex md:items-center w-full md:w-auto ${menu ? "block" : "hidden"}`} id="mobile-menu">
+                    <div className={`md:flex md:items-center w-full md:w-auto ${menu ? "block bg-rgbaHeader w-[900px] h-[900px] flex items-center justify-center transition-all" : "hidden"}`} id="mobile-menu">
                         <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
 
 
