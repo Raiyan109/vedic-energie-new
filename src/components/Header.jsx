@@ -22,10 +22,10 @@ const Header = () => {
     window.addEventListener('scroll', changeColor)
 
     return (
-        <div className={color ? 'rgbaHeader transition-all' : 'bg-white'}>
+        <div className={color ? 'bg-rgbaHeader transition-all fixed w-full h-[90px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
 
             <nav className=" px-2 sm:px-4">
-                <div className="container flex flex-wrap justify-between items-center mx-auto fixed w-full h-[90px] z-10">
+                <div className="container flex flex-wrap justify-between items-center mx-auto ">
                     <Link className="flex items-center" to='/'>
                         {/* <img src={logo} className="mr-3 h-10 sm:h-9 text-[#F2921D]" alt="Hiking Logo" /> */}
 
