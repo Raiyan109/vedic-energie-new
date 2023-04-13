@@ -65,7 +65,7 @@ const Footer = () => {
 
                                 <li>
                                     <a
-                                        href="/"
+                                        href="https://www.linkedin.com/company/vedic-energie/"
                                         rel="noreferrer"
                                         target="_blank"
                                         className="text-gray-700 transition hover:opacity-75 text-xl"

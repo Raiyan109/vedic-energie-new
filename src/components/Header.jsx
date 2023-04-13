@@ -53,8 +53,6 @@ const Header = () => {
 
                             <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/contact'>Contact</Link></li>
 
-                            <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/about'>About</Link></li>
-
                             <li><GetAQuote /></li>
 
 
