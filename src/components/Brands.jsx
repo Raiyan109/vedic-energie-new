@@ -1,5 +1,5 @@
 import React from 'react';
-import brand from '../assets/3d-fluency-recycling.png'
+import brand from '../assets/emblem.png'
 const Brands = () => {
     return (
         <div>
@@ -8,30 +8,11 @@ const Brands = () => {
                     <div class="-mx-4 flex flex-wrap">
                         <div class="w-full px-4">
                             <div class="flex flex-wrap items-center justify-center">
-                                <a
-                                    href="#"
-                                    class="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-                                >
-                                    <img src={brand} width="130" height="130" alt="" />
-                                </a>
-                                <a
-                                    href="#"
-                                    class="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-                                >
-                                    <img src={brand} width="130" height="130" alt="" />
-                                </a>
-                                <a
-                                    href="#"
-                                    class="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-                                >
-                                    <img src={brand} width="130" height="130" alt="" />
-                                </a>
-                                <a
-                                    href="#"
-                                    class="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-                                >
-                                    <img src={brand} width="130" height="130" alt="" />
-                                </a>
+                            <img src={brand} width="220" style={{marginRight: "60px"}} height="170" alt="" />
+                            <img src={brand} width="220" style={{marginRight: "60px"}} height="170" alt="" />
+                            <img src={brand} width="220" style={{marginRight: "60px"}} height="170" alt="" />
+                            <img src={brand} width="220" style={{marginRight: "60px"}} height="170" alt="" />
+                               
                             </div>
                         </div>
                     </div>

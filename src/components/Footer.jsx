@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div>
-            <footer aria-label="Site Footer" className="bg-white">
+            <footer aria-label="Site Footer" style={{marginTop:"100px"}} className="bg-white">
                 <div
                     className="max-w-screen-xl px-4 py-16 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
                 >
@@ -19,19 +19,16 @@ const Footer = () => {
 
 
                             <p className="max-w-xs mt-4 text-gray-500">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non
-                                cupiditate quae nam molestias.
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                             </p>
                             <h3 className='uppercase underline font-medium text-green mt-4'>Social Links</h3>
                             <ul className="flex gap-6 mt-8">
                                 <li>
                                     <a
                                         href="/"
-                                        rel="noreferrer"
-                                        target="_blank"
-                                        className="text-gray-700 transition hover:opacity-75 text-xl"
+                                        style={{color: "green"}}
                                     >
-                                        <span className="sr-only">Facebook</span>
+                                        <span className="sr-only">Instagram</span>
                                         <BsFacebook />
                                     </a>
                                 </li>

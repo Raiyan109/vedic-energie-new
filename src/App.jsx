@@ -12,7 +12,7 @@ import ReduceEnergy from './pages/ReduceEnergy'
 import EnergySaving from './pages/EnergySaving'
 import styled from 'styled-components'
 import NotFound from './pages/NotFound'
-
+import './App.css';
 const Container = styled.div`
 scroll-snap-type:y mandatory;
 scroll-behavior:smooth;
