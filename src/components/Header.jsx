@@ -22,10 +22,10 @@ const Header = () => {
     window.addEventListener('scroll', changeColor)
 
     return (
-        <div className={color ? 'rgbaHeader transition-all' : 'bg-white'}>
+        <div className={color ? 'bg-rgbaHeader transition-all fixed w-full h-[90px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
 
             <nav className=" px-2 sm:px-4">
-                <div className="container flex flex-wrap justify-between items-center mx-auto fixed w-full h-[90px] z-10">
+                <div className="container flex flex-wrap justify-between items-center mx-auto ">
                     <Link className="flex items-center" to='/'>
                         {/* <img src={logo} className="mr-3 h-10 sm:h-9 text-[#F2921D]" alt="Hiking Logo" /> */}
 
@@ -34,14 +34,14 @@ const Header = () => {
 
                     <button
                         onClick={() => setMenu(!menu)}
-                        className="inline-flex items-center p-2 ml-3  md:hidden"
+                        className=" items-center   md:hidden text-white text-2xl"
                     >
                         {menu ? <FaTimes /> : <FaBars />}
                         <span className="sr-only">Open main menu</span>
                     </button>
 
 
-                    <div className={`md:flex md:items-center w-full md:w-auto ${menu ? "block" : "hidden"}`} id="mobile-menu">
+                    <div className={`md:flex md:items-center w-full md:w-auto ${menu ? "block bg-rgbaHeader w-[900px] h-[900px] flex items-center justify-center transition-all" : "hidden"}`} id="mobile-menu">
                         <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
 
 
@@ -52,8 +52,6 @@ const Header = () => {
                             <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/blog'>Blog</Link></li>
 
                             <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/contact'>Contact</Link></li>
-
-                            <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/about'>About</Link></li>
 
                             <li><GetAQuote /></li>
 

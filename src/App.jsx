@@ -11,6 +11,7 @@ import RenewableEnergy from './pages/RenewableEnergy'
 import ReduceEnergy from './pages/ReduceEnergy'
 import EnergySaving from './pages/EnergySaving'
 import styled from 'styled-components'
+import NotFound from './pages/NotFound'
 
 const Container = styled.div`
 scroll-snap-type:y mandatory;
@@ -74,7 +75,7 @@ function App() {
     },
     {
       path: '*',
-      element: <div>Not Found </div>
+      element: <NotFound />
     },
   ])
 
