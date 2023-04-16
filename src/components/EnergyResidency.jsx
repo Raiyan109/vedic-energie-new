@@ -40,7 +40,7 @@ const EnergyResidency = () => {
         <Section>
             <Swiper pagination={{ clickable: true }} autoplay={{delay : 900}}  modules={[Pagination, Navigation, Autoplay]} className="mySwiper">
                 <SwiperSlide>
-                    <section className="dark:bg-gray-800 dark:text-gray-100">
+                    <section id="about" className="dark:bg-gray-800 dark:text-gray-100">
                         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
                             <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                                 <h1 className="text-5xl font-bold sm:text-6xl text-white leading-8">Energy Supply Solution For Residency.

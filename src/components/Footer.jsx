@@ -5,31 +5,48 @@ import { FaTwitterSquare } from 'react-icons/fa'
 import { ImLocation2 } from 'react-icons/im'
 import { MdEmail } from 'react-icons/md'
 import { Link } from 'react-router-dom';
-
+import clss from './style.module.css';
+import pic from '../assets/footerlogo.png';
 
 const Footer = () => {
+   
     return (
+      
         <div>
             <footer aria-label="Site Footer" style={{marginTop:"100px"}} className="bg-white">
-                <div
-                    className="max-w-screen-xl px-4 py-16 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
+                <div id="contact"
+                    className="max-w-screen-xl px-4 py-14 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
                 >
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                         <div>
 
-
-                            <p className="max-w-xs mt-4 text-gray-500">
+                            <img style={{paddingBottom:"20px"}} src={pic} width='150' height='150'></img>
+                            <p className="max-w-xs mt-4 text-green-500 text-green mt-4">
                             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                             </p>
-                            <h3 className='uppercase underline font-medium text-green mt-4'>Social Links</h3>
+                            <h3 style={{paddingTop:"20px"}}  className='uppercase underline font-medium text-green mt-4'>Social Links</h3>
                             <ul className="flex gap-6 mt-8">
                                 <li>
+                                <a
+                                        href="/"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="text-gray-700 transition hover:opacity-75 text-xl"
+                                    >
+                                        <BsFacebook className={clss.in} />
+                                   </a>
+                                </li>
+
+                                <li>
                                     <a
                                         href="/"
-                                        style={{color: "green"}}
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="text-gray-700 transition hover:opacity-75 text-xl"
                                     >
-                                        <span className="sr-only">Instagram</span>
-                                        <BsFacebook />
+                                       
+
+                                        <AiOutlineInstagram className={clss.in} />
                                     </a>
                                 </li>
 
@@ -40,23 +57,10 @@ const Footer = () => {
                                         target="_blank"
                                         className="text-gray-700 transition hover:opacity-75 text-xl"
                                     >
-                                        <span className="sr-only">Instagram</span>
-
-                                        <AiOutlineInstagram />
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a
-                                        href="/"
-                                        rel="noreferrer"
-                                        target="_blank"
-                                        className="text-gray-700 transition hover:opacity-75 text-xl"
-                                    >
-                                        <span className="sr-only">Twitter</span>
+                                        <span ><FaTwitterSquare className={clss.in}/></span>
 
 
-                                        <FaTwitterSquare />
+                                        
                                     </a>
                                 </li>
 
@@ -67,9 +71,9 @@ const Footer = () => {
                                         target="_blank"
                                         className="text-gray-700 transition hover:opacity-75 text-xl"
                                     >
-                                        <span className="sr-only">Linkedin</span>
+                                     
 
-                                        <AiFillLinkedin />
+                                        <AiFillLinkedin className={clss.in}/>
                                     </a>
                                 </li>
 
@@ -144,16 +148,17 @@ const Footer = () => {
                                 <nav aria-label="Footer Navigation - Company" className="mt-6">
                                     <div className='flex gap-2 py-2'>
                                         <h3 className='text-xl text-green'><ImLocation2 /></h3>
-                                        <p className='text-green text-xs'>31 Steeplebush Ave Unit 1 Brampton, ON L6R 3B4</p>
+                                        <p className='text-green text-sm'>31 Steeplebush Ave Unit 1 Brampton, ON L6R 3B4</p>
                                     </div>
                                     <div className='flex gap-2 py-2'>
                                         <h3 className='text-xl text-green'><MdEmail /></h3>
-                                        <p className='text-green text-xs'>contact@vedicenergie.com</p>
+                                        <p className='text-green text-sm'>contact@vedicenergie.com</p>
                                     </div>
                                     <div className='flex gap-2 py-2'>
                                         <h3 className='text-xl text-green'><BsFillTelephoneFill /></h3>
-                                        <p className='text-green text-xs'>+91 98439 37773</p>
+                                        <p className='text-green text-sm'>+91 98439 37773</p>
                                     </div>
+                                    <iframe style={{paddingTop:"20px"}} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109060.53116613768!2d81.54933879141241!3d21.213079179947787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dc214e07cc6b%3A0xad8281733d2dcbe7!2sRaipur%2C%20Chhattisgarh%20492013!5e0!3m2!1sen!2sin!4v1681626250643!5m2!1sen!2sin" width="330" height="197" ></iframe>
                                 </nav>
                             </div>
 
@@ -168,6 +173,7 @@ const Footer = () => {
                 </div>
             </footer>
         </div>
+      
     );
 };
 

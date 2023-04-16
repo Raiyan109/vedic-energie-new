@@ -11,7 +11,7 @@ const Articles = () => {
     return (
         <Section className='bg-gradient-to-b from-yellow via-lightGreen to-green'>
             <div className='flex flex-col justify-center items-center mb-4'>
-                <h1 className="text-3xl font-bold text-green" style={{marginTop:"70px"}}>Recent Articles
+                <h1 id='article' className="text-3xl font-bold text-green" style={{marginTop:"70px"}}>Recent Articles
                 </h1>
                 <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-10">
                     <div class="container mx-auto">

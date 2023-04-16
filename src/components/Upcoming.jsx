@@ -14,7 +14,7 @@ scroll-snap-align:center;
 const Upcoming = () => {
     return (
         <Section>
-            <div className='bg-cover bg-center bg-no-repeat p-8'>
+            <div id="services" className='bg-cover bg-center bg-no-repeat p-8'>
                 
                 <div className='text-center text-2xl font-bold'>Upcoming Launch</div>
                 <section className="dark:bg-gray-800 dark:text-gray-100 p-36">

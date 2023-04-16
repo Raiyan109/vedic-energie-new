@@ -13,6 +13,11 @@ import EnergySaving from './pages/EnergySaving'
 import styled from 'styled-components'
 import NotFound from './pages/NotFound'
 import './App.css';
+import Efficient from './components/Efficient';
+import EnergyResidency from './components/EnergyResidency';
+import Articles from './components/Articles';
+import Header from './components/Header'
+
 const Container = styled.div`
 scroll-snap-type:y mandatory;
 scroll-behavior:smooth;
@@ -31,15 +36,15 @@ function App() {
     },
     {
       path: '/about',
-      element: <About />
+      element:  <Efficient />
     },
     {
       path: '/services',
-      element: <Services />
+      element: <EnergyResidency />
     },
     {
       path: '/blog',
-      element: <Blog />
+      element: <Articles />
     },
     {
       path: '/contact',
