@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily: {
         Poppins: 'Poppins'
+      },
+      lineHeight: {
+        'loose': '1',
       }
     },
     colors: {

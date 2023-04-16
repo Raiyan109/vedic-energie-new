@@ -4,20 +4,21 @@ import img from '../assets/article.png'
 
 const Section = styled.div`
 height:150vh;
-
 scroll-snap-align:center;
 `
 const Articles = () => {
     return (
         <Section className='bg-gradient-to-b from-yellow via-lightGreen to-green'>
             <div className='flex flex-col justify-center items-center mb-4'>
+
                 <h1 id='article' className="text-3xl font-bold text-green" style={{marginTop:"70px"}}>Recent Articles
+
                 </h1>
                 <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-10">
                     <div class="container mx-auto">
                         <div class="flex flex-wrap">
                             <div class="w-full px-4 md:w-1/2 xl:w-1/3 ">
-                                <div class="overflow-hidden bg-white">
+                                <div class="overflow-hidden bg-white mb-10">
                                     <img
                                         src={img}
                                     />
@@ -49,7 +50,7 @@ const Articles = () => {
                                 </div>
                             </div>
                             <div class="w-full px-4 md:w-1/2 xl:w-1/3 ">
-                                <div class="mb-10 overflow-hidden  bg-white">
+                                <div class="mb-10 overflow-hidden bg-white">
                                     <img
                                         src={img}
                                     />

@@ -14,6 +14,7 @@ scroll-snap-align:center;
 const Upcoming = () => {
     return (
         <Section>
+
             <div id="services" className='bg-cover bg-center bg-no-repeat p-8'>
                 
                 <div className='text-center text-2xl font-bold'>Upcoming Launch</div>
@@ -30,9 +31,10 @@ const Upcoming = () => {
                         </div>
                         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-50 xl:h-100 2xl:h-128">
                             <img src={img} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
         </Section>
     );

@@ -21,7 +21,9 @@ const Header = () => {
     window.addEventListener('scroll', changeColor)
 
     return (
+
         <div  className={color ? 'bg-rgbaHeader transition-all fixed w-full h-[100px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
+
 
             <nav style={{marginTop:"-25px"}} className=" px-2 sm:px-4">
                 <div className="container flex flex-wrap justify-between items-center mx-auto ">
@@ -32,7 +34,7 @@ const Header = () => {
                         <img src={logo} style={{width:"70px",height:"70px",backgroundColor:"white",paddingTop:"-110px"}}></img>
                     </Link>
 
-             
+
 
                    
                     <div className={`md:flex md:items-center w-full md:w-auto ${menu ? "block bg-rgbaHeader w-[900px] h-[900px] flex items-center justify-center transition-all" : "hidden"}`} id="mobile-menu">

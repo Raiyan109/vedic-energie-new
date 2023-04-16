@@ -169,7 +169,7 @@ const Footer = () => {
             </footer>
             <footer className="flex justify-center items-center p-4 bg-lightGreen  text-xs">
                 <div>
-                    <p className='text-white-100'>COPYRIGHT © 2023 VEDIC ENERGIES | ALL RIGHTS RESERVED | PRIVACY | SITEMAP | LEGAL | COPYRIGHT | ACCESSIBILITY</p>
+                    <p className='text-white'>COPYRIGHT © 2023 VEDIC ENERGIES | ALL RIGHTS RESERVED | PRIVACY | SITEMAP | LEGAL | COPYRIGHT | ACCESSIBILITY</p>
                 </div>
             </footer>
         </div>
