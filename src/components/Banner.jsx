@@ -16,10 +16,9 @@ const Banner = () => {
         <Section>
             <section
                 className="relative bg-cover bg-center bg-no-repeat"
-
             >
                 <div
-                    className="absolute inset-0  sm:bg-transparent sm:bg-gradient-to-r sm:from-black/95 sm:to-white/35 bg-blend-overlay"
+                    className="absolute inset-0  bg-transparent bg-gradient-to-r from-black/95 to-white/35 bg-blend-overlay"
                 ></div>
 
                 <div
@@ -28,10 +27,10 @@ const Banner = () => {
                     <div className="max-w-xl text-center sm:text-left w-full">
                         <img src={curveImg} alt="" className='w-80 relative ' />
 
-                        <h1 className="text-1xl font-extrabold sm:text-4xl absolute top-[230px] lg:top-[400px]">
+                        <h1 className="text-1xl font-extrabold lg:text-4xl text-3xl absolute top-[230px] lg:top-[400px]">
                             <span className='text-yellow'>Responsible</span> Consumption
 
-                            <strong className="block font-extrabold text-rose-700">
+                            <strong className="block font-extrabold">
                                 <span className='text-yellow'>And</span> Production
                             </strong>
                         </h1>

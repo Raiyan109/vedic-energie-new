@@ -22,7 +22,7 @@ const Header = () => {
     window.addEventListener('scroll', changeColor)
 
     return (
-        <div className={color ? 'bg-rgbaHeader transition-all fixed w-full h-[90px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
+        <div className={color ? 'bg-rgbaHeader transition-all fixed w-full h-[90px] z-10 p-16' : 'fixed w-full h-[90px] z-10 p-10'}>
 
             <nav className=" px-2 sm:px-4">
                 <div className="container flex flex-wrap justify-between items-center mx-auto ">
@@ -34,7 +34,7 @@ const Header = () => {
 
                     <button
                         onClick={() => setMenu(!menu)}
-                        className=" items-center   md:hidden text-white text-2xl"
+                        className=" items-center md:hidden text-white text-2xl"
                     >
                         {menu ? <FaTimes /> : <FaBars />}
                         <span className="sr-only">Open main menu</span>
