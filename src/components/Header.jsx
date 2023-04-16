@@ -5,7 +5,6 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 import { Link, NavLink } from 'react-router-dom';
 import GetAQuote from './GetAQuote';
 import logo from '../assets/homelogo.png';
-import '../pages/home';
 
 const Header = () => {
     const [menu, setMenu] = useState(false)

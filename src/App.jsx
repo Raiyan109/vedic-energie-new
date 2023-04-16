@@ -34,22 +34,22 @@ function App() {
       path: '/',
       element: <Home />
     },
-    {
-      path: '/about',
-      element:  <Efficient />
-    },
-    {
-      path: '/services',
-      element: <EnergyResidency />
-    },
-    {
-      path: '/blog',
-      element: <Articles />
-    },
-    {
-      path: '/contact',
-      element: <Contact />
-    },
+    // {
+    //   path: '/about',
+    //   element:  <Efficient />
+    // },
+    // {
+    //   path: '/services',
+    //   element: <EnergyResidency />
+    // },
+    // {
+    //   path: '/blog',
+    //   element: <Articles />
+    // },
+    // {
+    //   path: '/contact',
+    //   element: <Contact />
+    // },
     {
       path: '/getAQuote',
       element: <div>Get A Quote</div>
