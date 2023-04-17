@@ -40,7 +40,7 @@ const Header = () => {
                     </button>
 
 
-                    <div className={`md:flex md:items-center w-full md:w-auto ${menu ? "block bg-rgbaHeader w-[900px] h-[900px] flex items-center justify-center transition-all" : "hidden"}`} id="mobile-menu">
+                    <div className={`md:flex md:items-center w-full md:w-auto ${menu ? "block bg-rgbaHeader w-[900px] h-[600px] flex items-center justify-center transition-all" : "hidden"}`} id="mobile-menu">
                         <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
 
                             {/* <li className='block py-2 pr-4 pl-3 '><Link className='text-xl font-bold text-green' to='/about'>About Us</Link></li>
@@ -56,7 +56,7 @@ const Header = () => {
 
                             <li className='block py-2 pr-4 pl-3'><a className='text-xl font-bold text-green' href="/#article">Blog</a></li>
 
-                            <li className='block py-2 pr-4 pl-3'><a className='text-xl font-bold text-green' href="/#contact">Contact</a></li>
+                            <li className='block py-2 pr-4 pl-3 mb-2'><a className='text-xl font-bold text-green' href="/#contact">Contact</a></li>
                             <li><GetAQuote /></li>
 
 
