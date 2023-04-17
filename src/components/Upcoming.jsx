@@ -18,7 +18,7 @@ const Upcoming = () => {
             <div id="services" className='bg-cover bg-center bg-no-repeat p-8'>
 
                 <div className='text-center text-2xl font-bold'>Upcoming Launch</div>
-                <section className="dark:bg-gray-800 dark:text-gray-100 p-36">
+                <section className="dark:bg-gray-800 dark:text-gray-100 lg:p-36 p-7">
                     <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-6 lg:flex-row lg:justify-between">
                         <div className="flex flex-col justify-center p-4 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                             <h1 className="text-5xl font-bold leading-none sm:text-5xl text-orange">Energy Calculator
