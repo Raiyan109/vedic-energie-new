@@ -4,6 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styled from 'styled-components';
 import "swiper/css";
 import "swiper/css/navigation";
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
 import { BsFillStarFill } from 'react-icons/bs'
 
 const Section = styled.div`
@@ -35,12 +38,12 @@ scroll-snap-align:center;
   
 `
 
-import { Navigation } from "swiper";
+import { Navigation, Pagination, Scrollbar,Autoplay } from "swiper";
 
 const Client = () => {
     return (
         <Section className="">
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper bg-cover bg-center bg-no-repeat p-8">
+            <Swiper navigation={true} pagination={{ clickable: true }} autoplay={{delay: 900}} modules={[Navigation, Pagination, Scrollbar, Autoplay]} className="mySwiper bg-cover bg-center bg-no-repeat p-8">
                 <SwiperSlide>
                     <div className='flex flex-col justify-center items-center bg-gray-200 p-10'>
                         <h1 className="text-5xl font-bold text-green">What Our Clients Say

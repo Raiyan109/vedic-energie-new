@@ -1,11 +1,14 @@
 import React, { useRef, useState } from "react";
 import styled from 'styled-components';
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import img1 from '../assets/pexels-manuela-adler-949194.jpg'
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+import img1 from '../assets/solar-panels.png'
 
-import { Pagination } from "swiper";
+import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 
 const Section = styled.div`
 height:100vh;
@@ -35,9 +38,9 @@ scroll-snap-align:center;
 const EnergyResidency = () => {
     return (
         <Section>
-            <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
+            <Swiper pagination={{ clickable: true }} autoplay={{delay : 900}}  modules={[Pagination, Navigation, Autoplay]} className="mySwiper">
                 <SwiperSlide>
-                    <section className="dark:bg-gray-800 dark:text-gray-100">
+                    <section id="about" className="dark:bg-gray-800 dark:text-gray-100">
                         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
                             <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                                 <h1 className="text-5xl font-bold sm:text-6xl text-white lg:leading-loose leading-12">Energy Supply Solution For Residency.
@@ -53,7 +56,7 @@ const EnergyResidency = () => {
                         </div>
                     </section>
                 </SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
+                <SwiperSlide> slide 2</SwiperSlide>
                 <SwiperSlide>Slide 3</SwiperSlide>
                 <SwiperSlide>Slide 4</SwiperSlide>
                 <SwiperSlide>Slide 5</SwiperSlide>

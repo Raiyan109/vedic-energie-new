@@ -12,6 +12,11 @@ import ReduceEnergy from './pages/ReduceEnergy'
 import EnergySaving from './pages/EnergySaving'
 import styled from 'styled-components'
 import NotFound from './pages/NotFound'
+import './App.css';
+import Efficient from './components/Efficient';
+import EnergyResidency from './components/EnergyResidency';
+import Articles from './components/Articles';
+import Header from './components/Header'
 
 const Container = styled.div`
 scroll-snap-type:y mandatory;
@@ -29,22 +34,22 @@ function App() {
       path: '/',
       element: <Home />
     },
-    {
-      path: '/about',
-      element: <About />
-    },
-    {
-      path: '/services',
-      element: <Services />
-    },
-    {
-      path: '/blog',
-      element: <Blog />
-    },
-    {
-      path: '/contact',
-      element: <Contact />
-    },
+    // {
+    //   path: '/about',
+    //   element:  <Efficient />
+    // },
+    // {
+    //   path: '/services',
+    //   element: <EnergyResidency />
+    // },
+    // {
+    //   path: '/blog',
+    //   element: <Articles />
+    // },
+    // {
+    //   path: '/contact',
+    //   element: <Contact />
+    // },
     {
       path: '/getAQuote',
       element: <div>Get A Quote</div>
