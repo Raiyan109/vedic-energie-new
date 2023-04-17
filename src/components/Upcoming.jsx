@@ -16,7 +16,7 @@ const Upcoming = () => {
         <Section>
 
             <div id="services" className='bg-cover bg-center bg-no-repeat p-8'>
-                
+
                 <div className='text-center text-2xl font-bold'>Upcoming Launch</div>
                 <section className="dark:bg-gray-800 dark:text-gray-100 p-36">
                     <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-6 lg:flex-row lg:justify-between">
@@ -34,7 +34,7 @@ const Upcoming = () => {
 
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </Section>
     );
