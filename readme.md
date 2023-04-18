@@ -1,1 +1,1 @@
-(Live Link)[https://vedic-frontend-raiyan109.vercel.app/]
+[Live Link](https://vedic-frontend-raiyan109.vercel.app/)
