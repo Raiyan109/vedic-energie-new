@@ -4,10 +4,11 @@ import curveImg from '../assets/3d-fluency-recycling.png'
 import styled from 'styled-components';
 
 const Section = styled.div`
-background-image: url(${bg});min-width: 100vh;
+background-image: url(${bg});
+
 height: 100vh;
-background-size: cover;
-isolation: isolate;
+
+
 `
 
 const Banner = () => {
