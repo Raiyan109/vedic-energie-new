@@ -7,7 +7,7 @@ background-color:#75ed9d;
 scroll-snap-align:center;
 @media only screen and (max-width:600px){
 .circle{
-    margin-left:35px;
+    margin-left:90px;
 }
 }
 
@@ -23,9 +23,9 @@ const Efficient = () => {
                     </h2>
 
                 </div>
-                <div style={{gap:"9rem"}} className="grid gap-8 row-gap-10 lg:grid-cols-2">
-                    <div className="circle max-w-md sm:mx-auto sm:text-center rounded-tr-[74px] rounded-bl-[74px] bg-lightYellow border-none p-10">
-                        <div style={{transform:"translateY(-69px)"}} className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-lightYellow border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
+                <div style={{gap:"5rem"}} className="grid gap-8 row-gap-10 lg:grid-cols-2">
+                    <div className=" max-w-md sm:mx-auto sm:text-center rounded-tr-[74px] rounded-bl-[74px] bg-lightYellow border-none p-10">
+                        <div className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-lightYellow border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
                             <svg
                                 className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
                                 stroke="currentColor"
@@ -51,8 +51,8 @@ const Efficient = () => {
 
                     </div>
 
-                    <div className="circle max-w-md sm:mx-auto sm:text-center rounded-tl-[74px] rounded-br-[74px] bg-lightYellow border-none p-10">
-                        <div style={{transform:"translateY(-69px)"}} className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-lightYellow border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
+                    <div className=" max-w-md sm:mx-auto sm:text-center rounded-tl-[74px] rounded-br-[74px] bg-lightYellow border-none p-10">
+                        <div  className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-lightYellow border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
                             <svg
                                 className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
                                 stroke="currentColor"
@@ -76,8 +76,8 @@ const Efficient = () => {
 
                     </div>
                     
-                    <div className="circle max-w-md sm:mx-auto sm:text-center rounded-tl-[74px] rounded-br-[74px] bg-lightYellow border-none p-10">
-                        <div style={{transform:"translateY(-69px)"}} className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-lightYellow border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
+                    <div className="max-w-md sm:mx-auto sm:text-center rounded-tl-[74px] rounded-br-[74px] bg-lightYellow border-none p-10">
+                        <div  className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-lightYellow border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
                             <svg
                                 className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
                                 stroke="currentColor"
@@ -101,8 +101,8 @@ const Efficient = () => {
 
                     </div>
 
-                    <div className="circle max-w-md sm:mx-auto sm:text-center rounded-tr-[74px] rounded-bl-[74px] bg-lightYellow border-none p-10">
-                        <div style={{transform:"translateY(-69px)"}} className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-lightYellow border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
+                    <div className="max-w-md sm:mx-auto sm:text-center rounded-tr-[74px] rounded-bl-[74px] bg-lightYellow border-none p-10">
+                        <div className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-lightYellow border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
                             <svg
                                 className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
                                 stroke="currentColor"
