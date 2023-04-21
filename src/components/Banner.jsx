@@ -1,6 +1,6 @@
 import React from 'react';
 import bg from '../assets/back.jpg'
-import curveImg from '../assets/3d-fluency-recycling.png'
+
 import styled from 'styled-components';
 
 const Section = styled.div`

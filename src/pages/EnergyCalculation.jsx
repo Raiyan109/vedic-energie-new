@@ -25,15 +25,13 @@ const EnergyCalculation = () => {
                     ...state,
                     [action.payload.name]: action.payload.value,
                 }
-            case "SUMMER":
+            case "TOGGLE":
                 return {
                     ...state,
-                    [action.payload.name]: action.payload.value,
+                    summer: !state.summer
                 }
-                break;
-
             default:
-                state;
+                return state;
         }
     }
 
@@ -89,7 +87,10 @@ const EnergyCalculation = () => {
                                                         Air conditioner</td>
                                                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                         <label for="themeSwitcherTwo" class="themeSwitcherTwo relative inline-flex cursor-pointer select-none items-center">
-                                                            <input type="checkbox" className="sr-only peer"
+                                                            <input type="checkbox"
+                                                                name='summer'
+                                                                onClick={() => dispatch({ type: "TOGGLE" })}
+                                                                className="sr-only peer"
                                                                 checked={enabled}
                                                                 readOnly />
                                                             <div
@@ -108,7 +109,9 @@ const EnergyCalculation = () => {
                                                         <input type="number"
                                                             name="airCon"
                                                             id="url"
-                                                            onChange={(e) => inputDispatch(e)} className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset dark:border-green dark:text-white dark:bg-green focus:ring-orange" autocomplete="off" />
+                                                            onChange={(e) => inputDispatch(e)}
+                                                            // disabled={!state.summer}
+                                                            className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset dark:border-green dark:text-white dark:bg-green focus:ring-orange" autocomplete="off" />
                                                     </td>
 
 
