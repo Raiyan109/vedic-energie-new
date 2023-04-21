@@ -30,7 +30,6 @@ const EnergyDemandManagement = () => {
                                     name='state'
                                     id='state'
 
-                                    onfocus='this.size=3;' onblur='this.size=1;' onchange='this.size=1; this.blur();'
                                 >
                                     {
                                         states.map(state => <option value={state.state}>{state.state}</option>)
