@@ -36,7 +36,7 @@ const Header = () => {
 
                     <button
                         onClick={() => setMenu(!menu)}
-                        className=" items-center md:hidden text-white text-2xl"
+                        className=" items-center md:hidden text-lightGreen text-2xl"
                     >
                         {menu ? <FaTimes /> : <FaBars />}
                         <span className="sr-only">Open main menu</span>
