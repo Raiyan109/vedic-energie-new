@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import teslaImg from '../assets/tesla-logo-png-27.png'
 import adaniImg from '../assets/Adani_2012_logo.png'
 const Section = styled.div`
-
+height:100vh;
 background-color:#FFB951;
 scroll-snap-align:center;
 `
