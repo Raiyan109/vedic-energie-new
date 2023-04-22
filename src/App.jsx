@@ -11,6 +11,9 @@ scrollbar-width:none;
 &::-webkit-scrollbar{
   display:none;
 }
+-webkit-scrollbar {
+  display: none;
+}
 `;
 
 function App() {
