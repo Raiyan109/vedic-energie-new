@@ -10,6 +10,7 @@ import Client from '../components/Client';
 import See from '../components/See';
 import Articles from '../components/Articles';
 import Brands from '../components/Brands';
+import Affiliate from '../components/Affiliate';
 
 
 const Home = () => {
@@ -20,8 +21,9 @@ const Home = () => {
             <Efficient />
             <EnergyResidency />
             <Upcoming />
-            <Client />
-            <Brands />
+            <Affiliate />
+            {/* <Client /> */}
+            {/* <Brands /> */}
             <See />
             <Articles />
             <Footer />
