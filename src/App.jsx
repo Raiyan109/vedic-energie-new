@@ -14,6 +14,9 @@ scrollbar-width:none;
 -webkit-scrollbar {
   display: none;
 }
+@media only screen and (max-width:700px){
+overflow-x-hidden;
+}
 `;
 
 function App() {
