@@ -26,5 +26,8 @@ export default {
       rgbaHeader: 'rgba(0,0,0,0.85)'
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    // ...
+  ],
 }
