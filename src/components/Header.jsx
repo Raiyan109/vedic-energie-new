@@ -18,7 +18,6 @@ const Header = () => {
             setColor(false)
         }
     }
-
     window.addEventListener('scroll', changeColor)
 
 
@@ -53,6 +52,7 @@ const Header = () => {
                             <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/blog'><a href='/#article'>Blog</a></Link></li>
 
                             <li className='block py-2 pr-4 pl-3'><Link className='text-xl font-bold text-green' to='/contact'>Contact</Link></li> */}
+
 
 
                             <li className='block py-2 pr-4 pl-3 text-xl font-bold'>
@@ -113,14 +113,7 @@ const Header = () => {
                             </li>
 
                             {/* 
-                            <li className='block py-2 pr-4 pl-3 '><a className='text-xl font-bold text-green' href="/#about">About Us</a></li>
-
-
-                            <li className='block py-2 pr-4 pl-3'><a className='text-xl font-bold text-green' href="/#services">Services</a></li>
-
-                            <li className='block py-2 pr-4 pl-3'><a className='text-xl font-bold text-green' href="/#article">Blog</a></li>
-
-                            <li className='block py-2 pr-4 pl-3 mb-2'><a className='text-xl font-bold text-green' href="/#contact">Contact</a></li> */}
+                          
                             <li><GetAQuote /></li>
 
 
