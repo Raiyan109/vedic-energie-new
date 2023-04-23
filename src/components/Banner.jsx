@@ -1,7 +1,7 @@
 import React from 'react';
 import bg from '../assets/back.jpg'
 import styled from 'styled-components';
-import styles from './Banner.module.css'
+import styles from './banner.module.css'
 
 
 const Section = styled.div`
