@@ -4,7 +4,7 @@ const GetAQuote = () => {
     return (
         <div>
 
-            <button className='w-[137px] h-[50px] bg-green text-yellow rounded-md text-[18px] hover:bg-lightGreen hover:text-green hover:transition-all hover:font-bold'>Get a Quote</button>
+            <button className='w-[137px] h-[50px] bg-green text-yellow rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-lightGreen hover:text-green hover:transition-all hover:font-bold'>Get a Quote</button>
 
         </div>
     );

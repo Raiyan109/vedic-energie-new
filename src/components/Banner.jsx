@@ -1,28 +1,26 @@
 import React from 'react';
 import bg from '../assets/back.jpg'
-
 import styled from 'styled-components';
-import './banner.css';
+import styles from './Banner.module.css'
+
+
 const Section = styled.div`
-
 background-image: url(${bg});
-
 height: 100vh;
-
-
 `
 
 const Banner = () => {
     return (
 
-        <Section className="sec1">
-            <section 
+        <Section >
+            <section
+                className={styles.sec1}
             >
 
-                <div 
+                <div
                     className="absolute inset-0  bg-transparent bg-gradient-to-r from-black/95 to-white/35 bg-blend-overlay "
                 ></div>
-                <div 
+                <div
                     className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
                 >
 
