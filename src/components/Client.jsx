@@ -10,7 +10,7 @@ import 'swiper/css/autoplay';
 import { BsFillStarFill } from 'react-icons/bs'
 
 const Section = styled.div`
-height:100vh;
+
 background-image: url(${bg});
 scroll-snap-align:center;
 .swiper {
@@ -38,12 +38,12 @@ scroll-snap-align:center;
   
 `
 
-import { Navigation, Pagination, Scrollbar,Autoplay } from "swiper";
+import { Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
 
 const Client = () => {
     return (
         <Section className="">
-            <Swiper navigation={true} pagination={{ clickable: true }} autoplay={{delay: 900}} modules={[Navigation, Pagination, Scrollbar, Autoplay]} className="mySwiper bg-cover bg-center bg-no-repeat p-8">
+            <Swiper navigation={true} pagination={{ clickable: true }} autoplay={{ delay: 900 }} modules={[Navigation, Pagination, Scrollbar, Autoplay]} className="mySwiper bg-cover bg-center bg-no-repeat p-8 py-36">
                 <SwiperSlide>
                     <div className='flex flex-col justify-center items-center bg-gray-200 p-10'>
                         <h1 className="text-5xl font-bold text-green">What Our Clients Say
