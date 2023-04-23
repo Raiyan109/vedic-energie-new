@@ -1,9 +1,23 @@
-.in{
+.in {
     width: 30px;
     height: 28px;
     color: rgb(34, 109, 13);
 }
-.in:hover{
-    
+
+.in:hover {
+
     transform: scale(1.2);
+}
+
+.navLink {
+    text-decoration: none;
+    color: #1D6126;
+    transition: all 0.1s ease-in-out;
+
+
+}
+
+.navLink:hover {
+    color: orange;
+
 }

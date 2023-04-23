@@ -3,13 +3,16 @@ import styled from 'styled-components';
 
 
 const Section = styled.div`
-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:130px 0; 
 background-color:#75ed9d;
 scroll-snap-align:center;
 `
 const See = () => {
     return (
-        <Section className='flex justify-center items-center'>
+        <Section>
             <div className='flex flex-col justify-center items-center bg-green-800 p-20'>
                 <h1 className="text-4xl font-bold text-white">SEE WHAT WE CAN DO FOR YOU
                 </h1>

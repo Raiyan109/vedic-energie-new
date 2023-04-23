@@ -10,16 +10,18 @@ import Client from '../components/Client';
 import See from '../components/See';
 import Articles from '../components/Articles';
 import Brands from '../components/Brands';
+import Affiliate from '../components/Affiliate';
 
 
 const Home = () => {
     return (
-        <div className='font-Poppins'>
+        <div className='font-Poppins scrollbar-hide md:scrollbar-default'>
             <Header />
             <Banner />
             <Efficient />
             <EnergyResidency />
             <Upcoming />
+            <Affiliate />
             <Client />
             <Brands />
             <See />
