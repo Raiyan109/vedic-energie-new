@@ -15,7 +15,7 @@ import Affiliate from '../components/Affiliate';
 
 const Home = () => {
     return (
-        <div className='font-Poppins scrollbar-hide md:scrollbar-default'>
+        <div className='font-Poppins'>
             <Header />
             <Banner />
             <Efficient />
