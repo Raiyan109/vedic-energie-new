@@ -61,8 +61,8 @@ const Header = () => {
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 2.5px #1D6126' : 'none',
-
+                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
+                                            color: isActive ? 'lightGreen' : '#1D6126',
                                         };
                                     }}
                                 >
@@ -75,8 +75,8 @@ const Header = () => {
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 2.5px #1D6126' : 'none',
-
+                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
+                                            color: isActive ? 'lightGreen' : '#1D6126',
                                         };
                                     }}
                                 >
@@ -89,7 +89,8 @@ const Header = () => {
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 2.5px #1D6126' : 'none',
+                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
+                                            color: isActive ? 'lightGreen' : '#1D6126',
 
                                         };
                                     }}
@@ -103,8 +104,8 @@ const Header = () => {
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 2.5px #1D6126' : 'none',
-
+                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
+                                            color: isActive ? 'lightGreen' : '#1D6126',
                                         };
                                     }}
                                 >
