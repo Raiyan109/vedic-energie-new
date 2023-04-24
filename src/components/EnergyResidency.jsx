@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import styled from 'styled-components';
-import { Swiper, SwiperSlide} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/pagination';
@@ -38,7 +38,7 @@ scroll-snap-align:center;
 const EnergyResidency = () => {
     return (
         <Section>
-            <Swiper pagination={{ clickable: true }} autoplay={{delay : 900}}  modules={[Pagination, Navigation, Autoplay]} className="mySwiper">
+            <Swiper pagination={{ clickable: true }} autoplay={{ delay: 900 }} modules={[Pagination, Navigation, Autoplay]} className="mySwiper">
                 <SwiperSlide>
                     <section id="about" className="dark:bg-gray-800 dark:text-gray-100">
                         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
@@ -51,7 +51,7 @@ const EnergyResidency = () => {
 
                             </div>
                             <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                                <img src={img1} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+                                <img src={img1} alt="energy-residency" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                             </div>
                         </div>
                     </section>

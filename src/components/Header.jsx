@@ -30,7 +30,7 @@ const Header = () => {
             <nav style={{ marginTop: "-25px" }} className="px-2 sm:px-4">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <Link className="flex items-center" to='/'>
-                        <img src={logo} style={{ width: "70px", height: "70px", backgroundColor: "white", paddingTop: "-110px" }}></img>
+                        <img src={logo} alt='header-logo' style={{ width: "70px", height: "70px", backgroundColor: "white", paddingTop: "-110px" }}></img>
                     </Link>
 
                     <button

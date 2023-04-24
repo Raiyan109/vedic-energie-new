@@ -20,7 +20,7 @@ const Articles = () => {
                             <div class="w-full px-4 md:w-1/2 xl:w-1/3 ">
                                 <div class="overflow-hidden bg-white mb-10">
                                     <img
-                                        src={img}
+                                        src={img} alt='article'
                                     />
                                     <div class="p-6 text-left sm:p-9 md:p-7 xl:p-9">
                                         <h3>
@@ -53,6 +53,7 @@ const Articles = () => {
                                 <div class="mb-10 overflow-hidden bg-white">
                                     <img
                                         src={img}
+                                        alt='article'
                                     />
                                     <div class="p-6 text-left sm:p-9 md:p-7 xl:p-9">
                                         <h3>
@@ -85,6 +86,7 @@ const Articles = () => {
                                 <div class="mb-10 overflow-hidden bg-white">
                                     <img
                                         src={img}
+                                        alt='article'
                                     />
                                     <div class="p-6 text-left sm:p-9 md:p-7 xl:p-9">
                                         <h3>

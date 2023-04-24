@@ -9,32 +9,32 @@ import clss from './style.module.css';
 import pic from '../assets/footerlogo.png';
 
 const Footer = () => {
-   
+
     return (
-      
+
         <div>
-            <footer aria-label="Site Footer" style={{marginTop:"100px"}} className="bg-white">
+            <footer aria-label="Site Footer" style={{ marginTop: "100px" }} className="bg-white">
                 <div id="contact"
                     className="max-w-screen-xl px-4 py-14 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
                 >
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                         <div>
 
-                            <img style={{paddingBottom:"20px"}} src={pic} width='150' height='150'></img>
-                            <p className="max-w-xs mt-4 text-green-500 text-green mt-4">
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                            <img style={{ paddingBottom: "20px" }} src={pic} width='150' height='150' alt='footer-logo'></img>
+                            <p className="max-w-xs mt-4 text-green-500 text-green">
+                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                             </p>
-                            <h3 style={{paddingTop:"20px"}}  className='uppercase underline font-medium text-green mt-4'>Social Links</h3>
+                            <h3 style={{ paddingTop: "20px" }} className='uppercase underline font-medium text-green mt-4'>Social Links</h3>
                             <ul className="flex gap-6 mt-8">
                                 <li>
-                                <a
+                                    <a
                                         href="/"
                                         rel="noreferrer"
                                         target="_blank"
                                         className="text-gray-700 transition hover:opacity-75 text-xl"
                                     >
                                         <BsFacebook className={clss.in} />
-                                   </a>
+                                    </a>
                                 </li>
 
                                 <li>
@@ -44,7 +44,7 @@ const Footer = () => {
                                         target="_blank"
                                         className="text-gray-700 transition hover:opacity-75 text-xl"
                                     >
-                                       
+
 
                                         <AiOutlineInstagram className={clss.in} />
                                     </a>
@@ -57,10 +57,10 @@ const Footer = () => {
                                         target="_blank"
                                         className="text-gray-700 transition hover:opacity-75 text-xl"
                                     >
-                                        <span ><FaTwitterSquare className={clss.in}/></span>
+                                        <span ><FaTwitterSquare className={clss.in} /></span>
 
 
-                                        
+
                                     </a>
                                 </li>
 
@@ -71,9 +71,9 @@ const Footer = () => {
                                         target="_blank"
                                         className="text-gray-700 transition hover:opacity-75 text-xl"
                                     >
-                                     
 
-                                        <AiFillLinkedin className={clss.in}/>
+
+                                        <AiFillLinkedin className={clss.in} />
                                     </a>
                                 </li>
 
@@ -158,7 +158,7 @@ const Footer = () => {
                                         <h3 className='text-xl text-green'><BsFillTelephoneFill /></h3>
                                         <p className='text-green text-sm'>+91 98439 37773</p>
                                     </div>
-                                    <iframe style={{paddingTop:"20px"}} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109060.53116613768!2d81.54933879141241!3d21.213079179947787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dc214e07cc6b%3A0xad8281733d2dcbe7!2sRaipur%2C%20Chhattisgarh%20492013!5e0!3m2!1sen!2sin!4v1681626250643!5m2!1sen!2sin" width="330" height="197" ></iframe>
+                                    <iframe style={{ paddingTop: "20px" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109060.53116613768!2d81.54933879141241!3d21.213079179947787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dc214e07cc6b%3A0xad8281733d2dcbe7!2sRaipur%2C%20Chhattisgarh%20492013!5e0!3m2!1sen!2sin!4v1681626250643!5m2!1sen!2sin" width="330" height="197" ></iframe>
                                 </nav>
                             </div>
 
@@ -173,7 +173,7 @@ const Footer = () => {
                 </div>
             </footer>
         </div>
-      
+
     );
 };
 
