@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import teslaImg from '../assets/tesla-logo-png-27.png'
 import adaniImg from '../assets/Adani_2012_logo.png'
+
 const Section = styled.div`
 
 background-color:#FFB951;
@@ -23,12 +24,12 @@ const Affiliate = () => {
 
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
-                                <a href="https://www.tesla.com/" target="_blank"><img src={teslaImg} className="w-20 h-16 my-auto" alt="" /></a>
+                                <a href="https://www.tesla.com/" target="_blank"><img src={teslaImg} className="w-20 h-16 my-auto" alt="tesla" /></a>
                             </li>
 
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
-                                <a href="https://www.adanisolar.com/" target="_blank"><img src={adaniImg} className="w-20 h-16 my-auto" alt="" /></a>
+                                <a href="https://www.adanisolar.com/" target="_blank"><img src={adaniImg} className="w-20 h-16 my-auto" alt="adani" /></a>
                             </li>
 
 

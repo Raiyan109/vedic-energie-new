@@ -30,7 +30,7 @@ const Upcoming = () => {
                             </div>
                         </div>
                         <div className="flex items-center justify-center p-6 mt-0 lg:mt-0 h-72 sm:h-80 lg:h-50 xl:h-100 2xl:h-128">
-                            <img src={img} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+                            <img src={img} alt="upcoming-energy" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
 
                         </div>
                     </div>
