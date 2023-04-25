@@ -19,7 +19,18 @@ const Calculation = () => {
                             <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator For Your Home</h3>
 
                             <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 gap-7'>
-
+                                <label
+                                    for="State"
+                                    className="relative block overflow-hidden border-b border-green pt-3 focus-within:border-blue"
+                                >
+                                    <input
+                                        style={{ background: 'transparent' }}
+                                        type="dropdown"
+                                        id="UserEmail"
+                                        placeholder="Email"
+                                        className="peer h-8 w-full border-none p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                    />
+                                </label>
                             </div>
                         </div>
 

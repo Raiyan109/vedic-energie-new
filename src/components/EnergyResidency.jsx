@@ -56,7 +56,7 @@ const EnergyResidency = () => {
                         </div>
                     </section>
                 </SwiperSlide>
-                <SwiperSlide> slide 2</SwiperSlide>
+
 
 
             </Swiper>
