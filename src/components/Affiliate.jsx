@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import teslaImg from '../assets/tesla-logo-png-27.png'
 import adaniImg from '../assets/Adani_2012_logo.png'
+
 const Section = styled.div`
 
 background-color:#FFB951;
