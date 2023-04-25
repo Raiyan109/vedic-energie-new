@@ -4,7 +4,7 @@ import 'react-circular-progressbar/dist/styles.css';
 const CircleProgressBar = () => {
     const percentage = 75;
     return (
-        <div style={{ width: 200, height: 200 }}>
+        <div>
             <CircularProgressbarWithChildren
                 value={percentage}
                 styles={buildStyles({

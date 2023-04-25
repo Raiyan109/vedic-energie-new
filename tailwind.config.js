@@ -21,6 +21,7 @@ export default {
       black: '#100c08',
       white: '#ffff',
       blue: '#05386B',
+      lightBlue: '#2F45B7',
       lightYellow: '#FEFFCD',
       orange: '#FFB951',
       rgbaHeader: 'rgba(0,0,0,0.85)'
