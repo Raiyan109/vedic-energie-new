@@ -9,18 +9,13 @@ align-items:center;
 padding:130px 0; 
 background-color:#75ed9d;
 scroll-snap-align:center;
-@media only screen and (max-width:600px){
-    height:120vh;
-    .see{
-        padding-top:100px;
-    }
-}
+
 `
 const See = () => {
     return (
         <Section>
-            <div className='flex flex-col justify-center items-center bg-green-800 p-20'>
-                <h1 className="see text-4xl font-bold text-white">SEE WHAT WE CAN DO FOR YOU
+            <div className='flex flex-col justify-center items-center p-20'>
+                <h1 className="see lg:pt-4 md:pt-3 pt-7 text-4xl font-bold text-white">SEE WHAT WE CAN DO FOR YOU
                 </h1>
                 <h1 className="text-3xl text-white uppercase py-5">Schedule Your <span className='text-yellow'>First Meeting</span>
                 </h1>
