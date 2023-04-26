@@ -2,6 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import teslaImg from '../assets/tesla-logo-png-27.png'
 import adaniImg from '../assets/Adani_2012_logo.png'
+import hiveImg from '../assets/hivepower.png'
+import dynmhxImg from '../assets/dynamhex.jpg'
+import climateTradeImg from '../assets/climatetrade.png'
+import ecosiaImg from '../assets/ecosia.png'
+import doconomyImg from '../assets/doconomy.png'
+import climatiqImg from '../assets/climatiq.png'
 
 const Section = styled.div`
 
@@ -34,32 +40,34 @@ const Affiliate = () => {
 
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
-                                <a href="https://www.hivepower.tech/" target="_blank"><img src={teslaImg} className="w-20 h-16 my-auto" alt="" /></a>
+                                <a href="https://www.hivepower.tech/" target="_blank"><img src={hiveImg} className="w-20 h-16 my-auto" alt="" /></a>
                             </li>
 
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
-                                <a href="https://www.dynmhx.io/" target="_blank"><img src={teslaImg} className="w-20 h-16 my-auto" alt="" /></a>
+                                <a href="https://www.dynmhx.io/" target="_blank"><img src={dynmhxImg} className="w-20 h-16 my-auto" alt="" /></a>
                             </li>
 
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
-                                <a href="https://climatetrade.com/es/inicio/" target="_blank"><img src={teslaImg} className="w-20 h-16 my-auto" alt="" /></a>
+                                <a href="https://climatetrade.com/es/inicio/
+" target="_blank"><img src={climateTradeImg} className="w-20 h-16 my-auto" alt="" /></a>
                             </li>
 
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
-                                <a href="https://www.tesla.com/" target="_blank"><img src={teslaImg} className="w-20 h-16 my-auto" alt="" /></a>
+                                <a href="https://info.ecosia.org/
+" target="_blank"><img src={ecosiaImg} className="w-20 h-16 my-auto" alt="" /></a>
                             </li>
 
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
-                                <a href="https://www.tesla.com/" target="_blank"><img src={teslaImg} className="w-20 h-16 my-auto" alt="" /></a>
+                                <a href="https://doconomy.com/" target="_blank"><img src={doconomyImg} className="w-20 h-16 my-auto" alt="" /></a>
                             </li>
 
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
-                                <a href="https://www.tesla.com/" target="_blank"><img src={teslaImg} className="w-20 h-16 my-auto" alt="" /></a>
+                                <a href="https://www.climatiq.io/" target="_blank"><img src={climatiqImg} className="w-20 h-16 my-auto" alt="" /></a>
                             </li>
 
                         </ul>
