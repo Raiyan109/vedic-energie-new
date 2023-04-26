@@ -4,3 +4,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (max-width:700px) {
+    * {
+        overflow-x: hidden;
+    }
+}

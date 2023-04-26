@@ -13,10 +13,7 @@ import EnergySaving from '../pages/EnergySaving'
 
 import NotFound from '../pages/NotFound'
 
-import Efficient from '../components/Efficient';
-import EnergyResidency from '../components/EnergyResidency';
-import Articles from '../components/Articles';
-import Header from '../components/Header'
+
 
 
 const routes = createBrowserRouter([

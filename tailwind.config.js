@@ -15,19 +15,22 @@ export default {
     },
     colors: {
       green: '#1D6126',
-      lightgreen:'#369517',
+      lightgreen: '#369517',
       lightGreen: '#75ed9d',
       yellow: '#EBE667',
       black: '#100c08',
       white: '#ffff',
       blue: '#05386B',
+      lightBlue: '#2F45B7',
       lightYellow: '#FEFFCD',
       orange: '#FFB951',
       rgbaHeader: 'rgba(0,0,0,0.85)'
     },
+
   },
   plugins: [
+    require('tailwind-scrollbar'),
     require('@tailwindcss/forms'),
-    // ...
+    require('tailwind-scrollbar-hide')
   ],
 }

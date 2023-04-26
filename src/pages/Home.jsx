@@ -11,6 +11,7 @@ import See from '../components/See';
 import Articles from '../components/Articles';
 import Brands from '../components/Brands';
 import Affiliate from '../components/Affiliate';
+import BackToTopButton from '../components/BackToTopButton';
 
 
 const Home = () => {
@@ -22,11 +23,12 @@ const Home = () => {
             <EnergyResidency />
             <Upcoming />
             <Affiliate />
-            {/* <Client /> */}
-            {/* <Brands /> */}
+            <Client />
+            <Brands />
             <See />
             <Articles />
             <Footer />
+            <BackToTopButton />
         </div>
     );
 };

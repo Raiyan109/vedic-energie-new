@@ -27,15 +27,15 @@ const Header = () => {
         <div className={color ? 'bg-rgbaHeader transition-all fixed w-full h-[100px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
 
 
-            <nav style={{ marginTop: "-25px" }} className=" px-2 sm:px-4">
-                <div className="container flex flex-wrap justify-between items-center mx-auto ">
+            <nav style={{ marginTop: "-25px" }} className="px-2 sm:px-4">
+                <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <Link className="flex items-center" to='/'>
-                        <img src={logo} style={{ width: "70px", height: "70px", backgroundColor: "white", paddingTop: "-110px" }}></img>
+                        <img src={logo} alt='header-logo' style={{ width: "70px", height: "70px", backgroundColor: "white", paddingTop: "-110px" }}></img>
                     </Link>
 
                     <button
                         onClick={() => setMenu(!menu)}
-                        className=" items-center md:hidden text-lightGreen text-2xl"
+                        className="items-center md:hidden text-lightGreen text-2xl"
                     >
                         {menu ? <FaTimes /> : <FaBars />}
                         <span className="sr-only">Open main menu</span>
@@ -55,41 +55,42 @@ const Header = () => {
 
 
 
-                            <li className='block py-2 pr-4 pl-3 text-xl font-bold'>
+                            <li className='block py-2 pr-4 pl-3 lg:text-xl md:text-sm sm:text-xl font-bold'>
                                 <NavLink
                                     to="/about"
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 2.5px #1D6126' : 'none',
-
+                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
+                                            color: isActive ? 'lightGreen' : '#1D6126',
                                         };
                                     }}
                                 >
                                     About us
                                 </NavLink>
                             </li>
-                            <li className='block py-2 pr-4 pl-3 text-xl font-bold'>
+                            <li className='block py-2 pr-4 pl-3 lg:text-xl md:text-sm sm:text-xl font-bold'>
                                 <NavLink
                                     to="/services"
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 2.5px #1D6126' : 'none',
-
+                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
+                                            color: isActive ? 'lightGreen' : '#1D6126',
                                         };
                                     }}
                                 >
                                     Services
                                 </NavLink>
                             </li>
-                            <li className='block py-2 pr-4 pl-3 text-xl font-bold text-green'>
+                            <li className='block py-2 pr-4 pl-3 lg:text-xl md:text-sm sm:text-xl font-bold text-green'>
                                 <NavLink
                                     to="/blog"
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 2.5px #1D6126' : 'none',
+                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
+                                            color: isActive ? 'lightGreen' : '#1D6126',
 
                                         };
                                     }}
@@ -97,14 +98,14 @@ const Header = () => {
                                     Blog
                                 </NavLink>
                             </li>
-                            <li className='block py-2 pr-4 pl-3 text-xl font-bold text-green'>
+                            <li className='block py-2 pr-4 pl-3 lg:text-xl md:text-sm sm:text-xl font-bold text-green'>
                                 <NavLink
                                     to="/contact"
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 2.5px #1D6126' : 'none',
-
+                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
+                                            color: isActive ? 'lightGreen' : '#1D6126',
                                         };
                                     }}
                                 >
@@ -112,8 +113,8 @@ const Header = () => {
                                 </NavLink>
                             </li>
 
-                    
-                          
+
+
                             <li><GetAQuote /></li>
 
 
