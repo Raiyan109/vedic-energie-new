@@ -11,7 +11,7 @@ import img1 from '../assets/solar-panels.png'
 import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 
 const Section = styled.div`
-height:100vh;
+
 background-color:#FFB951;
 scroll-snap-align:center;
 .swiper {
