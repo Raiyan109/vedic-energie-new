@@ -20,7 +20,8 @@ body {
 }
 
 @media only screen and (max-width:700px) {
-    body {
+    #root{
         overflow-x: hidden;
     }
+ 
 }
