@@ -1,13 +1,9 @@
 import React, { useReducer, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { BsFillSunFill } from 'react-icons/bs'
-import { FaCanadianMapleLeaf } from 'react-icons/fa'
-import Toggle from '../components/Toggle';
-import Input from '../components/Input';
 import CircleProgressBar from '../components/CircleProgressBar';
 import CalculateButton from '../components/CalculateButton';
-import Calculation from '../components/Calculation';
+
 
 const EnergyCalculation = () => {
 
@@ -17,7 +13,7 @@ const EnergyCalculation = () => {
         <div >
             <Header />
             <div>
-                <div className='bg-lightGreen'>
+                <div className='bg-[#D4FAFC]'>
                     <div className="container flex flex-col justify-center p-6 mx-auto py-40 md:py-42 lg:py-46 lg:flex-row lg:justify-between">
                         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                             <h1 className="text-5xl font-semibold sm:text-6xl text-white lg:leading-loose leading-12">Energy Calculator For Your <span className='text-black'>Home</span> And <span className='text-black'>Industry</span>
@@ -33,8 +29,6 @@ const EnergyCalculation = () => {
                         </div>
                     </div>
                 </div>
-
-                <Calculation />
             </div>
             <Footer />
         </div>

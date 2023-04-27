@@ -12,6 +12,7 @@ import ReduceEnergy from '../pages/ReduceEnergy'
 import EnergySaving from '../pages/EnergySaving'
 
 import NotFound from '../pages/NotFound'
+import Calculation from "../components/Calculation";
 
 
 
@@ -44,6 +45,10 @@ const routes = createBrowserRouter([
     {
         path: '/energyCalc',
         element: <EnergyCalculation />
+    },
+    {
+        path: '/calcStep1',
+        element: <Calculation />
     },
     {
         path: '/energyDemand',
