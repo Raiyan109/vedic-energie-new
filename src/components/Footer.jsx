@@ -21,7 +21,7 @@ const Footer = () => {
             {/*  */}
 
             <footer class="text-gray-600 body-font">
-                <div class="container px-5 lg:py-24 py-9 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col lg:gap-40 gap-2">
+                <div class="container lg:px-5 px-1 lg:py-24 py-9 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col lg:gap-40 gap-2">
                     <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                         <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                             <img style={{ paddingBottom: "20px" }} src={pic} width='150' height='150' className='' alt='footer-logo' />
