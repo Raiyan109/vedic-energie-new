@@ -7,6 +7,7 @@ import styles from './banner.module.css'
 const Section = styled.div`
 background-image: url(${bg});
 height: 100vh;
+
 `
 
 const Banner = () => {
@@ -21,7 +22,7 @@ const Banner = () => {
                     className="absolute inset-0  bg-transparent bg-gradient-to-r from-black/95 to-white/35 bg-blend-overlay "
                 ></div>
                 <div
-                    className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
+                    className="relative mx-auto max-w-screen-xl  py-32 lg:flex lg:h-screen lg:items-center lg:px-8"
                 >
 
 
