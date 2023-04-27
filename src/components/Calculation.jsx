@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LetsGoButton from './LetsGoButton';
 
 const Calculation = () => {
     return (
@@ -26,11 +27,57 @@ const Calculation = () => {
                                     <input
                                         style={{ background: 'transparent' }}
                                         type="dropdown"
-                                        id="UserEmail"
-                                        placeholder="Email"
+                                        id="State"
+                                        placeholder="State"
                                         className="peer h-8 w-full border-none p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                                     />
                                 </label>
+                                <label
+                                    for="District"
+                                    className="relative block overflow-hidden border-b border-green pt-3 focus-within:border-blue"
+                                >
+                                    <input
+                                        style={{ background: 'transparent' }}
+                                        type="dropdown"
+                                        id="District"
+                                        placeholder="District"
+                                        className="peer h-8 w-full border-none p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                    />
+                                </label>
+                                <label
+                                    for="City"
+                                    className="relative block overflow-hidden border-b border-green pt-3 focus-within:border-blue"
+                                >
+                                    <input
+                                        style={{ background: 'transparent' }}
+                                        type="dropdown"
+                                        id="City"
+                                        placeholder="City"
+                                        className="peer h-8 w-full border-none p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                    />
+                                </label>
+                                <label
+                                    for="BilledUnitsPerMonth"
+                                    className="relative block overflow-hidden border-b border-green pt-3 focus-within:border-blue"
+                                >
+                                    <input
+                                        style={{ background: 'transparent' }}
+                                        type="dropdown"
+                                        id="BilledUnitsPerMonth"
+                                        placeholder="BilledUnitsPerMonth"
+                                        className="peer h-8 w-full border-none p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                    />
+                                </label>
+
+                                {/* Slider range */}
+                                <fieldset className="flex flex-nowrap items-center max-w-xs space-x-2 dark:text-gray-100">
+                                    <label for="No of people in your home">
+                                        <input id="slider" type="range" value="75" className="w-full h-2 rounded-lg cursor-pointer accent-lightYellow" />
+                                    </label>
+
+                                </fieldset>
+
+                                <LetsGoButton />
                             </div>
                         </div>
 
