@@ -16,7 +16,7 @@ import BackToTopButton from '../components/BackToTopButton';
 
 const Home = () => {
     return (
-        <div className='font-Poppins'>
+        <div className='font-Poppins overflow-x-hidden'>
             <Header />
             <Banner />
             <Efficient />
