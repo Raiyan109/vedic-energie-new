@@ -10,7 +10,7 @@ import doconomyImg from '../assets/doconomy.png'
 import climatiqImg from '../assets/climatiq.png'
 
 const Section = styled.div`
-
+height:100vh;
 background-color:#FFB951;
 scroll-snap-align:center;
 `

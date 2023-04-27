@@ -34,6 +34,11 @@ scroll-snap-align:center;
     height: 100%;
     object-fit: cover;
 }
+@media only screen and (max-width:700px){
+    height:130vh;
+    padding-top:17px;
+  
+}
 `
 const EnergyResidency = () => {
     return (

@@ -24,7 +24,7 @@ const Header = () => {
 
     return (
 
-        <div className={color ? 'bg-rgbaHeader transition-all fixed w-full h-[100px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
+        <div id="root" className={color ? 'bg-rgbaHeader transition-all fixed w-full h-[100px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
 
 
             <nav style={{ marginTop: "-25px" }} className="px-2 sm:px-4">
