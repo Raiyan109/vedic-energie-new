@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 const RangeSlider = ({ value, handleRange }) => {
     return (
-        <div>
-            <fieldset className="flex flex-nowrap items-center max-w-xs space-x-2">
+        <div className='pt-3'>
+            <span className='text-lightYellow text-xl'>No of People in Your Home</span>
+            <fieldset className="flex flex-nowrap items-center max-w-xs space-x-2 py-2">
                 <label for="No of people in your home">
                     <Slider id="slider" type="range"
                         min='1'

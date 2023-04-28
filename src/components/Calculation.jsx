@@ -24,60 +24,62 @@ const Calculation = ({ ref }) => {
                             </span>
                             <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator For Your Home</h3>
 
-                            <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 gap-7'>
+                            <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 gap-7 py-10'>
                                 <label
                                     for="State"
-                                    className="relative block overflow-hidden border-b border-green pt-3 focus-within:border-blue"
+                                    className="relative block overflow-hidden border-b border-green pt-6 focus-within:border-blue"
                                 >
                                     <input
                                         style={{ background: 'transparent' }}
                                         type="dropdown"
                                         id="State"
                                         placeholder="State"
-                                        className="peer h-8 w-full border-none p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                                     />
                                 </label>
                                 <label
                                     for="District"
-                                    className="relative block overflow-hidden border-b border-green pt-3 focus-within:border-blue"
+                                    className="relative block overflow-hidden border-b border-green pt-6 focus-within:border-blue"
                                 >
                                     <input
                                         style={{ background: 'transparent' }}
                                         type="dropdown"
                                         id="District"
                                         placeholder="District"
-                                        className="peer h-8 w-full border-none p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                                     />
                                 </label>
                                 <label
                                     for="City"
-                                    className="relative block overflow-hidden border-b border-green pt-3 focus-within:border-blue"
+                                    className="relative block overflow-hidden border-b border-green pt-6 focus-within:border-blue"
                                 >
                                     <input
                                         style={{ background: 'transparent' }}
                                         type="dropdown"
                                         id="City"
                                         placeholder="City"
-                                        className="peer h-8 w-full border-none p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                                     />
                                 </label>
                                 <label
                                     for="BilledUnitsPerMonth"
-                                    className="relative block overflow-hidden border-b border-green pt-3 focus-within:border-blue"
+                                    className="relative block overflow-hidden border-b border-green pt-6 focus-within:border-blue"
                                 >
                                     <input
                                         style={{ background: 'transparent' }}
                                         type="dropdown"
                                         id="BilledUnitsPerMonth"
                                         placeholder="Billed Units per Month"
-                                        className="peer h-8 w-full border-none p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                                     />
                                 </label>
 
                                 {/* Slider range */}
                                 <RangeSlider value={value} handleRange={handleRange} />
 
-                                <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{value}</div>
+                                <div className='pt-6'>
+                                    <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{value}</div>
+                                </div>
                                 <LetsGoButton />
                             </div>
                         </div>
