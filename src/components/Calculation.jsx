@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 import LetsGoButton from './LetsGoButton';
 import RangeSlider from './RangeSlider';
 import { states } from '../constants';
+import { districts } from '../constants';
 import { AiOutlineSearch } from 'react-icons/ai'
 
 const Calculation = ({ ref }) => {
     const [value, setValue] = useState(5)
-    const [isOpen, setIsOpen] = useState(false)
-    const [inputValue, setInputValue] = useState('')
-    const [selected, setSelected] = useState('')
+    const [isOpenState, setIsOpenState] = useState(false)
+    const [isOpenDistrict, setIsOpenDistrict] = useState(false)
+    const [inputValueState, setInputValueState] = useState('')
+    const [inputValueDistrict, setInputValueDistrict] = useState('')
+    const [selectedState, setSelectedState] = useState('')
+    const [selectedDistrict, setSelectedDistrict] = useState('')
 
     const handleRange = (e) => {
         setValue(e.target.value)
@@ -31,7 +35,7 @@ const Calculation = ({ ref }) => {
                             <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator For Your Home</h3>
 
                             <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 gap-7 py-10'>
-                                <label
+                                {/* <label
                                     for="State"
                                     className="relative block overflow-hidden border-b border-green pt-6 focus-within:border-blue"
                                 >
@@ -52,7 +56,7 @@ const Calculation = ({ ref }) => {
                                             ))}
                                         </div>
                                     )}
-                                </label>
+                                </label> */}
 
                                 {/* <div className='relative block border-b border-green pt-6 focus-within:border-blue'>
                                     <button
@@ -71,25 +75,25 @@ const Calculation = ({ ref }) => {
                                     )}
                                 </div> */}
 
-                                {/* new dropdown */}
+                                {/* new dropdown - STATE */}
 
                                 <div className='w-full h-8 font-medium z-10'>
                                     <div
-                                        onClick={() => setIsOpen(!isOpen)}
+                                        onClick={() => setIsOpenState(!isOpenState)}
                                         className='w-full mt-8 flex items-center justify-start border-b-2 text-lightYellow'>
-                                        {selected
-                                            ? selected
+                                        {selectedState
+                                            ? selectedState
                                             : 'Select State'}
                                     </div>
-                                    <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpen ? 'max-h-60' : 'max-h-0'}`}>
+                                    <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenState ? 'max-h-60' : 'max-h-0'}`}>
 
                                         {/* input field */}
                                         <div className='flex items-center px-2 sticky top-0 bg-lightYellow'>
                                             <AiOutlineSearch size={18} className='' />
                                             <input
                                                 type="text"
-                                                value={inputValue}
-                                                onChange={(e) => setInputValue(e.target.value.toLowerCase())}
+                                                value={inputValueState}
+                                                onChange={(e) => setInputValueState(e.target.value.toLowerCase())}
                                                 placeholder='Enter state name'
                                                 className='bg-lightYellow p-2 outline-none focus:outline-none focus:ring focus:ring-lightYellow border-none'
                                             />
@@ -98,20 +102,20 @@ const Calculation = ({ ref }) => {
                                             <li
                                                 key={index}
                                                 className={`p-2 text-sm cursor-pointer hover:bg-yellow hover:text-black 
-                                                ${item.state.toLowerCase() === selected.toLowerCase() && 'bg-yellow text-black'}
-                                                ${item.state.toLowerCase().startsWith(inputValue) ? 'block'
+                                                ${item.name.toLowerCase() === selectedState.toLowerCase() && 'bg-yellow text-black'}
+                                                ${item.name.toLowerCase().startsWith(inputValueState) ? 'block'
                                                         :
                                                         'hidden'
                                                     }`}
                                                 onClick={() => {
-                                                    if (item.state.toLowerCase() !== selected.toLowerCase()) {
-                                                        setSelected(item.state)
-                                                        setIsOpen(false)
-                                                        setInputValue('')
+                                                    if (item.name.toLowerCase() !== selectedState.toLowerCase()) {
+                                                        setSelectedState(item.name)
+                                                        setIsOpenState(false)
+                                                        setInputValueState('')
                                                     }
                                                 }}
                                             >
-                                                {item.state}
+                                                {item.name}
                                             </li>
                                         ))}
                                     </ul>
@@ -119,9 +123,55 @@ const Calculation = ({ ref }) => {
 
                                 {/*  */}
 
+                                {/* new dropdown - DISTRICT */}
 
+                                <div className='w-full h-8 font-medium z-10'>
+                                    <div
+                                        onClick={() => setIsOpenDistrict(!isOpenDistrict)}
+                                        className='w-full mt-8 flex items-center justify-start border-b-2 text-lightYellow'>
+                                        {selectedDistrict
+                                            ? selectedDistrict
+                                            : 'Select District'}
+                                    </div>
+                                    <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenDistrict ? 'max-h-60' : 'max-h-0'}`}>
 
-                                <label
+                                        {/* input field */}
+                                        <div className='flex items-center px-2 sticky top-0 bg-lightYellow'>
+                                            <AiOutlineSearch size={18} className='' />
+                                            <input
+                                                type="text"
+                                                value={inputValueDistrict}
+                                                onChange={(e) => setInputValueDistrict(e.target.value.toLowerCase())}
+                                                placeholder='Enter state name'
+                                                className='bg-lightYellow p-2 outline-none focus:outline-none focus:ring focus:ring-lightYellow border-none'
+                                            />
+                                        </div>
+                                        {districts.map((item, index) => (
+                                            <li
+                                                key={index}
+                                                className={`p-2 text-sm cursor-pointer hover:bg-yellow hover:text-black 
+                                                ${item.name.toLowerCase() === selectedDistrict.toLowerCase() && 'bg-yellow text-black'}
+                                                ${item.name.toLowerCase().startsWith(inputValueDistrict) ? 'block'
+                                                        :
+                                                        'hidden'
+                                                    }`}
+                                                onClick={() => {
+                                                    if (item.name.toLowerCase() !== selectedDistrict.toLowerCase()) {
+                                                        setSelectedDistrict(item.name)
+                                                        setIsOpenDistrict(false)
+                                                        setInputValueDistrict('')
+                                                    }
+                                                }}
+                                            >
+                                                {item.name}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/*  */}
+
+                                {/* <label
                                     for="District"
                                     className="relative block overflow-hidden border-b border-green pt-6 focus-within:border-blue"
                                 >
@@ -156,7 +206,7 @@ const Calculation = ({ ref }) => {
                                         placeholder="Billed Units per Month"
                                         className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                                     />
-                                </label>
+                                </label> */}
 
                                 {/* Slider range */}
                                 <RangeSlider value={value} handleRange={handleRange} />
