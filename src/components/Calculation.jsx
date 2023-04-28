@@ -4,16 +4,21 @@ import LetsGoButton from './LetsGoButton';
 import RangeSlider from './RangeSlider';
 import { states } from '../constants';
 import { districts } from '../constants';
+import { cities } from '../constants';
 import { AiOutlineSearch } from 'react-icons/ai'
 
 const Calculation = ({ ref }) => {
-    const [value, setValue] = useState(5)
+    const [peopleRangeValue, setPeopleRangeValue] = useState(5)
+    const [unitRangeValue, setUnitRangeValue] = useState(100)
     const [isOpenState, setIsOpenState] = useState(false)
     const [isOpenDistrict, setIsOpenDistrict] = useState(false)
+    const [isOpenCity, setIsOpenCity] = useState(false)
     const [inputValueState, setInputValueState] = useState('')
     const [inputValueDistrict, setInputValueDistrict] = useState('')
+    const [inputValueCity, setInputValueCity] = useState('')
     const [selectedState, setSelectedState] = useState('')
     const [selectedDistrict, setSelectedDistrict] = useState('')
+    const [selectedCity, setSelectedCity] = useState('')
 
     const handleRange = (e) => {
         setValue(e.target.value)
@@ -83,7 +88,7 @@ const Calculation = ({ ref }) => {
                                         className='w-full mt-8 flex items-center justify-start border-b-2 text-lightYellow'>
                                         {selectedState
                                             ? selectedState
-                                            : 'Select State'}
+                                            : 'State'}
                                     </div>
                                     <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenState ? 'max-h-60' : 'max-h-0'}`}>
 
@@ -131,7 +136,7 @@ const Calculation = ({ ref }) => {
                                         className='w-full mt-8 flex items-center justify-start border-b-2 text-lightYellow'>
                                         {selectedDistrict
                                             ? selectedDistrict
-                                            : 'Select District'}
+                                            : 'District'}
                                     </div>
                                     <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenDistrict ? 'max-h-60' : 'max-h-0'}`}>
 
@@ -168,6 +173,71 @@ const Calculation = ({ ref }) => {
                                         ))}
                                     </ul>
                                 </div>
+
+                                {/*  */}
+
+                                {/* new dropdown - CITY */}
+
+                                <div className='w-full h-8 font-medium z-10'>
+                                    <div
+                                        onClick={() => setIsOpenCity(!isOpenCity)}
+                                        className='w-full mt-8 flex items-center justify-start border-b-2 text-lightYellow'>
+                                        {selectedCity
+                                            ? selectedCity
+                                            : 'City'}
+                                    </div>
+                                    <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenCity ? 'max-h-60' : 'max-h-0'}`}>
+
+                                        {/* input field */}
+                                        <div className='flex items-center px-2 sticky top-0 bg-lightYellow'>
+                                            <AiOutlineSearch size={18} className='' />
+                                            <input
+                                                type="text"
+                                                value={inputValueCity}
+                                                onChange={(e) => setInputValueCity(e.target.value.toLowerCase())}
+                                                placeholder='Enter state name'
+                                                className='bg-lightYellow p-2 outline-none focus:outline-none focus:ring focus:ring-lightYellow border-none'
+                                            />
+                                        </div>
+                                        {cities.map((item, index) => (
+                                            <li
+                                                key={index}
+                                                className={`p-2 text-sm cursor-pointer hover:bg-yellow hover:text-black 
+                                                ${item.name.toLowerCase() === selectedCity.toLowerCase() && 'bg-yellow text-black'}
+                                                ${item.name.toLowerCase().startsWith(inputValueCity) ? 'block'
+                                                        :
+                                                        'hidden'
+                                                    }`}
+                                                onClick={() => {
+                                                    if (item.name.toLowerCase() !== selectedCity.toLowerCase()) {
+                                                        setSelectedCity(item.name)
+                                                        setIsOpenCity(false)
+                                                        setInputValueCity('')
+                                                    }
+                                                }}
+                                            >
+                                                {item.name}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/*  */}
+
+                                {/* new dropdown - Billed unit per month */}
+
+                                <label
+                                    for="BilledUnitsPerMonth"
+                                    className="relative block overflow-hidden border-b-2 border-lightYellow pt-6 focus-within:border-blue"
+                                >
+                                    <input
+                                        style={{ background: 'transparent' }}
+                                        type="dropdown"
+                                        id="BilledUnitsPerMonth"
+                                        placeholder="Billed Units per Month"
+                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-md"
+                                    />
+                                </label>
 
                                 {/*  */}
 
@@ -208,11 +278,22 @@ const Calculation = ({ ref }) => {
                                     />
                                 </label> */}
 
-                                {/* Slider range */}
-                                <RangeSlider value={value} handleRange={handleRange} />
+                                {/* Slider range people count */}
+                                <RangeSlider min='1' max={20} value={peopleRangeValue} handleRange={handleRange}
+                                    text='No of People in Your Home'
+                                />
 
                                 <div className='pt-6'>
-                                    <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{value}</div>
+                                    <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{peopleRangeValue}</div>
+                                </div>
+
+                                {/* Slider range Units Consumed */}
+                                <RangeSlider min='10' max='1000' value={unitRangeValue} handleRange={handleRange}
+                                    text='Units Consumed'
+                                />
+
+                                <div className='pt-6'>
+                                    <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{unitRangeValue}</div>
                                 </div>
                                 <LetsGoButton />
                             </div>

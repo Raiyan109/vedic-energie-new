@@ -38,7 +38,14 @@ export const districts = [
     { "name": "WARANGAL" },
 ];
 export const cities = [
-    {
-
-    },
+    { "name": "Port Blair" },
+    { "name": "Visakhapatnam" },
+    { "name": "Vijayawada" },
+    { "name": "Guntur" },
+    { "name": "Nellore" },
+    { "name": "Kurnool" },
+    { "name": "Kakinada" },
+    { "name": "Tirupati" },
+    { "name": "Anantapur" },
+    { "name": "Kadapa" },
 ];

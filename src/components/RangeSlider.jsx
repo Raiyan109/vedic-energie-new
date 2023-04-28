@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const RangeSlider = ({ value, handleRange }) => {
+const RangeSlider = ({ value, handleRange, min, max, text }) => {
     return (
         <div className='pt-3'>
-            <span className='text-lightYellow text-xl'>No of People in Your Home</span>
+            <span className='text-lightYellow text-xl'>{text}</span>
             <fieldset className="flex flex-nowrap items-center max-w-xs space-x-2 py-2">
                 <label for="No of people in your home">
                     <Slider id="slider" type="range"
-                        min='1'
-                        max='20'
+                        min={min}
+                        max={max}
                         defaultValue={value}
                         onChange={handleRange}
                         className="" />
