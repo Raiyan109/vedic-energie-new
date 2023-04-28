@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { forwardRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LetsGoButton from './LetsGoButton';
+import RangeSlider from './RangeSlider';
 
-const Calculation = () => {
+const Calculation = ({ ref }) => {
+    const [value, setValue] = useState(5)
+    const handleRange = (e) => {
+        setValue(e.target.value)
+    }
     return (
-        <div>
+        <div ref={ref}>
             <section className="bg-orange">
                 <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                     <div>
@@ -64,19 +69,15 @@ const Calculation = () => {
                                         style={{ background: 'transparent' }}
                                         type="dropdown"
                                         id="BilledUnitsPerMonth"
-                                        placeholder="BilledUnitsPerMonth"
+                                        placeholder="Billed Units per Month"
                                         className="peer h-8 w-full border-none p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                                     />
                                 </label>
 
                                 {/* Slider range */}
-                                <fieldset className="flex flex-nowrap items-center max-w-xs space-x-2 dark:text-gray-100">
-                                    <label for="No of people in your home">
-                                        <input id="slider" type="range" value="75" className="w-full h-2 rounded-lg cursor-pointer accent-lightYellow" />
-                                    </label>
+                                <RangeSlider value={value} handleRange={handleRange} />
 
-                                </fieldset>
-
+                                <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{value}</div>
                                 <LetsGoButton />
                             </div>
                         </div>
@@ -89,4 +90,4 @@ const Calculation = () => {
     );
 };
 
-export default Calculation;
+export default forwardRef(Calculation);
