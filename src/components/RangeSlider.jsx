@@ -9,7 +9,7 @@ const RangeSlider = ({ value, handleRange }) => {
                 <label for="No of people in your home">
                     <Slider id="slider" type="range"
                         min='1'
-                        max='10'
+                        max='20'
                         defaultValue={value}
                         onChange={handleRange}
                         className="" />
