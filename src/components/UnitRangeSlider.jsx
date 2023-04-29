@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const RangeSlider = ({ value, handleRange, min, max, text }) => {
+const UnitRangeSlider = ({ unitRangeValue, peopleRangeValue, handleUnitRange, handlePeopleRange, min, max, text }) => {
     return (
         <div className='pt-3'>
             <span className='text-lightYellow text-xl'>{text}</span>
@@ -10,8 +10,8 @@ const RangeSlider = ({ value, handleRange, min, max, text }) => {
                     <Slider id="slider" type="range"
                         min={min}
                         max={max}
-                        defaultValue={value}
-                        onChange={handleRange}
+                        defaultValue={unitRangeValue}
+                        onChange={handleUnitRange}
                         className="" />
                 </label>
             </fieldset>
@@ -19,7 +19,7 @@ const RangeSlider = ({ value, handleRange, min, max, text }) => {
     );
 };
 
-export default RangeSlider;
+export default UnitRangeSlider;
 
 const Slider = styled.input`
 -webkit-appearance:none;

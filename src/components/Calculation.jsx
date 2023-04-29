@@ -1,11 +1,13 @@
 import React, { forwardRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LetsGoButton from './LetsGoButton';
-import RangeSlider from './RangeSlider';
+
 import { states } from '../constants';
 import { districts } from '../constants';
 import { cities } from '../constants';
 import { AiOutlineSearch } from 'react-icons/ai'
+import UnitRangeSlider from './UnitRangeSlider';
+import PeopleRangeSlider from './PeopleRangeSlider';
 
 const Calculation = ({ ref }) => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
@@ -20,8 +22,12 @@ const Calculation = ({ ref }) => {
     const [selectedDistrict, setSelectedDistrict] = useState('')
     const [selectedCity, setSelectedCity] = useState('')
 
-    const handleRange = (e) => {
-        setValue(e.target.value)
+    const handlePeopleRange = (e) => {
+        setPeopleRangeValue(e.target.value)
+
+    }
+    const handleUnitRange = (e) => {
+        setUnitRangeValue(e.target.value)
     }
     return (
         <div ref={ref}>
@@ -228,58 +234,23 @@ const Calculation = ({ ref }) => {
 
                                 <label
                                     for="BilledUnitsPerMonth"
-                                    className="relative block overflow-hidden border-b-2 border-lightYellow pt-6 focus-within:border-blue"
+                                    className="relative block overflow-hidden border-b-2 border-lightYellow pt-6"
                                 >
                                     <input
                                         style={{ background: 'transparent' }}
                                         type="dropdown"
                                         id="BilledUnitsPerMonth"
                                         placeholder="Billed Units per Month"
-                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-md"
+                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md"
                                     />
                                 </label>
 
                                 {/*  */}
 
-                                {/* <label
-                                    for="District"
-                                    className="relative block overflow-hidden border-b border-green pt-6 focus-within:border-blue"
-                                >
-                                    <input
-                                        style={{ background: 'transparent' }}
-                                        type="dropdown"
-                                        id="District"
-                                        placeholder="District"
-                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                    />
-                                </label>
-                                <label
-                                    for="City"
-                                    className="relative block overflow-hidden border-b border-green pt-6 focus-within:border-blue"
-                                >
-                                    <input
-                                        style={{ background: 'transparent' }}
-                                        type="dropdown"
-                                        id="City"
-                                        placeholder="City"
-                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                    />
-                                </label>
-                                <label
-                                    for="BilledUnitsPerMonth"
-                                    className="relative block overflow-hidden border-b border-green pt-6 focus-within:border-blue"
-                                >
-                                    <input
-                                        style={{ background: 'transparent' }}
-                                        type="dropdown"
-                                        id="BilledUnitsPerMonth"
-                                        placeholder="Billed Units per Month"
-                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                    />
-                                </label> */}
+
 
                                 {/* Slider range people count */}
-                                <RangeSlider min='1' max={20} value={peopleRangeValue} handleRange={handleRange}
+                                <PeopleRangeSlider min='1' max={20} value={peopleRangeValue} handlePeopleRange={handlePeopleRange}
                                     text='No of People in Your Home'
                                 />
 
@@ -288,7 +259,7 @@ const Calculation = ({ ref }) => {
                                 </div>
 
                                 {/* Slider range Units Consumed */}
-                                <RangeSlider min='10' max='1000' value={unitRangeValue} handleRange={handleRange}
+                                <UnitRangeSlider min='10' max='1000' value={unitRangeValue} handleUnitRange={handleUnitRange}
                                     text='Units Consumed'
                                 />
 
