@@ -4,7 +4,7 @@ const Toggle = () => {
     const [enabled, setEnabled] = useState(false);
     return (
         <div>
-            <label for="themeSwitcherTwo" class="themeSwitcherTwo relative inline-flex cursor-pointer select-none items-center">
+            <label for="themeSwitcherTwo" className="themeSwitcherTwo relative inline-flex cursor-pointer select-none items-center">
                 <input type="checkbox" className="sr-only peer"
                     checked={enabled}
                     readOnly />

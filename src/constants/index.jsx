@@ -1,3 +1,7 @@
+import SummerSwitch from "../components/SummerSwitch";
+import Toggle from "../components/Toggle";
+import WinterSwitch from "../components/WinterSwitch";
+
 export const states = [
     { "name": "ANDAMAN & NICOBAR ISLANDS" },
     { "name": "TELANGANA" },
@@ -56,33 +60,33 @@ export const tableItems = [
         title: "Machines",
         items: [
             {
-                prop: "Air Conditioner",
-                clicks: "129",
+                name: "Air Conditioner",
+                status: <SummerSwitch />,
                 impression: "Good"
             },
             {
-                prop: "Geyser",
-                clicks: "798",
+                name: "Geyser",
+                status: <WinterSwitch />,
                 impression: "Normal"
             },
             {
-                prop: "Washing Machine",
-                clicks: "399",
+                name: "Washing Machine",
+                status: "399",
                 impression: "Great"
             },
             {
-                prop: "Microwave",
-                clicks: "678",
+                name: "Microwave",
+                status: "678",
                 impression: "Bad"
             },
             {
-                prop: "Fridge",
-                clicks: "678",
+                name: "Fridge",
+                status: "678",
                 impression: "Bad"
             },
             {
-                prop: "Lights",
-                clicks: "678",
+                name: "Lights",
+                status: "678",
                 impression: "Bad"
             },
         ]
@@ -92,23 +96,23 @@ export const tableItems = [
         title: "Top countries",
         items: [
             {
-                prop: "Mauritania",
-                clicks: "203",
+                name: "Mauritania",
+                status: "203",
                 impression: "Good"
             },
             {
-                prop: "United state america",
-                clicks: "408",
+                name: "United state america",
+                status: "408",
                 impression: "Great"
             },
             {
-                prop: "France",
-                clicks: "99",
+                name: "France",
+                status: "99",
                 impression: "Bad"
             },
             {
-                prop: "Germany",
-                clicks: "320",
+                name: "Germany",
+                status: "320",
                 impression: "Normal"
             },
         ]

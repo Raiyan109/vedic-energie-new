@@ -14,25 +14,25 @@ const Articles = () => {
                 <h1 id='article' className="text-3xl font-bold text-green" style={{ marginTop: "70px" }}>Recent Articles
 
                 </h1>
-                <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-10">
-                    <div class="container mx-auto">
-                        <div class="flex flex-wrap">
-                            <div class="w-full px-4 md:w-1/2 xl:w-1/3 ">
-                                <div class="overflow-hidden bg-white mb-10">
+                <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-10">
+                    <div className="container mx-auto">
+                        <div className="flex flex-wrap">
+                            <div className="w-full px-4 md:w-1/2 xl:w-1/3 ">
+                                <div className="overflow-hidden bg-white mb-10">
                                     <img
                                         src={img} alt='article'
                                     />
-                                    <div class="p-6 text-left sm:p-9 md:p-7 xl:p-9">
+                                    <div className="p-6 text-left sm:p-9 md:p-7 xl:p-9">
                                         <h3>
                                             <a
                                                 href="#"
-                                                class="text-primary hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
+                                                className="text-primary hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
                                             >
                                                 Sustainable Fashion
                                             </a>
                                             <p className='text-md font-normal text-primary'>Published On December, 2022</p>
                                         </h3>
-                                        <p class="text-primary mb-7 text-sm leading-relaxed py-10">
+                                        <p className="text-primary mb-7 text-sm leading-relaxed py-10">
                                             It is a long established fact that a reader will be
                                             distracted by the readable content of a page when
                                             looking at its layout. The point of using Lorem Ipsum is
@@ -49,23 +49,23 @@ const Articles = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-full px-4 md:w-1/2 xl:w-1/3 ">
-                                <div class="mb-10 overflow-hidden bg-white">
+                            <div className="w-full px-4 md:w-1/2 xl:w-1/3 ">
+                                <div className="mb-10 overflow-hidden bg-white">
                                     <img
                                         src={img}
                                         alt='article'
                                     />
-                                    <div class="p-6 text-left sm:p-9 md:p-7 xl:p-9">
+                                    <div className="p-6 text-left sm:p-9 md:p-7 xl:p-9">
                                         <h3>
                                             <a
                                                 href="#"
-                                                class="text-primary hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
+                                                className="text-primary hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
                                             >
                                                 Sustainable Fashion
                                             </a>
                                             <p className='text-md font-normal text-primary'>Published On December, 2022</p>
                                         </h3>
-                                        <p class="text-primary mb-7 text-sm leading-relaxed py-10">
+                                        <p className="text-primary mb-7 text-sm leading-relaxed py-10">
                                             It is a long established fact that a reader will be
                                             distracted by the readable content of a page when
                                             looking at its layout. The point of using Lorem Ipsum is
@@ -82,23 +82,23 @@ const Articles = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-full px-4 md:w-1/2 xl:w-1/3 ">
-                                <div class="mb-10 overflow-hidden bg-white">
+                            <div className="w-full px-4 md:w-1/2 xl:w-1/3 ">
+                                <div className="mb-10 overflow-hidden bg-white">
                                     <img
                                         src={img}
                                         alt='article'
                                     />
-                                    <div class="p-6 text-left sm:p-9 md:p-7 xl:p-9">
+                                    <div className="p-6 text-left sm:p-9 md:p-7 xl:p-9">
                                         <h3>
                                             <a
                                                 href="#"
-                                                class="text-primary hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
+                                                className="text-primary hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
                                             >
                                                 Sustainable Fashion
                                             </a>
                                             <p className='text-md font-normal text-primary'>Published On December, 2022</p>
                                         </h3>
-                                        <p class="text-primary mb-7 text-sm leading-relaxed py-10">
+                                        <p className="text-primary mb-7 text-sm leading-relaxed py-10">
                                             It is a long established fact that a reader will be
                                             distracted by the readable content of a page when
                                             looking at its layout. The point of using Lorem Ipsum is
