@@ -63,7 +63,7 @@ const Table = () => {
                                         <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
                                         <td className="pr-6 py-4 whitespace-nowrap text-indigo-600">{item.status}</td>
                                         <td className="pr-6 py-4 whitespace-nowrap">
-                                            <span className={`py-2 px-3 rounded-full font-semibold text-xs ${labelColors[item?.impression]?.color || ""}`}>{item.impression}</span>
+                                            <span className={`py-2 px-3 rounded-full font-semibold text-xs ${labelColors[item?.watt]?.color || ""}`}>{item.watt}</span>
                                         </td>
                                     </tr>
                                 ))

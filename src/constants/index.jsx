@@ -1,5 +1,6 @@
 import SummerSwitch from "../components/SummerSwitch";
 import Toggle from "../components/Toggle";
+import WattInput from "../components/WattInput";
 import WinterSwitch from "../components/WinterSwitch";
 
 export const states = [
@@ -62,32 +63,32 @@ export const tableItems = [
             {
                 name: "Air Conditioner",
                 status: <SummerSwitch />,
-                impression: "Good"
+                watt: <WattInput />
             },
             {
                 name: "Geyser",
                 status: <WinterSwitch />,
-                impression: "Normal"
+                watt: <WattInput />
             },
             {
                 name: "Washing Machine",
                 status: "399",
-                impression: "Great"
+                watt: <WattInput />
             },
             {
                 name: "Microwave",
                 status: "678",
-                impression: "Bad"
+                watt: <WattInput />
             },
             {
                 name: "Fridge",
                 status: "678",
-                impression: "Bad"
+                watt: <WattInput />
             },
             {
                 name: "Lights",
                 status: "678",
-                impression: "Bad"
+                watt: <WattInput />
             },
         ]
     },
@@ -98,22 +99,22 @@ export const tableItems = [
             {
                 name: "Mauritania",
                 status: "203",
-                impression: "Good"
+                watt: <WattInput />
             },
             {
                 name: "United state america",
                 status: "408",
-                impression: "Great"
+                watt: <WattInput />
             },
             {
                 name: "France",
                 status: "99",
-                impression: "Bad"
+                watt: <WattInput />
             },
             {
                 name: "Germany",
                 status: "320",
-                impression: "Normal"
+                watt: <WattInput />
             },
         ]
     }
