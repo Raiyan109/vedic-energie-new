@@ -24,7 +24,8 @@ export default {
       lightBlue: '#2F45B7',
       lightYellow: '#FEFFCD',
       orange: '#FFB951',
-      rgbaHeader: 'rgba(0,0,0,0.85)'
+      rgbaHeader: 'rgba(0,0,0,0.85)',
+      darkblue: '#9e5d21'
     },
 
   },

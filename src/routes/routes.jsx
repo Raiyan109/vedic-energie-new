@@ -13,7 +13,7 @@ import EnergySaving from '../pages/EnergySaving'
 
 import NotFound from '../pages/NotFound'
 
-
+import Category from "../components/Guage";
 
 
 const routes = createBrowserRouter([
@@ -69,6 +69,10 @@ const routes = createBrowserRouter([
         path: '*',
         element: <NotFound />
     },
+    {
+        path: '/guage',
+        element: <Category />
+    }
 ])
 
 export default routes;
