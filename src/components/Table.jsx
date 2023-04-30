@@ -1,29 +1,10 @@
 import React from 'react';
 import { useState } from "react"
-import { tableItems } from '../constants';
+import { customTableItems, tableItems } from '../constants';
 
 const Table = () => {
     const [selectedItem, setSelectedItem] = useState(0)
-    const labelColors = {
-        "Air Conditioner": {
-            color: "text-blue bg-gray",
-        },
-        "Geyser": {
-            color: "text-blue bg-lightGray",
-        },
-        "Washing Machine": {
-            color: "text-blue bg-gray",
-        },
-        "Microwave": {
-            color: "text-blue bg-lightGray",
-        },
-        "Fridge": {
-            color: "text-blue bg-gray",
-        },
-        "Lights": {
-            color: "text-blue bg-lightGray",
-        },
-    }
+
     return (
         <div>
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
@@ -46,10 +27,10 @@ const Table = () => {
                             ))
                         }
                     </ul>
-                    <table className="w-full table-auto text-left">
+                    <table className="w-full table-auto text-left border-separate border-spacing-y-3">
                         <thead className="text-blue uppercase font-medium bg-lightYellow">
                             <tr>
-                                <th className="py-4 pr-6 pl-2">{tableItems[selectedItem].title}</th>
+                                <th className="py-4 pr-6 pl-5">{tableItems[selectedItem].title}</th>
                                 <th className="py-4 pr-6">Status</th>
                                 <th className="py-4 pr-6">Watts</th>
                                 <th className="py-4 pr-6">CONSUMPTION TIME</th>
@@ -60,19 +41,42 @@ const Table = () => {
                             {
                                 tableItems[selectedItem].items.map((item, idx) => (
                                     <tr key={idx} className='odd:bg-gray even:bg-lightGray'>
-                                        <td className="pr-6 pl-2 py-4 whitespace-nowrap">{item.name}</td>
-                                        <td className="pr-6 py-4 whitespace-nowrap text-indigo-600">{item.status}</td>
-                                        <td className="pr-6 py-4 whitespace-nowrap">
-                                            <span className={`py-2 px-3 rounded-full font-semibold text-xs ${labelColors[item?.watt]?.color || ""}`}>{item.watt}</span>
+                                        <td className="pr-6 pl-5  whitespace-nowrap font-semibold">{item.name}</td>
+                                        <td className="pr-6  whitespace-nowrap">{item.status}</td>
+                                        <td className="pr-6  whitespace-nowrap">
+                                            <span className='py-2 px-3 rounded-full font-semibold text-xs'>{item.watt}</span>
                                         </td>
-                                        <td className="pr-6 py-4 whitespace-nowrap text-indigo-600">{item.consumption}</td>
-                                        <td className="pr-6 py-4 whitespace-nowrap text-indigo-600">{item.assumptions}</td>
+                                        <td className="pr-6  whitespace-nowrap">{item.consumption}</td>
+                                        <td className="pr-6  whitespace-nowrap">{item.assumptions}</td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+
+                    {/* Custom Machines Section */}
+                    <div className="lg:max-w-none max-w-xl mt-8 py-6">
+                        <h3 className="text-blue lg:text-2xl font-bold text-xl">
+                            If You Want To Add Other Machines You Can Customize It Here
+                        </h3>
+                    </div>
+
+                    <table className="w-full table-auto text-left border-separate border-spacing-y-3">
+
+                        <tbody className="text-blue py-3">
+                            {
+                                customTableItems[selectedItem].items.map((item, idx) => (
+                                    <tr key={idx} className='odd:bg-gray even:bg-lightGray'>
+                                        <td className="pr-6 pl-5  whitespace-nowrap font-semibold">{item.name}</td>
+                                        <td className="pr-6  whitespace-nowrap">{item.status}</td>
                                     </tr>
                                 ))
                             }
                         </tbody>
                     </table>
                 </div>
+
+
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 import Assumptions from "../components/Assumptions";
 import Consumption from "../components/Consumption";
+import CustomMachines from "../components/CustomMachines";
 import SummerSwitch from "../components/SummerSwitch";
 import Toggle from "../components/Toggle";
 import WattInput from "../components/WattInput";
@@ -108,32 +109,46 @@ export const tableItems = [
     },
     {
         label: "Winter",
-        title: "Top countries",
+        title: "Machines",
         items: [
             {
-                name: "Mauritania",
-                status: "203",
+                name: "Air Conditioner",
+                status: <SummerSwitch />,
                 watt: <WattInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
-                name: "United state america",
-                status: "408",
+                name: "Geyser",
+                status: <WinterSwitch />,
                 watt: <WattInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
-                name: "France",
-                status: "99",
+                name: "Washing Machine",
+                status: "399",
                 watt: <WattInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
-                name: "Germany",
-                status: "320",
+                name: "Microwave",
+                status: "678",
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
+            },
+            {
+                name: "Fridge",
+                status: "678",
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
+            },
+            {
+                name: "Lights",
+                status: "678",
                 watt: <WattInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
@@ -141,3 +156,21 @@ export const tableItems = [
         ]
     }
 ]
+
+export const customTableItems = [
+    {
+        items: [
+            {
+                name: <CustomMachines />,
+                status: <SummerSwitch />
+            }
+        ]
+    }
+];
+
+export const customMachines = [
+    { "name": "Heater" },
+    { "name": "Cooler" },
+    { "name": "Heater" },
+    { "name": "Fans" },
+];

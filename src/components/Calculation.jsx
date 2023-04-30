@@ -1,7 +1,6 @@
 import React, { forwardRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LetsGoButton from './LetsGoButton';
-
 import { states } from '../constants';
 import { districts } from '../constants';
 import { cities } from '../constants';
