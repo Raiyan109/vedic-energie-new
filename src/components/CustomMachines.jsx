@@ -3,30 +3,31 @@ import { customMachines } from '../constants';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 
 const CustomMachines = () => {
-    const [isOpenCustomMachine, setIsOpenCustomMachine] = useState(false)
+    let [isOpenCustomMachine, setIsOpenCustomMachine] = useState(false)
     const [selectedCustomMachine, setSelectedCustomMachine] = useState('')
 
-    const clickOutsideRef = useRef()
+    // let closeOutsideRef = useRef()
 
     useEffect(() => {
-        const clickOutsideHandler = (e) => {
-            if (!clickOutsideRef.current.contains(e.target)) {
-                setIsOpenCustomMachine(false)
-            }
-            document.addEventListener('mousedown', clickOutsideHandler)
+        document.addEventListener('mousedown', () => {
+            setIsOpenCustomMachine(false)
+        })
+        // let handler = (e) => {
+        //     if (!closeOutsideRef.current.contains(e.target)) {
+        //         setIsOpenCustomMachine(false)
+        //         console.log(closeOutsideRef.current);
+        //     }
+        // }
+        // document.addEventListener("mousedown", handler)
 
-            return () => {
-                document.removeEventListener('mousedown', clickOutsideHandler)
-            }
-        }
-    }, [])
+        // return () => {
+        //     document.removeEventListener("mousedown", handler)
+        // }
+    })
     return (
         <div>
-            <div
-                className='w-full h-8 font-medium z-20 mb-3'>
-                <div
-                    ref={clickOutsideRef}
-                    onClick={() => setIsOpenCustomMachine(!isOpenCustomMachine)}
+            {/* <div className='w-full h-8 font-medium mb-3'> */}
+            {/* <div onClick={() => setIsOpenCustomMachine(!isOpenCustomMachine)}
                     className='w-full mt-8 flex items-center justify-between text-blue'>
                     {selectedCustomMachine
                         ? selectedCustomMachine
@@ -45,25 +46,48 @@ const CustomMachines = () => {
                                 </div>
                             )
                     }
-                </div>
-                <ul className={`bg-lightGray mt-2 overflow-y-auto text-blue ${isOpenCustomMachine ? 'max-h-60' : 'max-h-0'}`}>
+                </div> */}
+            {/* {
+                    isOpenCustomMachine &&
+                    <ul className={`bg-lightGray mt-2 overflow-y-auto text-blue ${isOpenCustomMachine ? 'max-h-60' : 'max-h-0'}`}>
+                        {customMachines.map((item, index) => (
+                            <li
+                                key={index}
+                                className='p-2 text-sm cursor-pointer hover:bg-yellow hover:text-black'
+
+                            >
+                                {item.name}
+                            </li>
+                        ))}
+                    </ul>
+                } */}
+
+            {/* <ul className={`bg-lightGray mt-2 overflow-y-auto text-blue ${isOpenCustomMachine ? 'max-h-60' : 'max-h-0'}`}>
                     {customMachines.map((item, index) => (
                         <li
                             key={index}
-                            className={`p-2 text-sm cursor-pointer hover:bg-yellow hover:text-black 
-                                                ${item.name.toLowerCase() === selectedCustomMachine.toLowerCase() && 'bg-yellow text-black'}
-                                                `}
-                            onClick={() => {
-                                if (item.name.toLowerCase() !== selectedCustomMachine.toLowerCase()) {
-                                    setSelectedCustomMachine(item.name)
-                                    setIsOpenCustomMachine(false)
-                                }
-                            }}
+                            className='p-2 text-sm cursor-pointer hover:bg-yellow hover:text-black'
+                        // onClick={() => {
+                        //     if (item.name.toLowerCase() !== selectedCustomMachine.toLowerCase()) {
+                        //         setSelectedCustomMachine(item.name)
+                        //         setIsOpenCustomMachine(false)
+                        //     }
+                        // }}
                         >
                             {item.name}
                         </li>
                     ))}
-                </ul>
+                </ul> */}
+            {/* </div> */}
+            {/*  */}
+
+            <div>
+                <div class="">
+                    <select class="text-lg font-bold rounded  text-gray-600 h-14 w-60 pl-5 pr-10 bg-gray  focus:outline-none focus:border-none appearance-none border-none ">
+                        <option>Heater</option>
+                        <option>Cooler</option>
+                    </select>
+                </div>
             </div>
         </div>
     );

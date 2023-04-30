@@ -1,6 +1,9 @@
 import React from 'react';
 import { useState } from "react"
 import { customTableItems, tableItems } from '../constants';
+import AddButton from './AddButton';
+import CalculateButton from './CalculateButton';
+import FinalCalculate from './FinalCalculate';
 
 const Table = () => {
     const [selectedItem, setSelectedItem] = useState(0)
@@ -61,22 +64,28 @@ const Table = () => {
                         </h3>
                     </div>
 
-                    <table className="w-full table-auto text-left border-separate border-spacing-y-3">
+                    <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4'>
+                        <table className="lg:w-1/3 table-auto text-left border-separate border-spacing-y-3">
 
-                        <tbody className="text-blue py-3">
-                            {
-                                customTableItems[selectedItem].items.map((item, idx) => (
-                                    <tr key={idx} className='odd:bg-gray even:bg-lightGray'>
-                                        <td className="pr-6 pl-5  whitespace-nowrap font-semibold">{item.name}</td>
-                                        <td className="pr-6  whitespace-nowrap">{item.status}</td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
+                            <tbody className="text-blue py-3">
+                                {
+                                    customTableItems[selectedItem].items.map((item, idx) => (
+                                        <tr key={idx} className='odd:bg-gray even:bg-lightGray'>
+                                            <td className="pr-6 pl-5  whitespace-nowrap font-semibold">{item.name}</td>
+                                            <td className="pr-6  whitespace-nowrap">{item.status}</td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+
+                        <AddButton text='Add' />
+                    </div>
                 </div>
 
-
+                <div className='py-20 flex justify-center items-center'>
+                    <FinalCalculate />
+                </div>
             </div>
         </div>
     );
