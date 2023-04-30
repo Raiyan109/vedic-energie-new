@@ -26,7 +26,8 @@ export default {
       orange: '#FFB951',
       rgbaHeader: 'rgba(0,0,0,0.85)',
       lightGray: '#F1F6F9',
-      gray: '#9BA4B5'
+      gray: '#B7B7B7',
+      deepGray: '#9ba4b5'
     },
 
   },

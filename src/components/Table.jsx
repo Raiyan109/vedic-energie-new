@@ -49,7 +49,7 @@ const Table = () => {
                     <table className="w-full table-auto text-left">
                         <thead className="text-blue uppercase font-medium bg-lightYellow">
                             <tr>
-                                <th className="py-4 pr-6">{tableItems[selectedItem].title}</th>
+                                <th className="py-4 pr-6 pl-2">{tableItems[selectedItem].title}</th>
                                 <th className="py-4 pr-6">Status</th>
                                 <th className="py-4 pr-6">Watts</th>
                                 <th className="py-4 pr-6">CONSUMPTION TIME</th>
@@ -59,12 +59,14 @@ const Table = () => {
                         <tbody className="text-blue py-3">
                             {
                                 tableItems[selectedItem].items.map((item, idx) => (
-                                    <tr key={idx}>
-                                        <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
+                                    <tr key={idx} className='odd:bg-gray even:bg-lightGray'>
+                                        <td className="pr-6 pl-2 py-4 whitespace-nowrap">{item.name}</td>
                                         <td className="pr-6 py-4 whitespace-nowrap text-indigo-600">{item.status}</td>
                                         <td className="pr-6 py-4 whitespace-nowrap">
                                             <span className={`py-2 px-3 rounded-full font-semibold text-xs ${labelColors[item?.watt]?.color || ""}`}>{item.watt}</span>
                                         </td>
+                                        <td className="pr-6 py-4 whitespace-nowrap text-indigo-600">{item.consumption}</td>
+                                        <td className="pr-6 py-4 whitespace-nowrap text-indigo-600">{item.assumptions}</td>
                                     </tr>
                                 ))
                             }
