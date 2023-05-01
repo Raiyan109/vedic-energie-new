@@ -29,7 +29,7 @@ const Calculation = ({ ref }) => {
         setUnitRangeValue(e.target.value)
     }
     return (
-        <div ref={ref}>
+        <div>
             <section className="bg-orange">
                 <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                     <div>
@@ -277,4 +277,4 @@ const Calculation = ({ ref }) => {
     );
 };
 
-export default forwardRef(Calculation);
+export default Calculation;

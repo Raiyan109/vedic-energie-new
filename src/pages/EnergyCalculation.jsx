@@ -10,7 +10,7 @@ import Table from '../components/Table';
 const EnergyCalculation = () => {
     const { goToCalc, setGoToCalc } = useCalc()
 
-    const ref = useRef(null)
+    // const ref = useRef(null)
     const handleGoToCalcPage = () => {
         setGoToCalc(prevState => !prevState)
         ref.current?.scrollIntoView({ behavior: 'smooth' })
@@ -41,7 +41,8 @@ const EnergyCalculation = () => {
             </div>
 
             <div>
-                {goToCalc ? <Calculation ref={ref} /> : ''}
+                {/* {goToCalc ? <Calculation ref={ref} /> : ''} */}
+                <Calculation />
             </div>
 
             <Table />

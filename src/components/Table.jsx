@@ -69,7 +69,7 @@ const Table = () => {
 
                             <tbody className="text-blue py-3">
                                 {
-                                    customTableItems[selectedItem].items.map((item, idx) => (
+                                    customTableItems.map((item, idx) => (
                                         <tr key={idx} className='odd:bg-gray even:bg-lightGray'>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">{item.name}</td>
                                             <td className="pr-6  whitespace-nowrap">{item.status}</td>

@@ -1,8 +1,13 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useReducer, useState } from 'react';
+import { CalcReducer, initialState } from '../state/CalcState/calcReducer';
 
 const CALC_CONTEXT = createContext()
 
 const CalcProvider = ({ children }) => {
+
+
+    const [state, dispatch] = useReducer(CalcReducer, initialState)
+
     const [goToCalc, setGoToCalc] = useState(false)
 
     const value = {

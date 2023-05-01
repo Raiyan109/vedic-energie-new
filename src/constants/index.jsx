@@ -155,17 +155,18 @@ export const tableItems = [
             },
         ]
     }
-]
+];
 
 export const customTableItems = [
-    {
-        items: [
-            {
-                name: <CustomMachines />,
-                status: <SummerSwitch />
-            }
-        ]
-    }
+    // {
+    //     items: [
+    //         {
+    //             name: <CustomMachines />,
+    //             status: <SummerSwitch />
+    //         }
+    //     ]
+    // },
+    { "name": <CustomMachines />, "status": <SummerSwitch /> }
 ];
 
 export const customMachines = [
