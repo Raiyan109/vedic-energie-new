@@ -25,7 +25,11 @@ export default {
       lightYellow: '#FEFFCD',
       orange: '#FFB951',
       rgbaHeader: 'rgba(0,0,0,0.85)',
-      darkblue: '#9e5d21'
+      lightGray: '#F1F6F9',
+      gray: '#9BA4B5',
+      brown: '#9e5d21',
+      indigo: ' #2F45B7',
+      violet: '#6D61F6'
     },
 
   },

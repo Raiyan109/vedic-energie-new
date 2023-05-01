@@ -12,8 +12,10 @@ import ReduceEnergy from '../pages/ReduceEnergy'
 import EnergySaving from '../pages/EnergySaving'
 
 import NotFound from '../pages/NotFound'
+import Calculation from "../components/Calculation";
 
-import Category from "../components/Guage";
+import Tipscategory from "../components/Tipscategory";
+import Piechart from "../components/Piechart";
 
 
 const routes = createBrowserRouter([
@@ -46,6 +48,10 @@ const routes = createBrowserRouter([
         element: <EnergyCalculation />
     },
     {
+        path: '/calcStep1',
+        element: <Calculation />
+    },
+    {
         path: '/energyDemand',
         element: <EnergyDemandManagement />
     },
@@ -70,8 +76,12 @@ const routes = createBrowserRouter([
         element: <NotFound />
     },
     {
-        path: '/guage',
-        element: <Category />
+        path: '/tipscategory',
+        element: <Tipscategory />
+    },
+    {
+        path: '/piechart',
+        element: <Piechart/>
     }
 ])
 

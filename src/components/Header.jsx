@@ -55,7 +55,7 @@ const Header = () => {
 
 
 
-                            <li className='block py-2 pr-4 pl-3 lg:text-xl md:text-sm sm:text-xl font-bold'>
+                            <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
                                 <NavLink
                                     to="/about"
                                     className={styles.navLink}
@@ -69,7 +69,7 @@ const Header = () => {
                                     About us
                                 </NavLink>
                             </li>
-                            <li className='block py-2 pr-4 pl-3 lg:text-xl md:text-sm sm:text-xl font-bold'>
+                            <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
                                 <NavLink
                                     to="/services"
                                     className={styles.navLink}
@@ -83,7 +83,7 @@ const Header = () => {
                                     Services
                                 </NavLink>
                             </li>
-                            <li className='block py-2 pr-4 pl-3 lg:text-xl md:text-sm sm:text-xl font-bold text-green'>
+                            <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
                                 <NavLink
                                     to="/blog"
                                     className={styles.navLink}
@@ -98,7 +98,7 @@ const Header = () => {
                                     Blog
                                 </NavLink>
                             </li>
-                            <li className='block py-2 pr-4 pl-3 lg:text-xl md:text-sm sm:text-xl font-bold text-green'>
+                            <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
                                 <NavLink
                                     to="/contact"
                                     className={styles.navLink}
@@ -112,9 +112,20 @@ const Header = () => {
                                     Contact
                                 </NavLink>
                             </li>
-
-
-
+                            <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
+                                <NavLink
+                                    to="/energyCalc"
+                                    className={styles.navLink}
+                                    style={({ isActive, isPending }) => {
+                                        return {
+                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
+                                            color: isActive ? 'lightGreen' : '#1D6126',
+                                        };
+                                    }}
+                                >
+                                    Calculation
+                                </NavLink>
+                            </li>
                             <li><GetAQuote /></li>
 
 

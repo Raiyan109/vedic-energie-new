@@ -17,7 +17,7 @@ const CircleProgressBar = () => {
             >
                 <p className='text-2xl text-[#2F45B7]'>75%</p>
                 <p className='text-2xl text-[#2F45B7]'>Usage</p>
-            </CircularProgressbarWithChildren>;
+            </CircularProgressbarWithChildren>
 
         </div >
     );
