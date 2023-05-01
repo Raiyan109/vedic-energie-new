@@ -12,7 +12,7 @@ import ReduceEnergy from '../pages/ReduceEnergy'
 import EnergySaving from '../pages/EnergySaving'
 
 import NotFound from '../pages/NotFound'
-import Calculation from "../components/Calculation";
+import Calculation from "../components/Calculation";    
 
 import Tipscategory from "../components/Tipscategory";
 import Piechart from "../components/Piechart";
@@ -75,14 +75,14 @@ const routes = createBrowserRouter([
         path: '*',
         element: <NotFound />
     },
-    {
-        path: '/tipscategory',
-        element: <Tipscategory />
-    },
-    {
-        path: '/piechart',
-        element: <Piechart/>
-    }
+    // {
+    //     path: '/tipscategory',
+    //     element: <Tipscategory />
+    // },
+    // {
+    //     path: '/piechart',
+    //     element: <Piechart/>
+    // }
 ])
 
 export default routes;

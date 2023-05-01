@@ -1,8 +1,8 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-Chart.register(ChartDataLabels);
+// import ChartDataLabels from 'chartjs-plugin-datalabels';
+// Chart.register(ChartDataLabels);
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function Piechart(){
@@ -29,8 +29,8 @@ const data = {
 
   return(
 
-    <div className="row items-center">
-        <h3>High Energy Consumption Weightage of the Devices</h3>
+    <div className="items-center">
+        <h1 className='text-indigo font-bold text-3xl underline m-auto items-center text-center mt-10 pb-10'>High Energy Consumption Weightage <br /> of the Devices</h1>
             <div className=" w-[600px] h-[500px] flex mx-auto my-auto">
           <Pie width={150} height={150} data={data} 
            options={{responsive:true,
