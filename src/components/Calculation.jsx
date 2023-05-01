@@ -5,8 +5,10 @@ import { states } from '../constants';
 import { districts } from '../constants';
 import { cities } from '../constants';
 import { AiOutlineSearch } from 'react-icons/ai'
+import statesData from '../../public/states.json'
 import UnitRangeSlider from './UnitRangeSlider';
 import PeopleRangeSlider from './PeopleRangeSlider';
+import styled from 'styled-components';
 
 const Calculation = ({ ref }) => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
@@ -29,7 +31,7 @@ const Calculation = ({ ref }) => {
         setUnitRangeValue(e.target.value)
     }
     return (
-        <div>
+        <Section ref={ref}>
             <section className="bg-orange">
                 <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                     <div>
@@ -87,6 +89,19 @@ const Calculation = ({ ref }) => {
 
                                 {/* new dropdown - STATE */}
 
+
+                                <div class="select">
+                                    <select name="format" id="format">
+                                        <option selected disabled>State</option>
+
+                                        {
+                                            statesData.map((data, idx) => (
+                                                <option value={data.state_id} key={idx}>{data.state_name}</option>
+                                            ))
+                                        }
+                                    </select>
+                                </div>
+
                                 <div className='w-full h-8 font-medium z-10'>
                                     <div
                                         onClick={() => setIsOpenState(!isOpenState)}
@@ -108,24 +123,24 @@ const Calculation = ({ ref }) => {
                                                 className='bg-lightYellow p-2 outline-none focus:outline-none focus:ring focus:ring-lightYellow border-none'
                                             />
                                         </div>
-                                        {states.map((item, index) => (
+                                        {statesData.map((item, index) => (
                                             <li
                                                 key={index}
                                                 className={`p-2 text-sm cursor-pointer hover:bg-yellow hover:text-black 
-                                                ${item.name.toLowerCase() === selectedState.toLowerCase() && 'bg-yellow text-black'}
-                                                ${item.name.toLowerCase().startsWith(inputValueState) ? 'block'
+                                                ${item.state_name.toLowerCase() === selectedState.toLowerCase() && 'bg-yellow text-black'}
+                                                ${item.state_name.toLowerCase().startsWith(inputValueState) ? 'block'
                                                         :
                                                         'hidden'
                                                     }`}
                                                 onClick={() => {
-                                                    if (item.name.toLowerCase() !== selectedState.toLowerCase()) {
-                                                        setSelectedState(item.name)
+                                                    if (item.state_name.toLowerCase() !== selectedState.toLowerCase()) {
+                                                        setSelectedState(item.state_name)
                                                         setIsOpenState(false)
                                                         setInputValueState('')
                                                     }
                                                 }}
                                             >
-                                                {item.name}
+                                                {item.state_name}
                                             </li>
                                         ))}
                                     </ul>
@@ -273,8 +288,44 @@ const Calculation = ({ ref }) => {
 
                 </div>
             </section>
-        </div>
+        </Section>
     );
 };
 
 export default Calculation;
+
+const Section = styled.div`
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: transparent;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+ }
+ select::-ms-expand {
+    display: none;
+ }
+ .select {
+    
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 2em;
+    line-height: 3;
+    background: transparent;
+    overflow: hidden;
+    border:none;
+    border-bottom: 1px solid #FEFFCD;
+ }
+ 
+`
