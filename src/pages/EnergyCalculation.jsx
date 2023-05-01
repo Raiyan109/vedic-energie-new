@@ -6,6 +6,8 @@ import CalculateButton from '../components/CalculateButton';
 import Calculation from '../components/Calculation';
 import { useCalc } from '../context/CalcProvider';
 import Table from '../components/Table';
+import Piechart from '../components/Piechart';
+import Tipscategory from '../components/Tipscategory';
 
 const EnergyCalculation = () => {
     const { goToCalc, setGoToCalc } = useCalc()
@@ -45,6 +47,8 @@ const EnergyCalculation = () => {
             </div>
 
             <Table />
+            <Piechart/>
+            <Tipscategory/>
             <Footer />
         </div>
     );
