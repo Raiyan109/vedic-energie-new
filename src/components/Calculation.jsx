@@ -5,7 +5,7 @@ import { states } from '../constants';
 import { districts } from '../constants';
 import { cities } from '../constants';
 import { AiOutlineSearch } from 'react-icons/ai'
-import statesData from '../../public/states.json'
+import statesData from '../../public/States.json'
 import UnitRangeSlider from './UnitRangeSlider';
 import PeopleRangeSlider from './PeopleRangeSlider';
 import styled from 'styled-components';
@@ -23,12 +23,24 @@ const Calculation = ({ ref }) => {
     const [selectedDistrict, setSelectedDistrict] = useState('')
     const [selectedCity, setSelectedCity] = useState('')
 
+    const [statesId, setStatesId] = useState('')
+    const [district, setDistrict] = useState([])
+    const [districtID, setDistrictId] = useState('')
+
     const handlePeopleRange = (e) => {
         setPeopleRangeValue(e.target.value)
 
     }
     const handleUnitRange = (e) => {
         setUnitRangeValue(e.target.value)
+    }
+
+    const handleStates = (e) => {
+        const getStateId = e.target.value
+        const getDistrictData = statesData.find(state => state.state_id === getStateId)?.districts
+        setDistrict(getDistrictData)
+        setStatesId(getStateId)
+        console.log(getStateId);
     }
     return (
         <Section ref={ref}>
@@ -91,12 +103,23 @@ const Calculation = ({ ref }) => {
 
 
                                 <div class="select">
-                                    <select name="format" id="format">
+                                    <select name="state" id="state" onChange={(e) => handleStates(e)}>
                                         <option selected disabled>State</option>
-
                                         {
                                             statesData.map((data, idx) => (
                                                 <option value={data.state_id} key={idx}>{data.state_name}</option>
+                                            ))
+                                        }
+                                    </select>
+                                </div>
+
+                                <div class="select">
+                                    <select name="district" id="district">
+                                        <option selected disabled>District</option>
+
+                                        {
+                                            district?.map((item, idx) => (
+                                                <option value={item.district_id} key={idx}>{item.district_name}</option>
                                             ))
                                         }
                                     </select>
