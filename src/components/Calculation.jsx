@@ -25,7 +25,7 @@ const Calculation = ({ ref }) => {
 
     const [statesId, setStatesId] = useState('')
     const [district, setDistrict] = useState([])
-    const [districtID, setDistrictId] = useState('')
+    const [districtId, setDistrictId] = useState('')
 
     const handlePeopleRange = (e) => {
         setPeopleRangeValue(e.target.value)
@@ -41,6 +41,17 @@ const Calculation = ({ ref }) => {
         setDistrict(getDistrictData)
         setStatesId(getStateId)
         console.log(getStateId);
+    }
+
+    const handleDistricts = (e) => {
+        const districtId = e.target.value
+        console.log(districtId);
+        setDistrictId(districtId)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        alert('Get State id' + statesId + ' And ' + districtId)
     }
     return (
         <Section ref={ref}>
@@ -59,28 +70,7 @@ const Calculation = ({ ref }) => {
                             <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator For Your Home</h3>
 
                             <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 gap-7 py-10'>
-                                {/* <label
-                                    for="State"
-                                    className="relative block overflow-hidden border-b border-green pt-6 focus-within:border-blue"
-                                >
-                                    <input
-                                        onClick={() => setIsOpen((prev) => !prev)}
-                                        style={{ background: 'transparent' }}
-                                        type="dropdown"
-                                        id="State"
-                                        placeholder="State"
-                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                    />
-                                    {isOpen && (
-                                        <div className='absolute bg-lightBlue w-20 h-20'>
-                                            {states.map((item, index) => (
-                                                <div>
-                                                    <h3>{item.state}</h3>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-                                </label> */}
+
 
                                 {/* <div className='relative block border-b border-green pt-6 focus-within:border-blue'>
                                     <button
@@ -102,41 +92,45 @@ const Calculation = ({ ref }) => {
                                 {/* new dropdown - STATE */}
 
 
-                                <div class="select">
-                                    <select name="state" id="state" onChange={(e) => handleStates(e)}>
-                                        <option selected disabled>State</option>
-                                        {
-                                            statesData.map((data, idx) => (
-                                                <option value={data.state_id} key={idx}>{data.state_name}</option>
-                                            ))
-                                        }
-                                    </select>
-                                </div>
+                                <form onSubmit={handleSubmit}>
 
-                                <div class="select">
-                                    <select name="district" id="district">
-                                        <option selected disabled>District</option>
+                                    <div className="select mb-10">
+                                        <select name="state" id="state" onChange={(e) => handleStates(e)}>
+                                            <option selected disabled>State</option>
+                                            {
+                                                statesData.map((data, idx) => (
+                                                    <option value={data.state_id} key={idx}>{data.state_name}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </div>
 
-                                        {
-                                            district?.map((item, idx) => (
-                                                <option value={item.district_id} key={idx}>{item.district_name}</option>
-                                            ))
-                                        }
-                                    </select>
-                                </div>
+                                    <div className="select">
+                                        <select name="district" id="district" onChange={(e) => handleDistricts(e)}>
+                                            <option selected disabled>District</option>
 
-                                <div className='w-full h-8 font-medium z-10'>
-                                    <div
+                                            {
+                                                district?.map((item, idx) => (
+                                                    <option value={item.district_id} key={idx}>{item.district_name}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </div>
+                                    <button></button>
+                                </form>
+
+                                {/* <div className='w-full h-8 font-medium z-10'> */}
+                                {/* <div
                                         onClick={() => setIsOpenState(!isOpenState)}
                                         className='w-full mt-8 flex items-center justify-start border-b-2 text-lightYellow'>
                                         {selectedState
                                             ? selectedState
                                             : 'State'}
-                                    </div>
-                                    <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenState ? 'max-h-60' : 'max-h-0'}`}>
+                                    </div> */}
+                                {/* <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenState ? 'max-h-60' : 'max-h-0'}`}> */}
 
-                                        {/* input field */}
-                                        <div className='flex items-center px-2 sticky top-0 bg-lightYellow'>
+                                {/* input field */}
+                                {/* <div className='flex items-center px-2 sticky top-0 bg-lightYellow'>
                                             <AiOutlineSearch size={18} className='' />
                                             <input
                                                 type="text"
@@ -145,8 +139,8 @@ const Calculation = ({ ref }) => {
                                                 placeholder='Enter state name'
                                                 className='bg-lightYellow p-2 outline-none focus:outline-none focus:ring focus:ring-lightYellow border-none'
                                             />
-                                        </div>
-                                        {statesData.map((item, index) => (
+                                        </div> */}
+                                {/* {statesData.map((item, index) => (
                                             <li
                                                 key={index}
                                                 className={`p-2 text-sm cursor-pointer hover:bg-yellow hover:text-black 
@@ -165,26 +159,26 @@ const Calculation = ({ ref }) => {
                                             >
                                                 {item.state_name}
                                             </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                        ))} */}
+                                {/* </ul>
+                                </div> */}
 
                                 {/*  */}
 
                                 {/* new dropdown - DISTRICT */}
 
-                                <div className='w-full h-8 font-medium z-10'>
-                                    <div
+                                {/* <div className='w-full h-8 font-medium z-10'> */}
+                                {/* <div
                                         onClick={() => setIsOpenDistrict(!isOpenDistrict)}
                                         className='w-full mt-8 flex items-center justify-start border-b-2 text-lightYellow'>
                                         {selectedDistrict
                                             ? selectedDistrict
                                             : 'District'}
-                                    </div>
-                                    <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenDistrict ? 'max-h-60' : 'max-h-0'}`}>
+                                    </div> */}
+                                {/* <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenDistrict ? 'max-h-60' : 'max-h-0'}`}> */}
 
-                                        {/* input field */}
-                                        <div className='flex items-center px-2 sticky top-0 bg-lightYellow'>
+                                {/* input field */}
+                                {/* <div className='flex items-center px-2 sticky top-0 bg-lightYellow'>
                                             <AiOutlineSearch size={18} className='' />
                                             <input
                                                 type="text"
@@ -193,8 +187,8 @@ const Calculation = ({ ref }) => {
                                                 placeholder='Enter state name'
                                                 className='bg-lightYellow p-2 outline-none focus:outline-none focus:ring focus:ring-lightYellow border-none'
                                             />
-                                        </div>
-                                        {districts.map((item, index) => (
+                                        </div> */}
+                                {/* {districts.map((item, index) => (
                                             <li
                                                 key={index}
                                                 className={`p-2 text-sm cursor-pointer hover:bg-yellow hover:text-black 
@@ -213,26 +207,26 @@ const Calculation = ({ ref }) => {
                                             >
                                                 {item.name}
                                             </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                        ))} */}
+                                {/* </ul>
+                                </div> */}
 
                                 {/*  */}
 
                                 {/* new dropdown - CITY */}
 
-                                <div className='w-full h-8 font-medium z-10'>
-                                    <div
+                                {/* <div className='w-full h-8 font-medium z-10'> */}
+                                {/* <div
                                         onClick={() => setIsOpenCity(!isOpenCity)}
                                         className='w-full mt-8 flex items-center justify-start border-b-2 text-lightYellow'>
                                         {selectedCity
                                             ? selectedCity
                                             : 'City'}
-                                    </div>
-                                    <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenCity ? 'max-h-60' : 'max-h-0'}`}>
+                                    </div> */}
+                                {/* <ul className={`bg-lightYellow mt-2 overflow-y-auto text-black ${isOpenCity ? 'max-h-60' : 'max-h-0'}`}> */}
 
-                                        {/* input field */}
-                                        <div className='flex items-center px-2 sticky top-0 bg-lightYellow'>
+                                {/* input field */}
+                                {/* <div className='flex items-center px-2 sticky top-0 bg-lightYellow'>
                                             <AiOutlineSearch size={18} className='' />
                                             <input
                                                 type="text"
@@ -241,8 +235,8 @@ const Calculation = ({ ref }) => {
                                                 placeholder='Enter state name'
                                                 className='bg-lightYellow p-2 outline-none focus:outline-none focus:ring focus:ring-lightYellow border-none'
                                             />
-                                        </div>
-                                        {cities.map((item, index) => (
+                                        </div> */}
+                                {/* {cities.map((item, index) => (
                                             <li
                                                 key={index}
                                                 className={`p-2 text-sm cursor-pointer hover:bg-yellow hover:text-black 
@@ -261,9 +255,9 @@ const Calculation = ({ ref }) => {
                                             >
                                                 {item.name}
                                             </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                        ))} */}
+                                {/* </ul>
+                                </div> */}
 
                                 {/*  */}
 
@@ -271,7 +265,7 @@ const Calculation = ({ ref }) => {
 
                                 <label
                                     for="BilledUnitsPerMonth"
-                                    className="relative block overflow-hidden border-b-2 border-lightYellow pt-6"
+                                    className="relative block overflow-hidden border-b-2 border-lightYellow"
                                 >
                                     <input
                                         style={{ background: 'transparent' }}
@@ -326,11 +320,11 @@ select {
     outline:0;
     box-shadow:none;
     border:0!important;
-    background: transparent;
+    background: #FFB951;
+    color:#FEFFCD;
     background-image: none;
     flex: 1;
     padding: 0 .5em;
-    
     cursor:pointer;
     font-size: 1em;
     font-family: 'Open Sans', sans-serif;
@@ -339,7 +333,6 @@ select {
     display: none;
  }
  .select {
-    
     position: relative;
     display: flex;
     width: 20em;
