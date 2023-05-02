@@ -5,9 +5,9 @@ import React, { useState } from "react";
 export default function Tipscategory(){
     
     return(
-        <div >
+        <div className="bg-sandal ">
           
-          <div class="mx-auto w-3/5 overflow-hidden">
+          <div className="mx-auto w-3/5 overflow-hidden ">
   <canvas
     data-te-chart="pie"
     data-te-dataset-label="Traffic"
@@ -16,22 +16,22 @@ export default function Tipscategory(){
     data-te-dataset-background-color="['rgba(63, 81, 181, 0.5)', 'rgba(77, 182, 172, 0.5)', 'rgba(66, 133, 244, 0.5)', 'rgba(156, 39, 176, 0.5)', 'rgba(233, 30, 99, 0.5)', 'rgba(66, 73, 244, 0.4)', 'rgba(66, 133, 244, 0.2)']">
   </canvas>
 </div>
-<section class="relative py-2 overflow-hidden bg-gray-50">
+<section className="relative py-2 overflow-hidden">
  
  
 
-  <div class="relative container px-4 ">
+  <div className="relative container px-4 ">
 
-        <h5 class=" h-1 not-italic font-bold text-3xl text-center text-indigo">Tips that can save energy and money
+        <h5 className=" h-1 not-italic font-bold text-3xl text-center text-indigo ">Tips that can save energy and money
             </h5>
-    <div class="max-w-5xl ">
+    <div className="max-w-5xl ">
       
         
-      <div class="pt-18 sm:pt-24 sm:px-20 bg-white rounded-4xl shadow-lg">
-        <button class="flex mb-8 pb-0 group items-start justify-between border-[3px] border-brown text-left w-[1303px] ">
-          <div class="max-w-xl pr-5">
-            <h3 class="text-xl font-semibold text-black w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 1:</h3>
-            <p class="hidden group-hover:block bg-indigo w-[1299px]">
+      <div className="pt-18 sm:pt-24 sm:px-20 rounded-4xl">
+        <button className="flex mb-8 pb-0 group items-start justify-between border-[3px] bg-white border-brown text-left w-[1303px] ">
+          <div className="max-w-xl pr-5">
+            <h3 className="text-xl font-semibold text-black w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 1:</h3>
+            <p className="hidden group-hover:block bg-indigo w-[1299px]">
                 <ul className="list-disc not-italic font-normal text-2xl border-[3px] border-indigo leading-10 text-white ml-5 p-2">
                     <li className="p-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </li>
                     <li className="p-5">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
@@ -55,10 +55,10 @@ export default function Tipscategory(){
 
           </div>
         </button>
-        <button class="flex mb-8 pb-0 group items-start justify-between border-[3px] border-brown text-left w-[1303px] ">
-          <div class="max-w-xl pr-5">
-            <h3 class="text-xl font-semibold text-black w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 2:</h3>
-            <p class="hidden group-hover:block bg-indigo w-[1299px]">
+        <button className="flex mb-8 pb-0 group items-start justify-between border-[3px] bg-white border-brown text-left w-[1303px] ">
+          <div className="max-w-xl pr-5">
+            <h3 className="text-xl font-semibold text-black w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 2:</h3>
+            <p className="hidden group-hover:block bg-indigo w-[1299px]">
                 <ul className="list-disc not-italic font-normal text-2xl border-[3px] border-indigo leading-10 text-white ml-5 p-2">
                     <li className="p-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </li>
                     <li className="p-5">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
@@ -82,10 +82,10 @@ export default function Tipscategory(){
 
           </div>
         </button>
-        <button class="flex mb-8 pb-0 group items-start justify-between border-[3px] border-brown text-left w-[1303px] ">
-          <div class="max-w-xl pr-5">
-            <h3 class="text-xl font-semibold text-black w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 3:</h3>
-            <p class="hidden group-hover:block bg-indigo w-[1299px]">
+        <button className="flex mb-8 pb-0 group items-start justify-between border-[3px] bg-white border-brown text-left w-[1303px] ">
+          <div className="max-w-xl pr-5">
+            <h3 className="text-xl font-semibold text-black w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 3:</h3>
+            <p className="hidden group-hover:block bg-indigo w-[1299px]">
                 <ul className="list-disc not-italic font-normal text-2xl border-[3px] border-indigo leading-10 text-white ml-5 p-2">
                     <li className="p-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </li>
                     <li className="p-5">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
@@ -109,10 +109,10 @@ export default function Tipscategory(){
 
           </div>
         </button>
-        <button class="flex mb-8 pb-0 group items-start justify-between border-[3px] border-brown text-left w-[1303px] ">
-          <div class="max-w-xl pr-5">
-            <h3 class="text-xl font-semibold text-black w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 4:</h3>
-            <p class="hidden group-hover:block bg-indigo w-[1299px]">
+        <button className="flex mb-8 pb-0 group items-start justify-between border-[3px] bg-white border-brown text-left w-[1303px] ">
+          <div className="max-w-xl pr-5">
+            <h3 className="text-xl font-semibold text-black w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 4:</h3>
+            <p className="hidden group-hover:block bg-indigo w-[1299px]">
                 <ul className="list-disc not-italic font-normal text-2xl border-[3px] border-indigo leading-10 text-white ml-5 p-2">
                     <li className="p-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </li>
                     <li className="p-5">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>

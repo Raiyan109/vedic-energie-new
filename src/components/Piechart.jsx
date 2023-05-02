@@ -29,7 +29,7 @@ const data = {
 
   return(
 
-    <div className="items-center">
+    <div className="items-center bg-sandal">
         <h1 className='text-indigo font-bold text-3xl underline m-auto items-center text-center mt-10 pb-10'>High Energy Consumption Weightage <br /> of the Devices</h1>
             <div className=" w-[600px] h-[500px] flex mx-auto my-auto">
           <Pie width={150} height={150} data={data} 
