@@ -13,8 +13,6 @@ import styled from 'styled-components';
 const Calculation = ({ ref }) => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
     const [unitRangeValue, setUnitRangeValue] = useState(100)
-
-
     const [statesId, setStatesId] = useState('')
     const [district, setDistrict] = useState([])
     const [city, setCity] = useState([])
@@ -23,8 +21,8 @@ const Calculation = ({ ref }) => {
 
     const handlePeopleRange = (e) => {
         setPeopleRangeValue(e.target.value)
-
     }
+
     const handleUnitRange = (e) => {
         setUnitRangeValue(e.target.value)
     }
@@ -72,22 +70,22 @@ const Calculation = ({ ref }) => {
                             <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator For Your Home</h3>
 
                             <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 gap-7 py-10'>
-                                <form onSubmit={handleSubmit}>
 
-                                    {/*  STATE */}
-                                    <div className="select mb-10">
-                                        <select name="state" id="state" onChange={(e) => handleStates(e)}>
-                                            <option selected disabled>State</option>
-                                            {
-                                                statesData.map((data, idx) => (
-                                                    <option value={data.state_id} key={idx}>{data.state_name}</option>
-                                                ))
-                                            }
-                                        </select>
-                                    </div>
 
-                                    {/* Districts */}
-                                    <div className="select mb-10">
+                                {/*  STATE */}
+                                <div className="select">
+                                    <select name="state" id="state" onChange={(e) => handleStates(e)}>
+                                        <option selected disabled>State</option>
+                                        {
+                                            statesData.map((data, idx) => (
+                                                <option value={data.state_id} key={idx}>{data.state_name}</option>
+                                            ))
+                                        }
+                                    </select>
+                                </div>
+
+                                {/* Districts */}
+                                {/* <div className="select mb-10">
                                         <select name="district" id="district" onChange={(e) => handleDistricts(e)}>
                                             <option selected disabled>District</option>
 
@@ -97,62 +95,70 @@ const Calculation = ({ ref }) => {
                                                 ))
                                             }
                                         </select>
-                                    </div>
+                                    </div> */}
 
-                                    {/* Cities */}
-                                    <div className="select">
-                                        <select name="city" id="city" onChange={(e) => handleCities(e)}>
-                                            <option selected disabled>
-                                                City
-                                            </option>
+                                {/* Cities */}
+                                <div className="select">
+                                    <select name="city" id="city" onChange={(e) => handleCities(e)}>
+                                        <option selected disabled>
+                                            City
+                                        </option>
 
-                                            {
-                                                city?.map((item, idx) => (
-                                                    <option value={item.city_id} key={idx}>{item.city_name}</option>
-                                                ))
-                                            }
+                                        {
+                                            city?.map((item, idx) => (
+                                                <option value={item.city_id} key={idx}>{item.city_name}</option>
+                                            ))
+                                        }
 
-                                        </select>
-                                    </div>
-                                </form>
+                                    </select>
+                                </div>
+
 
                                 {/*  Billed unit per month */}
 
-                                <label
-                                    for="BilledUnitsPerMonth"
-                                    className="relative block overflow-hidden border-b-2 border-lightYellow pt-36 lg:ml-16 ml-0"
-                                >
-                                    <input
-                                        style={{ background: 'transparent' }}
-                                        type="dropdown"
-                                        id="BilledUnitsPerMonth"
-                                        placeholder="Billed Units per Month"
-                                        className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md"
-                                    />
-                                </label>
-
-                                {/*  */}
-
-                                {/* Slider range people count */}
-                                <PeopleRangeSlider min='1' max={20} value={peopleRangeValue} handlePeopleRange={handlePeopleRange}
-                                    text='No of People in Your Home'
-                                />
-
-                                <div className='pt-6'>
-                                    <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{peopleRangeValue}</div>
+                                <div>
+                                    <label
+                                        for="BilledUnitsPerMonth"
+                                        className="relative block overflow-hidden border-b-2 border-lightYellow pt-12"
+                                    >
+                                        <input
+                                            style={{ background: 'transparent' }}
+                                            type="dropdown"
+                                            id="BilledUnitsPerMonth"
+                                            placeholder="Billed Units per Month"
+                                            className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md"
+                                        />
+                                    </label>
                                 </div>
-
-                                {/* Slider range Units Consumed */}
-                                <UnitRangeSlider min='10' max='1000' value={unitRangeValue} handleUnitRange={handleUnitRange}
-                                    text='Units Consumed'
-                                />
-
-                                <div className='pt-6'>
-                                    <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{unitRangeValue}</div>
-                                </div>
-
-                                <LetsGoButton />
                             </div>
+                            {/*  */}
+
+                            <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-x-16 gap-7 py-10'>
+                                <div className='flex justify-start items-center gap-x-12'>
+                                    {/* Slider range people count */}
+                                    <PeopleRangeSlider min='1' max={20} value={peopleRangeValue} handlePeopleRange={handlePeopleRange}
+                                        text='No of People in Your Home'
+                                    />
+
+                                    <div className='pt-6'>
+                                        <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{peopleRangeValue}</div>
+                                    </div>
+                                </div>
+
+                                <div className='flex justify-start items-center gap-x-32'>
+                                    {/* Slider range Units Consumed */}
+                                    <UnitRangeSlider min='10' max='1000' value={unitRangeValue} handleUnitRange={handleUnitRange}
+                                        text='Units Consumed'
+                                    />
+
+                                    <div className='pt-6'>
+                                        <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{unitRangeValue}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <LetsGoButton />
+
                         </div>
                     </div>
                 </div>
@@ -185,13 +191,9 @@ select {
     display: none;
  }
  .select {
-    position: relative;
-    display: flex;
-    width: 20em;
+    width: 100%;
     height: 2em;
-    line-height: 3;
     background: transparent;
-    overflow: hidden;
     border:none;
     border-bottom: 1px solid #FEFFCD;
  }

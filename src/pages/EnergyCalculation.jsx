@@ -6,15 +6,16 @@ import CalculateButton from '../components/CalculateButton';
 import Calculation from '../components/Calculation';
 import { useCalc } from '../context/CalcProvider';
 import Table from '../components/Table';
+import { actionTypes } from '../state/CalcState/actionTypes';
 
 const EnergyCalculation = () => {
-    const { goToCalc, setGoToCalc } = useCalc()
+    const { state, dispatch } = useCalc()
 
     // const ref = useRef(null)
-    const handleGoToCalcPage = () => {
-        setGoToCalc(prevState => !prevState)
-        ref.current?.scrollIntoView({ behavior: 'smooth' })
-    }
+    // const handleGoToCalcPage = () => {
+    //     setGoToCalc(prevState => !prevState)
+    //     ref.current?.scrollIntoView({ behavior: 'smooth' })
+    // }
     return (
         <div >
             <Header />
@@ -29,7 +30,9 @@ const EnergyCalculation = () => {
                             </p>
 
                             <button
-                                onClick={handleGoToCalcPage}
+                                onClick={() =>
+                                    dispatch({ type: actionTypes.GO_TO_CALC, })
+                                }
                                 className='w-[137px] h-[50px] bg-orange rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-lightYellow hover:text-orange hover:transition-all'>Calculate</button>
                             {/* <CalculateButton /> */}
                         </div>
