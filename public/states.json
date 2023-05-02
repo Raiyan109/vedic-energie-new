@@ -22,5 +22,136 @@
     {
         "id": 6,
         "state": "BIHAR"
-    }
+    },
+    {
+        "id":7,
+        "state": "Chandigarh"
+    },
+   
+    {
+        "id":8,
+        "state": "Chhattisgarh"
+    },
+   
+    {
+        "id":9,
+        "state": "D. & N. Haveli&Daman&Diu"
+    },
+   
+    {
+        "id":10,
+        "state": "Delhi"
+    },
+   
+    {
+        "id":11,
+        "state": "Goa"
+    },
+   
+    {
+        "id":12,
+        "state": "Gujarat"
+    },
+   
+    {
+        "id":13,
+        "state": "Haryana"
+    },
+   
+    {
+        "id":14,
+        "state": "Himachal Pradesh"
+    },
+   
+    {
+        "id":15,
+        "state": "Jammu and Kashmir"
+    },
+   
+    {
+        "id":16,
+        "state": "Jharkhand"
+    },
+   
+    {
+        "id":17,
+        "state": "Karnataka"
+    },
+   
+    {
+        "id":18,
+        "state": "Kerala"
+    },
+   
+    {
+        "id":19,
+        "state": "Lakshadweep"
+    },
+   
+    {
+        "id":20,
+        "state": "Madhya Pradesh"
+    },
+   
+    {
+        "id":21,
+        "state": "Manipur"
+    },
+   
+    {
+        "id":22,
+        "state": "Meghalaya"
+    },
+   
+    {
+        "id":23,
+        "state": "Mizoram"
+    },
+   
+    {
+        "id":24,
+        "state": "Nagaland"
+    },
+   
+    {
+        "id":25,
+        "state": "Orissa"
+    },
+    {
+        "id":26,
+        "state": "Puducherry"
+    },
+    {
+        "id":27,
+        "state": "Punjab"
+    },
+    {
+        "id":28,
+        "state": "Rajasthan"
+    },
+    {
+        "id":29,
+        "state": "Sikkim"
+    },
+    {
+        "id":30,
+        "state": "Tamil Nadu"
+    },
+    {
+        "id":31,
+        "state": "Tripura"
+    },
+    {
+        "id":32,
+        "state": "Uttar Pradesh"
+    },
+    {
+        "id":33,
+        "state": "Uttarakhand"
+    },
+    {
+        "id":34,
+        "state": "West Bengal"
+    } 
+   
 ]
