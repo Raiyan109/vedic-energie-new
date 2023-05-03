@@ -1,3 +1,11 @@
+import Assumptions from "../components/Assumptions";
+import Consumption from "../components/Consumption";
+import CustomMachines from "../components/CustomMachines";
+import SummerSwitch from "../components/SummerSwitch";
+import Toggle from "../components/Toggle";
+import WattInput from "../components/WattInput";
+import WinterSwitch from "../components/WinterSwitch";
+
 export const states = [
     { "name": "ANDAMAN & NICOBAR ISLANDS" },
     { "name": "TELANGANA" },
@@ -56,61 +64,114 @@ export const tableItems = [
         title: "Machines",
         items: [
             {
-                prop: "Air Conditioner",
-                clicks: "129",
-                impression: "Good"
+                name: "Air Conditioner",
+                status: <SummerSwitch />,
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
             },
             {
-                prop: "Geyser",
-                clicks: "798",
-                impression: "Normal"
+                name: "Geyser",
+                status: <WinterSwitch />,
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
             },
             {
-                prop: "Washing Machine",
-                clicks: "399",
-                impression: "Great"
+                name: "Washing Machine",
+                status: "399",
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
             },
             {
-                prop: "Microwave",
-                clicks: "678",
-                impression: "Bad"
+                name: "Microwave",
+                status: "678",
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
             },
             {
-                prop: "Fridge",
-                clicks: "678",
-                impression: "Bad"
+                name: "Fridge",
+                status: "678",
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
             },
             {
-                prop: "Lights",
-                clicks: "678",
-                impression: "Bad"
+                name: "Lights",
+                status: "678",
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
             },
         ]
     },
     {
         label: "Winter",
-        title: "Top countries",
+        title: "Machines",
         items: [
             {
-                prop: "Mauritania",
-                clicks: "203",
-                impression: "Good"
+                name: "Air Conditioner",
+                status: <SummerSwitch />,
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
             },
             {
-                prop: "United state america",
-                clicks: "408",
-                impression: "Great"
+                name: "Geyser",
+                status: <WinterSwitch />,
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
             },
             {
-                prop: "France",
-                clicks: "99",
-                impression: "Bad"
+                name: "Washing Machine",
+                status: "399",
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
             },
             {
-                prop: "Germany",
-                clicks: "320",
-                impression: "Normal"
+                name: "Microwave",
+                status: "678",
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
+            },
+            {
+                name: "Fridge",
+                status: "678",
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
+            },
+            {
+                name: "Lights",
+                status: "678",
+                watt: <WattInput />,
+                consumption: <Consumption />,
+                assumptions: <Assumptions />
             },
         ]
     }
-]
+];
+
+export const customTableItems = [
+    // {
+    //     items: [
+    //         {
+    //             name: <CustomMachines />,
+    //             status: <SummerSwitch />
+    //         }
+    //     ]
+    // },
+    { "name": <CustomMachines />, "status": <SummerSwitch /> }
+];
+
+export const customMachines = [
+    { "name": "Heater" },
+    { "name": "Cooler" },
+    { "name": "Heater" },
+    { "name": "Fans" },
+];

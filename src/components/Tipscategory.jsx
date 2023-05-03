@@ -120,6 +120,6 @@ class="flex cursor-pointer items-center justify-between gap-6 rounded-lg bg-gray
     </summary>
   </details>
 
-        </div>
-    )
+    </div>
+  )
 }

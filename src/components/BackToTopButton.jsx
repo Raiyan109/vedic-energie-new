@@ -87,48 +87,48 @@ const Section = styled.div`
 `
 
 const BackToTopButton = () => {
-    const [backToButton, setBackToButton] = useState(false)
+  const [backToButton, setBackToButton] = useState(false)
 
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                setBackToButton(true)
-            }
-            else {
-                setBackToButton(false)
-            }
-        })
-    }, [])
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        setBackToButton(true)
+      }
+      else {
+        setBackToButton(false)
+      }
+    })
+  }, [])
 
-    const scrollUp = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
-    }
-    return (
-        <Section>
-            {backToButton && (
-                <button
-                    style={{
-                        position: 'fixed',
-                        bottom: '50px',
-                        right: '50px',
-                        height: '50px',
-                        width: '50px',
-                        fontSize: '50px'
-                    }}
-                    onClick={scrollUp}
-                >
-                    <a class="arrow-up">
-                        <span class="left-arm"></span>
-                        <span class="right-arm"></span>
-                        <span class="arrow-slide"></span>
-                    </a>
-                </button>
-            )}
-        </Section>
-    );
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+  return (
+    <Section>
+      {backToButton && (
+        <button
+          style={{
+            position: 'fixed',
+            bottom: '50px',
+            right: '50px',
+            height: '50px',
+            width: '50px',
+            fontSize: '50px'
+          }}
+          onClick={scrollUp}
+        >
+          <a className="arrow-up">
+            <span className="left-arm"></span>
+            <span className="right-arm"></span>
+            <span className="arrow-slide"></span>
+          </a>
+        </button>
+      )}
+    </Section>
+  );
 };
 
 export default BackToTopButton;

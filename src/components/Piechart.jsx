@@ -5,9 +5,9 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 // Chart.register(ChartDataLabels);
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function Piechart(){
-const data = {
-    labels: ['Air Conditioner', 'Lights', 'Geyser', 'Fridge', 'Washing Machine', 'Fans','Others'],
+export default function Piechart() {
+  const data = {
+    labels: ['Air Conditioner', 'Lights', 'Geyser', 'Fridge', 'Washing Machine', 'Fans', 'Others'],
     datasets: [
       {
         label: 'Energy consumption',
@@ -22,12 +22,12 @@ const data = {
           '#2F45B7'
         ],
         borderWidth: 0,
-   
+
       },
     ],
   };
 
-  return(
+  return (
 
     <div className="items-center bg-sandal">
         <h1 className='text-indigo font-bold text-3xl underline m-auto items-center text-center mt-10 pb-10'>High Energy Consumption Weightage <br /> of the Devices</h1>
@@ -68,8 +68,8 @@ const data = {
         plugins={[ChartDataLabels]}
         />
 
-            </div>
+      </div>
 
-          </div>
+    </div>
   );
 }

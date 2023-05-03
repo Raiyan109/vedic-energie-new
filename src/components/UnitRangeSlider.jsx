@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const UnitRangeSlider = ({ unitRangeValue, peopleRangeValue, handleUnitRange, handlePeopleRange, min, max, text }) => {
+const UnitRangeSlider = ({ unitRangeValue, handleUnitRange, min, max, text }) => {
     return (
         <div className='pt-3'>
-            <span className='text-lightYellow text-xl'>{text}</span>
+            <span className='text-lightYellow text-md'>{text}</span>
             <fieldset className="flex flex-nowrap items-center max-w-xs space-x-2 py-2">
                 <label for="No of people in your home">
                     <Slider id="slider" type="range"
