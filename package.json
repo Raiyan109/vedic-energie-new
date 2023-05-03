@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "chart.js": "^4.3.0",
     "chartjs": "^0.3.24",
     "chartjs-plugin-datalabels": "^2.2.0",
     "localforage": "^1.10.0",
