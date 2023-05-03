@@ -4061,5 +4061,95 @@
                 "state_id": "36"
             }
         ]
+    },
+    {
+        "city_id": "67",
+        "city_name": "Salur",
+        "state_id": "3"
+    },
+    {
+        "city_id": "68",
+        "city_name": "Mandapeta",
+        "state_id": "3"
+    },
+    {
+        "city_id": "69",
+        "city_name": "Jammalamadugu",
+        "state_id": "3"
+    },
+    {
+        "city_id": "70",
+        "city_name": "Peddapuram",
+        "state_id": "3"
+    },
+    {
+        "city_id": "71",
+        "city_name": "Punganur",
+        "state_id": "3"
+    },
+    {
+        "city_id": "72",
+        "city_name": "Nidadavole",
+        "state_id": "3"
+    },
+    {
+        "city_id": "73",
+        "city_name": "Repalle",
+        "state_id": "3"
+    },
+    {
+        "city_id": "74",
+        "city_name": "Ramachandrapuram",
+        "state_id": "3"
+    },
+    {
+        "city_id": "75",
+        "city_name": "Kovvur",
+        "state_id": "3"
+    },
+    {
+        "city_id": "76",
+        "city_name": "Tiruvuru",
+        "state_id": "3"
+    },
+    {
+        "city_id": "77",
+        "city_name": "Uravakonda",
+        "state_id": "3"
+    },
+    {
+        "city_id": "78",
+        "city_name": "Narsipatnam",
+        "state_id": "3"
+    },
+    {
+        "city_id": "79",
+        "city_name": "Yerraguntla",
+        "state_id": "3"
+    },
+    {
+        "city_id": "80",
+        "city_name": "Pedana",
+        "state_id": "3"
+    },
+    {
+        "city_id": "81",
+        "city_name": "Puttur",
+        "state_id": "3"
+    },
+    {
+        "city_id": "82",
+        "city_name": "Renigunta",
+        "state_id": "3"
+    },
+    {
+        "city_id": "83",
+        "city_name": "Rajam",
+        "state_id": "3"
+    },
+    {
+        "city_id": "84",
+        "city_name": "Srisailam Project (Right Flank Colony) Township",
+        "state_id": "3"
     }
 ]

@@ -5,7 +5,7 @@ import { states } from '../constants';
 import { districts } from '../constants';
 import { cities } from '../constants';
 import { AiOutlineSearch } from 'react-icons/ai'
-import statesData from '../../public/States.json'
+import statesData from '../../public/states.json'
 import UnitRangeSlider from './UnitRangeSlider';
 import PeopleRangeSlider from './PeopleRangeSlider';
 import styled from 'styled-components';
@@ -29,19 +29,19 @@ const Calculation = ({ ref }) => {
 
     const handleStates = (e) => {
         const getStateId = e.target.value
-        const getDistrictData = statesData.find(state => state.state_id === getStateId)?.districts
+        // const getDistrictData = statesData.find(state => state.state_id === getStateId)?.districts
         const getCityData = statesData.find(state => state.state_id === getStateId)?.cities
-        setDistrict(getDistrictData)
+        // setDistrict(getDistrictData)
         setCity(getCityData)
         setStatesId(getStateId)
         console.log(getStateId);
     }
 
-    const handleDistricts = (e) => {
-        const districtId = e.target.value
-        console.log(districtId);
-        setDistrictId(districtId)
-    }
+    // const handleDistricts = (e) => {
+    //     const districtId = e.target.value
+    //     console.log(districtId);
+    //     setDistrictId(districtId)
+    // }
 
     const handleCities = (e) => {
         const cityId = e.target.value
