@@ -1,5 +1,6 @@
 import Assumptions from "../components/Assumptions";
 import Consumption from "../components/Consumption";
+import AirConsumption from "../components/Consumptions/AirConsumption";
 import CustomMachines from "../components/CustomMachines";
 import SummerSwitch from "../components/SummerSwitch";
 import Toggle from "../components/Toggle";
@@ -72,7 +73,7 @@ export const tableItems = [
                 name: "Air Conditioner",
                 status: <SummerSwitch />,
                 watt: <AirConWattInput />,
-                consumption: <Consumption />,
+                consumption: <AirConsumption />,
                 assumptions: <Assumptions />
             },
             {
@@ -181,6 +182,8 @@ export const customMachines = [
     { "name": "Fans" },
 ];
 
+
+// Watts
 export const AirConWattRanges = [
     { "range": 1000 },
     { "range": 1500 },
@@ -209,4 +212,24 @@ export const FridgeWattRanges = [
 export const LightsWattRanges = [
     { "range": 7 },
     { "range": 23 }
+];
+
+
+// Consumption times
+export const AirConsTimes = [
+    { "range": 2 },
+    { "range": 3 },
+    { "range": 4 },
+    { "range": 5 },
+    { "range": 6 },
+    { "range": 7 },
+    { "range": 8 },
+    { "range": 9 },
+    { "range": 10 },
+    { "range": 11 },
+    { "range": 12 },
+    { "range": 13 },
+    { "range": 14 },
+    { "range": 15 },
+    { "range": 16 }
 ];
