@@ -30,7 +30,8 @@ export default {
       gray: '#9BA4B5',
       brown: '#9e5d21',
       indigo: ' #2F45B7',
-      violet: '#6D61F6'
+      violet: '#6D61F6',
+      sandal: '#FEFFCD'
     },
 
   },
