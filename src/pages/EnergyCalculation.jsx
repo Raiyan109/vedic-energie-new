@@ -9,6 +9,7 @@ import Table from '../components/Table';
 import { actionTypes } from '../state/CalcState/actionTypes';
 import Piechart from '../components/Piechart';
 import Tipscategory from '../components/Tipscategory';
+import SpeedOMeter from '../components/SpeedOMeter';
 
 const EnergyCalculation = () => {
     const { state, dispatch } = useCalc()
@@ -49,7 +50,7 @@ const EnergyCalculation = () => {
                 {/* {goToCalc ? <Calculation ref={ref} /> : ''} */}
                 <Calculation />
             </div>
-
+            <SpeedOMeter />
             <Table />
             <Piechart />
             <Tipscategory />
