@@ -233,3 +233,117 @@ export const AirConsTimes = [
     { "range": 15 },
     { "range": 16 }
 ];
+
+export const perCapitaEnergyConsumptionData = [
+    {
+        "name": "ANDAMAN & NICOBAR ISLANDS", "data": 367.3948635
+    },
+    { "name": "TELANGANA", "data": 367.3948635 },
+    {
+        "name": "ANDHRA PRADESH", "data": 328.8017687
+    },
+    {
+        "name": "ARUNACHAL PRADESH", "data": 120.9100817
+    },
+    {
+        "name": "ASSAM", "data": 105.9831799
+    },
+    {
+        "name": "BIHAR", "data": 118.696485
+    },
+    {
+        "name": "CHANDIGARH", "data": 564.5855402
+    },
+    {
+        "name": "Chattisgarh", "data": 213.6288618
+    },
+    {
+        "name": "DADRA & NAGAR HAVELI", "data": 227.6468725
+    },
+    {
+        "name": "DAMAN & DIU", "data": 227.6468725
+    },
+    {
+        "name": "Delhi", "data": 769.6764012
+
+    },
+    {
+        "name": "GOA", "data": 803.6070406
+    },
+    {
+        "name": "GUJARAT", "data": 230.8895989
+    },
+    {
+        "name": "HARYANA", "data": 396.2473579
+    },
+    {
+        "name": "HIMACHAL PRADESH", "data": 315.5510177
+    },
+    {
+        "name": "JAMMU & KASHMIR", "data": 351.5578652
+    },
+    {
+        "name": "JHARKHAND", "data": 164.0695139
+    },
+    {
+        "name": "KARNATAKA", "data": 231.4683404
+    },
+    {
+        "name": "KERALA", "data": 356.8132333
+    },
+    {
+        "name": "Lakshadweep", "data": 584.7475217
+
+    },
+    {
+        "name": "Madhya Pradesh", "data": 193.9362348
+    },
+    {
+        "name": "Maharashtra", "data": 238.8970754
+    },
+    {
+        "name": "Manipur", "data": 133.1151101
+    },
+    {
+        "name": "Meghalaya", "data": 149.3007878
+    },
+    {
+        "name": "Mizoram", "data": 223.1352359
+    },
+    {
+        "name": "Nagaland", "data": 174.6663681
+    },
+    {
+        "name": "Odisha", "data": 181.9562597
+    },
+    {
+        "name": "Puducherry", "data": 511.8043742
+    },
+    {
+        "name": "Punjab", "data": 498.6657989
+    },
+    {
+        "name": "Rajasthan", "data": 175.969487
+    },
+    {
+        "name": "Sikkim", "data": 167.4600871
+    },
+    {
+        "name": "Tamil Nadu", "data": 425.7338017
+    },
+    {
+        "name": "Telengana", "data": 336.2290976
+    },
+    {
+        "name": "Tripura", "data": 141.8425359
+    },
+    {
+        "name": "Uttar Pradesh", "data": 186.49766
+    },
+    {
+        "name": "Uttarkhand", "data": 275.6128816
+    },
+    {
+        "name": "West Bengal", "data": 176.9817362
+    },
+]

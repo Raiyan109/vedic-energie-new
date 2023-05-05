@@ -14,7 +14,7 @@ const SpeedOMeter = () => {
 
     useEffect(() => {
         setChartData({
-            labels: ['Red'],
+            labels: ['300', '200', '100'],
             datasets: [
                 {
                     label: '# of Votes',
@@ -33,10 +33,10 @@ const SpeedOMeter = () => {
                             return 'black'
                         }
                     },
-                    needleValue: 18,
+                    needleValue: 22,
                     borderColor: 'white',
                     borderWidth: 1,
-                    cutout: '95%',
+                    cutout: '90%',
                     circumference: 180,
                     rotation: 270,
                     borderRadius: 5,
@@ -75,16 +75,23 @@ const SpeedOMeter = () => {
             ctx.rotate(angle)
             ctx.beginPath()
             ctx.moveTo(0, -2)
-            ctx.lineTo(height - (ctx.canvas.offsetTop + 10), 0)
+            ctx.lineTo(height - (ctx.canvas.offsetTop + 20), 0)
             ctx.lineTo(0, 2)
             ctx.fillStyle = '#444'
             ctx.fill()
+            ctx.restore()
 
-            // Needle not
-            ctx.translate(-cx, -cy)
+            // Needle dot
             ctx.beginPath()
             ctx.arc(cx, cy, 5, 0, 10)
             ctx.fill()
+            ctx.restore()
+
+            // Value
+            ctx.font = '50px Helvetica'
+            ctx.fillStyle = '#444'
+            ctx.fillText(needleValue, cx, cy + 50)
+            ctx.textAlign = 'center'
             ctx.restore()
 
         }

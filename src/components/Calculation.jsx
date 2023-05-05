@@ -9,15 +9,18 @@ import statesData from '../../public/states.json'
 import UnitRangeSlider from './UnitRangeSlider';
 import PeopleRangeSlider from './PeopleRangeSlider';
 import styled from 'styled-components';
+import { perCapitaEnergyConsumptionData } from '../constants';
 
 const Calculation = ({ ref }) => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
     const [unitRangeValue, setUnitRangeValue] = useState(100)
     const [statesId, setStatesId] = useState('')
-    const [district, setDistrict] = useState([])
+    // const [district, setDistrict] = useState([])
     const [city, setCity] = useState([])
-    const [districtId, setDistrictId] = useState('')
+    const [avgConsumptionData, setAvgConsumptionData] = useState([])
+    // const [districtId, setDistrictId] = useState('')
     const [cityId, setCityId] = useState('')
+    const [conDataId, setConDataId] = useState('')
 
     const handlePeopleRange = (e) => {
         setPeopleRangeValue(e.target.value)
@@ -34,7 +37,11 @@ const Calculation = ({ ref }) => {
         // setDistrict(getDistrictData)
         setCity(getCityData)
         setStatesId(getStateId)
-        console.log(getStateId);
+
+        const getAvgEnergyData = statesData.find(state => state.state_id === getStateId)?.energyData
+        setAvgConsumptionData(getAvgEnergyData)
+        setStatesId(getStateId)
+
     }
 
     // const handleDistricts = (e) => {
@@ -47,6 +54,12 @@ const Calculation = ({ ref }) => {
         const cityId = e.target.value
         console.log(cityId);
         setCityId(cityId)
+    }
+
+    const handleAvgConsumptionData = (e) => {
+        const conDataId = e.target.value
+        console.log(conDataId);
+        setConDataId(conDataId)
     }
 
     const handleSubmit = (e) => {
@@ -74,7 +87,7 @@ const Calculation = ({ ref }) => {
 
                                 {/*  STATE */}
                                 <div className="select">
-                                    <select value="State" name="state" id="state" onChange={(e) => handleStates(e)}>
+                                    <select defaultValue="State" name="state" id="state" onChange={(e) => handleStates(e)}>
                                         <option selected disabled>State</option>
                                         {
                                             statesData.map((data, idx) => (
@@ -99,7 +112,7 @@ const Calculation = ({ ref }) => {
 
                                 {/* Cities */}
                                 <div className="select">
-                                    <select value='City' name="city" id="city" onChange={(e) => handleCities(e)}>
+                                    <select defaultValue='City' name="city" id="city" onChange={(e) => handleCities(e)}>
                                         <option selected disabled>
                                             City
                                         </option>
@@ -111,6 +124,15 @@ const Calculation = ({ ref }) => {
                                         }
 
                                     </select>
+                                </div>
+
+
+                                <div className='text-black'>
+                                    {
+                                        avgConsumptionData.map((item, idx) => (
+                                            <p key={idx}>{item.data}</p>
+                                        ))
+                                    }
                                 </div>
 
 
