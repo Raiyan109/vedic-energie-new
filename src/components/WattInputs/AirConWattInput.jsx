@@ -32,7 +32,7 @@ const WattInput = () => {
     return (
         <>
             <Section>
-                <select name="watt" id="watt" className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                <select name="watt" id="watt" value='Watt' className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
 
                     {
                         AirConWattRanges.map((range, idx) => (

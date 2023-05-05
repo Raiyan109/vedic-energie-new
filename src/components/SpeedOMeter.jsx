@@ -14,11 +14,11 @@ const SpeedOMeter = () => {
 
     useEffect(() => {
         setChartData({
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Red', 'Blue'],
             datasets: [
                 {
                     label: '# of Votes',
-                    data: [3],
+                    data: [30, 6],
                     backgroundColor: (context) => {
                         console.log(context)
                         const chart = context.chart;
@@ -33,6 +33,7 @@ const SpeedOMeter = () => {
                             return 'black'
                         }
                     },
+                    needleValue: 30,
                     borderColor: 'white',
                     borderWidth: 1,
                     cutout: '95%',
@@ -43,20 +44,36 @@ const SpeedOMeter = () => {
             ],
         })
 
+        // gaugeNeedle block
+
+
         setChartOptions({
             responsive: true,
             // maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: "top"
-                },
-                title: {
-                    display: true,
-                    text: 'This is a circular gauge chart'
-                },
-            },
+            plugins: [gaugeNeedle],
         })
     }, [])
+
+    const gaugeNeedle = {
+        id: 'gaugeNeedle',
+        afterDatasetDraw(chart, args, options) {
+            console.log(chart);
+            const { ctx, config, data, chartArea: { top, bottom, left, right, width, height } } = chart
+
+            ctx.save();
+            console.log(data);
+            const needleValue = data.datasets[0].needleValue
+            const dataTotal = data.datasets[0].data.reduce((a, b) => a + b, 0)
+            const angle = Math.PI + (1 / dataTotal * needleValue * Math.PI)
+            console.log(angle);
+
+            ctx.beginPath()
+            ctx.arc(10, 10, 5, 0, 10)
+            ctx.fill()
+            ctx.restore()
+
+        }
+    }
 
     const getGradient = (chart) => {
         const { ctx, chartArea: { top, bottom, left, right } } = chart;
@@ -74,7 +91,7 @@ const SpeedOMeter = () => {
                 <h1 className='underline text-4xl text-indigo font-bold lg:max-w-none max-w-lg text-center'>Per Capita Energy Consumption
                     W.R.T State</h1>
             </div>
-            <Doughnut options={chartOptions} data={chartData} />;
+            <Doughnut options={chartOptions} data={chartData} plugins={[gaugeNeedle]} />;
         </div>
     );
 };

@@ -10,6 +10,7 @@ import { actionTypes } from '../state/CalcState/actionTypes';
 import Piechart from '../components/Piechart';
 import Tipscategory from '../components/Tipscategory';
 import SpeedOMeter from '../components/SpeedOMeter';
+import Meter from '../components/Meter';
 
 const EnergyCalculation = () => {
     const { state, dispatch } = useCalc()
@@ -50,6 +51,7 @@ const EnergyCalculation = () => {
                 {/* {goToCalc ? <Calculation ref={ref} /> : ''} */}
                 <Calculation />
             </div>
+            {/* <Meter /> */}
             <SpeedOMeter />
             <Table />
             <Piechart />
