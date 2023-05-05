@@ -75,7 +75,7 @@ const SpeedOMeter = () => {
             ctx.rotate(angle)
             ctx.beginPath()
             ctx.moveTo(0, -2)
-            ctx.lineTo(height - ctx.canvas.offsetTop, 0)
+            ctx.lineTo(height - (ctx.canvas.offsetTop + 10), 0)
             ctx.lineTo(0, 2)
             ctx.fillStyle = '#444'
             ctx.fill()
