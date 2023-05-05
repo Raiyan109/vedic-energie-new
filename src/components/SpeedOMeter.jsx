@@ -14,11 +14,11 @@ const SpeedOMeter = () => {
 
     useEffect(() => {
         setChartData({
-            labels: ['Red', 'Blue'],
+            labels: ['Red'],
             datasets: [
                 {
                     label: '# of Votes',
-                    data: [30, 6],
+                    data: [2],
                     backgroundColor: (context) => {
                         console.log(context)
                         const chart = context.chart;
@@ -33,7 +33,7 @@ const SpeedOMeter = () => {
                             return 'black'
                         }
                     },
-                    needleValue: 30,
+                    needleValue: 18,
                     borderColor: 'white',
                     borderWidth: 1,
                     cutout: '95%',
@@ -57,18 +57,33 @@ const SpeedOMeter = () => {
     const gaugeNeedle = {
         id: 'gaugeNeedle',
         afterDatasetDraw(chart, args, options) {
-            console.log(chart);
+            // console.log(chart);
             const { ctx, config, data, chartArea: { top, bottom, left, right, width, height } } = chart
 
             ctx.save();
-            console.log(data);
+            // console.log(data);
             const needleValue = data.datasets[0].needleValue
             const dataTotal = data.datasets[0].data.reduce((a, b) => a + b, 0)
             const angle = Math.PI + (1 / dataTotal * needleValue * Math.PI)
-            console.log(angle);
 
+            const cx = width / 2
+            const cy = chart._metasets[0].data[0].y
+            console.log(ctx.canvas.offsetTop);
+
+            // Needle
+            ctx.translate(cx, cy)
+            ctx.rotate(angle)
             ctx.beginPath()
-            ctx.arc(10, 10, 5, 0, 10)
+            ctx.moveTo(0, -2)
+            ctx.lineTo(height - ctx.canvas.offsetTop, 0)
+            ctx.lineTo(0, 2)
+            ctx.fillStyle = '#444'
+            ctx.fill()
+
+            // Needle not
+            ctx.translate(-cx, -cy)
+            ctx.beginPath()
+            ctx.arc(cx, cy, 5, 0, 10)
             ctx.fill()
             ctx.restore()
 
@@ -91,7 +106,11 @@ const SpeedOMeter = () => {
                 <h1 className='underline text-4xl text-indigo font-bold lg:max-w-none max-w-lg text-center'>Per Capita Energy Consumption
                     W.R.T State</h1>
             </div>
-            <Doughnut options={chartOptions} data={chartData} plugins={[gaugeNeedle]} />;
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '50%', height: '50%' }}>
+                    <Doughnut options={chartOptions} data={chartData} plugins={[gaugeNeedle]} />
+                </div>
+            </div>
         </div>
     );
 };
