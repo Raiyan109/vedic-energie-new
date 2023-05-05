@@ -5,7 +5,8 @@ import { Chart, Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
-const SpeedOMeter = () => {
+const SpeedOMeter = ({ avgConsumptionData }) => {
+    console.log(avgConsumptionData);
     const [chartData, setChartData] = useState({
         datasets: [],
     })
@@ -13,14 +14,19 @@ const SpeedOMeter = () => {
     const [chartOptions, setChartOptions] = useState({})
 
     useEffect(() => {
+
         setChartData({
-            labels: ['300', '200', '100'],
+            labels: [avgConsumptionData],
             datasets: [
                 {
                     label: '# of Votes',
-                    data: [2],
+                    data: [1],
+                    // backgroundColor: [
+                    //     'rgba(255, 26, 104, 0.2)',
+
+                    // ],
                     backgroundColor: (context) => {
-                        console.log(context)
+                        // console.log(context)
                         const chart = context.chart;
                         const { ctx, chartArea } = chart
                         if (!chartArea) {
@@ -68,7 +74,7 @@ const SpeedOMeter = () => {
 
             const cx = width / 2
             const cy = chart._metasets[0].data[0].y
-            console.log(ctx.canvas.offsetTop);
+            // console.log(ctx.canvas.offsetTop);
 
             // Needle
             ctx.translate(cx, cy)
@@ -108,7 +114,7 @@ const SpeedOMeter = () => {
     }
 
     return (
-        <div>
+        <div id='perCapitaChart'>
             <div className='flex justify-center items-center py-14'>
                 <h1 className='underline text-4xl text-indigo font-bold lg:max-w-none max-w-lg text-center'>Per Capita Energy Consumption
                     W.R.T State</h1>

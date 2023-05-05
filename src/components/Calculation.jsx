@@ -10,6 +10,7 @@ import UnitRangeSlider from './UnitRangeSlider';
 import PeopleRangeSlider from './PeopleRangeSlider';
 import styled from 'styled-components';
 import { perCapitaEnergyConsumptionData } from '../constants';
+import SpeedOMeter from './SpeedOMeter';
 
 const Calculation = ({ ref }) => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
@@ -185,6 +186,8 @@ const Calculation = ({ ref }) => {
                     </div>
                 </div>
             </section>
+
+            <SpeedOMeter avgConsumptionData={avgConsumptionData} />
         </Section>
     );
 };

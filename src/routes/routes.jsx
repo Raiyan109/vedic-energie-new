@@ -12,10 +12,11 @@ import ReduceEnergy from '../pages/ReduceEnergy'
 import EnergySaving from '../pages/EnergySaving'
 
 import NotFound from '../pages/NotFound'
-import Calculation from "../components/Calculation";    
+import Calculation from "../components/Calculation";
 
 import Tipscategory from "../components/Tipscategory";
 import Piechart from "../components/Piechart";
+import SpeedOMeter from "../components/SpeedOMeter";
 
 
 const routes = createBrowserRouter([
@@ -50,6 +51,10 @@ const routes = createBrowserRouter([
     {
         path: '/calcStep1',
         element: <Calculation />
+    },
+    {
+        path: '/perCapitaChart',
+        element: <SpeedOMeter />
     },
     {
         path: '/energyDemand',
