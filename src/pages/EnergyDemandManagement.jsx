@@ -29,7 +29,7 @@ const EnergyDemandManagement = () => {
                                 <select
                                     name='state'
                                     id='state'
-
+                                    value='state'
                                 >
                                     {
                                         states.map(state => <option value={state.state}>{state.state}</option>)
