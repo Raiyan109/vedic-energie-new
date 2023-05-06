@@ -31,7 +31,7 @@ export default function Piechart() {
 
     <div className="items-center bg-sandal">
         <h1 className='text-indigo font-bold text-3xl underline m-auto items-center text-center mt-10 pb-10'>High Energy Consumption Weightage <br /> of the Devices</h1>
-            <div className=" w-[600px] h-[500px] flex mx-auto my-auto">
+            <div className="w-[400px] h-[300px] sm:w-[600px] sm:h-[500px] mx-auto my-auto">
           <Pie width={150} height={150} data={data} 
            options=
            
@@ -42,7 +42,8 @@ export default function Piechart() {
                 },
                 legend: {
                     display: true,
-                    position:'bottom',  
+                    position:'bottom',
+                    // align:'start',
                     labels: {
                         boxWidth:25,
                         boxHeight:26,
