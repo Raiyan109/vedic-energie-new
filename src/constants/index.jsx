@@ -1,9 +1,15 @@
 import Assumptions from "../components/Assumptions";
 import Consumption from "../components/Consumption";
+import AirConsumption from "../components/Consumptions/AirConsumption";
 import CustomMachines from "../components/CustomMachines";
 import SummerSwitch from "../components/SummerSwitch";
 import Toggle from "../components/Toggle";
-import WattInput from "../components/WattInput";
+import AirConWattInput from "../components/WattInputs/AirConWattInput";
+import FridgeInput from "../components/WattInputs/FridgeInput";
+import GeyserInput from "../components/WattInputs/GeyserInput";
+import LightsInput from "../components/WattInputs/LightsInput";
+import MicroWaveInput from "../components/WattInputs/MicroWaveInput";
+import WashingInput from "../components/WattInputs/WashingInput";
 import WinterSwitch from "../components/WinterSwitch";
 
 export const states = [
@@ -66,42 +72,42 @@ export const tableItems = [
             {
                 name: "Air Conditioner",
                 status: <SummerSwitch />,
-                watt: <WattInput />,
-                consumption: <Consumption />,
+                watt: <AirConWattInput />,
+                consumption: <AirConsumption />,
                 assumptions: <Assumptions />
             },
             {
                 name: "Geyser",
                 status: <WinterSwitch />,
-                watt: <WattInput />,
+                watt: <GeyserInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
                 name: "Washing Machine",
-                status: "399",
-                watt: <WattInput />,
+                status: <SummerSwitch />,
+                watt: <WashingInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
                 name: "Microwave",
-                status: "678",
-                watt: <WattInput />,
+                status: <SummerSwitch />,
+                watt: <MicroWaveInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
                 name: "Fridge",
-                status: "678",
-                watt: <WattInput />,
+                status: <SummerSwitch />,
+                watt: <FridgeInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
                 name: "Lights",
-                status: "678",
-                watt: <WattInput />,
+                status: <SummerSwitch />,
+                watt: <LightsInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
@@ -114,42 +120,42 @@ export const tableItems = [
             {
                 name: "Air Conditioner",
                 status: <SummerSwitch />,
-                watt: <WattInput />,
+                watt: <AirConWattInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
                 name: "Geyser",
                 status: <WinterSwitch />,
-                watt: <WattInput />,
+                watt: <AirConWattInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
                 name: "Washing Machine",
-                status: "399",
-                watt: <WattInput />,
+                status: <SummerSwitch />,
+                watt: <AirConWattInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
                 name: "Microwave",
-                status: "678",
-                watt: <WattInput />,
+                status: <SummerSwitch />,
+                watt: <AirConWattInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
                 name: "Fridge",
-                status: "678",
-                watt: <WattInput />,
+                status: <SummerSwitch />,
+                watt: <AirConWattInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
             {
                 name: "Lights",
-                status: "678",
-                watt: <WattInput />,
+                status: <SummerSwitch />,
+                watt: <AirConWattInput />,
                 consumption: <Consumption />,
                 assumptions: <Assumptions />
             },
@@ -174,4 +180,56 @@ export const customMachines = [
     { "name": "Cooler" },
     { "name": "Heater" },
     { "name": "Fans" },
+];
+
+
+// Watts
+export const AirConWattRanges = [
+    { "range": 1000 },
+    { "range": 1500 },
+    { "range": 2000 },
+    { "range": 2500 },
+];
+export const GeyserWattRanges = [
+    { "range": 1000 },
+    { "range": 1500 },
+    { "range": 2000 },
+    { "range": 2500 },
+];
+export const WashingWattRanges = [
+    { "range": 400 },
+    { "range": 3000 }
+];
+export const MicroWaveWattRanges = [
+    { "range": 600 },
+    { "range": 1200 },
+    { "range": 3000 }
+];
+export const FridgeWattRanges = [
+    { "range": 100 },
+    { "range": 250 }
+];
+export const LightsWattRanges = [
+    { "range": 7 },
+    { "range": 23 }
+];
+
+
+// Consumption times
+export const AirConsTimes = [
+    { "range": 2 },
+    { "range": 3 },
+    { "range": 4 },
+    { "range": 5 },
+    { "range": 6 },
+    { "range": 7 },
+    { "range": 8 },
+    { "range": 9 },
+    { "range": 10 },
+    { "range": 11 },
+    { "range": 12 },
+    { "range": 13 },
+    { "range": 14 },
+    { "range": 15 },
+    { "range": 16 }
 ];

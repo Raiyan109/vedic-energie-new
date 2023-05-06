@@ -74,7 +74,7 @@ const Calculation = ({ ref }) => {
 
                                 {/*  STATE */}
                                 <div className="select">
-                                    <select name="state" id="state" onChange={(e) => handleStates(e)}>
+                                    <select value="State" name="state" id="state" onChange={(e) => handleStates(e)}>
                                         <option selected disabled>State</option>
                                         {
                                             statesData.map((data, idx) => (
@@ -99,7 +99,7 @@ const Calculation = ({ ref }) => {
 
                                 {/* Cities */}
                                 <div className="select">
-                                    <select name="city" id="city" onChange={(e) => handleCities(e)}>
+                                    <select value='City' name="city" id="city" onChange={(e) => handleCities(e)}>
                                         <option selected disabled>
                                             City
                                         </option>
