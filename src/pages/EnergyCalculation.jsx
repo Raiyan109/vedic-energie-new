@@ -11,7 +11,19 @@ import Piechart from '../components/Piechart';
 import Tipscategory from '../components/Tipscategory';
 import SpeedOMeter from '../components/SpeedOMeter';
 import Meter from '../components/Meter';
-
+import bg from '../assets/ellipse.png'
+import styled from 'styled-components';
+const Section = styled.div`
+background-image: url(${bg});
+height: 120vh;
+background-repeat: no-repeat;
+background-size: cover; 
+background-position: center; 
+@media only screen and (max-width:700px){
+    height:auto;
+    
+}
+`
 const EnergyCalculation = () => {
     const { state, dispatch } = useCalc()
 
@@ -21,10 +33,10 @@ const EnergyCalculation = () => {
     //     ref.current?.scrollIntoView({ behavior: 'smooth' })
     // }
     return (
-        <div >
+        <Section >
             <Header />
             <div>
-                <div className='bg-[#D4FAFC]'>
+                <div >
                     <div className="container flex flex-col justify-center p-6 mx-auto py-40 md:py-42 lg:py-46 lg:flex-row lg:justify-between">
                         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                             <h1 className="text-5xl font-semibold sm:text-6xl text-white lg:leading-loose leading-12">Energy Calculator For Your <span className='text-black'>Home</span> And <span className='text-black'>Industry</span>
@@ -57,7 +69,7 @@ const EnergyCalculation = () => {
             <Piechart />
             <Tipscategory />
             <Footer />
-        </div>
+        </Section>
     );
 };
 
