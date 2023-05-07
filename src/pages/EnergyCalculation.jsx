@@ -51,8 +51,8 @@ const EnergyCalculation = () => {
                 {/* {goToCalc ? <Calculation ref={ref} /> : ''} */}
                 <Calculation />
             </div>
-            {/* <Meter /> */}
-            <SpeedOMeter />
+            <Meter />
+            {/* <SpeedOMeter /> */}
             <Table />
             <Piechart />
             <Tipscategory />

@@ -5,6 +5,7 @@
 }
 
 .in:hover {
+
     transform: scale(1.2);
 }
 
@@ -37,4 +38,16 @@
 .navLink:hover::before {
     transform-origin: left;
     transform: scaleX(1);
+}
+
+nav ul li a {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s ease-out;
+}
+
+nav ul li.active a {
+    color: lightgreen;
 }

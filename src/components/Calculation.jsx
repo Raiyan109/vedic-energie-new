@@ -11,6 +11,7 @@ import PeopleRangeSlider from './PeopleRangeSlider';
 import styled from 'styled-components';
 import { perCapitaEnergyConsumptionData } from '../constants';
 import SpeedOMeter from './SpeedOMeter';
+import Meter from './Meter';
 
 const Calculation = ({ ref }) => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
@@ -22,6 +23,8 @@ const Calculation = ({ ref }) => {
     // const [districtId, setDistrictId] = useState('')
     const [cityId, setCityId] = useState('')
     const [conDataId, setConDataId] = useState('')
+    const [selectedItem, setSelectedItem] = useState(null);
+
 
     const handlePeopleRange = (e) => {
         setPeopleRangeValue(e.target.value)
@@ -131,7 +134,10 @@ const Calculation = ({ ref }) => {
                                 <div className='text-black'>
                                     {
                                         avgConsumptionData.map((item, idx) => (
-                                            <p key={idx}>{item.data}</p>
+                                            <Meter key={idx} item={item}
+                                                selected={selectedItem === item}
+                                                onClick={() => setSelectedItem(item)}
+                                            />
                                         ))
                                     }
                                 </div>
@@ -187,7 +193,7 @@ const Calculation = ({ ref }) => {
                 </div>
             </section>
 
-            <SpeedOMeter avgConsumptionData={avgConsumptionData} />
+
         </Section>
     );
 };
