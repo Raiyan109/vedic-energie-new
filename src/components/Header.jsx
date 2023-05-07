@@ -90,14 +90,15 @@ const Header = () => {
 
 
                             <li className={activeLink === 'efficient' ? 'active' : ''}>
-                                <a href="#efficient" onClick={(e) => handleClick(e, 'efficient')}>About us</a>
+                                <a href="#efficient" onClick={(e) => handleClick(e, 'efficient')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>About us</a>
                             </li>
                             <li className={activeLink === 'energyRes' ? 'active' : ''}>
-                                <a href="#energyRes" onClick={(e) => handleClick(e, 'energyRes')}>Services</a>
+                                <a href="#energyRes" onClick={(e) => handleClick(e, 'energyRes')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Services</a>
                             </li>
                             <li className={activeLink === 'upcoming' ? 'active' : ''}>
-                                <a href="#upcoming" onClick={(e) => handleClick(e, 'upcoming')}>Blog</a>
+                                <a href="#upcoming" onClick={(e) => handleClick(e, 'upcoming')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Blog</a>
                             </li>
+
                             {/*  */}
                             {/* <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
                                 <NavLink
@@ -157,7 +158,7 @@ const Header = () => {
                                     Contact
                                 </NavLink>
                             </li> */}
-                            <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
+                            <li className='block  lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
                                 <NavLink
                                     to="/energyCalc"
                                     className={styles.navLink}
