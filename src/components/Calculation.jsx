@@ -12,10 +12,12 @@ import styled from 'styled-components';
 import { perCapitaEnergyConsumptionData } from '../constants';
 import SpeedOMeter from './SpeedOMeter';
 import Meter from './Meter';
+import DMeter from './DMeter';
 
 const Calculation = ({ ref }) => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
     const [unitRangeValue, setUnitRangeValue] = useState(100)
+    const [result, setResult] = useState(240);
     const [statesId, setStatesId] = useState('')
     // const [district, setDistrict] = useState([])
     const [city, setCity] = useState([])
@@ -24,14 +26,28 @@ const Calculation = ({ ref }) => {
     const [cityId, setCityId] = useState('')
     const [conDataId, setConDataId] = useState('')
     const [selectedItem, setSelectedItem] = useState(null);
-
+    const [selectedEnergyData, setSelectedEnergyData] = useState(null);
 
     const handlePeopleRange = (e) => {
-        setPeopleRangeValue(e.target.value)
+        setPeopleRangeValue(e.target.value);
+        const perCapitaEnergyConsumption = calculateEnergyConsumption(unitRangeValue, e.target.value);
+        console.log(perCapitaEnergyConsumption);
     }
 
     const handleUnitRange = (e) => {
-        setUnitRangeValue(e.target.value)
+        setUnitRangeValue(e.target.value);
+        const perCapitaEnergyConsumption = calculateEnergyConsumption(e.target.value, peopleRangeValue);
+        console.log(perCapitaEnergyConsumption);
+    }
+
+    // To calculate the per User energy consumption
+    const calculateEnergyConsumption = (unitConsumed, numberOfPeople) => {
+        if (numberOfPeople === 0) {
+            setResult(0)
+            return
+        }
+        const energyConsumption = (unitConsumed * 12) / numberOfPeople;
+        setResult(energyConsumption);
     }
 
     const handleStates = (e) => {
@@ -45,7 +61,7 @@ const Calculation = ({ ref }) => {
         const getAvgEnergyData = statesData.find(state => state.state_id === getStateId)?.energyData
         setAvgConsumptionData(getAvgEnergyData)
         setStatesId(getStateId)
-
+        setSelectedEnergyData(null); // set selected energy data to null
     }
 
     // const handleDistricts = (e) => {
@@ -58,6 +74,8 @@ const Calculation = ({ ref }) => {
         const cityId = e.target.value
         console.log(cityId);
         setCityId(cityId)
+        const selectedEnergyData = avgConsumptionData.find(data => data.data_id === conDataId)
+        setSelectedEnergyData(selectedEnergyData)
     }
 
     const handleAvgConsumptionData = (e) => {
@@ -65,6 +83,8 @@ const Calculation = ({ ref }) => {
         console.log(conDataId);
         setConDataId(conDataId)
     }
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -131,16 +151,22 @@ const Calculation = ({ ref }) => {
                                 </div>
 
 
-                                <div className='text-black'>
-                                    {
-                                        avgConsumptionData.map((item, idx) => (
-                                            <Meter key={idx} item={item}
-                                                selected={selectedItem === item}
-                                                onClick={() => setSelectedItem(item)}
-                                            />
-                                        ))
-                                    }
-                                </div>
+                                {/* {avgConsumptionData && avgConsumptionData.length > 0 && (
+                                    <div className="select">
+                                        <select defaultValue="Energy Data" name="energyData" id="energyData" onChange={(e) => handleAvgConsumptionData(e)}>
+                                            <option selected disabled>Energy Data</option>
+                                            {avgConsumptionData.map((data, idx) => (
+                                                <option value={data.data_id} key={idx}>
+                                                    {data.data}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                )} */}
+
+                                {/* <DMeter data={avgConsumptionData} /> */}
+
+
 
 
                                 {/*  Billed unit per month */}
@@ -150,13 +176,17 @@ const Calculation = ({ ref }) => {
                                         for="BilledUnitsPerMonth"
                                         className="relative block overflow-hidden border-b-2 border-lightYellow pt-12"
                                     >
-                                        <input
-                                            style={{ background: 'transparent' }}
-                                            type="dropdown"
-                                            id="BilledUnitsPerMonth"
-                                            placeholder="Billed Units per Month"
-                                            className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md"
-                                        />
+                                        <div className='flex justify-center items-center gap-5 text-lightYellow'>
+                                            <span>&#x20B9;</span>
+                                            <input
+                                                style={{ background: 'transparent' }}
+                                                type="number"
+                                                id="BilledUnitsPerMonth"
+                                                // placeholder="Billed Units per Month"
+                                                className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md"
+                                                pattern="^Rs\d+(\.\d{1,2})?$" placeholder="Enter amount in Rs" required
+                                            />
+                                        </div>
                                     </label>
                                 </div>
                             </div>
@@ -185,14 +215,14 @@ const Calculation = ({ ref }) => {
                                     </div>
                                 </div>
                             </div>
-
+                            <div>Result: {result}</div>
                             <LetsGoButton />
 
                         </div>
                     </div>
                 </div>
             </section>
-
+            <Meter conData={avgConsumptionData} userData={result} />
 
         </Section>
     );

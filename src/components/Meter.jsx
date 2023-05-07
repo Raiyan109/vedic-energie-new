@@ -5,24 +5,35 @@ import { PieChart, Pie, Cell } from 'recharts';
 
 
 
-const Meter = ({ item, selected }) => {
+const Meter = ({ conData, userData }) => {
+    console.log(userData);
     const [selectedItem, setSelectedItem] = useState(null);
     const RADIAN = Math.PI / 180;
     const data = [
-        { name: 'A', value: 40, color: '#ff0000' },
-        { name: 'B', value: 40, color: '#00ff00' },
-        { name: 'C', value: 20, color: '#0000ff' },
+        { name: '0', value: 0, color: '#ff0000' },
+        { name: '150', value: 150, color: '#00ff00' },
+        { name: '300', value: 300, color: '#0000ff' },
+        { name: '450', value: 450, color: '#924f64' },
+        { name: '600', value: 600, color: '#dc8965' },
+        { name: '750', value: 750, color: '#d2e1f7' },
+        { name: '900', value: 900, color: '#131b27' },
+
     ];
     const cx = 150;
     const cy = 200;
     const iR = 50;
     const oR = 100;
-    const value = selectedItem ? selectedItem : 0;
+    const value = userData
+    // const value = conData[0].data
+    // const value = conData.map(x => x.data)
     console.log(value);
     const needle = (value, data, cx, cy, iR, oR, color) => {
+        // console.log(value);
         let total = 0;
         data.forEach((v) => {
+            // console.log(v);
             total += v.value;
+            // console.log(total);
         });
         const ang = 180.0 * (1 - value / total);
         const length = (iR + 2 * oR) / 3;
@@ -46,8 +57,8 @@ const Meter = ({ item, selected }) => {
     return (
         <div>
             <div>
-                {item && item.data}
-                <h3>{item && item.data}</h3>
+                {conData && conData.data}
+
                 {/* <p>{item.value} kWh</p>
                 <p>{selected ? "Selected" : ""}</p> */}
             </div>

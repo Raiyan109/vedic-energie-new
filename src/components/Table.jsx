@@ -7,6 +7,9 @@ import FinalCalculate from './FinalCalculate';
 
 const Table = () => {
     const [selectedItem, setSelectedItem] = useState(0)
+    const [selectedTab, setSelectedTab] = useState(0);
+
+    const switches = tableItems[selectedTab].switches;
 
     return (
         <div>
@@ -16,7 +19,10 @@ const Table = () => {
                     <ul rol="tablist" className="w-full border-b flex items-center justify-center gap-x-3 overflow-x-auto">
                         {
                             tableItems.map((item, idx) => (
-                                <li key={idx} className={`py-2 border-b-2 rounded-md w-44 text-center mb-10 ${selectedItem == idx ? "border-indigo-600 text-[#F0EFFF] bg-blue" : "border-white text-blue bg-[#F0EFFF]"}`}>
+                                <li
+                                    key={idx}
+                                    className={`py-2 border-b-2 rounded-md w-44 text-center mb-10 ${selectedItem == idx
+                                            ? "border-indigo-600 text-[#F0EFFF] bg-blue" : "border-white text-blue bg-[#F0EFFF]"}`}>
                                     <button
                                         role="tab"
                                         aria-selected={selectedItem == idx ? true : false}
@@ -30,6 +36,7 @@ const Table = () => {
                             ))
                         }
                     </ul>
+
                     <table className="w-full table-auto text-left border-separate border-spacing-y-3">
                         <thead className="text-blue uppercase font-medium bg-lightYellow">
                             <tr>

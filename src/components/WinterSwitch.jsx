@@ -1,27 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 
 const WinterSwitch = () => {
-    const Section = styled.div`
-    input:checked {
-        background-color: #22c55e; /* bg-green-500 */
-      }
-    
-      input:checked ~ span:last-child {
-        --tw-translate-x: 1.75rem; /* translate-x-7 */
-      }
-    `
-
+    const [isSelected, setIsSelected] = useState(false)
     return (
-        <Section>
-            <label className="flex items-center relative w-max cursor-pointer select-none">
-
-                <input type="checkbox" className="appearance-none transition-colors cursor-pointer w-14 h-7 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue bg-yellow" />
-                <span className="absolute font-medium text-xs uppercase right-1 text-white"> OFF </span>
-                <span className="absolute font-medium text-xs uppercase right-8 text-white"> ON </span>
-                <span className="w-7 h-7 right-7 absolute rounded-full transform transition-transform bg-gray" />
-            </label>
-        </Section>
+        <div
+            onClick={() => setIsSelected(!isSelected)}
+            className={`flex w-20 h-8 rounded-full transition-all duration-500 cursor-pointer  ${isSelected ? 'bg-yellow' : 'bg-deepGray'}`}>
+            <span className={`h-8 w-8  rounded-full transition-all duration-500 shadow-lg ${isSelected && 'ml-12'} ${isSelected ? 'bg-orange' : 'bg-green'}`} ></span>
+        </div>
     );
 };
 

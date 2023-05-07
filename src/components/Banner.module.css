@@ -34,6 +34,14 @@
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .energyBg {
+        background-image: url('../assets/calcualtebannerbg.jpg');
+        background-size: cover;
+        height: 120vh;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .energyBg {
         background-image: url('../assets/calcualtebannerbg.jpg');

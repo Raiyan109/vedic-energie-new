@@ -68,6 +68,7 @@ export const tableItems = [
     {
         label: "Summer",
         title: "Machines",
+        switches: [0, 2, 4, 6], // switches 1, 3, 5, and 7 will be off
         items: [
             {
                 name: "Air Conditioner",
@@ -116,6 +117,7 @@ export const tableItems = [
     {
         label: "Winter",
         title: "Machines",
+        switches: [1, 3, 5, 7], // switches 0, 2, 4, and 6 will be off
         items: [
             {
                 name: "Air Conditioner",
