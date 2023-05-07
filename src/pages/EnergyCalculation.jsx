@@ -11,6 +11,7 @@ import Piechart from '../components/Piechart';
 import Tipscategory from '../components/Tipscategory';
 import SpeedOMeter from '../components/SpeedOMeter';
 import Meter from '../components/Meter';
+import styles from '../components/banner.module.css'
 
 const EnergyCalculation = () => {
     const { state, dispatch } = useCalc()
@@ -24,7 +25,7 @@ const EnergyCalculation = () => {
         <div >
             <Header />
             <div>
-                <div className='bg-[#D4FAFC]'>
+                <div className={styles.energyBg}>
                     <div className="container flex flex-col justify-center p-6 mx-auto py-40 md:py-42 lg:py-46 lg:flex-row lg:justify-between">
                         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                             <h1 className="text-5xl font-semibold sm:text-6xl text-white lg:leading-loose leading-12">Energy Calculator For Your <span className='text-black'>Home</span> And <span className='text-black'>Industry</span>
