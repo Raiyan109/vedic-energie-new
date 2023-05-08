@@ -159,53 +159,56 @@ const Calculation = () => {
                                     </div>
                                 )} */}
 
-                                {/*  Billed unit per month */}
 
-                                <div>
-                                    <label
-                                        for="BilledUnitsPerMonth"
-                                        className="relative block overflow-hidden border-b-2 border-lightYellow pt-12"
-                                    >
-                                        <div className='flex justify-center items-center gap-5 text-lightYellow'>
-                                            <span>&#x20B9;</span>
-                                            <input
-                                                style={{ background: 'transparent' }}
-                                                type="number"
-                                                id="BilledUnitsPerMonth"
-                                                // placeholder="Billed Units per Month"
-                                                className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md"
-                                                pattern="^Rs\d+(\.\d{1,2})?$" placeholder="Enter amount in Rs" required
-                                            />
+                                <div className='grid lg:grid-cols-1 grid-cols-1 lg:gap-x-40 gap-7 py-10'>
+                                    <div className='flex justify-start items-center gap-x-12'>
+                                        {/* Slider range people count */}
+                                        <PeopleRangeSlider min='1' max={20} value={peopleRangeValue} handlePeopleRange={handlePeopleRange}
+                                            text='No of People in Your Home'
+                                        />
+
+                                        <div className='pt-6'>
+                                            <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{peopleRangeValue}</div>
                                         </div>
-                                    </label>
-                                </div>
-                            </div>
-                            {/*  */}
+                                    </div>
 
-                            <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-x-16 gap-7 py-10'>
-                                <div className='flex justify-start items-center gap-x-12'>
-                                    {/* Slider range people count */}
-                                    <PeopleRangeSlider min='1' max={20} value={peopleRangeValue} handlePeopleRange={handlePeopleRange}
-                                        text='No of People in Your Home'
-                                    />
+                                    <div className='flex justify-start items-center gap-x-12'>
+                                        {/* Slider range Units Consumed */}
+                                        <UnitRangeSlider min='10' max='1000' value={unitRangeValue} handleUnitRange={handleUnitRange}
+                                            text='Units consumed per month'
+                                        />
 
-                                    <div className='pt-6'>
-                                        <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{peopleRangeValue}</div>
+                                        <div className='pt-6'>
+                                            <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{unitRangeValue}</div>
+                                        </div>
                                     </div>
                                 </div>
+                                {/* <div>Result: {result}</div> */}
 
-                                <div className='flex justify-start items-center gap-x-32'>
-                                    {/* Slider range Units Consumed */}
-                                    <UnitRangeSlider min='10' max='1000' value={unitRangeValue} handleUnitRange={handleUnitRange}
-                                        text='Units Consumed'
-                                    />
 
-                                    <div className='pt-6'>
-                                        <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{unitRangeValue}</div>
-                                    </div>
-                                </div>
                             </div>
-                            <div>Result: {result}</div>
+                            {/*  Billed unit per month */}
+
+                            <div className='max-w-md'>
+                                <label
+                                    for="BilledUnitsPerMonth"
+                                    className="relative block overflow-hidden border-b-2 border-lightYellow pt-2"
+                                >
+                                    <div className='flex justify-center items-center gap-2 text-lightYellow'>
+                                        <span>&#x20B9;</span>
+                                        <input
+                                            style={{ background: 'transparent' }}
+                                            type="number"
+                                            id="BilledUnitsPerMonth"
+                                            // placeholder="Billed Units per Month"
+                                            className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md"
+                                            pattern="^Rs\d+(\.\d{1,2})?$" placeholder="Enter amount in Rs"
+                                        />
+                                    </div>
+                                </label>
+                            </div>
+
+
                             <LetsGoButton />
 
                         </div>
