@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 
-const Meter = ({ conData }) => {
-    console.log(conData);
-    const [selectedItem, setSelectedItem] = useState(null);
+
+const UserMeter = ({ userData }) => {
+    console.log(userData);
+
     const RADIAN = Math.PI / 180;
     const data = [
         { name: '0', value: 0, color: '#ff0000' },
@@ -19,7 +20,7 @@ const Meter = ({ conData }) => {
     const cy = 200;
     const iR = 50;
     const oR = 100;
-    const value = conData
+    const value = userData
     // const value = conData[0].data
     // const value = conData.map(x => x.data)
     console.log(value);
@@ -53,7 +54,7 @@ const Meter = ({ conData }) => {
     return (
         <div>
             <div>
-                {conData && conData.data}
+                {userData && userData.data}
 
                 {/* <p>{item.value} kWh</p>
                 <p>{selected ? "Selected" : ""}</p> */}
@@ -61,7 +62,7 @@ const Meter = ({ conData }) => {
 
             <div id='perCapitaChart'>
                 <div className='flex justify-center items-center py-4'>
-                    <h1 className='text-xl text-orange font-bold lg:max-w-none max-w-sm text-center'>Per Capita Data</h1>
+                    <h1 className='text-xl text-orange font-bold lg:max-w-none max-w-sm text-center'>User's Consumption Data</h1>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <div style={{ width: '80%', height: '50%' }}>
@@ -91,4 +92,4 @@ const Meter = ({ conData }) => {
     );
 };
 
-export default Meter;
+export default UserMeter;

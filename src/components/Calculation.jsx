@@ -1,20 +1,15 @@
-import React, { forwardRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import LetsGoButton from './LetsGoButton';
-import { states } from '../constants';
-import { districts } from '../constants';
-import { cities } from '../constants';
-import { AiOutlineSearch } from 'react-icons/ai'
 import statesData from '../../public/states.json'
 import UnitRangeSlider from './UnitRangeSlider';
 import PeopleRangeSlider from './PeopleRangeSlider';
 import styled from 'styled-components';
-import { perCapitaEnergyConsumptionData } from '../constants';
 import SpeedOMeter from './SpeedOMeter';
 import Meter from './Meter';
-import DMeter from './DMeter';
+import UserMeter from './UserMeter';
 
-const Calculation = ({ ref }) => {
+const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
     const [unitRangeValue, setUnitRangeValue] = useState(100)
     const [result, setResult] = useState(240);
@@ -91,7 +86,7 @@ const Calculation = ({ ref }) => {
         alert('Get State id' + statesId + ' And ' + districtId)
     }
     return (
-        <Section ref={ref}>
+        <Section>
             <section className="bg-orange">
                 <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                     <div>
@@ -164,11 +159,6 @@ const Calculation = ({ ref }) => {
                                     </div>
                                 )} */}
 
-                                {/* <DMeter data={avgConsumptionData} /> */}
-
-
-
-
                                 {/*  Billed unit per month */}
 
                                 <div>
@@ -222,7 +212,20 @@ const Calculation = ({ ref }) => {
                     </div>
                 </div>
             </section>
-            <Meter conData={avgConsumptionData} userData={result} />
+
+            <div>
+                <div className='flex justify-center items-center py-14'>
+                    <h1 className='underline text-4xl text-indigo font-bold lg:max-w-none max-w-lg text-center'>Per Capita Energy Consumption
+                        W.R.T State</h1>
+                </div>
+
+                <div className='lg:flex md:flex justify-center items-center grid grid-cols-1'>
+                    <Meter conData={avgConsumptionData} userData={result} />
+
+                    <UserMeter userData={result} />
+                </div>
+            </div>
+
 
         </Section>
     );

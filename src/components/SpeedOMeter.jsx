@@ -5,8 +5,8 @@ import { Chart, Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
-const SpeedOMeter = ({ avgConsumptionData }) => {
-    console.log(avgConsumptionData);
+const SpeedOMeter = ({ avgConsumptionData, userData }) => {
+    console.log(userData);
     const [chartData, setChartData] = useState({
         datasets: [],
     })
@@ -16,30 +16,35 @@ const SpeedOMeter = ({ avgConsumptionData }) => {
     useEffect(() => {
 
         setChartData({
-            labels: [avgConsumptionData],
+            labels: ['0', '150', '300', '450', '600', '750', '900'],
             datasets: [
                 {
-                    label: '# of Votes',
-                    data: [1],
-                    // backgroundColor: [
-                    //     'rgba(255, 26, 104, 0.2)',
-
-                    // ],
-                    backgroundColor: (context) => {
-                        // console.log(context)
-                        const chart = context.chart;
-                        const { ctx, chartArea } = chart
-                        if (!chartArea) {
-                            return null
-                        }
-                        if (context.dataIndex === 0) {
-                            return getGradient(chart)
-                        }
-                        else {
-                            return 'black'
-                        }
-                    },
-                    needleValue: 22,
+                    label: 'Your energy consumption',
+                    data: [0, 150, 300, 450, 600, 750, 900],
+                    backgroundColor: [
+                        'rgba(255, 26, 104, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(0, 0, 0, 0.2)'
+                    ],
+                    // backgroundColor: (context) => {
+                    //     // console.log(context)
+                    //     const chart = context.chart;
+                    //     const { ctx, chartArea } = chart
+                    //     if (!chartArea) {
+                    //         return null
+                    //     }
+                    //     if (context.dataIndex === 0) {
+                    //         return getGradient(chart)
+                    //     }
+                    //     else {
+                    //         return 'black'
+                    //     }
+                    // },
+                    needleValue: userData,
                     borderColor: 'white',
                     borderWidth: 1,
                     cutout: '90%',
@@ -69,6 +74,7 @@ const SpeedOMeter = ({ avgConsumptionData }) => {
             ctx.save();
             // console.log(data);
             const needleValue = data.datasets[0].needleValue
+            console.log(needleValue);
             const dataTotal = data.datasets[0].data.reduce((a, b) => a + b, 0)
             const angle = Math.PI + (1 / dataTotal * needleValue * Math.PI)
 
