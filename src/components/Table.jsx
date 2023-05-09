@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from "react"
 import styles from '../components/checkboxToggle.module.css'
 import { customTableItems, tableItems } from '../constants';
@@ -29,8 +29,8 @@ const Table = () => {
     const [isHeaterOn, setIsHeaterOn] = useState(false)
 
     // Watt and Consumption calculation states
-    const [selectedWattage, setSelectedWattage] = useState("");
-    const [selectedConsumptionTime, setSelectedConsumptionTime] = useState("");
+    const [aCSelectedWattage, setACSelectedWattage] = useState("");
+    const [aCSelectedConsumptionTime, setACSelectedConsumptionTime] = useState("");
     const [total, setTotal] = useState(0);
     const [result, setResult] = useState(0);
 
@@ -65,25 +65,18 @@ const Table = () => {
         setIsLightsOn(!isLightsOn)
     };
 
+    // Watt and Consumption calculation functions
+    useEffect(() => {
+        setTotal(+aCSelectedWattage * +aCSelectedConsumptionTime);
+    }, [aCSelectedWattage, aCSelectedConsumptionTime]);
+
     const handleWattageSelect = (event) => {
-        setSelectedWattage(event.target.value);
-        setTotal(+event.target.value * +selectedConsumptionTime);
+        setACSelectedWattage(event.target.value);
     };
 
     const handleConsumptionTimeSelect = (event) => {
-        setSelectedConsumptionTime(parseFloat(event.target.value));
-        setTotal(Math.ceil(selectedWattage + selectedConsumptionTime));
+        setACSelectedConsumptionTime(event.target.value);
     };
-
-    const sum = (watt, time) => {
-        const res = watt + time
-
-    }
-
-    // Watt and Consumption calculation functions
-
-
-
 
     return (
         <div>
@@ -126,15 +119,16 @@ const Table = () => {
                                 <td>
                                     {/* <AirConWattInput /> */}
                                     <Select>
-                                        <select name="watt" id="watt" value={selectedWattage}
-                                            disabled={!isAirConditionerOn && !isWashingOn}
+                                        <select name="watt" id="watt" value={aCSelectedWattage}
+                                            disabled={!isAirConditionerOn}
                                             onChange={handleWattageSelect}
                                             className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'
                                         >
-
                                             {
                                                 AirConWattRanges.map((range, idx) => (
-                                                    <option value={range.range}>{range.range}</option>
+                                                    <option value={range.range}
+                                                        key={idx}
+                                                    >{range.range}</option>
                                                 ))
                                             }
                                         </select>
@@ -143,7 +137,7 @@ const Table = () => {
                                 <td>
                                     {/* <AirConsumption /> */}
                                     <Select>
-                                        <select name="watt" id="watt" value={selectedConsumptionTime}
+                                        <select name="watt" id="watt" value={aCSelectedConsumptionTime}
                                             disabled={!isAirConditionerOn && !isWashingOn}
                                             onChange={handleConsumptionTimeSelect}
                                             className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
@@ -157,6 +151,7 @@ const Table = () => {
                                 </td>
                                 <td>
                                     <Assumptions />
+                                    AC Total: {isAirConditionerOn ? total : ""}
                                 </td>
                             </tr>
                             {/* Geyser */}
@@ -270,7 +265,7 @@ const Table = () => {
                                 </td>
                                 <td>
                                     <Assumptions />
-                                    Total: {total}
+
                                 </td>
                             </tr>
                         </tbody>
