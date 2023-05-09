@@ -5,7 +5,8 @@ import { customTableItems, tableItems } from '../constants';
 import AddButton from './AddButton';
 import CalculateButton from './CalculateButton';
 import FinalCalculate from './FinalCalculate';
-import AirConWattInput from '../components/WattInputs/AirConWattInput'
+import { AirConWattRanges } from '../constants/index';
+import { AirConsTimes } from '../constants/index';
 import AirConsumption from './Consumptions/AirConsumption';
 import Assumptions from './Assumptions';
 import GeyserInput from './WattInputs/GeyserInput';
@@ -13,6 +14,7 @@ import WashingInput from './WattInputs/WashingInput';
 import MicroWaveInput from './WattInputs/MicroWaveInput';
 import FridgeInput from './WattInputs/FridgeInput';
 import LightsInput from './WattInputs/LightsInput';
+import styled from 'styled-components';
 
 const Table = () => {
     const [selectedItem, setSelectedItem] = useState(0)
@@ -25,6 +27,12 @@ const Table = () => {
     const [isFridgeOn, setIsFridgeOn] = useState(false)
     const [isLightsOn, setIsLightsOn] = useState(false)
     const [isHeaterOn, setIsHeaterOn] = useState(false)
+
+    // Watt and Consumption calculation states
+    const [selectedWattage, setSelectedWattage] = useState("");
+    const [selectedConsumptionTime, setSelectedConsumptionTime] = useState("");
+    const [total, setTotal] = useState(0);
+    const [result, setResult] = useState(0);
 
 
     const handleSummerClick = () => {
@@ -57,7 +65,25 @@ const Table = () => {
         setIsLightsOn(!isLightsOn)
     };
 
-    const switches = tableItems[selectedTab].switches;
+    const handleWattageSelect = (event) => {
+        setSelectedWattage(event.target.value);
+        setTotal(+event.target.value * +selectedConsumptionTime);
+    };
+
+    const handleConsumptionTimeSelect = (event) => {
+        setSelectedConsumptionTime(parseFloat(event.target.value));
+        setTotal(Math.ceil(selectedWattage + selectedConsumptionTime));
+    };
+
+    const sum = (watt, time) => {
+        const res = watt + time
+
+    }
+
+    // Watt and Consumption calculation functions
+
+
+
 
     return (
         <div>
@@ -94,14 +120,40 @@ const Table = () => {
                                             checked={isAirConditionerOn}
                                             onChange={handleSummerToggle}
                                         />
-                                        <label for="switch">Toggle</label>
+                                        <label htmlFor="switch">Toggle</label>
                                     </div>
                                 </td>
                                 <td>
-                                    <AirConWattInput />
+                                    {/* <AirConWattInput /> */}
+                                    <Select>
+                                        <select name="watt" id="watt" value={selectedWattage}
+                                            disabled={!isAirConditionerOn && !isWashingOn}
+                                            onChange={handleWattageSelect}
+                                            className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'
+                                        >
+
+                                            {
+                                                AirConWattRanges.map((range, idx) => (
+                                                    <option value={range.range}>{range.range}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </Select>
                                 </td>
                                 <td>
-                                    <AirConsumption />
+                                    {/* <AirConsumption /> */}
+                                    <Select>
+                                        <select name="watt" id="watt" value={selectedConsumptionTime}
+                                            disabled={!isAirConditionerOn && !isWashingOn}
+                                            onChange={handleConsumptionTimeSelect}
+                                            className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                                            {
+                                                AirConsTimes.map((range, idx) => (
+                                                    <option value={range.range}>{range.name}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </Select>
                                 </td>
                                 <td>
                                     <Assumptions />
@@ -116,7 +168,7 @@ const Table = () => {
                                             checked={isGeyserOn}
                                             onChange={handleWinterToggle}
                                         />
-                                        <label for="switch">Toggle</label>
+                                        <label htmlFor="switch">Toggle</label>
                                     </div>
                                 </td>
                                 <td>
@@ -138,7 +190,7 @@ const Table = () => {
                                             checked={isWashingOn}
                                             onChange={handleSummerToggle}
                                         />
-                                        <label for="switch">Toggle</label>
+                                        <label htmlFor="switch">Toggle</label>
                                     </div>
                                 </td>
                                 <td>
@@ -161,7 +213,7 @@ const Table = () => {
                                             checked={isMicroWaveOn}
                                             onChange={handleWinterToggle}
                                         />
-                                        <label for="switch">Toggle</label>
+                                        <label htmlFor="switch">Toggle</label>
                                     </div>
                                 </td>
                                 <td>
@@ -184,7 +236,7 @@ const Table = () => {
                                             checked={isFridgeOn}
                                             onChange={handleSummerToggle}
                                         />
-                                        <label for="switch">Toggle</label>
+                                        <label htmlFor="switch">Toggle</label>
                                     </div>
                                 </td>
                                 <td>
@@ -207,7 +259,7 @@ const Table = () => {
                                             checked={isLightsOn}
                                             onChange={handleWinterToggle}
                                         />
-                                        <label for="switch">Toggle</label>
+                                        <label htmlFor="switch">Toggle</label>
                                     </div>
                                 </td>
                                 <td>
@@ -218,6 +270,7 @@ const Table = () => {
                                 </td>
                                 <td>
                                     <Assumptions />
+                                    Total: {total}
                                 </td>
                             </tr>
                         </tbody>
@@ -232,3 +285,29 @@ const Table = () => {
 };
 
 export default Table;
+
+const Select = styled.div`
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    color:#FEFFCD;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+ }
+ select::-ms-expand {
+    display: none;
+ }
+ .select {
+    border:none;
+    border-bottom: 1px solid #FEFFCD;
+ }
+`

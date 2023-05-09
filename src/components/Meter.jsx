@@ -19,7 +19,7 @@ const Meter = ({ conData }) => {
     const cy = 200;
     const iR = 50;
     const oR = 100;
-    const value = conData
+    const value = conData.data
     // const value = conData[0].data
     // const value = conData.map(x => x.data)
     console.log(value);
@@ -52,13 +52,6 @@ const Meter = ({ conData }) => {
     };
     return (
         <div>
-            <div>
-                {conData && conData.data}
-
-                {/* <p>{item.value} kWh</p>
-                <p>{selected ? "Selected" : ""}</p> */}
-            </div>
-
             <div id='perCapitaChart'>
                 <div className='flex justify-center items-center py-4'>
                     <h1 className='text-xl text-orange font-bold lg:max-w-none max-w-sm text-center'>Per Capita Data</h1>

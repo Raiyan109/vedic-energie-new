@@ -219,22 +219,244 @@ export const LightsWattRanges = [
 
 // Consumption times
 export const AirConsTimes = [
-    { "range": 2 },
-    { "range": 3 },
-    { "range": 4 },
-    { "range": 5 },
-    { "range": 6 },
-    { "range": 7 },
-    { "range": 8 },
-    { "range": 9 },
-    { "range": 10 },
-    { "range": 11 },
-    { "range": 12 },
-    { "range": 13 },
-    { "range": 14 },
-    { "range": 15 },
-    { "range": 16 }
+    { "range": 0.1666666667, "name": '10 Minutes' },
+    { "range": 2, "name": '2 Hours' },
+    { "range": 3, "name": '3 Hours' },
+    { "range": 4, "name": '4 Hours' },
+    { "range": 5, "name": '5 Hours' },
+    { "range": 6, "name": '6 Hours' },
+    { "range": 7, "name": '7 Hours' },
+    { "range": 8, "name": '8 Hours' },
+    { "range": 9, "name": '9 Hours' },
+    { "range": 10, "name": '10 Hours' },
+    { "range": 11, "name": '11 Hours' },
+    { "range": 12, "name": '12 Hours' },
+    { "range": 13, "name": '13 Hours' },
+    { "range": 14, "name": '14 Hours' },
+    { "range": 15, "name": '15 Hours' },
+    { "range": 16, "name": '16 Hours' }
 ];
+
+export const GeyserConsTimes = [
+    {
+        "range": 0.08333333333,
+        "name": "5 Minutes"
+    },
+    {
+        "range": 0.1666666667,
+        "name": "10 Minutes"
+    },
+    {
+        "range": 0.25,
+        "name": "15 Minutes"
+    },
+    {
+        "range": 0.33333333333,
+        "name": "20 Minutes"
+    },
+    {
+        "range": 0.41666666666,
+        "name": "25 Minutes"
+    },
+    {
+        "range": 0.5,
+        "name": "30 Minutes"
+    },
+    {
+        "range": 0.58333333333,
+        "name": "35 Minutes"
+    },
+    {
+        "range": 0.66666666666,
+        "name": "40 Minutes"
+    },
+    {
+        "range": 0.75,
+        "name": "45 Minutes"
+    },
+    {
+        "range": 0.83333333333,
+        "name": "50 Minutes"
+    },
+    {
+        "range": 0.91666666666,
+        "name": "55 Minutes"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour"
+    },
+]
+
+export const MicrowaveConsTimes = [
+    {
+        "range": 0.08333333333,
+        "name": "5 Minutes"
+    },
+    {
+        "range": 0.1666666667,
+        "name": "10 Minutes"
+    },
+    {
+        "range": 0.25,
+        "name": "15 Minutes"
+    },
+    {
+        "range": 0.33333333333,
+        "name": "20 Minutes"
+    },
+    {
+        "range": 0.41666666666,
+        "name": "25 Minutes"
+    },
+    {
+        "range": 0.5,
+        "name": "30 Minutes"
+    },
+    {
+        "range": 0.58333333333,
+        "name": "35 Minutes"
+    },
+    {
+        "range": 0.66666666666,
+        "name": "40 Minutes"
+    },
+    {
+        "range": 0.75,
+        "name": "45 Minutes"
+    },
+    {
+        "range": 0.83333333333,
+        "name": "50 Minutes"
+    },
+    {
+        "range": 0.91666666666,
+        "name": "55 Minutes"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour"
+    },
+]
+
+export const WashingMachineConsTimes = [
+    {
+        "range": 0.1666666667,
+        "name": "10 Minutes"
+    },
+    {
+        "range": 0.25,
+        "name": "15 Minutes"
+    },
+    {
+        "range": 0.33333333333,
+        "name": "20 Minutes"
+    },
+    {
+        "range": 0.41666666666,
+        "name": "25 Minutes"
+    },
+    {
+        "range": 0.5,
+        "name": "30 Minutes"
+    },
+    {
+        "range": 0.58333333333,
+        "name": "35 Minutes"
+    },
+    {
+        "range": 0.66666666666,
+        "name": "40 Minutes"
+    },
+    {
+        "range": 0.75,
+        "name": "45 Minutes"
+    },
+    {
+        "range": 0.83333333333,
+        "name": "50 Minutes"
+    },
+    {
+        "range": 0.91666666666,
+        "name": "55 Minutes"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour"
+    },
+    {
+        "range": 1,
+        "name": "1 hour 5 min"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour 10 min"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour 15 min"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour 20 min"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour 25 min"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour 30 min"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour 35 min"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour 40 min"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour 45 min"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour 50 min"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour 55 min"
+    },
+    {
+        "range": 1,
+        "name": "2 Hour"
+    },
+    {
+        "range": 1,
+        "name": "2 Hour 5 min"
+    },
+    {
+        "range": 1,
+        "name": "2 Hour 10 min"
+    },
+    {
+        "range": 1,
+        "name": "2 Hour 15 min"
+    },
+    {
+        "range": 1,
+        "name": "2 Hour 20 min"
+    },
+    {
+        "range": 1,
+        "name": "2 Hour 25 min"
+    },
+    {
+        "range": 1,
+        "name": "2 Hour 30 min"
+    },
+]
 
 export const perCapitaEnergyConsumptionData = [
     {

@@ -13,13 +13,6 @@ const Footer = () => {
     return (
 
         <div className=''>
-
-
-
-
-
-            {/*  */}
-
             <footer className="text-gray-600 body-font">
                 <div className="container lg:px-5 px-1 lg:py-24 py-9 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col lg:gap-40 gap-2">
                     <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">

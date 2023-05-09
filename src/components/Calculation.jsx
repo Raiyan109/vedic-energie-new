@@ -54,16 +54,10 @@ const Calculation = () => {
         setStatesId(getStateId)
 
         const getAvgEnergyData = statesData.find(state => state.state_id === getStateId)?.energyData
-        setAvgConsumptionData(getAvgEnergyData)
+        setAvgConsumptionData(getAvgEnergyData[0])
         setStatesId(getStateId)
         setSelectedEnergyData(null); // set selected energy data to null
     }
-
-    // const handleDistricts = (e) => {
-    //     const districtId = e.target.value
-    //     console.log(districtId);
-    //     setDistrictId(districtId)
-    // }
 
     const handleCities = (e) => {
         const cityId = e.target.value
@@ -78,8 +72,6 @@ const Calculation = () => {
         console.log(conDataId);
         setConDataId(conDataId)
     }
-
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -99,7 +91,7 @@ const Calculation = () => {
                                 |
                                 <Link to='/article' className='text-lightYellow ml-2'>Commercial</Link>
                             </span>
-                            <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator For Your Home</h3>
+                            <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator for Your Home</h3>
 
                             <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 gap-7 py-10'>
 
@@ -107,7 +99,7 @@ const Calculation = () => {
                                 {/*  STATE */}
                                 <div className="select">
                                     <select defaultValue="State" name="state" id="state" onChange={(e) => handleStates(e)}>
-                                        <option selected disabled>State</option>
+                                        <option disabled>State</option>
                                         {
                                             statesData.map((data, idx) => (
                                                 <option value={data.state_id} key={idx}>{data.state_name}</option>
@@ -116,23 +108,12 @@ const Calculation = () => {
                                     </select>
                                 </div>
 
-                                {/* Districts */}
-                                {/* <div className="select mb-10">
-                                        <select name="district" id="district" onChange={(e) => handleDistricts(e)}>
-                                            <option selected disabled>District</option>
 
-                                            {
-                                                district?.map((item, idx) => (
-                                                    <option value={item.district_id} key={idx}>{item.district_name}</option>
-                                                ))
-                                            }
-                                        </select>
-                                    </div> */}
 
                                 {/* Cities */}
                                 <div className="select">
                                     <select defaultValue='City' name="city" id="city" onChange={(e) => handleCities(e)}>
-                                        <option selected disabled>
+                                        <option disabled>
                                             City
                                         </option>
 
@@ -144,20 +125,6 @@ const Calculation = () => {
 
                                     </select>
                                 </div>
-
-
-                                {/* {avgConsumptionData && avgConsumptionData.length > 0 && (
-                                    <div className="select">
-                                        <select defaultValue="Energy Data" name="energyData" id="energyData" onChange={(e) => handleAvgConsumptionData(e)}>
-                                            <option selected disabled>Energy Data</option>
-                                            {avgConsumptionData.map((data, idx) => (
-                                                <option value={data.data_id} key={idx}>
-                                                    {data.data}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                )} */}
 
 
                                 <div className='grid lg:grid-cols-1 grid-cols-1 lg:gap-x-40 gap-7 py-10'>
@@ -191,7 +158,7 @@ const Calculation = () => {
 
                             <div className='max-w-md'>
                                 <label
-                                    for="BilledUnitsPerMonth"
+                                    htmlFor="BilledUnitsPerMonth"
                                     className="relative block overflow-hidden border-b-2 border-lightYellow pt-2"
                                 >
                                     <div className='flex justify-center items-center gap-2 text-lightYellow'>
@@ -223,9 +190,9 @@ const Calculation = () => {
                 </div>
 
                 <div className='lg:flex md:flex justify-center items-center grid grid-cols-1'>
-                    <Meter conData={avgConsumptionData} userData={result} />
+                    <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} />
 
-                    <UserMeter userData={result} />
+                    <UserMeter userData={result} key={result} />
                 </div>
             </div>
 
