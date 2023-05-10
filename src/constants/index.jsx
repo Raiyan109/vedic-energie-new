@@ -1,6 +1,6 @@
 import Assumptions from "../components/Assumptions";
 import Consumption from "../components/Consumption";
-import AirConsumption from "../components/Consumptions/AirConsumption";
+import AirConsumption from "../components/Consumptions/GeyserConsumption";
 import CustomMachines from "../components/CustomMachines";
 import SummerSwitch from "../components/SummerSwitch";
 import Toggle from "../components/Toggle";

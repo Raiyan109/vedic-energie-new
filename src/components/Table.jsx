@@ -7,7 +7,6 @@ import CalculateButton from './CalculateButton';
 import FinalCalculate from './FinalCalculate';
 import { AirConWattRanges } from '../constants/index';
 import { AirConsTimes } from '../constants/index';
-import AirConsumption from './Consumptions/AirConsumption';
 import Assumptions from './Assumptions';
 import GeyserInput from './WattInputs/GeyserInput';
 import WashingInput from './WattInputs/WashingInput';
@@ -15,6 +14,7 @@ import MicroWaveInput from './WattInputs/MicroWaveInput';
 import FridgeInput from './WattInputs/FridgeInput';
 import LightsInput from './WattInputs/LightsInput';
 import styled from 'styled-components';
+import GeyserConsumption from './Consumptions/GeyserConsumption';
 
 const Table = () => {
     const [selectedItem, setSelectedItem] = useState(0)
@@ -31,8 +31,10 @@ const Table = () => {
     // Watt and Consumption calculation states
     const [aCSelectedWattage, setACSelectedWattage] = useState("");
     const [aCSelectedConsumptionTime, setACSelectedConsumptionTime] = useState("");
-    const [total, setTotal] = useState(0);
-    const [result, setResult] = useState(0);
+    const [geyserSelectedWattage, setGeyserSelectedWattage] = useState('')
+    const [geyserSelectedConsumptionTime, setGeyserSelectedConsumptionTime] = useState('')
+    const [airTotal, setAirTotal] = useState(0);
+    const [geyserTotal, setGeyserTotal] = useState(0);
 
 
     const handleSummerClick = () => {
@@ -67,15 +69,22 @@ const Table = () => {
 
     // Watt and Consumption calculation functions
     useEffect(() => {
-        setTotal(+aCSelectedWattage * +aCSelectedConsumptionTime);
+        setAirTotal(+aCSelectedWattage * +aCSelectedConsumptionTime);
     }, [aCSelectedWattage, aCSelectedConsumptionTime]);
+
+    useEffect(() => {
+        setGeyserTotal(+geyserSelectedWattage * +geyserSelectedConsumptionTime);
+        console.log(geyserTotal);
+    }, [geyserSelectedWattage, geyserSelectedConsumptionTime]);
 
     const handleWattageSelect = (event) => {
         setACSelectedWattage(event.target.value);
+        setGeyserSelectedWattage(event.target.value)
     };
 
     const handleConsumptionTimeSelect = (event) => {
         setACSelectedConsumptionTime(event.target.value);
+        setGeyserSelectedConsumptionTime(event.target.value)
     };
 
     return (
@@ -117,7 +126,7 @@ const Table = () => {
                                     </div>
                                 </td>
                                 <td>
-                                    {/* <AirConWattInput /> */}
+                                    {/* <AirConWatt /> */}
                                     <Select>
                                         <select name="watt" id="watt" value={aCSelectedWattage}
                                             disabled={!isAirConditionerOn}
@@ -134,8 +143,8 @@ const Table = () => {
                                         </select>
                                     </Select>
                                 </td>
+                                {/* <AirConsumption /> */}
                                 <td>
-                                    {/* <AirConsumption /> */}
                                     <Select>
                                         <select name="watt" id="watt" value={aCSelectedConsumptionTime}
                                             disabled={!isAirConditionerOn && !isWashingOn}
@@ -151,9 +160,10 @@ const Table = () => {
                                 </td>
                                 <td>
                                     <Assumptions />
-                                    AC Total: {isAirConditionerOn ? total : ""}
+                                    AC Total: {isAirConditionerOn ? airTotal : ""}
                                 </td>
                             </tr>
+
                             {/* Geyser */}
                             <tr className='odd:bg-gray even:bg-lightGray'>
                                 <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Geyser</td>
@@ -166,14 +176,24 @@ const Table = () => {
                                         <label htmlFor="switch">Toggle</label>
                                     </div>
                                 </td>
+                                {/* Geyser Watt */}
                                 <td>
-                                    <GeyserInput />
+                                    <GeyserInput geyserSelectedWattage={geyserSelectedWattage}
+
+                                        isGeyserOn={isGeyserOn}
+                                        handleWattageSelect={handleWattageSelect}
+                                    />
                                 </td>
                                 <td>
-                                    <AirConsumption />
+                                    <GeyserConsumption
+                                        geyserSelectedConsumptionTime={geyserSelectedConsumptionTime}
+                                        isGeyserOn={isGeyserOn}
+                                        handleConsumptionTimeSelect={handleConsumptionTimeSelect}
+                                    />
                                 </td>
                                 <td>
                                     <Assumptions />
+                                    Geyser Total: {isGeyserOn ? geyserTotal : ""}
                                 </td>
                             </tr>
                             {/* Washing Machine */}
@@ -192,7 +212,7 @@ const Table = () => {
                                     <WashingInput />
                                 </td>
                                 <td>
-                                    <AirConsumption />
+                                    <GeyserConsumption />
                                 </td>
                                 <td>
                                     <Assumptions />
@@ -215,7 +235,7 @@ const Table = () => {
                                     <MicroWaveInput />
                                 </td>
                                 <td>
-                                    <AirConsumption />
+                                    <GeyserConsumption />
                                 </td>
                                 <td>
                                     <Assumptions />
@@ -238,7 +258,7 @@ const Table = () => {
                                     <FridgeInput />
                                 </td>
                                 <td>
-                                    <AirConsumption />
+                                    <GeyserConsumption />
                                 </td>
                                 <td>
                                     <Assumptions />
@@ -261,7 +281,7 @@ const Table = () => {
                                     <LightsInput />
                                 </td>
                                 <td>
-                                    <AirConsumption />
+                                    <GeyserConsumption />
                                 </td>
                                 <td>
                                     <Assumptions />

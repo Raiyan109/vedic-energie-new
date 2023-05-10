@@ -27,11 +27,15 @@ select {
     border-bottom: 1px solid #FEFFCD;
  }
 `
-const GeyserInput = () => {
+const GeyserInput = ({ geyserSelectedWattage, isGeyserOn, handleWattageSelect }) => {
     return (
         <>
             <Section>
-                <select name="watt" id="watt" defaultValue='Watt' className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                <select name="watt" id="watt"
+                    value={geyserSelectedWattage}
+                    disabled={!isGeyserOn}
+                    onChange={handleWattageSelect}
+                    className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
                     {
                         GeyserWattRanges.map((range, idx) => (
                             <option value={range.range}>{range.range}</option>
