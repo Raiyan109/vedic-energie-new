@@ -8,12 +8,12 @@ const UserMeter = ({ userData }) => {
     const RADIAN = Math.PI / 180;
     const data = [
         { name: '0', value: 0, color: '#ff0000' },
-        { name: '150', value: 150, color: '#00ff00' },
-        { name: '300', value: 300, color: '#0000ff' },
-        { name: '450', value: 450, color: '#924f64' },
-        { name: '600', value: 600, color: '#dc8965' },
-        { name: '750', value: 750, color: '#d2e1f7' },
-        { name: '900', value: 900, color: '#131b27' },
+        { name: '150', value: 450, color: '#00ff00' },
+        { name: '300', value: 600, color: '#0000ff' },
+        { name: '450', value: 750, color: '#924f64' },
+        { name: '600', value: 1000, color: '#dc8965' },
+        { name: '750', value: 1500, color: '#d2e1f7' },
+        { name: '900', value: 2000, color: '#131b27' },
 
     ];
     const cx = 150;
@@ -78,6 +78,7 @@ const UserMeter = ({ userData }) => {
                                 outerRadius={oR}
                                 fill="#8884d8"
                                 stroke="none"
+                                label
                             >
                                 {data.map((entry, index) => (
                                     <Cell key={`cell-${index}`} fill={entry.color} />
@@ -86,7 +87,11 @@ const UserMeter = ({ userData }) => {
                             {needle(value, data, cx, cy, iR, oR, '#d0d000')}
                         </PieChart>
                     </div>
+                    <div className='absolute'>
+                        <h1 className='text-green text-center'>{value}</h1>
+                    </div>
                 </div>
+
             </div>
         </div>
     );

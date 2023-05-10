@@ -57,7 +57,7 @@ const Meter = ({ conData }) => {
                     <h1 className='text-xl text-orange font-bold lg:max-w-none max-w-sm text-center'>Per Capita Data</h1>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <div style={{ width: '80%', height: '50%' }}>
+                    <div style={{ width: '80%', height: '52%' }}>
                         <PieChart width={400} height={500}>
                             <Pie
                                 dataKey="value"
@@ -70,6 +70,7 @@ const Meter = ({ conData }) => {
                                 outerRadius={oR}
                                 fill="#8884d8"
                                 stroke="none"
+                                label
                             >
                                 {data.map((entry, index) => (
                                     <Cell key={`cell-${index}`} fill={entry.color} />
@@ -78,7 +79,11 @@ const Meter = ({ conData }) => {
                             {needle(value, data, cx, cy, iR, oR, '#d0d000')}
                         </PieChart>
                     </div>
+                    <div className='absolute'>
+                        <h1 className='text-green text-center'>{value}</h1>
+                    </div>
                 </div>
+
             </div>
         </div>
     );
