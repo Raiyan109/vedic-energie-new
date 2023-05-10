@@ -1,6 +1,6 @@
 import React from 'react';
-import { WashingWattRanges } from '../../constants';
 import styled from 'styled-components';
+import { WashingMachineConsTimes } from '../../constants';
 
 const Section = styled.div`
 select {
@@ -27,19 +27,18 @@ select {
     border-bottom: 1px solid #FEFFCD;
  }
 `
-const WashingInput = ({ washingSelectedWattage, isWashingOn, handleWattageSelect }) => {
+const WashingConsumption = ({ washingSelectedConsumptionTime, isWashingOn, handleConsumptionTimeSelect }) => {
     return (
         <>
             <Section>
-                <select name="watt" id="watt"
-                    value={washingSelectedWattage}
+                <select name="watt" id="watt" value={washingSelectedConsumptionTime}
                     disabled={!isWashingOn}
-                    onChange={handleWattageSelect}
-                    className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                    onChange={handleConsumptionTimeSelect}
+                    className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
 
                     {
-                        WashingWattRanges.map((range, idx) => (
-                            <option value={range.range} key={idx}>{range.range}</option>
+                        WashingMachineConsTimes.map((range, idx) => (
+                            <option value={range.range}>{range.name}</option>
                         ))
                     }
                 </select>
@@ -48,4 +47,4 @@ const WashingInput = ({ washingSelectedWattage, isWashingOn, handleWattageSelect
     );
 };
 
-export default WashingInput;
+export default WashingConsumption;

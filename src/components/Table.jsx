@@ -15,6 +15,7 @@ import FridgeInput from './WattInputs/FridgeInput';
 import LightsInput from './WattInputs/LightsInput';
 import styled from 'styled-components';
 import GeyserConsumption from './Consumptions/GeyserConsumption';
+import WashingConsumption from './Consumptions/WashingConsumption';
 
 const Table = () => {
     const [selectedItem, setSelectedItem] = useState(0)
@@ -33,8 +34,11 @@ const Table = () => {
     const [aCSelectedConsumptionTime, setACSelectedConsumptionTime] = useState("");
     const [geyserSelectedWattage, setGeyserSelectedWattage] = useState('')
     const [geyserSelectedConsumptionTime, setGeyserSelectedConsumptionTime] = useState('')
+    const [washingSelectedWattage, setWashingSelectedWattage] = useState('')
+    const [washingSelectedConsumptionTime, setWashingSelectedConsumptionTime] = useState('')
     const [airTotal, setAirTotal] = useState(0);
     const [geyserTotal, setGeyserTotal] = useState(0);
+    const [washingTotal, setWashingTotal] = useState(0)
 
 
     const handleSummerClick = () => {
@@ -77,18 +81,42 @@ const Table = () => {
         console.log(geyserTotal);
     }, [geyserSelectedWattage, geyserSelectedConsumptionTime]);
 
-    const handleWattageSelect = (event) => {
+    useEffect(() => {
+        setWashingTotal(+washingSelectedWattage * +washingSelectedConsumptionTime);
+        console.log(washingTotal);
+    }, [washingSelectedWattage, washingSelectedConsumptionTime]);
+
+    const handleACWattageSelect = (event) => {
         setACSelectedWattage(event.target.value);
-        setGeyserSelectedWattage(event.target.value)
+
     };
 
-    const handleConsumptionTimeSelect = (event) => {
+    const handleGeyserWattageSelect = (event) => {
+        setGeyserSelectedWattage(event.target.value)
+    }
+
+    const handleWashingWattageSelect = (event) => {
+        setWashingSelectedWattage(event.target.value)
+    }
+
+    const handleACConsumptionTimeSelect = (event) => {
         setACSelectedConsumptionTime(event.target.value);
+    };
+
+    const handleGeyserConsumptionTimeSelect = (event) => {
         setGeyserSelectedConsumptionTime(event.target.value)
     };
 
+    const handleWashingConsumptionTimeSelect = (event) => {
+        setWashingSelectedConsumptionTime(event.target.value);
+    };
+
+    const sum = () => {
+        const sumTotal = airTotal + washingTotal
+    }
+
     return (
-        <div>
+        <div className="bg-orange py-5">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <div>
                     <div className='w-full flex items-center justify-center gap-x-20 py-5'>
@@ -130,7 +158,7 @@ const Table = () => {
                                     <Select>
                                         <select name="watt" id="watt" value={aCSelectedWattage}
                                             disabled={!isAirConditionerOn}
-                                            onChange={handleWattageSelect}
+                                            onChange={handleACWattageSelect}
                                             className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'
                                         >
                                             {
@@ -148,7 +176,7 @@ const Table = () => {
                                     <Select>
                                         <select name="watt" id="watt" value={aCSelectedConsumptionTime}
                                             disabled={!isAirConditionerOn && !isWashingOn}
-                                            onChange={handleConsumptionTimeSelect}
+                                            onChange={handleACConsumptionTimeSelect}
                                             className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
                                             {
                                                 AirConsTimes.map((range, idx) => (
@@ -181,14 +209,14 @@ const Table = () => {
                                     <GeyserInput geyserSelectedWattage={geyserSelectedWattage}
 
                                         isGeyserOn={isGeyserOn}
-                                        handleWattageSelect={handleWattageSelect}
+                                        handleWattageSelect={handleGeyserWattageSelect}
                                     />
                                 </td>
                                 <td>
                                     <GeyserConsumption
                                         geyserSelectedConsumptionTime={geyserSelectedConsumptionTime}
                                         isGeyserOn={isGeyserOn}
-                                        handleConsumptionTimeSelect={handleConsumptionTimeSelect}
+                                        handleConsumptionTimeSelect={handleGeyserConsumptionTimeSelect}
                                     />
                                 </td>
                                 <td>
@@ -209,13 +237,23 @@ const Table = () => {
                                     </div>
                                 </td>
                                 <td>
-                                    <WashingInput />
+                                    <WashingInput
+                                        washingSelectedWattage={washingSelectedWattage}
+
+                                        isWashingOn={isWashingOn}
+                                        handleWattageSelect={handleWashingWattageSelect}
+                                    />
                                 </td>
                                 <td>
-                                    <GeyserConsumption />
+                                    <WashingConsumption
+                                        washingSelectedConsumptionTime={washingSelectedConsumptionTime}
+                                        isWashingOn={isWashingOn}
+                                        handleConsumptionTimeSelect={handleWashingConsumptionTimeSelect}
+                                    />
                                 </td>
                                 <td>
                                     <Assumptions />
+                                    Washing Total: {isWashingOn ? washingTotal : ""}
                                 </td>
                             </tr>
 

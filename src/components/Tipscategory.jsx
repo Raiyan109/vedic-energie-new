@@ -5,7 +5,7 @@ import React, { useState } from "react";
 export default function Tipscategory() {
 
   return (
-    <div className="bg-sandal py-[100px]">
+    <div className="bg-orange py-[100px]">
       <h5 className=" h-1 not-italic font-bold text-3xl text-center text-indigo py-[70px]">Tips that can save energy and money
       </h5>
       <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 mx-10">

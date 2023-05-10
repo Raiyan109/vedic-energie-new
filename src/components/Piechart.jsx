@@ -2,8 +2,18 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import styled from 'styled-components';
+import bg from '../assets/ellipse.png'
 // Chart.register(ChartDataLabels);
 ChartJS.register(ArcElement, Tooltip, Legend);
+
+const Section = styled.div`
+.box{
+background-image: url(${bg});
+background-repeat: no-repeat;
+background-size: cover; 
+background-position: center; 
+`
 
 export default function Piechart() {
   const data = {
@@ -29,49 +39,51 @@ export default function Piechart() {
 
   return (
 
-    <div className="items-center bg-sandal">
-      <h1 className='text-indigo font-bold text-3xl underline m-auto items-center text-center mt-10 pb-10'>High Energy Consumption Weightage <br /> of the Devices</h1>
-      <div className="w-[400px] h-[300px] sm:w-[600px] sm:h-[500px] mx-auto my-auto">
-        <Pie width={150} height={150} data={data}
-          options=
+    <Section>
+      <div className="items-center py-20 box">
+        <h1 className='text-indigo font-bold text-3xl underline m-auto items-center text-center pb-10'>High Energy Consumption Weightage <br /> of the Devices</h1>
+        <div className="w-[400px] h-[300px] sm:w-[600px] sm:h-[500px] mx-auto my-auto">
+          <Pie width={150} height={150} data={data}
+            options=
 
-          {{
-            responsive: true,
-            plugins: {
-              tooltip: {
-                enabled: false
-              },
-              legend: {
-                display: true,
-                position: 'bottom',
-                // align:'start',
-                labels: {
-                  boxWidth: 25,
-                  boxHeight: 26,
-                  color: 'black'
-                }
-
-              },
-              datalabels: {
-                color: 'white',
-                display: true,
-                formatter: (value, context) => {
-                  const datapoints = context.chart.data.datasets[0].data;
-                  function totalsum(total, datapoint) {
-                    return total + datapoint;
+            {{
+              responsive: true,
+              plugins: {
+                tooltip: {
+                  enabled: false
+                },
+                legend: {
+                  display: true,
+                  position: 'bottom',
+                  // align:'start',
+                  labels: {
+                    boxWidth: 25,
+                    boxHeight: 26,
+                    color: 'black'
                   }
-                  const totalvalue = datapoints.reduce(totalsum, 0);
-                  const percentageValue = (value / totalvalue * 100).toFixed(0);
-                  return `${percentageValue}%`;
+
+                },
+                datalabels: {
+                  color: 'white',
+                  display: true,
+                  formatter: (value, context) => {
+                    const datapoints = context.chart.data.datasets[0].data;
+                    function totalsum(total, datapoint) {
+                      return total + datapoint;
+                    }
+                    const totalvalue = datapoints.reduce(totalsum, 0);
+                    const percentageValue = (value / totalvalue * 100).toFixed(0);
+                    return `${percentageValue}%`;
+                  }
                 }
               }
-            }
-          }}
-          plugins={[ChartDataLabels]}
-        />
+            }}
+            plugins={[ChartDataLabels]}
+          />
 
+        </div>
       </div>
 
-    </div>
+    </Section>
   );
 }

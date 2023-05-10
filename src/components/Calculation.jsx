@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import SpeedOMeter from './SpeedOMeter';
 import Meter from './Meter';
 import UserMeter from './UserMeter';
+import bg from '../assets/ellipse.png'
 
 const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
@@ -183,7 +184,7 @@ const Calculation = () => {
                 </div>
             </section>
 
-            <div>
+            <div className='box'>
                 <div className='flex justify-center items-center py-14'>
                     <h1 className='underline text-4xl text-indigo font-bold lg:max-w-none max-w-lg text-center'>Per Capita Energy Consumption
                         W.R.T State</h1>
@@ -231,5 +232,12 @@ select {
     border:none;
     border-bottom: 1px solid #FEFFCD;
  }
- 
+ .box{
+    background-image: url(${bg});
+
+background-repeat: no-repeat;
+background-size: cover; 
+background-position: center; 
+  
+ }
 `
