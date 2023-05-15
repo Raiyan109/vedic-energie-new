@@ -18,8 +18,8 @@ import GeyserConsumption from './Consumptions/GeyserConsumption';
 import WashingConsumption from './Consumptions/WashingConsumption';
 
 const Table = () => {
-    const [selectedItem, setSelectedItem] = useState(0)
-    const [selectedTab, setSelectedTab] = useState(0);
+    // const [selectedItem, setSelectedItem] = useState(0)
+    // const [selectedTab, setSelectedTab] = useState(0);
 
     const [isAirConditionerOn, setIsAirConditionerOn] = useState(false);
     const [isGeyserOn, setIsGeyserOn] = useState(false);
@@ -28,6 +28,7 @@ const Table = () => {
     const [isFridgeOn, setIsFridgeOn] = useState(false)
     const [isLightsOn, setIsLightsOn] = useState(false)
     const [isHeaterOn, setIsHeaterOn] = useState(false)
+
 
     // Watt and Consumption calculation states
     const [aCSelectedWattage, setACSelectedWattage] = useState("");
@@ -44,32 +45,38 @@ const Table = () => {
     const handleSummerClick = () => {
         setIsAirConditionerOn(true);
         setIsGeyserOn(false);
-        setIsWashingOn(true)
-        setIsMicroWaveOn(false)
-        setIsFridgeOn(true)
-        setIsLightsOn(false)
+
     };
 
     const handleWinterClick = () => {
         setIsAirConditionerOn(false);
         setIsGeyserOn(true);
-        setIsWashingOn(false)
-        setIsMicroWaveOn(true)
-        setIsFridgeOn(false)
-        setIsLightsOn(true)
+
     };
 
     const handleSummerToggle = () => {
         setIsAirConditionerOn(!isAirConditionerOn);
-        setIsWashingOn(!isWashingOn)
-        setIsFridgeOn(!isFridgeOn)
     };
 
     const handleWinterToggle = () => {
         setIsGeyserOn(!isGeyserOn);
-        setIsMicroWaveOn(!isMicroWaveOn)
-        setIsLightsOn(!isLightsOn)
     };
+
+    const handleWashingToggle = () => {
+        setIsWashingOn(!isWashingOn)
+    }
+
+    const handleMicroToggle = () => {
+        setIsMicroWaveOn(!isMicroWaveOn)
+    }
+
+    const handleFridgeToggle = () => {
+        setIsFridgeOn(!isFridgeOn)
+    }
+
+    const handleLightsToggle = () => {
+        setIsLightsOn(!isLightsOn)
+    }
 
     // Watt and Consumption calculation functions
     useEffect(() => {
@@ -175,7 +182,7 @@ const Table = () => {
                                 <td>
                                     <Select>
                                         <select name="watt" id="watt" value={aCSelectedConsumptionTime}
-                                            disabled={!isAirConditionerOn && !isWashingOn}
+                                            disabled={!isAirConditionerOn}
                                             onChange={handleACConsumptionTimeSelect}
                                             className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
                                             {
@@ -203,6 +210,7 @@ const Table = () => {
                                         />
                                         <label htmlFor="switch">Toggle</label>
                                     </div>
+
                                 </td>
                                 {/* Geyser Watt */}
                                 <td>
@@ -228,13 +236,14 @@ const Table = () => {
                             <tr className='odd:bg-gray even:bg-lightGray'>
                                 <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Washing Machine</td>
                                 <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
-                                    <div className={styles.toggle}>
-                                        <input type="checkbox" id="switch"
+                                    <label className={styles.toggleSwitch}>
+                                        <input
+                                            type="checkbox"
                                             checked={isWashingOn}
-                                            onChange={handleSummerToggle}
+                                            onChange={handleWashingToggle}
                                         />
-                                        <label htmlFor="switch">Toggle</label>
-                                    </div>
+                                        <span className={styles.toggleSwitchSlider}></span>
+                                    </label>
                                 </td>
                                 <td>
                                     <WashingInput
@@ -261,13 +270,14 @@ const Table = () => {
                             <tr className='odd:bg-gray even:bg-lightGray'>
                                 <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Microwave Oven</td>
                                 <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
-                                    <div className={styles.toggle}>
-                                        <input type="checkbox" id="switch"
+                                    <label className={styles.toggleSwitch}>
+                                        <input
+                                            type="checkbox"
                                             checked={isMicroWaveOn}
-                                            onChange={handleWinterToggle}
+                                            onChange={handleMicroToggle}
                                         />
-                                        <label htmlFor="switch">Toggle</label>
-                                    </div>
+                                        <span className={styles.toggleSwitchSlider}></span>
+                                    </label>
                                 </td>
                                 <td>
                                     <MicroWaveInput />
@@ -284,13 +294,14 @@ const Table = () => {
                             <tr className='odd:bg-gray even:bg-lightGray'>
                                 <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Fridge</td>
                                 <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
-                                    <div className={styles.toggle}>
-                                        <input type="checkbox" id="switch"
+                                    <label className={styles.toggleSwitch}>
+                                        <input
+                                            type="checkbox"
                                             checked={isFridgeOn}
-                                            onChange={handleSummerToggle}
+                                            onChange={handleFridgeToggle}
                                         />
-                                        <label htmlFor="switch">Toggle</label>
-                                    </div>
+                                        <span className={styles.toggleSwitchSlider}></span>
+                                    </label>
                                 </td>
                                 <td>
                                     <FridgeInput />
@@ -307,13 +318,14 @@ const Table = () => {
                             <tr className='odd:bg-gray even:bg-lightGray'>
                                 <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Lights</td>
                                 <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
-                                    <div className={styles.toggle}>
-                                        <input type="checkbox" id="switch"
+                                    <label className={styles.toggleSwitch}>
+                                        <input
+                                            type="checkbox"
                                             checked={isLightsOn}
-                                            onChange={handleWinterToggle}
+                                            onChange={handleLightsToggle}
                                         />
-                                        <label htmlFor="switch">Toggle</label>
-                                    </div>
+                                        <span className={styles.toggleSwitchSlider}></span>
+                                    </label>
                                 </td>
                                 <td>
                                     <LightsInput />

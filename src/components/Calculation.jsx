@@ -9,6 +9,7 @@ import SpeedOMeter from './SpeedOMeter';
 import Meter from './Meter';
 import UserMeter from './UserMeter';
 import bg from '../assets/ellipse.png'
+import Gauge from './Gauge';
 
 const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
@@ -194,7 +195,9 @@ const Calculation = () => {
                     <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} />
 
                     <UserMeter userData={result} key={result} />
+
                 </div>
+                <Gauge userData={result} key={result} />
             </div>
 
 
