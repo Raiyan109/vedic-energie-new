@@ -7,7 +7,7 @@ import Calculation from '../components/Calculation';
 import { useCalc } from '../context/CalcProvider';
 import Table from '../components/Table';
 import { actionTypes } from '../state/CalcState/actionTypes';
-import Piechart from '../components/Piechart';
+import Piechart from '../components/PieChart';
 import Tipscategory from '../components/Tipscategory';
 import SpeedOMeter from '../components/SpeedOMeter';
 import Meter from '../components/Meter';
@@ -68,7 +68,7 @@ const EnergyCalculation = () => {
             {/* <Meter /> */}
             {/* <SpeedOMeter /> */}
             <Table />
-            <Piechart />
+            {/* <Piechart /> */}
             <Tipscategory />
             <Footer />
         </Section >

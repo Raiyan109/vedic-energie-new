@@ -15,21 +15,18 @@ background-size: cover;
 background-position: center; 
 `
 
-export default function Piechart() {
+export default function PieChart({ airPercentage, geyserPercentage, washingPercentage }) {
+  console.log(airPercentage, geyserPercentage, washingPercentage);
   const data = {
-    labels: ['Air Conditioner', 'Lights', 'Geyser', 'Fridge', 'Washing Machine', 'Fans', 'Others'],
+    labels: ['Air Conditioner', 'Lights', 'Geyser'],
     datasets: [
       {
         label: 'Energy consumption',
-        data: [30, 15, 10, 12, 20, 12, 6],
+        data: [airPercentage, geyserPercentage, washingPercentage],
         backgroundColor: [
           '#6D61F6',
           '#53CFEA',
-          '#0027F1',
-          '#6C9782',
-          '#16277B',
-          '#7BAEFB',
-          '#2F45B7'
+          '#0027F1'
         ],
         borderWidth: 0,
 
@@ -54,12 +51,12 @@ export default function Piechart() {
                 },
                 legend: {
                   display: true,
-                  position: 'bottom',
-                  // align:'start',
+                  position: 'right',
+                  align: 'start',
                   labels: {
                     boxWidth: 25,
                     boxHeight: 26,
-                    color: 'black'
+                    color: 'black',
                   }
 
                 },
@@ -67,6 +64,7 @@ export default function Piechart() {
                   color: 'white',
                   display: true,
                   formatter: (value, context) => {
+                    // return `${value}%`
                     const datapoints = context.chart.data.datasets[0].data;
                     function totalsum(total, datapoint) {
                       return total + datapoint;

@@ -16,6 +16,7 @@ import LightsInput from './WattInputs/LightsInput';
 import styled from 'styled-components';
 import GeyserConsumption from './Consumptions/GeyserConsumption';
 import WashingConsumption from './Consumptions/WashingConsumption';
+import PieChart from './PieChart';
 
 const Table = () => {
     // const [selectedItem, setSelectedItem] = useState(0)
@@ -37,6 +38,8 @@ const Table = () => {
     const [geyserSelectedConsumptionTime, setGeyserSelectedConsumptionTime] = useState('')
     const [washingSelectedWattage, setWashingSelectedWattage] = useState('')
     const [washingSelectedConsumptionTime, setWashingSelectedConsumptionTime] = useState('')
+
+    // State variables for total sum
     const [airTotal, setAirTotal] = useState(0);
     const [geyserTotal, setGeyserTotal] = useState(0);
     const [washingTotal, setWashingTotal] = useState(0)
@@ -45,13 +48,11 @@ const Table = () => {
     const handleSummerClick = () => {
         setIsAirConditionerOn(true);
         setIsGeyserOn(false);
-
     };
 
     const handleWinterClick = () => {
         setIsAirConditionerOn(false);
         setIsGeyserOn(true);
-
     };
 
     const handleSummerToggle = () => {
@@ -118,234 +119,243 @@ const Table = () => {
         setWashingSelectedConsumptionTime(event.target.value);
     };
 
-    const sum = () => {
-        const sumTotal = airTotal + washingTotal
-    }
+
+    // The sum of total watt hours for all devices
+    // const totalWattHours = airTotal + geyserTotal + washingTotal
+
+    // Calculation of the percentages for each device
+    // const airPercentage = (airTotal / totalWattHours * 100).toFixed(2);
+    // const geyserPercentage = (geyserTotal / totalWattHours * 100).toFixed(2);
+    // const washingPercentage = (washingTotal / totalWattHours * 100).toFixed(2);
 
     return (
-        <div className="bg-orange py-5">
-            <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-                <div>
-                    <div className='w-full flex items-center justify-center gap-x-20 py-5'>
-                        <button
-                            className={isAirConditionerOn ? `bg-blue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-blue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
-                            onClick={handleSummerClick}>Summer</button>
+        <div>
+            <div className="bg-orange py-5">
+                <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+                    <div>
+                        <div className='w-full flex items-center justify-center gap-x-20 py-5'>
+                            <button
+                                className={isAirConditionerOn ? `bg-blue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-blue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
+                                onClick={handleSummerClick}>Summer</button>
 
-                        <button
-                            className={isGeyserOn ? `bg-blue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-blue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
-                            onClick={handleWinterClick}>Winter</button>
-                    </div>
+                            <button
+                                className={isGeyserOn ? `bg-blue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-blue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
+                                onClick={handleWinterClick}>Winter</button>
+                        </div>
 
-                    <table className="w-full table-auto text-left border-separate border-spacing-y-3">
-                        <thead className="text-blue uppercase font-medium bg-lightYellow">
-                            <tr>
-                                <th className="py-4 pr-6 pl-5">Machines</th>
-                                <th className="py-4 pr-6 pl-5">Status</th>
-                                <th className="py-4 pr-6 pl-5">Watts</th>
-                                <th className="py-4 pr-6 pl-5">Consumption Time</th>
-                                <th className="py-4 pr-6 pl-5">Assumptions</th>
-                            </tr>
-                        </thead>
+                        <table className="w-full table-auto text-left border-separate border-spacing-y-3">
+                            <thead className="text-blue uppercase font-medium bg-lightYellow">
+                                <tr>
+                                    <th className="py-4 pr-6 pl-5">Machines</th>
+                                    <th className="py-4 pr-6 pl-5">Status</th>
+                                    <th className="py-4 pr-6 pl-5">Watts</th>
+                                    <th className="py-4 pr-6 pl-5">Consumption Time</th>
+                                    <th className="py-4 pr-6 pl-5">Assumptions</th>
+                                </tr>
+                            </thead>
 
-                        <tbody className="text-blue py-3">
-                            {/* Air Condition */}
-                            <tr className='odd:bg-gray even:bg-lightGray'>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Air Conditioner</td>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
-                                    <div className={styles.toggle}>
-                                        <input type="checkbox" id="switch"
-                                            checked={isAirConditionerOn}
-                                            onChange={handleSummerToggle}
+                            <tbody className="text-blue py-3">
+                                {/* Air Condition */}
+                                <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Air Conditioner</td>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
+                                        <div className={styles.toggle}>
+                                            <input type="checkbox" id="switch"
+                                                checked={isAirConditionerOn}
+                                                onChange={handleSummerToggle}
+                                            />
+                                            <label htmlFor="switch">Toggle</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {/* <AirConWatt /> */}
+                                        <Select>
+                                            <select name="watt" id="watt" value={aCSelectedWattage}
+                                                disabled={!isAirConditionerOn}
+                                                onChange={handleACWattageSelect}
+                                                className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'
+                                            >
+                                                {
+                                                    AirConWattRanges.map((range, idx) => (
+                                                        <option value={range.range}
+                                                            key={idx}
+                                                        >{range.range}</option>
+                                                    ))
+                                                }
+                                            </select>
+                                        </Select>
+                                    </td>
+                                    {/* <AirConsumption /> */}
+                                    <td>
+                                        <Select>
+                                            <select name="watt" id="watt" value={aCSelectedConsumptionTime}
+                                                disabled={!isAirConditionerOn}
+                                                onChange={handleACConsumptionTimeSelect}
+                                                className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                                                {
+                                                    AirConsTimes.map((range, idx) => (
+                                                        <option value={range.range}>{range.name}</option>
+                                                    ))
+                                                }
+                                            </select>
+                                        </Select>
+                                    </td>
+                                    <td>
+                                        <Assumptions />
+                                        AC Total: {isAirConditionerOn ? airTotal : ""}
+                                    </td>
+                                </tr>
+
+                                {/* Geyser */}
+                                <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Geyser</td>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
+                                        <div className={styles.toggle}>
+                                            <input type="checkbox" id="switch"
+                                                checked={isGeyserOn}
+                                                onChange={handleWinterToggle}
+                                            />
+                                            <label htmlFor="switch">Toggle</label>
+                                        </div>
+
+                                    </td>
+                                    {/* Geyser Watt */}
+                                    <td>
+                                        <GeyserInput geyserSelectedWattage={geyserSelectedWattage}
+
+                                            isGeyserOn={isGeyserOn}
+                                            handleWattageSelect={handleGeyserWattageSelect}
                                         />
-                                        <label htmlFor="switch">Toggle</label>
-                                    </div>
-                                </td>
-                                <td>
-                                    {/* <AirConWatt /> */}
-                                    <Select>
-                                        <select name="watt" id="watt" value={aCSelectedWattage}
-                                            disabled={!isAirConditionerOn}
-                                            onChange={handleACWattageSelect}
-                                            className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'
-                                        >
-                                            {
-                                                AirConWattRanges.map((range, idx) => (
-                                                    <option value={range.range}
-                                                        key={idx}
-                                                    >{range.range}</option>
-                                                ))
-                                            }
-                                        </select>
-                                    </Select>
-                                </td>
-                                {/* <AirConsumption /> */}
-                                <td>
-                                    <Select>
-                                        <select name="watt" id="watt" value={aCSelectedConsumptionTime}
-                                            disabled={!isAirConditionerOn}
-                                            onChange={handleACConsumptionTimeSelect}
-                                            className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
-                                            {
-                                                AirConsTimes.map((range, idx) => (
-                                                    <option value={range.range}>{range.name}</option>
-                                                ))
-                                            }
-                                        </select>
-                                    </Select>
-                                </td>
-                                <td>
-                                    <Assumptions />
-                                    AC Total: {isAirConditionerOn ? airTotal : ""}
-                                </td>
-                            </tr>
-
-                            {/* Geyser */}
-                            <tr className='odd:bg-gray even:bg-lightGray'>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Geyser</td>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
-                                    <div className={styles.toggle}>
-                                        <input type="checkbox" id="switch"
-                                            checked={isGeyserOn}
-                                            onChange={handleWinterToggle}
+                                    </td>
+                                    <td>
+                                        <GeyserConsumption
+                                            geyserSelectedConsumptionTime={geyserSelectedConsumptionTime}
+                                            isGeyserOn={isGeyserOn}
+                                            handleConsumptionTimeSelect={handleGeyserConsumptionTimeSelect}
                                         />
-                                        <label htmlFor="switch">Toggle</label>
-                                    </div>
+                                    </td>
+                                    <td>
+                                        <Assumptions />
+                                        Geyser Total: {isGeyserOn ? geyserTotal : ""}
+                                    </td>
+                                </tr>
+                                {/* Washing Machine */}
+                                <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Washing Machine</td>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
+                                        <label className={styles.toggleSwitch}>
+                                            <input
+                                                type="checkbox"
+                                                checked={isWashingOn}
+                                                onChange={handleWashingToggle}
+                                            />
+                                            <span className={styles.toggleSwitchSlider}></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <WashingInput
+                                            washingSelectedWattage={washingSelectedWattage}
 
-                                </td>
-                                {/* Geyser Watt */}
-                                <td>
-                                    <GeyserInput geyserSelectedWattage={geyserSelectedWattage}
-
-                                        isGeyserOn={isGeyserOn}
-                                        handleWattageSelect={handleGeyserWattageSelect}
-                                    />
-                                </td>
-                                <td>
-                                    <GeyserConsumption
-                                        geyserSelectedConsumptionTime={geyserSelectedConsumptionTime}
-                                        isGeyserOn={isGeyserOn}
-                                        handleConsumptionTimeSelect={handleGeyserConsumptionTimeSelect}
-                                    />
-                                </td>
-                                <td>
-                                    <Assumptions />
-                                    Geyser Total: {isGeyserOn ? geyserTotal : ""}
-                                </td>
-                            </tr>
-                            {/* Washing Machine */}
-                            <tr className='odd:bg-gray even:bg-lightGray'>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Washing Machine</td>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
-                                    <label className={styles.toggleSwitch}>
-                                        <input
-                                            type="checkbox"
-                                            checked={isWashingOn}
-                                            onChange={handleWashingToggle}
+                                            isWashingOn={isWashingOn}
+                                            handleWattageSelect={handleWashingWattageSelect}
                                         />
-                                        <span className={styles.toggleSwitchSlider}></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <WashingInput
-                                        washingSelectedWattage={washingSelectedWattage}
-
-                                        isWashingOn={isWashingOn}
-                                        handleWattageSelect={handleWashingWattageSelect}
-                                    />
-                                </td>
-                                <td>
-                                    <WashingConsumption
-                                        washingSelectedConsumptionTime={washingSelectedConsumptionTime}
-                                        isWashingOn={isWashingOn}
-                                        handleConsumptionTimeSelect={handleWashingConsumptionTimeSelect}
-                                    />
-                                </td>
-                                <td>
-                                    <Assumptions />
-                                    Washing Total: {isWashingOn ? washingTotal : ""}
-                                </td>
-                            </tr>
-
-                            {/* Microwave Oven */}
-                            <tr className='odd:bg-gray even:bg-lightGray'>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Microwave Oven</td>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
-                                    <label className={styles.toggleSwitch}>
-                                        <input
-                                            type="checkbox"
-                                            checked={isMicroWaveOn}
-                                            onChange={handleMicroToggle}
+                                    </td>
+                                    <td>
+                                        <WashingConsumption
+                                            washingSelectedConsumptionTime={washingSelectedConsumptionTime}
+                                            isWashingOn={isWashingOn}
+                                            handleConsumptionTimeSelect={handleWashingConsumptionTimeSelect}
                                         />
-                                        <span className={styles.toggleSwitchSlider}></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <MicroWaveInput />
-                                </td>
-                                <td>
-                                    <GeyserConsumption />
-                                </td>
-                                <td>
-                                    <Assumptions />
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>
+                                        <Assumptions />
+                                        Washing Total: {isWashingOn ? washingTotal : ""}
+                                    </td>
+                                </tr>
 
-                            {/* Fridge */}
-                            <tr className='odd:bg-gray even:bg-lightGray'>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Fridge</td>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
-                                    <label className={styles.toggleSwitch}>
-                                        <input
-                                            type="checkbox"
-                                            checked={isFridgeOn}
-                                            onChange={handleFridgeToggle}
-                                        />
-                                        <span className={styles.toggleSwitchSlider}></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <FridgeInput />
-                                </td>
-                                <td>
-                                    <GeyserConsumption />
-                                </td>
-                                <td>
-                                    <Assumptions />
-                                </td>
-                            </tr>
+                                {/* Microwave Oven */}
+                                <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Microwave Oven</td>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
+                                        <label className={styles.toggleSwitch}>
+                                            <input
+                                                type="checkbox"
+                                                checked={isMicroWaveOn}
+                                                onChange={handleMicroToggle}
+                                            />
+                                            <span className={styles.toggleSwitchSlider}></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <MicroWaveInput />
+                                    </td>
+                                    <td>
+                                        <GeyserConsumption />
+                                    </td>
+                                    <td>
+                                        <Assumptions />
+                                    </td>
+                                </tr>
 
-                            {/* Lights */}
-                            <tr className='odd:bg-gray even:bg-lightGray'>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Lights</td>
-                                <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
-                                    <label className={styles.toggleSwitch}>
-                                        <input
-                                            type="checkbox"
-                                            checked={isLightsOn}
-                                            onChange={handleLightsToggle}
-                                        />
-                                        <span className={styles.toggleSwitchSlider}></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <LightsInput />
-                                </td>
-                                <td>
-                                    <GeyserConsumption />
-                                </td>
-                                <td>
-                                    <Assumptions />
+                                {/* Fridge */}
+                                <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Fridge</td>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
+                                        <label className={styles.toggleSwitch}>
+                                            <input
+                                                type="checkbox"
+                                                checked={isFridgeOn}
+                                                onChange={handleFridgeToggle}
+                                            />
+                                            <span className={styles.toggleSwitchSlider}></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <FridgeInput />
+                                    </td>
+                                    <td>
+                                        <GeyserConsumption />
+                                    </td>
+                                    <td>
+                                        <Assumptions />
+                                    </td>
+                                </tr>
 
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table >
-                    <div className='py-20 flex justify-center items-center'>
-                        <FinalCalculate />
-                    </div>
+                                {/* Lights */}
+                                <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Lights</td>
+                                    <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
+                                        <label className={styles.toggleSwitch}>
+                                            <input
+                                                type="checkbox"
+                                                checked={isLightsOn}
+                                                onChange={handleLightsToggle}
+                                            />
+                                            <span className={styles.toggleSwitchSlider}></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <LightsInput />
+                                    </td>
+                                    <td>
+                                        <GeyserConsumption />
+                                    </td>
+                                    <td>
+                                        <Assumptions />
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table >
+                        <div className='py-20 flex justify-center items-center'>
+                            <FinalCalculate />
+                        </div>
+                    </div >
                 </div >
             </div >
-        </div >
+
+            <PieChart airPercentage={airTotal} geyserPercentage={geyserTotal} washingPercentage={washingTotal} />
+        </div>
     );
 };
 
