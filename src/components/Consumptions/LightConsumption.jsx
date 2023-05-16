@@ -1,6 +1,6 @@
 import React from 'react';
-import { LightsWattRanges } from '../../constants';
 import styled from 'styled-components';
+import { LightConsTimes } from '../../constants';
 
 const Section = styled.div`
 select {
@@ -27,18 +27,18 @@ select {
     border-bottom: 1px solid #FEFFCD;
  }
 `
-const LightsInput = ({ lightSelectedWattage, isLightsOn, handleWattageSelect }) => {
+const LightConsumption = ({ lightSelectedConsumptionTime, isLightsOn, handleConsumptionTimeSelect }) => {
     return (
         <>
             <Section>
-                <select name="watt" id="watt"
-                    value={lightSelectedWattage}
+                <select name="watt" id="watt" value={lightSelectedConsumptionTime}
                     disabled={!isLightsOn}
-                    onChange={handleWattageSelect}
-                    className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                    onChange={handleConsumptionTimeSelect}
+                    className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+
                     {
-                        LightsWattRanges.map((range, idx) => (
-                            <option value={range.range}>{range.range}</option>
+                        LightConsTimes.map((range, idx) => (
+                            <option value={range.range}>{range.name}</option>
                         ))
                     }
                 </select>
@@ -47,4 +47,4 @@ const LightsInput = ({ lightSelectedWattage, isLightsOn, handleWattageSelect }) 
     );
 };
 
-export default LightsInput;
+export default LightConsumption;

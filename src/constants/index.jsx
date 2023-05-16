@@ -474,6 +474,25 @@ export const FridgeConsTimes = [
     { "range": 24, "name": '24 Hours' }
 ]
 
+export const LightConsTimes = [
+    { "range": 1, "name": '1 Hours' },
+    { "range": 2, "name": '2 Hours' },
+    { "range": 3, "name": '3 Hours' },
+    { "range": 4, "name": '4 Hours' },
+    { "range": 5, "name": '5 Hours' },
+    { "range": 6, "name": '6 Hours' },
+    { "range": 7, "name": '7 Hours' },
+    { "range": 8, "name": '8 Hours' },
+    { "range": 9, "name": '9 Hours' },
+    { "range": 10, "name": '10 Hours' },
+    { "range": 11, "name": '11 Hours' },
+    { "range": 12, "name": '12 Hours' },
+    { "range": 13, "name": '13 Hours' },
+    { "range": 14, "name": '14 Hours' },
+    { "range": 15, "name": '15 Hours' },
+    { "range": 16, "name": '16 Hours' },
+]
+
 export const perCapitaEnergyConsumptionData = [
     {
         "name": "ANDAMAN & NICOBAR ISLANDS", "data": 367.3948635

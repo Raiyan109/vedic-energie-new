@@ -19,6 +19,7 @@ import WashingConsumption from './Consumptions/WashingConsumption';
 import PieChart from './PieChart';
 import OvenConsumption from './Consumptions/OvenConsumption';
 import FridgeConsumption from './Consumptions/FridgeConsumption';
+import LightConsumption from './Consumptions/LightConsumption';
 
 const Table = () => {
     // const [selectedItem, setSelectedItem] = useState(0)
@@ -405,14 +406,23 @@ const Table = () => {
                                         </label>
                                     </td>
                                     <td>
-                                        <LightsInput />
+                                        <LightsInput
+                                            lightSelectedWattage={lightSelectedWattage}
+
+                                            isLightsOn={isLightsOn}
+                                            handleWattageSelect={handleLightWattageSelect}
+                                        />
                                     </td>
                                     <td>
-                                        <GeyserConsumption />
+                                        <LightConsumption
+                                            lightSelectedConsumptionTime={lightSelectedConsumptionTime}
+                                            isLightsOn={isLightsOn}
+                                            handleConsumptionTimeSelect={handleLightConsumptionTimeSelect}
+                                        />
                                     </td>
                                     <td>
                                         <Assumptions />
-
+                                        Light Total: {isLightsOn ? lightsTotal : ""}
                                     </td>
                                 </tr>
                             </tbody>
@@ -424,7 +434,7 @@ const Table = () => {
                 </div >
             </div >
 
-            <PieChart airPercentage={airTotal} geyserPercentage={geyserTotal} washingPercentage={washingTotal} ovenPercentage={ovenTotal} fridgePercentage={fridgeTotal} />
+            <PieChart airPercentage={airTotal} geyserPercentage={geyserTotal} washingPercentage={washingTotal} ovenPercentage={ovenTotal} fridgePercentage={fridgeTotal} lightPercentage={lightsTotal} />
         </div>
     );
 };
