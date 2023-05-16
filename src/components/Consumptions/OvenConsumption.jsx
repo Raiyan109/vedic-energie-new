@@ -1,6 +1,6 @@
 import React from 'react';
-import { MicroWaveWattRanges } from '../../constants';
 import styled from 'styled-components';
+import { MicrowaveConsTimes } from '../../constants';
 
 const Section = styled.div`
 select {
@@ -27,18 +27,18 @@ select {
     border-bottom: 1px solid #FEFFCD;
  }
 `
-const MicroWaveInput = ({ ovenSelectedWattage, isMicroWaveOn, handleWattageSelect }) => {
+const OvenConsumption = ({ ovenSelectedConsumptionTime, isMicroWaveOn, handleConsumptionTimeSelect }) => {
     return (
         <>
             <Section>
-                <select name="watt" id="watt"
-                    value={ovenSelectedWattage}
+                <select name="watt" id="watt" value={ovenSelectedConsumptionTime}
                     disabled={!isMicroWaveOn}
-                    onChange={handleWattageSelect}
-                    className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                    onChange={handleConsumptionTimeSelect}
+                    className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+
                     {
-                        MicroWaveWattRanges.map((range, idx) => (
-                            <option value={range.range}>{range.range}</option>
+                        MicrowaveConsTimes.map((range, idx) => (
+                            <option value={range.range}>{range.name}</option>
                         ))
                     }
                 </select>
@@ -47,4 +47,4 @@ const MicroWaveInput = ({ ovenSelectedWattage, isMicroWaveOn, handleWattageSelec
     );
 };
 
-export default MicroWaveInput;
+export default OvenConsumption;

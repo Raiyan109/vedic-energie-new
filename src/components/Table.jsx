@@ -17,6 +17,7 @@ import styled from 'styled-components';
 import GeyserConsumption from './Consumptions/GeyserConsumption';
 import WashingConsumption from './Consumptions/WashingConsumption';
 import PieChart from './PieChart';
+import OvenConsumption from './Consumptions/OvenConsumption';
 
 const Table = () => {
     // const [selectedItem, setSelectedItem] = useState(0)
@@ -38,11 +39,21 @@ const Table = () => {
     const [geyserSelectedConsumptionTime, setGeyserSelectedConsumptionTime] = useState('')
     const [washingSelectedWattage, setWashingSelectedWattage] = useState('')
     const [washingSelectedConsumptionTime, setWashingSelectedConsumptionTime] = useState('')
+    const [ovenSelectedWattage, setOvenSelectedWattage] = useState("");
+    const [ovenSelectedConsumptionTime, setOvenSelectedConsumptionTime] = useState("");
+    const [fridgeSelectedWattage, setFridgeSelectedWattage] = useState("");
+    const [fridgeSelectedConsumptionTime, setFridgeSelectedConsumptionTime] = useState("");
+    const [lightSelectedWattage, setLightSelectedWattage] = useState("");
+    const [lightSelectedConsumptionTime, setLightSelectedConsumptionTime] = useState("");
 
     // State variables for total sum
     const [airTotal, setAirTotal] = useState(0);
     const [geyserTotal, setGeyserTotal] = useState(0);
     const [washingTotal, setWashingTotal] = useState(0)
+    const [ovenTotal, setOvenTotal] = useState(0)
+    const [fridgeTotal, setFridgeTotal] = useState(0)
+    const [lightsTotal, setLightsTotal] = useState(0)
+    const [heaterTotal, setHeaterTotal] = useState(0)
 
 
     const handleSummerClick = () => {
@@ -94,9 +105,23 @@ const Table = () => {
         console.log(washingTotal);
     }, [washingSelectedWattage, washingSelectedConsumptionTime]);
 
+    useEffect(() => {
+        setOvenTotal(+ovenSelectedWattage * +ovenSelectedConsumptionTime);
+        console.log(ovenTotal);
+    }, [ovenSelectedWattage, ovenSelectedConsumptionTime]);
+
+    useEffect(() => {
+        setFridgeTotal(+fridgeSelectedWattage * +fridgeSelectedConsumptionTime);
+        console.log(fridgeTotal);
+    }, [fridgeSelectedWattage, fridgeSelectedConsumptionTime]);
+
+    useEffect(() => {
+        setLightsTotal(+lightSelectedWattage * +lightSelectedConsumptionTime);
+        console.log(lightsTotal);
+    }, [lightSelectedWattage, lightSelectedConsumptionTime]);
+
     const handleACWattageSelect = (event) => {
         setACSelectedWattage(event.target.value);
-
     };
 
     const handleGeyserWattageSelect = (event) => {
@@ -106,6 +131,18 @@ const Table = () => {
     const handleWashingWattageSelect = (event) => {
         setWashingSelectedWattage(event.target.value)
     }
+
+    const handleOvenWattageSelect = (event) => {
+        setOvenSelectedWattage(event.target.value);
+    };
+
+    const handleFridgeWattageSelect = (event) => {
+        setFridgeSelectedWattage(event.target.value);
+    };
+
+    const handleLightWattageSelect = (event) => {
+        setLightSelectedWattage(event.target.value);
+    };
 
     const handleACConsumptionTimeSelect = (event) => {
         setACSelectedConsumptionTime(event.target.value);
@@ -117,6 +154,18 @@ const Table = () => {
 
     const handleWashingConsumptionTimeSelect = (event) => {
         setWashingSelectedConsumptionTime(event.target.value);
+    };
+
+    const handleOvenConsumptionTimeSelect = (event) => {
+        setOvenSelectedConsumptionTime(event.target.value);
+    };
+
+    const handleFridgeConsumptionTimeSelect = (event) => {
+        setFridgeSelectedConsumptionTime(event.target.value);
+    };
+
+    const handleLightConsumptionTimeSelect = (event) => {
+        setLightSelectedConsumptionTime(event.target.value);
     };
 
 
@@ -287,10 +336,19 @@ const Table = () => {
                                         </label>
                                     </td>
                                     <td>
-                                        <MicroWaveInput />
+                                        <MicroWaveInput
+                                            ovenSelectedWattage={ovenSelectedWattage}
+
+                                            isMicroWaveOn={isMicroWaveOn}
+                                            handleWattageSelect={handleOvenWattageSelect}
+                                        />
                                     </td>
                                     <td>
-                                        <GeyserConsumption />
+                                        <OvenConsumption
+                                            ovenSelectedConsumptionTime={ovenSelectedConsumptionTime}
+                                            isMicroWaveOn={isMicroWaveOn}
+                                            handleConsumptionTimeSelect={handleOvenConsumptionTimeSelect}
+                                        />
                                     </td>
                                     <td>
                                         <Assumptions />
