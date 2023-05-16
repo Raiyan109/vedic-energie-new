@@ -458,6 +458,22 @@ export const WashingMachineConsTimes = [
     },
 ]
 
+export const FridgeConsTimes = [
+    { "range": 12, "name": '12 Hours' },
+    { "range": 13, "name": '13 Hours' },
+    { "range": 14, "name": '14 Hours' },
+    { "range": 15, "name": '15 Hours' },
+    { "range": 16, "name": '16 Hours' },
+    { "range": 17, "name": '17 Hours' },
+    { "range": 18, "name": '18 Hours' },
+    { "range": 19, "name": '19 Hours' },
+    { "range": 20, "name": '20 Hours' },
+    { "range": 21, "name": '21 Hours' },
+    { "range": 22, "name": '22 Hours' },
+    { "range": 23, "name": '23 Hours' },
+    { "range": 24, "name": '24 Hours' }
+]
+
 export const perCapitaEnergyConsumptionData = [
     {
         "name": "ANDAMAN & NICOBAR ISLANDS", "data": 367.3948635

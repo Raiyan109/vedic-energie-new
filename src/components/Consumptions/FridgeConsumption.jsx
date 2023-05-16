@@ -1,6 +1,6 @@
 import React from 'react';
-import { FridgeWattRanges } from '../../constants';
 import styled from 'styled-components';
+import { FridgeConsTimes } from '../../constants';
 
 const Section = styled.div`
 select {
@@ -27,17 +27,18 @@ select {
     border-bottom: 1px solid #FEFFCD;
  }
 `
-const FridgeInput = ({ fridgeSelectedWattage, isFridgeOn, handleWattageSelect }) => {
+const FridgeConsumption = ({ fridgeSelectedConsumptionTime, isFridgeOn, handleConsumptionTimeSelect }) => {
     return (
         <>
             <Section>
-                <select name="watt" id="watt" value={fridgeSelectedWattage}
+                <select name="watt" id="watt" value={fridgeSelectedConsumptionTime}
                     disabled={!isFridgeOn}
-                    onChange={handleWattageSelect}
-                    className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                    onChange={handleConsumptionTimeSelect}
+                    className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+
                     {
-                        FridgeWattRanges.map((range, idx) => (
-                            <option value={range.range}>{range.range}</option>
+                        FridgeConsTimes.map((range, idx) => (
+                            <option value={range.range}>{range.name}</option>
                         ))
                     }
                 </select>
@@ -46,4 +47,4 @@ const FridgeInput = ({ fridgeSelectedWattage, isFridgeOn, handleWattageSelect })
     );
 };
 
-export default FridgeInput;
+export default FridgeConsumption;

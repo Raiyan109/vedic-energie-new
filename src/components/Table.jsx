@@ -18,6 +18,7 @@ import GeyserConsumption from './Consumptions/GeyserConsumption';
 import WashingConsumption from './Consumptions/WashingConsumption';
 import PieChart from './PieChart';
 import OvenConsumption from './Consumptions/OvenConsumption';
+import FridgeConsumption from './Consumptions/FridgeConsumption';
 
 const Table = () => {
     // const [selectedItem, setSelectedItem] = useState(0)
@@ -352,6 +353,7 @@ const Table = () => {
                                     </td>
                                     <td>
                                         <Assumptions />
+                                        Oven Total: {isMicroWaveOn ? ovenTotal : ""}
                                     </td>
                                 </tr>
 
@@ -369,13 +371,23 @@ const Table = () => {
                                         </label>
                                     </td>
                                     <td>
-                                        <FridgeInput />
+                                        <FridgeInput
+                                            fridgeSelectedWattage={fridgeSelectedWattage}
+
+                                            isFridgeOn={isFridgeOn}
+                                            handleWattageSelect={handleFridgeWattageSelect}
+                                        />
                                     </td>
                                     <td>
-                                        <GeyserConsumption />
+                                        <FridgeConsumption
+                                            fridgeSelectedConsumptionTime={fridgeSelectedConsumptionTime}
+                                            isFridgeOn={isFridgeOn}
+                                            handleConsumptionTimeSelect={handleFridgeConsumptionTimeSelect}
+                                        />
                                     </td>
                                     <td>
                                         <Assumptions />
+                                        Fridge Total: {isFridgeOn ? fridgeTotal : ""}
                                     </td>
                                 </tr>
 
@@ -412,7 +424,7 @@ const Table = () => {
                 </div >
             </div >
 
-            <PieChart airPercentage={airTotal} geyserPercentage={geyserTotal} washingPercentage={washingTotal} />
+            <PieChart airPercentage={airTotal} geyserPercentage={geyserTotal} washingPercentage={washingTotal} ovenPercentage={ovenTotal} fridgePercentage={fridgeTotal} />
         </div>
     );
 };
