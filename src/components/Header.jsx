@@ -1,14 +1,51 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Link, NavLink } from 'react-router-dom';
 import GetAQuote from './GetAQuote';
 import logo from '../assets/homelogo.png';
-
+// import { HashLink as NavLink } from 'react-router-hash-link';
+import './style.css'
 import styles from './style.module.css'
 
 const Header = () => {
     const [menu, setMenu] = useState(false)
     const [color, setColor] = useState(false)
+    const [activeLink, setActiveLink] = useState("");
+
+    const handleClick = (event, targetSection) => {
+        event.preventDefault();
+        const section = document.getElementById(targetSection);
+        window.scrollTo({
+            top: section.offsetTop,
+            behavior: 'smooth'
+        });
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const section1 = document.getElementById('banner');
+            const section2 = document.getElementById('efficient');
+            const section3 = document.getElementById('energyRes');
+            const section4 = document.getElementById('article');
+
+            if (window.pageYOffset >= section1.offsetTop && window.pageYOffset < section2.offsetTop) {
+                setActiveLink('banner');
+            } else if (window.pageYOffset >= section2.offsetTop && window.pageYOffset < section3.offsetTop) {
+                setActiveLink('efficient');
+            } else if (window.pageYOffset >= section3.offsetTop && window.pageYOffset < section4.offsetTop) {
+                setActiveLink('energyRes');
+            } else if (window.pageYOffset >= section4.offsetTop) {
+                setActiveLink('article')
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
     const changeColor = () => {
         if (window.scrollY >= 100) {
@@ -55,7 +92,21 @@ const Header = () => {
 
 
 
-                            <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
+                            <li className={activeLink === 'banner' ? 'active' : ''}>
+                                <a href="#banner" onClick={(e) => handleClick(e, 'banner')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Home</a>
+                            </li>
+                            <li className={activeLink === 'efficient' ? 'active' : ''}>
+                                <a href="#efficient" onClick={(e) => handleClick(e, 'efficient')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>About Us</a>
+                            </li>
+                            <li className={activeLink === 'energyRes' ? 'active' : ''}>
+                                <a href="#energyRes" onClick={(e) => handleClick(e, 'energyRes')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Services</a>
+                            </li>
+                            <li className={activeLink === 'article' ? 'active' : ''}>
+                                <a href="#article" onClick={(e) => handleClick(e, 'article')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Blog</a>
+                            </li>
+
+                            {/*  */}
+                            {/* <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
                                 <NavLink
                                     to="/about"
                                     className={styles.navLink}
@@ -69,6 +120,7 @@ const Header = () => {
                                     About us
                                 </NavLink>
                             </li>
+
                             <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
                                 <NavLink
                                     to="/services"
@@ -111,8 +163,8 @@ const Header = () => {
                                 >
                                     Contact
                                 </NavLink>
-                            </li>
-                            <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
+                            </li> */}
+                            <li className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
                                 <NavLink
                                     to="/energyCalc"
                                     className={styles.navLink}

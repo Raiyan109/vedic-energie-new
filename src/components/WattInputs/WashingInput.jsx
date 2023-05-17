@@ -27,15 +27,19 @@ select {
     border-bottom: 1px solid #FEFFCD;
  }
 `
-const WashingInput = () => {
+const WashingInput = ({ washingSelectedWattage, isWashingOn, handleWattageSelect }) => {
     return (
         <>
             <Section>
-                <select name="watt" id="watt" value='Watt' className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                <select name="watt" id="watt"
+                    value={washingSelectedWattage}
+                    disabled={!isWashingOn}
+                    onChange={handleWattageSelect}
+                    className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
 
                     {
                         WashingWattRanges.map((range, idx) => (
-                            <option value={range.range}>{range.range}</option>
+                            <option value={range.range} key={idx}>{range.range}</option>
                         ))
                     }
                 </select>

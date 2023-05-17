@@ -7,7 +7,7 @@ import Calculation from '../components/Calculation';
 import { useCalc } from '../context/CalcProvider';
 import Table from '../components/Table';
 import { actionTypes } from '../state/CalcState/actionTypes';
-import Piechart from '../components/Piechart';
+import Piechart from '../components/PieChart';
 import Tipscategory from '../components/Tipscategory';
 import SpeedOMeter from '../components/SpeedOMeter';
 import Meter from '../components/Meter';
@@ -45,11 +45,13 @@ const EnergyCalculation = () => {
                             <p className="mt-6 mb-8 text-lg sm:mb-12">You can have an estimate about your energy bills according to your usage
                             </p>
 
-                            <button
-                                onClick={() =>
-                                    dispatch({ type: actionTypes.GO_TO_CALC, })
-                                }
-                                className='w-[137px] h-[50px] bg-orange rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-lightYellow hover:text-orange hover:transition-all'>Calculate</button>
+                            <div>
+                                <button
+                                    onClick={() =>
+                                        dispatch({ type: actionTypes.GO_TO_CALC, })
+                                    }
+                                    className='w-[137px] h-[50px] bg-orange rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-lightYellow hover:text-orange hover:transition-all'>Calculate</button>
+                            </div>
                             {/* <CalculateButton /> */}
                         </div>
                         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
@@ -64,12 +66,12 @@ const EnergyCalculation = () => {
                 <Calculation />
             </div>
             {/* <Meter /> */}
-            <SpeedOMeter />
+            {/* <SpeedOMeter /> */}
             <Table />
-            <Piechart />
+            {/* <Piechart /> */}
             <Tipscategory />
             <Footer />
-        </Section>
+        </Section >
     );
 };
 

@@ -2,8 +2,7 @@ import React from 'react';
 import { BsQuestionLg } from 'react-icons/bs'
 import styled from 'styled-components';
 
-const Assumptions = () => {
-  const Section = styled.div`
+const Section = styled.div`
     .tooltip {
         position: relative;
       }
@@ -42,6 +41,9 @@ const Assumptions = () => {
         opacity: 1;
       }
     `
+
+const Assumptions = () => {
+
   return (
     <Section>
       <div className='flex justify-start items-center'>

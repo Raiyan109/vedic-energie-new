@@ -15,7 +15,7 @@ const Upcoming = () => {
     return (
         <Section>
 
-            <div id="services" className='bg-center bg-no-repeat lg:p-8 py-12'>
+            <div id="upcoming" className='bg-center bg-no-repeat lg:p-8 py-12'>
 
                 <div className='text-center lg:text-2xl text-xl font-bold'>Upcoming Launch</div>
                 <section className="lg:p-36 md:p-32 py-20 p-1">

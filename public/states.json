@@ -26,6 +26,13 @@
                 "city_name": "Port Blair",
                 "state_id": "1"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "1",
+                "data": "367.3948635",
+                "state_id": "1"
+            }
         ]
     },
     {
@@ -113,6 +120,13 @@
             {
                 "city_id": "4",
                 "city_name": "Amaravati",
+                "state_id": "2"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "2",
+                "data": "328.8017687",
                 "state_id": "2"
             }
         ]
@@ -212,6 +226,13 @@
             {
                 "city_id": "5",
                 "city_name": "Itanagar",
+                "state_id": "3"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "3",
+                "data": "120.9100817",
                 "state_id": "3"
             }
         ]
@@ -363,6 +384,13 @@
                 "city_name": "Dispur",
                 "state_id": "4"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "4",
+                "data": "105.9831799",
+                "state_id": "4"
+            }
         ]
     },
     {
@@ -380,6 +408,13 @@
             {
                 "city_id": "7",
                 "city_name": "Chandigarh",
+                "state_id": "5"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "5",
+                "data": "564.5855402",
                 "state_id": "5"
             }
         ]
@@ -586,6 +621,13 @@
                 "city_name": "Patna",
                 "state_id": "6"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "6",
+                "data": "118.696485",
+                "state_id": "6"
+            }
         ]
     },
     {
@@ -735,6 +777,13 @@
                 "city_name": "Raipur",
                 "state_id": "7"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "213.6288618",
+                "state_id": "7"
+            }
         ]
     },
     {
@@ -752,6 +801,13 @@
             {
                 "city_id": "10",
                 "city_name": "Daman & Diu",
+                "state_id": "8"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "227.6468725",
                 "state_id": "8"
             }
         ]
@@ -778,6 +834,13 @@
                 "city_name": "Daman & Diu",
                 "state_id": "9"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "227.6468725",
+                "state_id": "9"
+            }
         ]
     },
     {
@@ -800,6 +863,13 @@
             {
                 "city_id": "11",
                 "city_name": "Panji",
+                "state_id": "10"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "803.6070406",
                 "state_id": "10"
             }
         ]
@@ -1001,6 +1071,13 @@
                 "city_name": "Gandhinagar",
                 "state_id": "11"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "230.8895989",
+                "state_id": "11"
+            }
         ]
     },
     {
@@ -1120,6 +1197,13 @@
                 "city_name": "Faridabad",
                 "state_id": "12"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "396.2473579",
+                "state_id": "12"
+            }
         ]
     },
     {
@@ -1192,6 +1276,13 @@
             {
                 "city_id": "18",
                 "city_name": "Shimla",
+                "state_id": "13"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "315.5510177",
                 "state_id": "13"
             }
         ]
@@ -1321,6 +1412,13 @@
             {
                 "city_id": "20",
                 "city_name": "Jammu",
+                "state_id": "14"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "351.5578652",
                 "state_id": "14"
             }
         ]
@@ -1465,6 +1563,13 @@
             {
                 "city_id": "22",
                 "city_name": "Ranchi",
+                "state_id": "15"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "164.0695139",
                 "state_id": "15"
             }
         ]
@@ -1631,6 +1736,13 @@
                 "city_name": "Bangalore",
                 "state_id": "16"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "231.4683404",
+                "state_id": "16"
+            }
         ]
     },
     {
@@ -1715,6 +1827,13 @@
                 "city_name": "Thiruvananthapuram",
                 "state_id": "17"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "356.8132333",
+                "state_id": "17"
+            }
         ]
     },
     {
@@ -1732,6 +1851,13 @@
             {
                 "city_id": "25",
                 "city_name": "Kavaratti",
+                "state_id": "18"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "584.7475217",
                 "state_id": "18"
             }
         ]
@@ -2018,6 +2144,13 @@
                 "city_name": "Jabalpur",
                 "state_id": "19"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "193.9362348",
+                "state_id": "19"
+            }
         ]
     },
     {
@@ -2252,6 +2385,13 @@
                 "city_name": "Navi Mumbai",
                 "state_id": "20"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "238.8970754",
+                "state_id": "20"
+            }
         ]
     },
     {
@@ -2309,6 +2449,13 @@
             {
                 "city_id": "40",
                 "city_name": "Imphal",
+                "state_id": "21"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "133.1151101",
                 "state_id": "21"
             }
         ]
@@ -2380,6 +2527,13 @@
                 "city_name": "Shilong",
                 "state_id": "22"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "149.3007878",
+                "state_id": "22"
+            }
         ]
     },
     {
@@ -2432,6 +2586,13 @@
             {
                 "city_id": "42",
                 "city_name": "Aizawl",
+                "state_id": "23"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "223.1352359",
                 "state_id": "23"
             }
         ]
@@ -2503,6 +2664,13 @@
                 "city_name": "Kohima",
                 "state_id": "24"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "174.6663681",
+                "state_id": "24"
+            }
         ]
     },
     {
@@ -2570,6 +2738,13 @@
             {
                 "city_id": "44",
                 "city_name": "Delhi",
+                "state_id": "25"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "769.6764012",
                 "state_id": "25"
             }
         ]
@@ -2736,6 +2911,13 @@
                 "city_name": "Bhubaneswar",
                 "state_id": "26"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "181.9562597",
+                "state_id": "26"
+            }
         ]
     },
     {
@@ -2768,6 +2950,13 @@
             {
                 "city_id": "46",
                 "city_name": "Pondicherry",
+                "state_id": "27"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "511.8043742",
                 "state_id": "27"
             }
         ]
@@ -2897,6 +3086,13 @@
             {
                 "city_id": "48",
                 "city_name": "Amritsar",
+                "state_id": "28"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "498.6657989",
                 "state_id": "28"
             }
         ]
@@ -3088,6 +3284,13 @@
                 "city_name": "Kota[6]",
                 "state_id": "29"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "175.969487",
+                "state_id": "29"
+            }
         ]
     },
     {
@@ -3120,6 +3323,13 @@
             {
                 "city_id": "52",
                 "city_name": "Gangtok",
+                "state_id": "30"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "167.4600871",
                 "state_id": "30"
             }
         ]
@@ -3306,6 +3516,13 @@
                 "city_name": "Madurai",
                 "state_id": "31"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "425.7338017",
+                "state_id": "31"
+            }
         ]
     },
     {
@@ -3370,6 +3587,13 @@
                 "city_name": "Hyderabad",
                 "state_id": "32"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "336.2290976",
+                "state_id": "32"
+            }
         ]
     },
     {
@@ -3422,6 +3646,13 @@
             {
                 "city_id": "57",
                 "city_name": "Agartala",
+                "state_id": "33"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "141.8425359",
                 "state_id": "33"
             }
         ]
@@ -3843,6 +4074,13 @@
                 "city_name": "Prayagraj",
                 "state_id": "34"
             }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "186.49766",
+                "state_id": "34"
+            }
         ]
     },
     {
@@ -3920,6 +4158,13 @@
             {
                 "city_id": "65",
                 "city_name": "Dehradun",
+                "state_id": "35"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "275.6128816",
                 "state_id": "35"
             }
         ]
@@ -4034,6 +4279,13 @@
             {
                 "city_id": "67",
                 "city_name": "Howrah",
+                "state_id": "36"
+            }
+        ],
+        "energyData": [
+            {
+                "data_id": "7",
+                "data": "176.9817362",
                 "state_id": "36"
             }
         ]

@@ -82,8 +82,8 @@ const CustomMachines = () => {
             {/*  */}
 
             <div>
-                <div class="">
-                    <select value='Others' class="text-lg font-bold rounded  text-gray-600 h-14 w-60 pl-5 pr-10 bg-gray  focus:outline-none focus:border-none appearance-none border-none ">
+                <div className="">
+                    <select value='Others' className="text-lg font-bold rounded  text-gray-600 h-14 w-60 pl-5 pr-10 bg-gray  focus:outline-none focus:border-none appearance-none border-none ">
                         <option>Heater</option>
                         <option>Cooler</option>
                         <option>Fans</option>

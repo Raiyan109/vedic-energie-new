@@ -1,6 +1,6 @@
 import React from 'react';
-import { AirConWattRanges } from '../../constants';
 import styled from 'styled-components';
+import { GeyserConsTimes } from '../../constants';
 
 const Section = styled.div`
 select {
@@ -28,15 +28,18 @@ select {
  }
 `
 
-const WattInput = () => {
+const GeyserConsumption = ({ geyserSelectedConsumptionTime, isGeyserOn, handleConsumptionTimeSelect }) => {
     return (
         <>
             <Section>
-                <select name="watt" id="watt" defaultValue='Watt' className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                <select name="watt" id="watt" value={geyserSelectedConsumptionTime}
+                    disabled={!isGeyserOn}
+                    onChange={handleConsumptionTimeSelect}
+                    className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
 
                     {
-                        AirConWattRanges.map((range, idx) => (
-                            <option value={range.range}>{range.range}</option>
+                        GeyserConsTimes.map((range, idx) => (
+                            <option value={range.range}>{range.name}</option>
                         ))
                     }
                 </select>
@@ -45,4 +48,4 @@ const WattInput = () => {
     );
 };
 
-export default WattInput;
+export default GeyserConsumption;

@@ -27,11 +27,14 @@ select {
     border-bottom: 1px solid #FEFFCD;
  }
 `
-const FridgeInput = () => {
+const FridgeInput = ({ fridgeSelectedWattage, isFridgeOn, handleWattageSelect }) => {
     return (
         <>
             <Section>
-                <select name="watt" id="watt" value='Watt' className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
+                <select name="watt" id="watt" value={fridgeSelectedWattage}
+                    disabled={!isFridgeOn}
+                    onChange={handleWattageSelect}
+                    className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
                     {
                         FridgeWattRanges.map((range, idx) => (
                             <option value={range.range}>{range.range}</option>
