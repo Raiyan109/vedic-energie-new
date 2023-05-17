@@ -16,7 +16,7 @@ import LightsInput from './WattInputs/LightsInput';
 import styled from 'styled-components';
 import GeyserConsumption from './Consumptions/GeyserConsumption';
 import WashingConsumption from './Consumptions/WashingConsumption';
-import PieChart from './Piechart';
+import PieChart from './PieChart';
 import OvenConsumption from './Consumptions/OvenConsumption';
 import FridgeConsumption from './Consumptions/FridgeConsumption';
 import LightConsumption from './Consumptions/LightConsumption';
