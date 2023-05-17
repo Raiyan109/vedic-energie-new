@@ -9,7 +9,8 @@ import SpeedOMeter from './SpeedOMeter';
 import Meter from './Meter';
 import UserMeter from './UserMeter';
 import bg from '../assets/ellipse.png'
-import Gauge from './Gauge';
+import UserGauge from './UserGauge';
+import CapitaGauge from './CapitaGauge';
 
 const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
@@ -185,19 +186,19 @@ const Calculation = () => {
                 </div>
             </section>
 
-            <div className='box'>
+            <div className='box h-auto'>
                 <div className='flex justify-center items-center py-14'>
                     <h1 className='underline text-4xl text-indigo font-bold lg:max-w-none max-w-lg text-center'>Per Capita Energy Consumption
                         W.R.T State</h1>
                 </div>
 
-                <div className='lg:flex md:flex justify-center items-center grid grid-cols-1'>
-                    <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} />
+                <div className='lg:flex md:grid md:grid-cols-1 justify-center items-center grid grid-cols-1'>
+                    {/* <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} /> */}
 
-                    <UserMeter userData={result} key={result} />
-
+                    <CapitaGauge conData={avgConsumptionData} />
+                    <UserGauge userData={result} key={result} />
                 </div>
-                <Gauge userData={result} key={result} />
+
             </div>
 
 
@@ -237,10 +238,9 @@ select {
  }
  .box{
     background-image: url(${bg});
-
-background-repeat: no-repeat;
-background-size: cover; 
-background-position: center; 
-  
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    
  }
 `
