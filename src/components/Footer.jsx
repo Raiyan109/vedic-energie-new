@@ -121,7 +121,7 @@ const Footer = () => {
                         </div>
                         <div className="lg:w-1/4 md:w-1/2 w-full px-4 lg:ml-20 ml-0 flex lg:flex-row flex-col lg:justify-between lg:items-end justify-center items-center gap-x-20">
                             <div className="text-center">
-                                <h2 className="title-font font-medium text-green underline tracking-widest text-md uppercase mb-3 lg:ml-5 ml-0">Contact</h2>
+                                <h2 className="title-font font-medium text-green underline tracking-widest text-md uppercase mb-3 lg:ml-5 ml-0 lg:mt-0 mt-12">Contact</h2>
 
                                 <ul className="mt-8 space-y-4 text-sm">
                                     <li>

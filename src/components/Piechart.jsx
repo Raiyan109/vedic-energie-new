@@ -16,8 +16,6 @@ background-position: center;
 `
 
 export default function PieChart({ airPercentage, geyserPercentage, washingPercentage, ovenPercentage, fridgePercentage, lightPercentage }) {
-  console.log(airPercentage, geyserPercentage, washingPercentage);
-
 
   const data = {
     labels: ['Air Conditioner', 'Geyser', 'Washing Machine', 'Oven', 'Fridge', 'Lights'],
