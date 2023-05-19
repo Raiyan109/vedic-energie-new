@@ -16,7 +16,7 @@ const UserGauge = ({ userData }) => {
     return (
         <div className='relative'>
             <div className='flex justify-center items-center py-4'>
-                <h1 className='text-xl text-orange font-bold lg:max-w-none max-w-sm text-center'>User's Consumption Data</h1>
+                <h1 className='lg:text-2xl md:text-2xl text-xl text-orange font-bold lg:max-w-none max-w-sm text-center'>User's Consumption Data</h1>
             </div>
             <GaugeChart
                 id="gauge-chart1"

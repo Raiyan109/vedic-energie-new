@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GaugeChart from 'react-gauge-chart';
 
 const CapitaGauge = ({ conData }) => {
@@ -8,14 +8,14 @@ const CapitaGauge = ({ conData }) => {
     const outputMin = 0;
     const outputMax = 1;
 
-    const data = conData.data; // replace with your data
+    const data = conData.data ? conData.data : 100 // replace with your data
     console.log(data);
     const value = (data - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin;
 
     return (
         <div>
             <div className='flex justify-center items-center py-4'>
-                <h1 className='text-xl text-orange font-bold lg:max-w-none max-w-sm text-center'>Per Capita Consumption Data</h1>
+                <h1 className='lg:text-2xl md:text-2xl text-xl text-orange font-bold lg:max-w-none max-w-sm text-center'>Per Capita Consumption Data</h1>
             </div>
             <GaugeChart
                 id="gauge-chart1"
