@@ -254,7 +254,7 @@ const Table = () => {
                                         </td>
                                         <td>
                                             <Assumptions />
-                                            AC Total: {isAirConditionerOn ? airTotal : ""}
+                                            AC Total: {isAirConditionerOn ? airTotal.toFixed(2) : ""}
                                         </td>
                                     </tr>
 
@@ -288,7 +288,7 @@ const Table = () => {
                                         </td>
                                         <td>
                                             <Assumptions />
-                                            Geyser Total: {isGeyserOn ? geyserTotal : ""}
+                                            Geyser Total: {isGeyserOn ? geyserTotal.toFixed(2) : ""}
                                         </td>
                                     </tr>
                                     {/* Washing Machine */}
@@ -321,7 +321,7 @@ const Table = () => {
                                         </td>
                                         <td>
                                             <Assumptions />
-                                            Washing Total: {isWashingOn ? washingTotal : ""}
+                                            Washing Total: {isWashingOn ? washingTotal.toFixed(2) : ""}
                                         </td>
                                     </tr>
 
@@ -355,7 +355,7 @@ const Table = () => {
                                         </td>
                                         <td>
                                             <Assumptions />
-                                            Oven Total: {isMicroWaveOn ? ovenTotal : ""}
+                                            Oven Total: {isMicroWaveOn ? ovenTotal.toFixed(2) : ""}
                                         </td>
                                     </tr>
 
@@ -389,7 +389,7 @@ const Table = () => {
                                         </td>
                                         <td>
                                             <Assumptions />
-                                            Fridge Total: {isFridgeOn ? fridgeTotal : ""}
+                                            Fridge Total: {isFridgeOn ? fridgeTotal.toFixed(2) : ""}
                                         </td>
                                     </tr>
 
@@ -423,7 +423,7 @@ const Table = () => {
                                         </td>
                                         <td>
                                             <Assumptions />
-                                            Light Total: {isLightsOn ? lightsTotal : ""}
+                                            Light Total: {isLightsOn ? lightsTotal.toFixed(2) : ""}
                                         </td>
                                     </tr>
                                 </tbody>

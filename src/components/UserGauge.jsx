@@ -24,7 +24,7 @@ const UserGauge = ({ userData }) => {
                 percent={percent}
                 needleColor='green'
                 needleBaseColor='green'
-            // hideText={true}
+                hideText={true}
             />
             {/* <h1 className='absolute lg:bottom-[-70px] lg:left-[380px] md:bottom-30 md:left-28 bottom-28 left-52 lg:text-6xl md:text-1xl text-md text-green'>{text}</h1> */}
         </div>

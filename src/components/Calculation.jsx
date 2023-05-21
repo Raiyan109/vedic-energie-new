@@ -186,7 +186,7 @@ const Calculation = () => {
                 </div>
             </section>
 
-            <div className='box h-auto'>
+            <div className='box h-auto p-10'>
                 <div className='flex justify-center items-center py-14'>
                     <h1 className='underline text-4xl text-indigo font-bold lg:max-w-none max-w-lg text-center'>Per Capita Energy Consumption
                         W.R.T State</h1>
@@ -195,8 +195,26 @@ const Calculation = () => {
                 <div className='lg:flex md:grid md:grid-cols-1 justify-center items-center grid grid-cols-1'>
                     {/* <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} /> */}
 
-                    <CapitaGauge conData={avgConsumptionData} />
+                    {/* <CapitaGauge conData={avgConsumptionData} /> */}
                     <UserGauge userData={result} key={result} />
+
+                    <div className='flex justify-center items-center'>
+
+                        <div className='max-w-md
+                            rounded-2xl
+                            text-[#1A2421]
+                            backdrop-blur-lg
+                            [ p-2 md:p-10 lg:p-10 ]
+                            [ bg-gradient-to-b from-white/60 to-white/30 ]
+                            [ border-[1px] border-solid border-white border-opacity-30 ]
+                            [ shadow-black/70 shadow-2xl ] mt-10'>
+                            <h1 className='text-xl font-semibold text-lightgreen text-center uppercase mb-10'>Consumption Data</h1>
+                            <p className='mb-6'>Per Capita User Consumption : <span className='text-orange font-bold'>
+                                {avgConsumptionData.data}</span></p>
+                            <p className=''>Your Consumption data : <span className='text-orange font-bold'>
+                                {result}</span></p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
