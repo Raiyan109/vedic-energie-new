@@ -209,7 +209,7 @@ const Calculation = () => {
                             [ border-[1px] border-solid border-white border-opacity-30 ]
                             [ shadow-black/70 shadow-2xl ] mt-10'>
                             <h1 className='text-xl font-semibold text-lightgreen text-center uppercase mb-10'>Consumption Data</h1>
-                            <p className='mb-6'>Per Capita User Consumption : <span className='text-orange font-bold'>
+                            <p className='mb-6'>Per Capita Consumption data : <span className='text-orange font-bold'>
                                 {avgConsumptionData.data}</span></p>
                             <p className=''>Your Consumption data : <span className='text-orange font-bold'>
                                 {result}</span></p>
