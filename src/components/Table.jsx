@@ -32,6 +32,11 @@ const Table = () => {
     const [isFridgeOn, setIsFridgeOn] = useState(false)
     const [isLightsOn, setIsLightsOn] = useState(false)
     const [isHeaterOn, setIsHeaterOn] = useState(false)
+    const [showPieChart, setShowPieChart] = useState(false);
+
+    const handleFinalCalculateClick = () => {
+        setShowPieChart(true);
+    };
 
 
     // Watt and Consumption calculation states
@@ -291,6 +296,7 @@ const Table = () => {
                                             Geyser Total: {isGeyserOn ? geyserTotal.toFixed(2) : ""}
                                         </td>
                                     </tr>
+
                                     {/* Washing Machine */}
                                     <tr className='odd:bg-gray even:bg-lightGray'>
                                         <td className="pr-6 pl-5 py-6  whitespace-nowrap font-semibold">Washing Machine</td>
@@ -430,13 +436,22 @@ const Table = () => {
                             </table >
                         </div>
                         <div className='py-20 flex justify-center items-center'>
-                            <FinalCalculate />
+                            <FinalCalculate handleClick={handleFinalCalculateClick} />
                         </div>
                     </div >
                 </div >
             </div >
 
-            <PieChart airPercentage={airTotal} geyserPercentage={geyserTotal} washingPercentage={washingTotal} ovenPercentage={ovenTotal} fridgePercentage={fridgeTotal} lightPercentage={lightsTotal} />
+            {showPieChart && (
+                <PieChart
+                    airPercentage={airTotal}
+                    geyserPercentage={geyserTotal}
+                    washingPercentage={washingTotal}
+                    ovenPercentage={ovenTotal}
+                    fridgePercentage={fridgeTotal}
+                    lightPercentage={lightsTotal}
+                />
+            )}
         </div>
     );
 };

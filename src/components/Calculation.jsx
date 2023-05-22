@@ -15,7 +15,7 @@ import CapitaGauge from './CapitaGauge';
 const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
     const [unitRangeValue, setUnitRangeValue] = useState(100)
-    const [result, setResult] = useState(240);
+    const [result, setResult] = useState(0);
     const [statesId, setStatesId] = useState('')
     // const [district, setDistrict] = useState([])
     const [city, setCity] = useState([])
@@ -197,7 +197,9 @@ const Calculation = () => {
                     {/* <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} /> */}
 
                     {/* <CapitaGauge conData={avgConsumptionData} /> */}
-                    <UserGauge userData={result} key={result} />
+                    {/* <UserGauge userData={result} key={result} /> */}
+
+                    <SpeedOMeter userData={result} key={result} />
 
                     <div className='flex justify-center items-center'>
 
