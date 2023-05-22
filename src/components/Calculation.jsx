@@ -58,6 +58,7 @@ const Calculation = () => {
 
         const getAvgEnergyData = statesData.find(state => state.state_id === getStateId)?.energyData
         setAvgConsumptionData(getAvgEnergyData[0])
+        console.log(avgConsumptionData);
         setStatesId(getStateId)
         setSelectedEnergyData(null); // set selected energy data to null
     }
@@ -200,14 +201,8 @@ const Calculation = () => {
 
                     <div className='flex justify-center items-center'>
 
-                        <div className='max-w-md
-                            rounded-2xl
-                            text-[#1A2421]
-                            backdrop-blur-lg
-                            [ p-2 md:p-10 lg:p-10 ]
-                            [ bg-gradient-to-b from-white/60 to-white/30 ]
-                            [ border-[1px] border-solid border-white border-opacity-30 ]
-                            [ shadow-black/70 shadow-2xl ] mt-10'>
+                        <div className='max-w-md rounded-2xl text-[#1A2421] backdrop-blur-lg [ p-2 md:p-10 lg:p-10 ] [ bg-gradient-to-b from-white/60 to-white/30 ]
+                            [ border-[1px] border-solid border-white border-opacity-30 ]   [ shadow-black/70 shadow-2xl ] mt-10'>
                             <h1 className='text-xl font-semibold text-lightgreen text-center uppercase mb-10'>Consumption Data</h1>
                             <p className='mb-6'>Per Capita Consumption data : <span className='text-orange font-bold'>
                                 {avgConsumptionData.data}</span></p>

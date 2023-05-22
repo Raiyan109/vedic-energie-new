@@ -8,8 +8,8 @@ const CapitaGauge = ({ conData }) => {
     const outputMin = 0;
     const outputMax = 1;
 
-    const data = conData.data ? conData.data : 100 // replace with your data
-    console.log(data);
+    const data = conData.data ? conData.data : 100
+    // console.log(data);
     const value = (data - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin;
 
     return (
