@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGauge } from "use-gauge";
 
 const START_ANGLE = 80;
 const END_ANGLE = 280;
 
 export function Arced({ value, capitaValue }) {
-  console.log(capitaValue);
+  const [errorMessage, setErrorMessage] = useState('');
   const gauge = useGauge({
     domain: [0, 12000],
     startAngle: START_ANGLE,
@@ -20,24 +20,29 @@ export function Arced({ value, capitaValue }) {
     tipRadius: 2
   });
 
+
   const arcStroke1 = () => {
-    if (value > capitaValue) {
+    if (value > capitaValue.data) {
       return "red"; // Red color when user value is greater than capitaValue
     }
     return "#0cccad"; // Default color
   };
   const arcStroke2 = () => {
-    if (value > capitaValue) {
+    if (value > capitaValue.data) {
       return "red"; // Red color when user value is greater than capitaValue
     }
     return "yellow"; // Default color
   };
   const arcStroke3 = () => {
-    if (value > capitaValue) {
-      return "bg-orange"; // Red color when user value is greater than capitaValue
+    if (value > capitaValue.data) {
+      return "#ec3e27";
     }
     return "green"; // Default color
   };
+
+  const color = arcStroke3();
+  const errorMsg = value > capitaValue.data ? 'Your Consumption has increased!' : '';
+
 
   return (
     <div className="p-4">
@@ -54,7 +59,6 @@ export function Arced({ value, capitaValue }) {
             strokeLinecap="round"
             strokeWidth={24}
           /> */}
-
           <path
             {...gauge.getArcProps({
               offset: -20,
@@ -63,10 +67,10 @@ export function Arced({ value, capitaValue }) {
             })}
             fill="none"
             strokeLinecap="round"
-            // stroke={arcStroke1()}
+            stroke={arcStroke1()}
             strokeWidth={24}
-            // className="stroke-orange"
-            className={value < capitaValue ? `stroke-indigo` : 'stroke-orange'}
+          // className="stroke-orange"
+          // className={value < capitaValue ? `stroke-indigo` : 'stroke-orange'}
           />
           <path
             {...gauge.getArcProps({
@@ -75,8 +79,8 @@ export function Arced({ value, capitaValue }) {
               endAngle: gauge.valueToAngle(8000)
             })}
             fill="none"
-            // stroke={arcStroke2()}
-            className="stroke-lightYellow"
+            stroke={arcStroke2()}
+            // className="stroke-lightYellow"
             strokeWidth={24}
           />
           <path
@@ -86,20 +90,10 @@ export function Arced({ value, capitaValue }) {
               endAngle: gauge.valueToAngle(4000)
             })}
             fill="none"
-            // stroke={arcStroke3()}
-            className="stroke-green"
+            stroke={color}
+            // className="stroke-green"
             strokeWidth={24}
           />
-          {/* <path
-            {...gauge.getArcProps({
-              offset: -70,
-              startAngle: gauge.valueToAngle(0),
-              endAngle: gauge.valueToAngle(500)
-            })}
-            fill="none"
-            className="stroke-green-mui-400"
-            strokeWidth={24}
-          /> */}
         </g>
         <g id="ticks">
           {gauge.ticks.map((angle) => {
@@ -154,6 +148,15 @@ export function Arced({ value, capitaValue }) {
             textAnchor="middle"
           >
             {capitaValue.data}
+          </text>
+          <text
+            x="0"
+            y="-60"
+            dominantBaseline="middle"
+            textAnchor="middle"
+            className="fill-[#ec3e27] font-semibold text-lg"
+          >
+            {errorMsg}
           </text>
         </g>
       </svg>
