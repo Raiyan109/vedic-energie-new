@@ -11,6 +11,7 @@ import UserMeter from './UserMeter';
 import bg from '../assets/ellipse.png'
 import UserGauge from './UserGauge';
 import CapitaGauge from './CapitaGauge';
+import { Arced } from './Arced';
 
 const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
@@ -199,7 +200,11 @@ const Calculation = () => {
                     {/* <CapitaGauge conData={avgConsumptionData} /> */}
                     {/* <UserGauge userData={result} key={result} /> */}
 
-                    <SpeedOMeter userData={result} key={result} />
+                    {/* <SpeedOMeter userData={result} key={result} /> */}
+
+                    <div className="p-10">
+                        <Arced value={result} capitaValue={avgConsumptionData} />
+                    </div>
 
                     <div className='flex justify-center items-center'>
 
