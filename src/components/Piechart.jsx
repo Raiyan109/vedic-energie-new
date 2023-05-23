@@ -16,8 +16,7 @@ background-position: center;
 `
 
 export default function PieChart({ airPercentage, geyserPercentage, washingPercentage, ovenPercentage, fridgePercentage, lightPercentage }) {
-  console.log(airPercentage, geyserPercentage, washingPercentage);
-
+  console.log(ovenPercentage);
 
   const data = {
     labels: ['Air Conditioner', 'Geyser', 'Washing Machine', 'Oven', 'Fridge', 'Lights'],
@@ -26,12 +25,12 @@ export default function PieChart({ airPercentage, geyserPercentage, washingPerce
         label: 'Energy consumption',
         data: [airPercentage, geyserPercentage, washingPercentage, ovenPercentage, fridgePercentage, lightPercentage].filter(value => value !== null && value !== 0),
         backgroundColor: [
-          '#6D61F6',
-          '#53CFEA',
-          '#0027F1',
-          '#924f64',
-          '#d2e1f7',
-          '#186f4c'
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
         ],
         borderWidth: 0,
 

@@ -26,7 +26,8 @@
     "sort-by": "^1.2.0",
     "styled-components": "^5.3.9",
     "swiper": "^9.2.0",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "use-gauge": "^0.6.0"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",

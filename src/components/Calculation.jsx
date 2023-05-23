@@ -11,11 +11,12 @@ import UserMeter from './UserMeter';
 import bg from '../assets/ellipse.png'
 import UserGauge from './UserGauge';
 import CapitaGauge from './CapitaGauge';
+import { Arced } from './Arced';
 
 const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
     const [unitRangeValue, setUnitRangeValue] = useState(100)
-    const [result, setResult] = useState(240);
+    const [result, setResult] = useState(0);
     const [statesId, setStatesId] = useState('')
     // const [district, setDistrict] = useState([])
     const [city, setCity] = useState([])
@@ -58,6 +59,7 @@ const Calculation = () => {
 
         const getAvgEnergyData = statesData.find(state => state.state_id === getStateId)?.energyData
         setAvgConsumptionData(getAvgEnergyData[0])
+        console.log(avgConsumptionData);
         setStatesId(getStateId)
         setSelectedEnergyData(null); // set selected energy data to null
     }
@@ -90,9 +92,9 @@ const Calculation = () => {
                     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                         <div>
                             <span>
-                                <Link to='/article' className='text-lightBlue mr-2'>Residency</Link>
+                                <Link to='#' className='text-lightBlue mr-2'>Residency</Link>
                                 |
-                                <Link to='/article' className='text-lightYellow ml-2'>Commercial</Link>
+                                <Link to='#' className='text-lightYellow ml-2'>Commercial</Link>
                             </span>
                             <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator for Your Home</h3>
 
@@ -186,7 +188,7 @@ const Calculation = () => {
                 </div>
             </section>
 
-            <div className='box h-auto'>
+            <div className='box h-auto p-10'>
                 <div className='flex justify-center items-center py-14'>
                     <h1 className='underline text-4xl text-indigo font-bold lg:max-w-none max-w-lg text-center'>Per Capita Energy Consumption
                         W.R.T State</h1>
@@ -195,8 +197,26 @@ const Calculation = () => {
                 <div className='lg:flex md:grid md:grid-cols-1 justify-center items-center grid grid-cols-1'>
                     {/* <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} /> */}
 
-                    <CapitaGauge conData={avgConsumptionData} />
-                    <UserGauge userData={result} key={result} />
+                    {/* <CapitaGauge conData={avgConsumptionData} /> */}
+                    {/* <UserGauge userData={result} key={result} /> */}
+
+                    {/* <SpeedOMeter userData={result} key={result} /> */}
+
+                    <div className="p-10">
+                        <Arced value={result} capitaValue={avgConsumptionData} />
+                    </div>
+
+                    <div className='flex justify-center items-center'>
+
+                        <div className='max-w-md rounded-2xl text-[#1A2421] backdrop-blur-lg [ p-2 md:p-10 lg:p-10 ] [ bg-gradient-to-b from-white/60 to-white/30 ]
+                            [ border-[1px] border-solid border-white border-opacity-30 ]   [ shadow-black/70 shadow-2xl ] mt-10'>
+                            <h1 className='text-xl font-semibold text-lightgreen text-center uppercase mb-10'>Consumption Data</h1>
+                            <p className='mb-6'>Per Capita Consumption data : <span className='text-orange font-bold'>
+                                {avgConsumptionData.data}</span></p>
+                            <p className=''>Your Consumption data : <span className='text-orange font-bold'>
+                                {result}</span></p>
+                        </div>
+                    </div>
                 </div>
 
             </div>

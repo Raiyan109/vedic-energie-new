@@ -1,9 +1,11 @@
 import React from 'react';
 
-const FinalCalculate = () => {
+const FinalCalculate = ({ handleClick }) => {
     return (
         <div>
-            <button className='w-[137px] h-[50px] bg-lightYellow rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-yellow hover:transition-all'>Calculate</button>
+            <button
+                onClick={handleClick}
+                className='w-[137px] h-[50px] bg-lightYellow rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-yellow hover:transition-all'>Calculate</button>
         </div>
     );
 };

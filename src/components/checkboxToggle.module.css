@@ -44,7 +44,7 @@
 .toggleSwitch {
     position: relative;
     display: inline-block;
-    width: 60px;
+    width: 70px;
     height: 30px;
 }
 
@@ -61,7 +61,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: gray;
     transition: 0.4s;
     border-radius: 34px;
 }
@@ -70,7 +70,7 @@
     position: absolute;
     content: "";
     width: 23px;
-    height: 23px;
+    height: 22px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -79,9 +79,9 @@
 }
 
 .toggleSwitch input:checked+.toggleSwitchSlider {
-    background-color: #2196F3;
+    background-color: #bada55;
 }
 
 .toggleSwitch input:checked+.toggleSwitchSlider:before {
-    transform: translateX(30px);
+    transform: translateX(38px);
 }

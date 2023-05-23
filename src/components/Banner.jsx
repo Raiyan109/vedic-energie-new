@@ -27,7 +27,7 @@ const Banner = () => {
                 >
 
 
-                    <svg id="sv" className='lg:w-[722px] lg:h-[358px] md:w-[762px] md:h-[398px] w-[365px] h-[240px] lg:px-0 md:pl-12 px-3' viewBox="0 0 722 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg id="sv" className='lg:w-[722px] lg:h-[358px] md:w-[702px] md:h-[398px] w-[365px] h-[240px] lg:px-0 md:pl-24 pl-12 px-3' viewBox="0 0 722 358" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                         <path d="M368 153.5C368 189.013 354.523 223.427 329.866 250.879C305.208 278.331 270.896 297.122 232.775 304.051C194.654 310.979 155.084 305.616 120.805 288.875C86.5271 272.134 59.6623 245.052 44.7882 212.242C29.9142 179.432 27.9513 142.925 39.234 108.941C50.5167 74.9575 74.3469 45.5994 106.664 25.8694C138.981 6.13944 177.786 -2.74174 216.467 0.739143C255.147 4.22002 291.31 19.8476 318.794 44.9591L289.095 72.0943C268.483 53.2607 241.361 41.54 212.35 38.9294C183.34 36.3187 154.236 42.9796 129.998 57.7771C105.76 72.5746 87.8875 94.5931 79.4255 120.081C70.9635 145.569 72.4357 172.949 83.5912 197.556C94.7467 222.164 114.895 242.476 140.604 255.031C166.313 267.587 195.991 271.609 224.581 266.413C253.172 261.217 278.906 247.123 297.399 226.535C315.892 205.946 326 180.135 326 153.5H368Z" fill="url(#paint0_linear_0_1)" />
 
@@ -62,7 +62,9 @@ const Banner = () => {
 
 
                 </div>
-                <div className='relative text-yellow text-center text-1xl sm:text-2xl mt-[-130px] sm:mt-[-220px] ml-[0px] sm:ml-[-580px]  block'>Connecting world to green energy solutions and carbon free future.</div>
+                <div className='relative flex justify-center items-start lg:max-w-none md:max-w-none max-w-sm'>
+                    <h1 className=' text-yellow text-center lg:text-3xl md:text-xl text-xl lg:mt-[-190px] md:mt-[-100px] mt-[-120px] lg:ml-[-505px] md:ml-[-200px] ml-1 lg:px-0 md:pl-12 pl-12'>Connecting world to green energy solutions and carbon free future.</h1>
+                </div>
             </section>
 
         </Section>
