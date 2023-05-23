@@ -7,7 +7,7 @@ const END_ANGLE = 280;
 export function Arced({ value, capitaValue }) {
   const [errorMessage, setErrorMessage] = useState('');
   const gauge = useGauge({
-    domain: [0, 12000],
+    domain: [0, 1500],
     startAngle: START_ANGLE,
     endAngle: END_ANGLE,
     numTicks: 7 /** This is for the tiny lines above the arc like sunshine. */,
@@ -62,40 +62,36 @@ export function Arced({ value, capitaValue }) {
           <path
             {...gauge.getArcProps({
               offset: -20,
-              startAngle: gauge.valueToAngle(8000),
-              endAngle: gauge.valueToAngle(12000)
+              startAngle: gauge.valueToAngle(1000),
+              endAngle: gauge.valueToAngle(1500)
             })}
             fill="none"
             strokeLinecap="round"
             stroke={arcStroke1()}
             strokeWidth={24}
-          // className="stroke-orange"
-          // className={value < capitaValue ? `stroke-indigo` : 'stroke-orange'}
           />
           <path
             {...gauge.getArcProps({
               offset: -20,
-              startAngle: gauge.valueToAngle(4000),
-              endAngle: gauge.valueToAngle(8000)
+              startAngle: gauge.valueToAngle(500),
+              endAngle: gauge.valueToAngle(1000)
             })}
             fill="none"
             stroke={arcStroke2()}
-            // className="stroke-lightYellow"
             strokeWidth={24}
           />
           <path
             {...gauge.getArcProps({
               offset: -20,
               startAngle: gauge.valueToAngle(0),
-              endAngle: gauge.valueToAngle(4000)
+              endAngle: gauge.valueToAngle(500)
             })}
             fill="none"
             stroke={color}
-            // className="stroke-green"
             strokeWidth={24}
           />
         </g>
-        <g id="ticks">
+        {/* <g id="ticks">
           {gauge.ticks.map((angle) => {
             const asValue = gauge.angleToValue(angle);
             const showText = asValue % 2 === 0;
@@ -116,7 +112,7 @@ export function Arced({ value, capitaValue }) {
               </div>
             );
           })}
-        </g>
+        </g> */}
         <g id="needle">
 
           <circle className="fill-green" {...needle.base} r={20} />
@@ -127,13 +123,13 @@ export function Arced({ value, capitaValue }) {
           <rect
             className="fill-green"
             x="-8rem"
-            y="2rem"
+            y="-19rem"
             width="60%"
             height="5rem"
           />
           <text
             x="0"
-            y="50"
+            y="-280"
             className="text-2xl fill-orange font-bold"
             dominantBaseline="middle"
             textAnchor="middle"
@@ -142,7 +138,7 @@ export function Arced({ value, capitaValue }) {
           </text>
           <text
             x="0"
-            y="90"
+            y="-250"
             className="text-2xl fill-white"
             dominantBaseline="middle"
             textAnchor="middle"

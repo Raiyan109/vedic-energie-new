@@ -146,7 +146,7 @@ const Calculation = () => {
 
                                     <div className='flex justify-start items-center gap-x-12'>
                                         {/* Slider range Units Consumed */}
-                                        <UnitRangeSlider min='10' max='1000' value={unitRangeValue} handleUnitRange={handleUnitRange}
+                                        <UnitRangeSlider min='10' max='125' value={unitRangeValue} handleUnitRange={handleUnitRange}
                                             text='Units consumed per month'
                                         />
 
