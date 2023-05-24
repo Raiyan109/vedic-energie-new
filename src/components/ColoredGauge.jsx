@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useGauge } from "use-gauge";
 
-const useSpeedTest = () => {
-    const [value, setValue] = useState(50);
+// const useSpeedTest = () => {
+//     // const [value, setValue] = useState(50);
 
-    return {
-        value: Math.min(value, 100)
-    };
-};
+//     return {
+//         value: Math.min(value, 100)
+//     };
+// };
 
 const ColoredGauge = ({ value, capitaValue }) => {
     // const { value } = useSpeedTest();
@@ -27,6 +27,13 @@ const ColoredGauge = ({ value, capitaValue }) => {
         tipRadius: 2
     });
 
+    const circleClassName = value > capitalValue ? "stroke-[#FF0000]" : "stroke-green";
+    const message =
+        value > capitalValue
+            ? "Your consumption crossed the capita consumption"
+            : "Your consumption is OK";
+
+
     return (
         <div>
             <svg className="w-full overflow-visible p-4" {...gauge.getSVGProps()}>
@@ -40,7 +47,7 @@ const ColoredGauge = ({ value, capitaValue }) => {
                         fill="none"
                         className="stroke-gray"
                         strokeLinecap="round"
-                        strokeWidth={15}
+                        strokeWidth={40}
                     />
                     <path
                         {...gauge.getArcProps({
@@ -49,9 +56,9 @@ const ColoredGauge = ({ value, capitaValue }) => {
                             endAngle: gauge.valueToAngle(value)
                         })}
                         fill="none"
-                        className="stroke-green"
+                        className={circleClassName}
                         strokeLinecap="round"
-                        strokeWidth={15}
+                        strokeWidth={40}
                     />
                 </g>
                 <g id="needle">
@@ -71,6 +78,14 @@ const ColoredGauge = ({ value, capitaValue }) => {
                     >
                         Capita Consumption Data
                     </text>
+                    {/* <text
+                        y="80"
+                        className="text-xl fill-blue font-bold name-text"
+                        dominantBaseline="middle"
+                        textAnchor="middle"
+                    >
+                        {message}
+                    </text> */}
                 </g>
             </svg>
         </div>

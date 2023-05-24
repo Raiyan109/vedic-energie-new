@@ -84,6 +84,11 @@ const Calculation = () => {
         e.preventDefault()
         alert('Get State id' + statesId + ' And ' + districtId)
     }
+
+    const message =
+        result > avgConsumptionData.data
+            ? <p className='text-[#FF0000]'>Your consumption crossed the capita consumption</p>
+            : <p className='text-green'>Your consumption is OK</p>;
     return (
         <Section>
             <section className="bg-orange">
@@ -216,7 +221,7 @@ const Calculation = () => {
 
                         <div className='max-w-md rounded-2xl text-[#1A2421] backdrop-blur-lg [ p-2 md:p-10 lg:p-10 ] [ bg-gradient-to-b from-white/60 to-white/30 ]
                             [ border-[1px] border-solid border-white border-opacity-30 ]   [ shadow-black/70 shadow-2xl ] mt-10'>
-                            <h1 className='text-xl font-semibold text-lightgreen text-center uppercase mb-10'>Consumption Data</h1>
+                            <h1 className='text-xl font-semibold text-lightgreen text-center uppercase mb-10'>{message}</h1>
                             <p className='mb-6'>Per Capita Consumption data : <span className='text-orange font-bold'>
                                 {avgConsumptionData.data}</span></p>
                             <p className=''>Your Consumption data : <span className='text-orange font-bold'>
