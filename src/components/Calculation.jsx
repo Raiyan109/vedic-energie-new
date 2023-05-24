@@ -12,6 +12,8 @@ import bg from '../assets/ellipse.png'
 import UserGauge from './UserGauge';
 import CapitaGauge from './CapitaGauge';
 import { Arced } from './Arced';
+import BlurryGauge from './BlurryGauge';
+import ColoredGauge from './ColoredGauge';
 
 const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
@@ -203,7 +205,11 @@ const Calculation = () => {
                     {/* <SpeedOMeter userData={result} key={result} /> */}
 
                     <div className="p-10">
-                        <Arced value={result} capitaValue={avgConsumptionData} />
+                        {/* <Arced value={result} capitaValue={avgConsumptionData} /> */}
+
+                        {/* <BlurryGauge value={result} capitaValue={avgConsumptionData} /> */}
+
+                        <ColoredGauge value={result} capitaValue={avgConsumptionData} />
                     </div>
 
                     <div className='flex justify-center items-center'>

@@ -54,3 +54,14 @@ nav ul li.active a {
     color: lightgreen;
     border-bottom: solid 5px lightgreen;
 }
+
+.light {
+    filter: saturate(0);
+    opacity: 0.1;
+    transition: all 0.2s ease-out;
+}
+
+.light.active {
+    opacity: 1;
+    filter: saturate(1);
+}

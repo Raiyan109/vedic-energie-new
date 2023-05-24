@@ -104,27 +104,27 @@ const Table = () => {
 
     useEffect(() => {
         setGeyserTotal(+geyserSelectedWattage * +geyserSelectedConsumptionTime);
-        console.log(geyserTotal);
+        // console.log(geyserTotal);
     }, [geyserSelectedWattage, geyserSelectedConsumptionTime]);
 
     useEffect(() => {
         setWashingTotal(+washingSelectedWattage * +washingSelectedConsumptionTime);
-        console.log(washingTotal);
+        // console.log(washingTotal);
     }, [washingSelectedWattage, washingSelectedConsumptionTime]);
 
     useEffect(() => {
         setOvenTotal(+ovenSelectedWattage * +ovenSelectedConsumptionTime);
-        console.log(ovenTotal);
+        // console.log(ovenTotal);
     }, [ovenSelectedWattage, ovenSelectedConsumptionTime]);
 
     useEffect(() => {
         setFridgeTotal(+fridgeSelectedWattage * +fridgeSelectedConsumptionTime);
-        console.log(fridgeTotal);
+        // console.log(fridgeTotal);
     }, [fridgeSelectedWattage, fridgeSelectedConsumptionTime]);
 
     useEffect(() => {
         setLightsTotal(+lightSelectedWattage * +lightSelectedConsumptionTime);
-        console.log(lightsTotal);
+        // console.log(lightsTotal);
     }, [lightSelectedWattage, lightSelectedConsumptionTime]);
 
     const handleACWattageSelect = (event) => {

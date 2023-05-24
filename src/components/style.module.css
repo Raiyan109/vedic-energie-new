@@ -38,3 +38,15 @@
     transform-origin: left;
     transform: scaleX(1);
 }
+
+
+.light {
+    filter: saturate(0);
+    opacity: 0.1;
+    transition: all 0.2s ease-out;
+}
+
+.light.active {
+    opacity: 1;
+    filter: saturate(1);
+}
