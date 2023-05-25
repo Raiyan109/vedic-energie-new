@@ -207,7 +207,7 @@ const Table = () => {
                                         <th className="py-4 pr-6 pl-5">Status</th>
                                         <th className="py-4 pr-6 pl-5">Watts</th>
                                         <th className="py-4 pr-6 pl-5">Consumption Time</th>
-                                        <th className="py-4 pr-6 pl-5">Assumptions</th>
+                                        {/* <th className="py-4 pr-6 pl-5">Assumptions</th> */}
                                     </tr>
                                 </thead>
 
@@ -257,10 +257,10 @@ const Table = () => {
                                                 </select>
                                             </Select>
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             AC Total: {isAirConditionerOn ? airTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
 
                                     {/* Geyser */}
@@ -291,10 +291,10 @@ const Table = () => {
                                                 handleConsumptionTimeSelect={handleGeyserConsumptionTimeSelect}
                                             />
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             Geyser Total: {isGeyserOn ? geyserTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
 
                                     {/* Washing Machine */}
@@ -325,10 +325,10 @@ const Table = () => {
                                                 handleConsumptionTimeSelect={handleWashingConsumptionTimeSelect}
                                             />
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             Washing Total: {isWashingOn ? washingTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
 
                                     {/* Microwave Oven */}
@@ -359,10 +359,10 @@ const Table = () => {
                                                 handleConsumptionTimeSelect={handleOvenConsumptionTimeSelect}
                                             />
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             Oven Total: {isMicroWaveOn ? ovenTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
 
                                     {/* Fridge */}
@@ -393,10 +393,10 @@ const Table = () => {
                                                 handleConsumptionTimeSelect={handleFridgeConsumptionTimeSelect}
                                             />
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             Fridge Total: {isFridgeOn ? fridgeTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
 
                                     {/* Lights */}
@@ -427,10 +427,10 @@ const Table = () => {
                                                 handleConsumptionTimeSelect={handleLightConsumptionTimeSelect}
                                             />
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             Light Total: {isLightsOn ? lightsTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
                                 </tbody>
                             </table >

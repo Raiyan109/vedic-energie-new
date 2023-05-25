@@ -42,7 +42,7 @@ export default function PieChart({ airPercentage, geyserPercentage, washingPerce
 
     <Section>
       <div className="items-center py-20 box">
-        <h1 className='text-indigo font-bold text-3xl underline m-auto items-center text-center pb-10'>High Energy Consumption Weightage <br /> of the Devices</h1>
+        <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5 text-center mb-24">High Energy Consumption Weightage <br /> of the Devices</h1>
         <div className="w-[400px] h-[300px] sm:w-[600px] sm:h-[500px] mx-auto my-auto">
           <Pie width={150} height={150} data={data}
             options=

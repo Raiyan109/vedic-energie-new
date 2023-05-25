@@ -93,9 +93,9 @@ const Calculation = () => {
         <Section>
             <section className="bg-orange">
                 <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
-                    <div>
+                    {/* <div>
                         <h2 className='text-center text-2xl font-bold text-lightBlue'>Energy Calculator</h2>
-                    </div>
+                    </div> */}
                     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                         <div>
                             <span>
@@ -197,7 +197,7 @@ const Calculation = () => {
 
             <div className='box h-auto p-10'>
                 <div className='flex justify-center items-center py-14'>
-                    <h1 className='underline text-4xl text-indigo font-bold lg:max-w-none max-w-lg text-center'>Per Capita Energy Consumption
+                    <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Per Capita Energy Consumption
                         W.R.T State</h1>
                 </div>
 

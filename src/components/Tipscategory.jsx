@@ -6,7 +6,7 @@ export default function Tipscategory() {
 
   return (
     <div className="bg-orange py-[100px]">
-      <h5 className="h-1 not-italic font-bold text-3xl text-center text-indigo py-[70px]">Tips that can save energy and money
+      <h5 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5 text-center mb-24">Tips that can save energy and money
       </h5>
       <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 mx-10">
 

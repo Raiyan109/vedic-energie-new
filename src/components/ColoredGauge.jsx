@@ -45,7 +45,7 @@ const ColoredGauge = ({ value, capitaValue }) => {
                             endAngle: 290
                         })}
                         fill="none"
-                        className="stroke-gray"
+                        className="stroke-white"
                         strokeLinecap="round"
                         strokeWidth={40}
                     />
