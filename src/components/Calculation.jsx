@@ -19,6 +19,9 @@ const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
     const [unitRangeValue, setUnitRangeValue] = useState(100)
     const [result, setResult] = useState(0);
+    const [result5000, setResult5000] = useState(0);
+    const [peopleRangeValue5000, setPeopleRangeValue5000] = useState(5)
+    const [unitRangeValue5000, setUnitRangeValue5000] = useState(100)
     const [statesId, setStatesId] = useState('')
     // const [district, setDistrict] = useState([])
     const [city, setCity] = useState([])
@@ -41,6 +44,18 @@ const Calculation = () => {
         console.log(perCapitaEnergyConsumption);
     }
 
+    const handlePeopleRange5000 = (e) => {
+        setPeopleRangeValue5000(e.target.value);
+        const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(unitRangeValue5000, e.target.value);
+        console.log(perCapitaEnergyConsumption5000);
+    }
+
+    const handleUnitRange5000 = (e) => {
+        setUnitRangeValue5000(e.target.value);
+        const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(e.target.value, peopleRangeValue5000);
+        console.log(perCapitaEnergyConsumption5000);
+    }
+
     // To calculate the per User energy consumption
     const calculateEnergyConsumption = (unitConsumed, numberOfPeople) => {
         if (numberOfPeople === 0) {
@@ -50,6 +65,20 @@ const Calculation = () => {
         const energyConsumption = (unitConsumed * 12) / numberOfPeople;
         setResult(energyConsumption);
     }
+
+    const calculateEnergyConsumption5000 = (unitConsumed5000, numberOfPeople5000) => {
+        const energyConsumption5000 = (unitConsumed5000 * 12) / numberOfPeople5000;
+        setResult(energyConsumption5000);
+        if (result5000 >= 5000) {
+            setResult5000(5000)
+            return
+        }
+        else {
+            setResult5000(energyConsumption5000)
+            return
+        }
+    }
+
 
     const handleStates = (e) => {
         const getStateId = e.target.value
@@ -153,7 +182,7 @@ const Calculation = () => {
 
                                     <div className='flex justify-start items-center gap-x-12'>
                                         {/* Slider range Units Consumed */}
-                                        <UnitRangeSlider min='10' max='125' value={unitRangeValue} handleUnitRange={handleUnitRange}
+                                        <UnitRangeSlider min='10' max='1500' value={unitRangeValue} handleUnitRange={handleUnitRange}
                                             text='Units consumed per month'
                                         />
 
@@ -197,8 +226,7 @@ const Calculation = () => {
 
             <div className='box h-auto p-10'>
                 <div className='flex justify-center items-center py-14'>
-                    <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Per Capita Energy Consumption
-                        W.R.T State</h1>
+                    <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Meter</h1>
                 </div>
 
                 <div className='lg:flex md:grid md:grid-cols-1 justify-center items-center grid grid-cols-1'>

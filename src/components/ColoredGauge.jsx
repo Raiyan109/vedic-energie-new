@@ -11,14 +11,15 @@ import { useGauge } from "use-gauge";
 
 const ColoredGauge = ({ value, capitaValue }) => {
     // const { value } = useSpeedTest();
+    console.log(value);
     const capitalValue = Math.trunc(capitaValue.data)
     console.log(capitalValue);
     const gauge = useGauge({
-        domain: [0, 1500],
+        domain: [0, 18000],
         startAngle: 70,
         endAngle: 290,
         numTicks: 21,
-        diameter: 400
+        diameter: 500
     });
 
     const needle = gauge.getNeedleProps({
@@ -63,20 +64,20 @@ const ColoredGauge = ({ value, capitaValue }) => {
                 </g>
                 <g id="needle">
                     <text
-                        y="-1rem"
-                        className="text-6xl fill-blue font-bold name-text"
+                        y="-130"
+                        className="text-8xl fill-blue font-bold name-text"
                         dominantBaseline="middle"
                         textAnchor="middle"
                     >
-                        {capitalValue}
+                        {value}
                     </text>
                     <text
-                        y="50"
+                        y="-70"
                         className="text-xl fill-blue font-bold name-text"
                         dominantBaseline="middle"
                         textAnchor="middle"
                     >
-                        Capita Consumption Data
+                        User's consumption
                     </text>
                     {/* <text
                         y="80"
@@ -86,6 +87,15 @@ const ColoredGauge = ({ value, capitaValue }) => {
                     >
                         {message}
                     </text> */}
+                    <text
+                        y="50"
+                        className="text-2xl fill-blue name-text"
+                        dominantBaseline="middle"
+                        textAnchor="middle"
+                    >
+                        State's average consumption : {capitalValue}
+                    </text>
+
                 </g>
             </svg>
         </div>

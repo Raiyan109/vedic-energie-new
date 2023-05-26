@@ -34,9 +34,6 @@ const Table = () => {
     const [isHeaterOn, setIsHeaterOn] = useState(false)
     const [showPieChart, setShowPieChart] = useState(false);
 
-    const handleFinalCalculateClick = () => {
-        setShowPieChart(true);
-    };
 
 
     // Watt and Consumption calculation states
@@ -183,6 +180,12 @@ const Table = () => {
     // const airPercentage = (airTotal / totalWattHours * 100).toFixed(2);
     // const geyserPercentage = (geyserTotal / totalWattHours * 100).toFixed(2);
     // const washingPercentage = (washingTotal / totalWattHours * 100).toFixed(2);
+
+    // Function for the final calculate button
+    const handleFinalCalculateClick = () => {
+        setShowPieChart(true);
+    };
+
 
     return (
         <div>
