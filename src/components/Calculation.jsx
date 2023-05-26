@@ -36,25 +36,33 @@ const Calculation = () => {
         setPeopleRangeValue(e.target.value);
         const perCapitaEnergyConsumption = calculateEnergyConsumption(unitRangeValue, e.target.value);
         console.log(perCapitaEnergyConsumption);
+
+        setPeopleRangeValue5000(e.target.value);
+        const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(unitRangeValue5000, e.target.value);
+        console.log(perCapitaEnergyConsumption5000);
     }
 
     const handleUnitRange = (e) => {
         setUnitRangeValue(e.target.value);
         const perCapitaEnergyConsumption = calculateEnergyConsumption(e.target.value, peopleRangeValue);
         console.log(perCapitaEnergyConsumption);
-    }
 
-    const handlePeopleRange5000 = (e) => {
-        setPeopleRangeValue5000(e.target.value);
-        const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(unitRangeValue5000, e.target.value);
-        console.log(perCapitaEnergyConsumption5000);
-    }
-
-    const handleUnitRange5000 = (e) => {
         setUnitRangeValue5000(e.target.value);
         const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(e.target.value, peopleRangeValue5000);
         console.log(perCapitaEnergyConsumption5000);
     }
+
+    // const handlePeopleRange5000 = (e) => {
+    //     setPeopleRangeValue5000(e.target.value);
+    //     const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(unitRangeValue5000, e.target.value);
+    //     console.log(perCapitaEnergyConsumption5000);
+    // }
+
+    // const handleUnitRange5000 = (e) => {
+    //     setUnitRangeValue5000(e.target.value);
+    //     const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(e.target.value, peopleRangeValue5000);
+    //     console.log(perCapitaEnergyConsumption5000);
+    // }
 
     // To calculate the per User energy consumption
     const calculateEnergyConsumption = (unitConsumed, numberOfPeople) => {
@@ -68,16 +76,14 @@ const Calculation = () => {
 
     const calculateEnergyConsumption5000 = (unitConsumed5000, numberOfPeople5000) => {
         const energyConsumption5000 = (unitConsumed5000 * 12) / numberOfPeople5000;
-        setResult(energyConsumption5000);
-        if (result5000 >= 5000) {
-            setResult5000(5000)
-            return
-        }
-        else {
-            setResult5000(energyConsumption5000)
-            return
+        if (energyConsumption5000 >= 5000) {
+            setResult5000(5000);
+        } else {
+            setResult5000(energyConsumption5000);
         }
     }
+
+    const fixedResult5000 = result5000.toFixed()
 
 
     const handleStates = (e) => {
@@ -242,7 +248,7 @@ const Calculation = () => {
 
                         {/* <BlurryGauge value={result} capitaValue={avgConsumptionData} /> */}
 
-                        <ColoredGauge value={result} capitaValue={avgConsumptionData} />
+                        <ColoredGauge value={fixedResult5000} capitaValue={avgConsumptionData} />
                     </div>
 
                     <div className='flex justify-center items-center'>
