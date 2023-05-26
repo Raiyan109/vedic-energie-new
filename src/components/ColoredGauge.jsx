@@ -15,7 +15,7 @@ const ColoredGauge = ({ value, capitaValue }) => {
     const capitalValue = Math.trunc(capitaValue.data)
     console.log(capitalValue);
     const gauge = useGauge({
-        domain: [0, 18000],
+        domain: [0, 5000],
         startAngle: 70,
         endAngle: 290,
         numTicks: 21,
