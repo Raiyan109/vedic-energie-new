@@ -72,7 +72,7 @@ const Header = () => {
 
                     <button
                         onClick={() => setMenu(!menu)}
-                        className="items-center md:hidden text-lightGreen text-2xl"
+                        className="items-center md:hidden text-lightBlue text-2xl"
                     >
                         {menu ? <FaTimes /> : <FaBars />}
                         <span className="sr-only">Open main menu</span>
@@ -93,16 +93,16 @@ const Header = () => {
 
 
                             <li className={activeLink === 'banner' ? 'active' : ''}>
-                                <a href="#banner" onClick={(e) => handleClick(e, 'banner')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Home</a>
+                                <a href="#banner" onClick={(e) => handleClick(e, 'banner')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>Home</a>
                             </li>
                             <li className={activeLink === 'efficient' ? 'active' : ''}>
-                                <a href="#efficient" onClick={(e) => handleClick(e, 'efficient')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>About Us</a>
+                                <a href="#efficient" onClick={(e) => handleClick(e, 'efficient')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>About Us</a>
                             </li>
                             <li className={activeLink === 'energyRes' ? 'active' : ''}>
-                                <a href="#energyRes" onClick={(e) => handleClick(e, 'energyRes')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Services</a>
+                                <a href="#energyRes" onClick={(e) => handleClick(e, 'energyRes')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>Services</a>
                             </li>
                             <li className={activeLink === 'article' ? 'active' : ''}>
-                                <a href="#article" onClick={(e) => handleClick(e, 'article')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Blog</a>
+                                <a href="#article" onClick={(e) => handleClick(e, 'article')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>Blog</a>
                             </li>
 
                             {/*  */}
@@ -164,14 +164,14 @@ const Header = () => {
                                     Contact
                                 </NavLink>
                             </li> */}
-                            <li className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
+                            <li className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>
                                 <NavLink
                                     to="/energyCalc"
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
-                                            color: isActive ? 'lightGreen' : '#1D6126',
+                                            borderBottom: isActive ? 'solid 5px blue' : 'none',
+                                            color: isActive ? 'blue' : '#2F45B7',
                                         };
                                     }}
                                 >
