@@ -8,10 +8,13 @@ import climateTradeImg from '../assets/climatetrade.png'
 import ecosiaImg from '../assets/ecosia.png'
 import doconomyImg from '../assets/doconomy.png'
 import climatiqImg from '../assets/climatiq.png'
-
+import bg from '../assets/ellipse.png'
 const Section = styled.div`
 height:100vh;
-background-color:#FFB951;
+background-image: url(${bg});
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
 scroll-snap-align:center;
 `
 const Affiliate = () => {

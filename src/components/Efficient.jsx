@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import bg from '../assets/calcualtebannerbg.jpg'
+import bg from '../assets/ellipse.png'
 
 const Section = styled.div`
 background-image: url(${bg});
