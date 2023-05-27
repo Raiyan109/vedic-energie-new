@@ -251,7 +251,7 @@ const Calculation = () => {
                         <ColoredGauge value={fixedResult5000} capitaValue={avgConsumptionData} />
                     </div>
 
-                    <div className='flex justify-center items-center'>
+                    {/* <div className='flex justify-center items-center'>
 
                         <div className='max-w-md rounded-2xl text-[#1A2421] backdrop-blur-lg [ p-2 md:p-10 lg:p-10 ] [ bg-gradient-to-b from-white/60 to-white/30 ]
                             [ border-[1px] border-solid border-white border-opacity-30 ]   [ shadow-black/70 shadow-2xl ] mt-10'>
@@ -261,7 +261,7 @@ const Calculation = () => {
                             <p className=''>Your Consumption data : <span className='text-orange font-bold'>
                                 {result}</span></p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
@@ -291,6 +291,10 @@ select {
     font-size: 1em;
     font-family: 'Open Sans', sans-serif;
  }
+//  select:focus {
+//     box-shadow:  30px 30px 76px #c3c3c3,
+//              -30px -30px 76px #FFB951;
+//   }
  select::-ms-expand {
     display: none;
  }
