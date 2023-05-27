@@ -75,7 +75,7 @@ const Footer = () => {
                         <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
                             <h3 style={{ paddingTop: "20px" }} className='uppercase underline font-medium text-green mt-4'>Social Links</h3>
                             <div>
-                                <ul className="flex gap-6 mt-8 lg:justify-start justify-center">
+                                <ul className="flex gap-6 mt-8 lg:justify-start md:justify-start justify-center">
                                     {/* <li>
                                     <a
                                         href="/"
@@ -168,7 +168,7 @@ const Footer = () => {
 
                     </div>
                 </div>
-                <footer className="flex justify-center items-center p-4 bg-lightGreen lg:text-xs text-[10px]">
+                <footer className="flex justify-center items-center p-4 bg-blue lg:text-xs text-[10px]">
                     <div>
                         <p className='text-white'>COPYRIGHT © 2023 VEDIC ENERGIES | ALL RIGHTS RESERVED | PRIVACY | SITEMAP | LEGAL | COPYRIGHT | ACCESSIBILITY</p>
                     </div>

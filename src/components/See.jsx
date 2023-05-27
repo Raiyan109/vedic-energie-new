@@ -7,7 +7,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 padding:130px 0; 
-background-color:#75ed9d;
+background-color:#2F45B7;
 scroll-snap-align:center;
 
 `

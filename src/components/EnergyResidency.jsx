@@ -12,7 +12,7 @@ import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 
 const Section = styled.div`
 
-background-color:#FFB951;
+background-color:#05386B;
 scroll-snap-align:center;
 .swiper {
     width: 100%;
@@ -50,12 +50,15 @@ const EnergyResidency = () => {
                         <h1 className="text-5xl font-bold sm:text-6xl text-white lg:leading-loose leading-12">Energy Supply Solution For Residency.
 
                         </h1>
-                        <p className="mt-6 mb-8 text-lg sm:mb-12 text-green">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                        <p className="mt-6 mb-8 text-lg sm:mb-12 text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                         </p>
 
                     </div>
                     <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                        <img src={img1} alt="energy-residency" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+                        <img src={img1} alt="energy-residency" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" style={{
+                            boxShadow: '17px 15px 35px 8px white',
+
+                        }} />
                     </div>
                 </div>
             </section>
