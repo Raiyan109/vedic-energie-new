@@ -126,6 +126,7 @@ const Calculation = () => {
             : <p className='text-green'>Your consumption is OK</p>;
     return (
         <Section>
+
             <section className="bg-orange">
                 <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                     {/* <div>
@@ -173,6 +174,10 @@ const Calculation = () => {
                                     </select>
                                 </div>
 
+                                {/* Vertical text */}
+                                <div class="flex justify-center items-center absolute -right-44">
+                                    <h1 className='transform -rotate-90 text-[#E58C07] w-[500px] text-[150px] font-bold uppercase vertical'>Step 1</h1>
+                                </div>
 
                                 <div className='grid lg:grid-cols-1 grid-cols-1 lg:gap-x-40 gap-7 py-10'>
                                     <div className='flex justify-start items-center gap-x-12'>
@@ -313,5 +318,8 @@ select {
     background-size: cover; 
     background-position: center; 
     
+ }
+ .vertical{
+  -webkit-text-stroke: 4px white;
  }
 `

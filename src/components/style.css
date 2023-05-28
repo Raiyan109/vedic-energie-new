@@ -65,3 +65,7 @@ nav ul li.active a {
     opacity: 1;
     filter: saturate(1);
 }
+
+.vertical2 {
+    -webkit-text-stroke: 4px navy;
+}
