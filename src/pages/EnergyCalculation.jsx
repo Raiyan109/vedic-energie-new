@@ -32,6 +32,12 @@ const EnergyCalculation = () => {
     //     setGoToCalc(prevState => !prevState)
     //     ref.current?.scrollIntoView({ behavior: 'smooth' })
     // }
+
+    const [showStateSelect, setShowStateSelect] = useState(false);
+
+    const handleGoToStateSelectClick = () => {
+        setShowStateSelect(true);
+    };
     return (
         <Section >
             <Header />
@@ -47,9 +53,7 @@ const EnergyCalculation = () => {
 
                             <div>
                                 <button
-                                    onClick={() =>
-                                        dispatch({ type: actionTypes.GO_TO_CALC, })
-                                    }
+                                    onClick={handleGoToStateSelectClick}
                                     className='w-[137px] h-[50px] bg-orange rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-lightYellow hover:text-orange hover:transition-all'>Calculate</button>
                             </div>
                             {/* <CalculateButton /> */}
@@ -63,7 +67,10 @@ const EnergyCalculation = () => {
 
             <div>
                 {/* {goToCalc ? <Calculation ref={ref} /> : ''} */}
-                <Calculation />
+
+                {showStateSelect && (
+                    <Calculation />
+                )}
             </div>
             {/* <Meter /> */}
             {/* <SpeedOMeter /> */}

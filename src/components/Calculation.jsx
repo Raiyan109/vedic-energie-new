@@ -31,6 +31,7 @@ const Calculation = () => {
     const [conDataId, setConDataId] = useState('')
     const [selectedItem, setSelectedItem] = useState(null);
     const [selectedEnergyData, setSelectedEnergyData] = useState(null);
+    const [showEnergyMeter, setShowEnergyMeter] = useState(false);
 
     const handlePeopleRange = (e) => {
         setPeopleRangeValue(e.target.value);
@@ -115,10 +116,9 @@ const Calculation = () => {
         setConDataId(conDataId)
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        alert('Get State id' + statesId + ' And ' + districtId)
-    }
+    const handleGoToEnergyMeter = () => {
+        setShowEnergyMeter(true);
+    };
 
     const message =
         result > avgConsumptionData.data
@@ -222,36 +222,37 @@ const Calculation = () => {
                                 </label>
                             </div>
 
-
-                            <LetsGoButton />
-
+                            <LetsGoButton handleClick={handleGoToEnergyMeter} />
                         </div>
                     </div>
                 </div>
             </section>
+            {
+                showEnergyMeter && (
+                    <div className='box h-auto p-10'>
+                        <div className='flex justify-center items-center py-14'>
+                            <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-lightBlue py-5">Energy Meter</h1>
+                        </div>
 
-            <div className='box h-auto p-10'>
-                <div className='flex justify-center items-center py-14'>
-                    <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Meter</h1>
-                </div>
+                        <div className='lg:flex md:grid md:grid-cols-1 justify-center items-center grid grid-cols-1'>
+                            {/* <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} /> */}
 
-                <div className='lg:flex md:grid md:grid-cols-1 justify-center items-center grid grid-cols-1'>
-                    {/* <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} /> */}
+                            {/* <CapitaGauge conData={avgConsumptionData} /> */}
+                            {/* <UserGauge userData={result} key={result} /> */}
 
-                    {/* <CapitaGauge conData={avgConsumptionData} /> */}
-                    {/* <UserGauge userData={result} key={result} /> */}
+                            {/* <SpeedOMeter userData={result} key={result} /> */}
 
-                    {/* <SpeedOMeter userData={result} key={result} /> */}
+                            <div className="p-10">
+                                {/* <Arced value={result} capitaValue={avgConsumptionData} /> */}
 
-                    <div className="p-10">
-                        {/* <Arced value={result} capitaValue={avgConsumptionData} /> */}
+                                {/* <BlurryGauge value={result} capitaValue={avgConsumptionData} /> */}
 
-                        {/* <BlurryGauge value={result} capitaValue={avgConsumptionData} /> */}
 
-                        <ColoredGauge value={fixedResult5000} capitaValue={avgConsumptionData} />
-                    </div>
+                                <ColoredGauge value={fixedResult5000} capitaValue={avgConsumptionData} />
 
-                    {/* <div className='flex justify-center items-center'>
+                            </div>
+
+                            {/* <div className='flex justify-center items-center'>
 
                         <div className='max-w-md rounded-2xl text-[#1A2421] backdrop-blur-lg [ p-2 md:p-10 lg:p-10 ] [ bg-gradient-to-b from-white/60 to-white/30 ]
                             [ border-[1px] border-solid border-white border-opacity-30 ]   [ shadow-black/70 shadow-2xl ] mt-10'>
@@ -262,10 +263,11 @@ const Calculation = () => {
                                 {result}</span></p>
                         </div>
                     </div> */}
-                </div>
+                        </div>
 
-            </div>
-
+                    </div>
+                )
+            }
 
         </Section>
     );

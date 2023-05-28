@@ -12,14 +12,17 @@ const Footer = () => {
     return (
         <>
             <footer>
-                <div className="container lg:px-5 px-1 lg:py-12 py-9 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col lg:gap-[50px] gap-2">
+                <div className="container lg:px-5 md:px-0 px-1 lg:py-12 py-9 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col lg:gap-[10px] gap-2">
                     <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                            <img style={{ paddingBottom: "20px" }} src={pic} width='150' height='150' className='' alt='footer-logo' />
+                            <img src={pic} width='150' height='150' className='' alt='footer-logo' />
                         </a>
-                        <p className="mt-2 text-sm text-green">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+
                     </div>
 
+                    <div className="w-64 flex-shrink-1 md:mx-0 mx-auto text-center md:text-left">
+                        <p className="mt-2 text-sm text-green">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    </div>
                     <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
                         {/* <div className="lg:w-1/4 md:w-1/2 w-full px-4">
                             <h2 className="title-font font-medium text-green underline tracking-widest text-md uppercase mb-3">Quick Link</h2>
@@ -73,7 +76,7 @@ const Footer = () => {
 
                         {/* Social Links */}
                         <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-                            <h3 style={{ paddingTop: "20px" }} className='uppercase underline font-medium text-green mt-4'>Social Links</h3>
+                            <h3 className='uppercase underline font-medium text-green mt-4 ml-3'>Social Links</h3>
                             <div>
                                 <ul className="flex gap-6 mt-8 lg:justify-start md:justify-start justify-center">
                                     {/* <li>
@@ -119,7 +122,7 @@ const Footer = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="lg:w-1/4 md:w-1/2 w-full px-4 lg:ml-20 ml-0 flex lg:flex-row flex-col lg:justify-between lg:items-end justify-center items-center gap-x-20">
+                        <div className="lg:w-1/4 md:w-1/2 w-full px-4 lg:ml-20 ml-0 lg:pr-0 md:pr-16 pr-0 flex lg:flex-row flex-col lg:justify-between lg:items-end justify-center items-center gap-x-20">
                             <div className="text-center">
                                 <h2 className="title-font font-medium text-green underline tracking-widest text-md uppercase mb-3 lg:ml-5 ml-0 lg:mt-0 mt-12">Contact</h2>
 
