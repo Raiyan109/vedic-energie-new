@@ -193,7 +193,9 @@ const Table = () => {
             <div className="bg-gradient-to-b from-white via-white to-lightBlue py-5">
                 <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                     <div className='overflow'>
-
+                        <button type="button" className="rounded-full px-4 mr-2 bg-green text-white p-2 leading-none flex items-center lg:hidden md:block">
+                            Step 2
+                        </button>
                         <div className='w-full flex items-center justify-center gap-x-20 py-5'>
                             <button
                                 className={isAirConditionerOn ? `bg-blue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-blue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
@@ -217,7 +219,7 @@ const Table = () => {
                                 </thead>
 
                                 {/* Vertical text */}
-                                <div class="flex justify-center items-center absolute -right-44">
+                                <div class="flex justify-center items-center absolute -right-44 lg:block md:hidden">
                                     <h1 className='transform -rotate-90 text-[#e8f4f8] w-[500px] text-[150px] font-bold uppercase vertical2'>Step 2</h1>
                                 </div>
 

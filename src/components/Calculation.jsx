@@ -132,6 +132,9 @@ const Calculation = () => {
                     {/* <div>
                         <h2 className='text-center text-2xl font-bold text-lightBlue'>Energy Calculator</h2>
                     </div> */}
+                    <button type="button" className="rounded-full px-4 mr-2 bg-green text-white p-2 leading-none flex items-center lg:hidden md:block">
+                        Step 1
+                    </button>
                     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                         <div>
                             <span>
@@ -175,8 +178,10 @@ const Calculation = () => {
                                 </div>
 
                                 {/* Vertical text */}
-                                <div class="flex justify-center items-center absolute -right-44">
-                                    <h1 className='transform -rotate-90 text-[#E58C07] w-[500px] text-[150px] font-bold uppercase vertical'>Step 1</h1>
+                                <div className='lg:block md:hidden hidden'>
+                                    <div className="flex justify-center items-center absolute -right-44">
+                                        <h1 className='transform lg:-rotate-90 md:rotate-0 rotate-0  text-[#E58C07] w-[500px] lg:text-[150px] md:text-[50px] text-[40px] font-bold uppercase vertical'>Step 1</h1>
+                                    </div>
                                 </div>
 
                                 <div className='grid lg:grid-cols-1 grid-cols-1 lg:gap-x-40 gap-7 py-10'>
