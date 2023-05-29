@@ -8,7 +8,18 @@ export default function Tipscategory() {
     <div className="bg-orange py-[100px]">
       <h5 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5 text-center mb-24">Tips that can save energy and money
       </h5>
-      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 mx-10">
+      <div className="flex justify-center items-center">
+        <button type="button" className="rounded-full px-4 mr-2 bg-green text-white p-2 leading-none flex items-center lg:hidden md:block">
+          Step 2
+        </button>
+      </div>
+
+      {/* Vertical text */}
+      <div class="justify-center items-center absolute -right-44 -bottom-[3070px] lg:block md:hidden hidden">
+        <h1 className='transform -rotate-90 text-[#e8f4f8] w-[500px] text-[150px] font-bold uppercase vertical2'>Step 3</h1>
+      </div>
+
+      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 lg:mx-36 md:mx-20 mx-10">
 
         <div className="bg-indigo">
           <ul className="list-disc not-italic font-normal text-2xl border-[3px] border-indigo leading-10 text-white ml-5 p-2">
@@ -20,7 +31,7 @@ export default function Tipscategory() {
 
         </div>
         <summary
-          className="flex cursor-pointer items-center justify-between rounded-lg bg-gray-50 text-gray-900"
+          className="flex cursor-pointer items-center justify-between rounded-lg"
         >
           <h3 className="w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 1:</h3>
 
@@ -36,7 +47,7 @@ export default function Tipscategory() {
           </span>
         </summary>
       </details>
-      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 mx-10">
+      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 lg:mx-36 md:mx-20 mx-10">
 
         <div className="bg-indigo">
           <ul className="list-disc not-italic font-normal text-2xl border-[3px] border-indigo leading-10 text-white ml-5 p-2">
@@ -64,7 +75,7 @@ export default function Tipscategory() {
           </span>
         </summary>
       </details>
-      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 mx-10">
+      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 lg:mx-36 md:mx-20 mx-10">
 
         <div className="bg-indigo">
           <ul className="list-disc not-italic font-normal text-2xl border-[3px] border-indigo leading-10 text-white ml-5 p-2">
@@ -91,7 +102,7 @@ export default function Tipscategory() {
           </span>
         </summary>
       </details>
-      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 mx-10">
+      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 lg:mx-36 md:mx-20 mx-10">
 
         <div className="bg-indigo">
           <ul className="list-disc not-italic font-normal text-2xl border-[3px] border-indigo leading-10 text-white ml-5 p-2">

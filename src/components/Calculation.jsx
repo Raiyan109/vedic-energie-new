@@ -205,8 +205,8 @@ const Calculation = () => {
                                 {/* <div>Result: {result}</div> */}
                                 {/* Vertical text */}
                                 <div className='lg:block md:hidden hidden'>
-                                    <div className="flex justify-center items-center absolute -right-44">
-                                        <h1 className='transform lg:-rotate-90 md:rotate-0 rotate-0  text-[#E58C07] w-[500px] lg:text-[150px] md:text-[50px] text-[40px] font-bold uppercase vertical'>Step 1</h1>
+                                    <div className="flex justify-center items-center absolute -right-44 -bottom-96">
+                                        <h1 className='transform lg:-rotate-90 md:rotate-0 rotate-0  text-[#E58C07] w-[500px] text-[150px] font-bold uppercase vertical'>Step 1</h1>
                                     </div>
                                 </div>
 
