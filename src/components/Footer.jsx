@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
 
                     <div className="w-64 flex-shrink-1 md:mx-0 mx-auto text-center md:text-left">
-                        <p className="mt-2 text-sm text-green">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <p className="mt-2 text-sm text-blue">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                     </div>
                     <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
                         {/* <div className="lg:w-1/4 md:w-1/2 w-full px-4">
@@ -76,7 +76,7 @@ const Footer = () => {
 
                         {/* Social Links */}
                         <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-                            <h3 className='uppercase underline font-medium text-green mt-4 ml-3'>Social Links</h3>
+                            <h3 className='uppercase underline font-medium text-blue mt-4 ml-3'>Social Links</h3>
                             <div>
                                 <ul className="flex gap-6 mt-8 lg:justify-start md:justify-start justify-center">
                                     {/* <li>
@@ -124,7 +124,7 @@ const Footer = () => {
                         </div>
                         <div className="lg:w-1/4 md:w-1/2 w-full px-4 lg:ml-20 ml-0 lg:pr-0 md:pr-16 pr-0 flex lg:flex-row flex-col lg:justify-between lg:items-end justify-center items-center gap-x-20">
                             <div className="text-center">
-                                <h2 className="title-font font-medium text-green underline tracking-widest text-md uppercase mb-3 lg:ml-5 ml-0 lg:mt-0 mt-12">Contact</h2>
+                                <h2 className="title-font font-medium text-blue underline tracking-widest text-md uppercase mb-3 lg:ml-5 ml-0 lg:mt-0 mt-12">Contact</h2>
 
                                 <ul className="mt-8 space-y-4 text-sm">
                                     <li>
@@ -132,8 +132,8 @@ const Footer = () => {
                                             className="flex items-center justify-center gap-3 sm:justify-start"
                                             href="/"
                                         >
-                                            <h3 className='text-xl text-green'><ImLocation2 /></h3>
-                                            <span className='text-green text-sm'>Room- 3, B-20, Wallfort city, Raipur, Chhatisgarh</span>
+                                            <h3 className='text-xl text-blue'><ImLocation2 /></h3>
+                                            <span className='text-blue text-sm text-left'>Room- 3, B-20, Wallfort city, Raipur, Chhatisgarh</span>
                                         </a>
                                     </li>
                                     <li>
@@ -141,8 +141,8 @@ const Footer = () => {
                                             className="flex items-center justify-center gap-3 sm:justify-start"
                                             href="/"
                                         >
-                                            <h3 className='text-xl text-green'><MdEmail /></h3>
-                                            <span className='text-green text-sm'>contact@vedicenergie.com</span>
+                                            <h3 className='text-xl text-blue'><MdEmail /></h3>
+                                            <span className='text-blue text-sm'>contact@vedicenergie.com</span>
                                         </a>
                                     </li>
 
@@ -151,8 +151,8 @@ const Footer = () => {
                                             className="flex items-center justify-center gap-3 sm:justify-start"
                                             href="/"
                                         >
-                                            <h3 className='text-xl text-green'><BsFillTelephoneFill /></h3>
-                                            <span className='text-green text-sm'>+91 98439 37773</span>
+                                            <h3 className='text-xl text-blue'><BsFillTelephoneFill /></h3>
+                                            <span className='text-blue text-sm'>+91 98439 37773</span>
                                         </a>
                                     </li>
                                     <li>
@@ -171,7 +171,7 @@ const Footer = () => {
 
                     </div>
                 </div>
-                <footer className="flex justify-center items-center p-4 bg-blue lg:text-xs text-[10px]">
+                <footer className="flex justify-center items-center p-4 bg-lightBlue lg:text-sm text-[10px] font-semibold">
                     <div>
                         <p className='text-white'>COPYRIGHT © 2023 VEDIC ENERGIES | ALL RIGHTS RESERVED | PRIVACY | SITEMAP | LEGAL | COPYRIGHT | ACCESSIBILITY</p>
                     </div>

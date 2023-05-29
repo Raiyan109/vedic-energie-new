@@ -10,14 +10,14 @@ scroll-snap-align:center;
 `
 const Articles = () => {
     return (
-        <Section className='bg-gradient-to-b from-lightYellow via-lightYellow to-orange'>
+        <Section className='bg-gradient-to-b from-[#abb6f0] via-[#879af5] to-lightBlue'>
 
             <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20">
                 <div className="container mx-auto">
                     <div className="-mx-4 flex flex-wrap justify-center">
                         <div className="w-full px-4">
                             <div className="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
-                                <h1 id='article' className="text-3xl font-bold text-orange">Recent Articles</h1>
+                                <h1 id='article' className="text-3xl font-bold text-blue">Recent Articles</h1>
                             </div>
                         </div>
                     </div>

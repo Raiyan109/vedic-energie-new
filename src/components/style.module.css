@@ -1,11 +1,12 @@
 .in {
     width: 30px;
     height: 28px;
-    color: #2F45B7;
+    color: #05386B;
 }
 
 .in:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    transition: all 0.1s ease-in;
 }
 
 .navLink {
