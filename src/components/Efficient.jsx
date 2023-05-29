@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import bg from '../assets/ellipse.png'
-
+import saveMoney from '../assets/save-money (3).png'
+import saveWorld from '../assets/save-the-world (2).png'
+import energyControl from '../assets/energy-control (1).png'
+import silo from '../assets/silo (1).png'
 const Section = styled.div`
 background-image: url(${bg});
 background-repeat: no-repeat;
@@ -30,21 +33,7 @@ const Efficient = () => {
                     <div className="max-w-md sm:mx-auto sm:text-center rounded-tr-[74px] rounded-bl-[74px] bg-blue border-none p-10">
 
                         <div className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-white border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
-                            <svg
-                                className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
-                                stroke="currentColor"
-                                viewBox="0 0 52 52"
-                            >
-                                <polygon
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    fill="none"
-                                    points="29 13 14 29 25 29 23 39 38 23 27 23"
-
-
-                                />
-                            </svg>
+                            <img className='lg:w-20 md:w-20 w-12' src={saveMoney} alt="" />
                         </div>
                         <h6 className="mb-3 text-xl text-orange leading-5">The deep ocean</h6>
                         <p className="mb-3 text-sm text-white">
@@ -57,20 +46,7 @@ const Efficient = () => {
 
                     <div className="max-w-md sm:mx-auto sm:text-center rounded-tl-[74px] rounded-br-[74px] bg-blue border-none p-10">
                         <div className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-white border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
-
-                            <svg
-                                className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
-                                stroke="currentColor"
-                                viewBox="0 0 52 52"
-                            >
-                                <polygon
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    fill="none"
-                                    points="29 13 14 29 25 29 23 39 38 23 27 23"
-                                />
-                            </svg>
+                            <img className='lg:w-20 md:w-20 w-12' src={saveWorld} alt="" />
                         </div>
                         <h6 className="mb-3 text-xl text-orange leading-5">The deep ocean</h6>
                         <p className="mb-3 text-sm text-white">
@@ -84,20 +60,7 @@ const Efficient = () => {
                     <div className="max-w-md sm:mx-auto sm:text-center rounded-tl-[74px] rounded-br-[74px] bg-blue border-none p-10">
 
                         <div className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-white border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
-
-                            <svg
-                                className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
-                                stroke="currentColor"
-                                viewBox="0 0 52 52"
-                            >
-                                <polygon
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    fill="none"
-                                    points="29 13 14 29 25 29 23 39 38 23 27 23"
-                                />
-                            </svg>
+                            <img className='lg:w-20 md:w-20 w-12' src={energyControl} alt="" />
                         </div>
                         <h6 className="mb-3 text-xl text-orange leading-5">The deep ocean</h6>
                         <p className="mb-3 text-sm text-white">
@@ -110,19 +73,7 @@ const Efficient = () => {
 
                     <div className="max-w-md sm:mx-auto sm:text-center rounded-tr-[74px] rounded-bl-[74px] bg-blue border-none p-10">
                         <div className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-white border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
-                            <svg
-                                className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
-                                stroke="currentColor"
-                                viewBox="0 0 52 52"
-                            >
-                                <polygon
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    fill="none"
-                                    points="29 13 14 29 25 29 23 39 38 23 27 23"
-                                />
-                            </svg>
+                            <img className='lg:w-20 md:w-20 w-12' src={silo} alt="" />
                         </div>
                         <h6 className="mb-3 text-xl text-orange leading-5">The deep ocean</h6>
                         <p className="mb-3 text-sm text-white">

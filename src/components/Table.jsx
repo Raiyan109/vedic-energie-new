@@ -190,7 +190,7 @@ const Table = () => {
 
     return (
         <div>
-            <div className="bg-gradient-to-b from-white via-white to-lightBlue py-5">
+            <div className="relative bg-gradient-to-b from-white via-white to-lightBlue py-5">
                 <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                     <div className='overflow'>
                         <button type="button" className="rounded-full px-4 mr-2 bg-green text-white p-2 leading-none flex items-center lg:hidden md:block">
@@ -219,7 +219,7 @@ const Table = () => {
                                 </thead>
 
                                 {/* Vertical text */}
-                                <div class="justify-center items-center absolute -right-44 -bottom-[2000px] lg:block md:hidden hidden">
+                                <div class="justify-center items-center absolute -right-44 top-[340px] lg:block md:hidden hidden">
                                     <h1 className='transform -rotate-90 text-[#e8f4f8] w-[500px] text-[150px] font-bold uppercase vertical2'>Step 2</h1>
                                 </div>
 
