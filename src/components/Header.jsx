@@ -93,16 +93,16 @@ const Header = () => {
 
 
                             <li className={activeLink === 'banner' ? 'active' : ''}>
-                                <a href="#banner" onClick={(e) => handleClick(e, 'banner')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>Home</a>
+                                <a href="#banner" onClick={(e) => handleClick(e, 'banner')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>Home</a>
                             </li>
                             <li className={activeLink === 'efficient' ? 'active' : ''}>
-                                <a href="#efficient" onClick={(e) => handleClick(e, 'efficient')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>About Us</a>
+                                <a href="#efficient" onClick={(e) => handleClick(e, 'efficient')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>About Us</a>
                             </li>
                             <li className={activeLink === 'energyRes' ? 'active' : ''}>
-                                <a href="#energyRes" onClick={(e) => handleClick(e, 'energyRes')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>Services</a>
+                                <a href="#energyRes" onClick={(e) => handleClick(e, 'energyRes')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>Services</a>
                             </li>
                             <li className={activeLink === 'article' ? 'active' : ''}>
-                                <a href="#article" onClick={(e) => handleClick(e, 'article')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>Blog</a>
+                                <a href="#article" onClick={(e) => handleClick(e, 'article')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>Blog</a>
                             </li>
 
                             {/*  */}
@@ -170,8 +170,8 @@ const Header = () => {
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 5px blue' : 'none',
-                                            color: isActive ? 'blue' : '#2F45B7',
+                                            borderBottom: isActive ? 'solid 5px #EBE667' : 'none',
+                                            color: isActive ? '#EBE667' : 'white',
                                         };
                                     }}
                                 >

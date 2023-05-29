@@ -10,13 +10,13 @@
 
 .navLink {
     text-decoration: none;
-    color: #2F45B7;
+    color: #EBE667;
     transition: all 0.1s ease-in-out;
     position: relative;
 }
 
 .navLink:hover {
-    color: blue;
+    color: #EBE667;
 }
 
 .navLink::before {
@@ -25,7 +25,7 @@
     width: 100%;
     height: 3px;
     border-radius: 4px;
-    background-color: blue;
+    background-color: #EBE667;
     bottom: 0;
     left: 0;
     margin-bottom: -5px;
