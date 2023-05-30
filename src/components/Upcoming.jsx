@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import bg from '../assets/waveOrange.jpeg'
+import bg from '../assets/wave-bg-blue.png'
 import img from '../assets/solar-pa.png'
 import GetAQuote from './GetAQuote';
+
+
 const Section = styled.div`
 height:100vh;
 background-image: url(${bg});
-
 background-size: cover;
 isolation: isolate;
 scroll-snap-align:center;
@@ -15,7 +16,7 @@ const Upcoming = () => {
     return (
         <Section>
 
-            <div id="upcoming" className='bg-center bg-no-repeat lg:p-8 py-12'>
+            <div id="upcoming" className='bg-cover bg-no-repeat lg:p-8 py-12'>
 
                 <div className='text-center lg:text-3xl text-xl font-bold pt-10'>Upcoming Launch</div>
                 <section className="lg:p-36 md:p-32 py-20 p-1">
@@ -32,7 +33,7 @@ const Upcoming = () => {
                         <div className="flex items-center justify-center p-6 mt-0 lg:mt-0 h-72 sm:h-80 lg:h-50 xl:h-100 2xl:h-128">
                             <img src={img} alt="upcoming-energy" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
                                 style={{
-                                    boxShadow: '17px 25px 15px 8px rgba(0,0,0,0.2)'
+                                    boxShadow: '17px 25px 15px 8px rgb(37,89,191)'
                                 }}
                             />
 
