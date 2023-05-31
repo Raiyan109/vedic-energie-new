@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Link, NavLink } from 'react-router-dom';
 import GetAQuote from './GetAQuote';
-import logo from '../assets/homelogo.png';
+import logo from '../assets/logo-without-border.png';
 // import { HashLink as NavLink } from 'react-router-hash-link';
 import './style.css'
 import styles from './style.module.css'
@@ -67,7 +67,7 @@ const Header = () => {
             <nav style={{ marginTop: "-25px" }} className="px-2 sm:px-4">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <Link className="flex items-center" to='/'>
-                        <img src={logo} alt='header-logo' style={{ width: "70px", height: "70px", backgroundColor: "white", paddingTop: "-110px" }}></img>
+                        <img src={logo} alt='header-logo' style={{ width: "70px", height: "70px" }}></img>
                     </Link>
 
                     <button
