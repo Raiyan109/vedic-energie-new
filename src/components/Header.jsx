@@ -178,7 +178,7 @@ const Header = () => {
                                     Calculation
                                 </NavLink>
                             </li>
-                            <li><GetAQuote /></li>
+                            <li><GetAQuote backgroundColor='#F0EFFF' color='#2F45B7' /></li>
 
 
                         </ul>

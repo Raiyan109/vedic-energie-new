@@ -27,7 +27,7 @@ const Upcoming = () => {
                             <p className="mt-6 lg:mb-8 lg:text-lg md:text-sm text-xs mb-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like
                             </p>
                             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                                <GetAQuote />
+                                <GetAQuote backgroundColor='#2F45B7' color='#EBE667' />
                             </div>
                         </div>
                         <div className="flex items-center justify-center p-6 mt-0 lg:mt-0 h-72 sm:h-80 lg:h-50 xl:h-100 2xl:h-128">
