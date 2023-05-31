@@ -14,6 +14,7 @@ import EnergySaving from '../pages/EnergySaving'
 import NotFound from '../pages/NotFound'
 import Calculation from "../components/Calculation";
 import SpeedOMeter from "../components/SpeedOMeter";
+import ArticleDetail from "../components/ArticleDetail";
 
 
 const routes = createBrowserRouter([
@@ -32,6 +33,10 @@ const routes = createBrowserRouter([
     {
         path: '/blog',
         element: <Blog />
+    },
+    {
+        path: '/blog/:id',
+        element: <ArticleDetail />
     },
     {
         path: '/contact',
