@@ -25,7 +25,7 @@ const Article = ({ article, id }) => {
                     <p className="text-primary mb-7 text-sm leading-relaxed py-10">
                         {article.body}
                     </p>
-                    <Link to={`/blog/${id}`} ><button>Details</button></Link>
+                    <Link to={`/blog/${id}`} ><button className='text-blue text-xs text-right'>See details</button></Link>
                 </div>
             </div>
         </div>
