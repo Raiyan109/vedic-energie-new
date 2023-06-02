@@ -122,14 +122,14 @@ const Footer = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="lg:w-1/4 md:w-1/2 w-full px-4 lg:ml-20 ml-0 lg:pr-0 md:pr-16 pr-0 flex lg:flex-row flex-col lg:justify-between lg:items-end justify-center items-center gap-x-20">
+                        <div className="lg:w-1/4 md:w-1/2 w-full px-4 lg:ml-20 ml-0 lg:pr-0 md:pr-16 pr-4 flex lg:flex-row flex-col lg:justify-between lg:items-end justify-center items-center gap-x-20">
                             <div className="text-center">
                                 <h2 className="title-font font-medium text-blue underline tracking-widest text-md uppercase mb-3 lg:ml-5 ml-0 lg:mt-0 mt-12">Contact</h2>
 
                                 <ul className="mt-8 space-y-4 text-sm">
                                     <li>
                                         <a
-                                            className="flex items-center justify-center gap-3 sm:justify-start"
+                                            className="flex items-center justify-center gap-3"
                                             href="/"
                                         >
                                             <h3 className='text-xl text-blue'><ImLocation2 /></h3>
@@ -138,21 +138,21 @@ const Footer = () => {
                                     </li>
                                     <li>
                                         <a
-                                            className="flex items-center justify-center gap-3 sm:justify-start"
+                                            className="flex items-center justify-center gap-3"
                                             href="/"
                                         >
                                             <h3 className='text-xl text-blue'><MdEmail /></h3>
-                                            <span className='text-blue text-sm'>contact@vedicenergie.com</span>
+                                            <span className='text-blue text-sm text-left'>contact@vedicenergie.com</span>
                                         </a>
                                     </li>
 
                                     <li>
                                         <a
-                                            className="flex items-center justify-center gap-3 sm:justify-start"
+                                            className="flex items-center justify-center gap-3"
                                             href="/"
                                         >
                                             <h3 className='text-xl text-blue'><BsFillTelephoneFill /></h3>
-                                            <span className='text-blue text-sm'>+91 98439 37773</span>
+                                            <span className='text-blue text-sm text-left'>+91 98439 37773</span>
                                         </a>
                                     </li>
                                     <li>

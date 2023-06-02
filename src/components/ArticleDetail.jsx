@@ -30,15 +30,15 @@ const ArticleDetail = () => {
                 <div className='py-20'>
                     <div className='container mx-auto py-10'>
                         <div className='flex flex-col'>
-                            <div>
+                            <div className='p-9'>
                                 <img src={image} alt="" />
                             </div>
 
-                            <div className='flex justify-center items-center py-9'>
+                            <div className='flex justify-center items-center p-9'>
                                 <h1 className='text-5xl font-semibold text-green'>{title}</h1>
                             </div>
                             <h4 className='text-sm text-center text-green'>Published on {date}</h4>
-                            <div className='py-6 text-2xl leading-10'>
+                            <div className='p-6 text-2xl leading-10'>
                                 <p>{body}</p>
                             </div>
                         </div>

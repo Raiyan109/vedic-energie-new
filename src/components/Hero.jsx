@@ -2,14 +2,10 @@ import React from 'react';
 import bgHero from '../assets/mesmerizing-shot-crystal-blue-ocean-waves.jpg'
 import { CgInfinity } from 'react-icons/cg'
 import infinityImg from '../assets/infinity-symbol-2.png'
+
+
 const Hero = () => {
-    const imageStyle = {
-        // fontSize: '320px',
-        // opacity: '0.8',
-        color: 'linear-gradient(176.56deg, #B8D4F5 2.84%, #7DB1FF 129.04%)',
-        // background: ,
-        filter: 'blur(3.1px)',
-    };
+
     return (
         <div>
             {/* <div
@@ -26,7 +22,7 @@ const Hero = () => {
                         /> */}
                             <img src={infinityImg} alt="" />
 
-                            <h1 className='absolute lg:top-20 md:top-16 top-16 lg:right-24 md:right-24 right-0 lg:text-5xl md:text-5xl text-3xl max-w-md font-semibold' style={{ lineHeight: '1.3' }}><span className='text-white'>Responsible</span> Consumption And <span className='text-white'>Production</span></h1>
+                            <h1 className='absolute lg:top-20 md:top-16 top-10 lg:right-24 md:right-24 right-0 lg:text-5xl md:text-5xl text-3xl max-w-md font-semibold' style={{ lineHeight: '1.3' }}><span className='text-white'>Responsible</span> Consumption And <span className='text-white'>Production</span></h1>
 
                             <p className="absolute lg:-bottom-56 md:-bottom-36 bottom-50 lg:text-lg md:text-lg text-sm text-[#EAEDFF]">With an aim to change how the world is powered, we work towards developing smarter and greener energy plans. At a time when the environmental risk is increasing, we focus on creating transformational solutions to address the climate crisis and work in alignment with the global initiatives for saving the planet.</p>
 

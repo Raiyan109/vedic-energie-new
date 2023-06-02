@@ -21,7 +21,7 @@ const Affiliate = () => {
     return (
         <Section>
             <div className="py-36">
-                <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+                <div className="max-w-screen-xl mx-auto lg:px-4 md:px-8 px-2">
                     <div className="max-w-xl mx-auto text-center">
                         <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
                             Our Affiliates
@@ -29,7 +29,7 @@ const Affiliate = () => {
 
                     </div>
                     <div className="mt-12 flex justify-center">
-                        <ul className="inline-grid grid-cols-2 gap-x-10 gap-y-6 md:gap-x-16 md:grid-cols-3 lg:grid-cols-4">
+                        <ul className="inline-grid grid-cols-2 gap-x-16 gap-y-6 md:gap-x-16 md:grid-cols-3 lg:grid-cols-4">
 
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
@@ -54,13 +54,13 @@ const Affiliate = () => {
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
                                 <a href="https://climatetrade.com/es/inicio/
-" target="_blank"><img src={climateTradeImg} className="w-20 h-16 my-auto" alt="" /></a>
+                                " target="_blank"><img src={climateTradeImg} className="w-20 h-16 my-auto" alt="" /></a>
                             </li>
 
 
                             <li className='transform hover:scale-105 duration-500 ease-in-out'>
                                 <a href="https://info.ecosia.org/
-" target="_blank"><img src={ecosiaImg} className="w-20 h-16 my-auto" alt="" /></a>
+                                    " target="_blank"><img src={ecosiaImg} className="w-20 h-16 my-auto" alt="" /></a>
                             </li>
 
 

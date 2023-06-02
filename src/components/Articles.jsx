@@ -16,7 +16,7 @@ const Articles = () => {
     return (
         <Section className='bg-gradient-to-b from-[#abb6f0] via-[#879af5] to-lightBlue'>
 
-            <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20">
+            <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20 px-4">
                 <div className="container mx-auto">
                     <div className="-mx-4 flex flex-wrap justify-center">
                         <div className="w-full px-4">
