@@ -22,12 +22,17 @@ const Upcoming = () => {
                 <section className="lg:p-36 md:p-3 py-2 p-1">
                     <div className="container flex lg:flex-row lg:justify-between md:flex-col flex-col justify-center p-6 mx-auto ">
                         <div className="flex flex-col justify-center p-4 text-center lg:max-w-md xl:max-w-lg lg:text-left">
-                            <h1 className="lg:text-5xl md:text-3xl text-2xl font-bold leading-none  text-orange">Energy Calculator
+                            <h1 className="lg:text-5xl md:text-3xl text-2xl font-bold leading-none  text-orange">Home Energy Monitor
                             </h1>
-                            <p className="mt-6 lg:mb-8 lg:text-lg md:text-sm text-xs mb-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like
+                            <p className="mt-6 lg:mb-8 lg:text-lg md:text-sm text-xs mb-4">A home energy monitor is a device that helps you track and
+                                analyze the energy consumption of your household. It provides
+                                real-time information on how much energy is consumed ,allowing
+                                you to make informed decisions about energy usage and
+                                potentially save money on your utility bills. It is being developed
+                                inhouse and will be available to you in coming months.
                             </p>
                             <div className="flex flex-col space-y-4 ">
-                                <GetAQuote backgroundColor='#2F45B7' color='#EBE667' />
+                                <GetAQuote backgroundColor='#2F45B7' color='#F0EFFF' />
                             </div>
                         </div>
                         <div className="flex items-center justify-center p-6 lg:h-50 md:h-80 h-72">

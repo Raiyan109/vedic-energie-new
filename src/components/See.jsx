@@ -13,16 +13,14 @@ const See = () => {
     return (
         <Section>
             <div className='flex flex-col justify-center items-center py-32 px-5'>
-                <h1 className="see lg:pt-4 md:pt-3 pt-7 text-4xl font-bold text-white">SEE WHAT WE CAN DO FOR YOU
+                <h1 className="see lg:pt-4 md:pt-3 pt-7 text-5xl font-bold text-white">SEE WHAT WE CAN DO FOR YOU
                 </h1>
                 <h1 className="text-3xl text-white uppercase py-5">Schedule Your <span className='text-yellow'>First Meeting</span>
                 </h1>
 
-                <p className="py-7 text-white lg:w-2/3 mx-auto leading-relaxed text-sm font-light lg:text-center md:text-left text-left">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point
-                    of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
-                    making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-                    default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
-                    over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                <p className="py-7 text-white text-xl lg:w-2/3 mx-auto leading-relaxed font-light lg:text-center md:text-left text-left">Vedic Energy is your one stop destination for your energy needs that are cost
+                    effective, environment oriented and educationally impactful. Schedule a meeting
+                    with us and take your first step towards becoming energy efficient.
                 </p>
                 <button className='w-[137px] h-[50px] bg-yellow text-green rounded-md p-1 text-sm'>SCHEDULE NOW</button>
             </div>

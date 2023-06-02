@@ -35,11 +35,12 @@ const Efficient = () => {
                         <div className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-white border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
                             <img className='lg:w-20 md:w-20 w-12' src={saveMoney} alt="" />
                         </div>
-                        <h6 className="mb-3 text-xl text-orange leading-5">The deep ocean</h6>
+                        <h6 className="mb-3 text-xl text-orange leading-5">Cost-cutting</h6>
                         <p className="mb-3 text-sm text-white">
-                            A flower in my garden, a mystery in my panties. Heart attack never
-                            stopped old Big Bear. I didn't even know we were calling him Big
-                            Bear. We never had the chance to.
+                            We provide cost effective solutions for all your
+                            energy needs. With your bills getting reduced, you
+                            won't have to dig deep into your pockets to finance
+                            your energy requirements.
                         </p>
 
                     </div>
@@ -48,11 +49,13 @@ const Efficient = () => {
                         <div className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-white border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
                             <img className='lg:w-20 md:w-20 w-12' src={saveWorld} alt="" />
                         </div>
-                        <h6 className="mb-3 text-xl text-orange leading-5">The deep ocean</h6>
+                        <h6 className="mb-3 text-xl text-orange leading-5">Saving the planet</h6>
                         <p className="mb-3 text-sm text-white">
-                            A flower in my garden, a mystery in my panties. Heart attack never
-                            stopped old Big Bear. I didn't even know we were calling him Big
-                            Bear. We never had the chance to.
+                            At a time when the world is going through a severe
+                            climate crisis and the planet's health is deteriorating
+                            day by day, our greener solutions shall pave the
+                            way for a better future.
+
                         </p>
 
                     </div>
@@ -62,11 +65,11 @@ const Efficient = () => {
                         <div className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-white border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
                             <img className='lg:w-20 md:w-20 w-12' src={energyControl} alt="" />
                         </div>
-                        <h6 className="mb-3 text-xl text-orange leading-5">The deep ocean</h6>
+                        <h6 className="mb-3 text-xl text-orange leading-5">Efficient powering</h6>
                         <p className="mb-3 text-sm text-white">
-                            A flower in my garden, a mystery in my panties. Heart attack never
-                            stopped old Big Bear. I didn't even know we were calling him Big
-                            Bear. We never had the chance to.
+                            We help you become energy-efficient by assisting
+                            you to meet your growing energy demands using
+                            cost-effective and environment friendly ways.
                         </p>
 
                     </div>
@@ -75,11 +78,12 @@ const Efficient = () => {
                         <div className="circle flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-white border-2 border-green m-[-79px] sm:mx-auto sm:w-24 sm:h-24">
                             <img className='lg:w-20 md:w-20 w-12' src={silo} alt="" />
                         </div>
-                        <h6 className="mb-3 text-xl text-orange leading-5">The deep ocean</h6>
+                        <h6 className="mb-3 text-xl text-orange leading-5">A step towards SDGs</h6>
                         <p className="mb-3 text-sm text-white">
-                            A flower in my garden, a mystery in my panties. Heart attack never
-                            stopped old Big Bear. I didn't even know we were calling him Big
-                            Bear. We never had the chance to.
+                            Ever wondered if you could contribute to the SDGs
+                            from your home? Here is your chance to customize
+                            your energy plans and needs in harmony with the
+                            environment.
                         </p>
                     </div>
                 </div>
