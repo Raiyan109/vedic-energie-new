@@ -12,20 +12,36 @@ select {
     box-shadow:none;
     border:0!important;
     color:#FEFFCD;
-    background-image: none;
+    // background-image: none;
     flex: 1;
     padding: 0 .5em;
     cursor:pointer;
     font-size: 1em;
     font-family: 'Open Sans', sans-serif;
+    
  }
- select::-ms-expand {
-    display: none;
- }
+ select::before {
+    content: "\f13a";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+ 
  .select {
     border:none;
     border-bottom: 1px solid #FEFFCD;
  }
+
+  
 `
 const LightConsumption = ({ lightSelectedConsumptionTime, isLightsOn, handleConsumptionTimeSelect }) => {
     return (

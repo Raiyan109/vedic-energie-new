@@ -14,7 +14,7 @@ scroll-snap-align:center;
 `
 const Articles = () => {
     return (
-        <Section className='bg-gradient-to-b from-[#abb6f0] via-[#879af5] to-lightBlue'>
+        <Section className='bg-gradient-to-b from-[#E7EDFB] via-[#8F9CDA] to-[#354AB9]'>
 
             <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20 px-4">
                 <div className="container mx-auto">

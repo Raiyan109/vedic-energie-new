@@ -225,7 +225,7 @@ const Table = () => {
 
                                 <tbody className="text-blue py-3">
                                     {/* Air Condition */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Air Conditioner</td>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                             <div className={styles.toggle}>
@@ -276,7 +276,7 @@ const Table = () => {
                                     </tr>
 
                                     {/* Geyser */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Geyser</td>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                             <div className={styles.toggle}>
@@ -310,7 +310,7 @@ const Table = () => {
                                     </tr>
 
                                     {/* Washing Machine */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5 py-6  whitespace-nowrap font-semibold">Washing Machine</td>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                             <label className={styles.toggleSwitch}>
@@ -344,7 +344,7 @@ const Table = () => {
                                     </tr>
 
                                     {/* Microwave Oven */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Microwave Oven</td>
                                         <td className="pr-6 pl-5 whitespace-nowrap font-semibold">
                                             <label className={styles.toggleSwitch}>
@@ -378,7 +378,7 @@ const Table = () => {
                                     </tr>
 
                                     {/* Fridge */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Fridge</td>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                             <label className={styles.toggleSwitch}>
@@ -412,7 +412,7 @@ const Table = () => {
                                     </tr>
 
                                     {/* Lights */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Lights</td>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                             <label className={styles.toggleSwitch}>
@@ -480,7 +480,7 @@ select {
     box-shadow:none;
     border:0!important;
     color:#FEFFCD;
-    background-image: none;
+    // background-image: none;
     flex: 1;
     padding: 0 .5em;
     cursor:pointer;

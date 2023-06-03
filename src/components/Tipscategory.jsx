@@ -20,7 +20,7 @@ export default function Tipscategory() {
         <h1 className='transform -rotate-90 text-[#e8f4f8] w-[500px] text-[150px] font-bold uppercase vertical2'>Step 3</h1>
       </div>
 
-      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 lg:mx-36 md:mx-20 mx-10">
+      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 lg:mx-80 md:mx-20 mx-10">
 
         <div className="bg-indigo">
           <ul className="list-disc not-italic font-normal text-2xl border-[3px] border-indigo leading-10 text-white ml-5 p-2 space-y-3">
@@ -38,7 +38,7 @@ export default function Tipscategory() {
           <h3 className="w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 1:</h3>
 
           <span className="block group-open:hidden mr-3">
-            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19.4114 49.7031V0.555394H30.562V49.7031H19.4114ZM0.41282 30.7045V19.554H49.5605V30.7045H0.41282Z" fill="#2F45B7" />
             </svg>
           </span>
@@ -49,7 +49,7 @@ export default function Tipscategory() {
           </span>
         </summary>
       </details>
-      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 lg:mx-36 md:mx-20 mx-10">
+      <details className="group [&_summary::-webkit-details-marker]:hidden border-[3px] bg-white border-brown my-10 lg:mx-80 md:mx-20 mx-10">
 
         <div className="bg-indigo">
           <ul className="list-disc not-italic font-normal text-2xl border-[3px] border-indigo leading-10 text-white ml-5 p-2 space-y-5">
@@ -71,7 +71,7 @@ export default function Tipscategory() {
           <h3 className=" w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 2:</h3>
 
           <span className="block group-open:hidden mr-3">
-            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19.4114 49.7031V0.555394H30.562V49.7031H19.4114ZM0.41282 30.7045V19.554H49.5605V30.7045H0.41282Z" fill="#2F45B7" />
             </svg>
           </span>

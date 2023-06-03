@@ -46,7 +46,7 @@ const EnergyResidency = () => {
 
             <section id="energyRes">
                 <div className="container flex flex-col justify-center px-4 mx-auto lg:py-24 py-12 lg:flex-row lg:justify-between">
-                    <div className="flex flex-col justify-center py-6 px-2 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+                    <div className="flex flex-col justify-center py-6 lg:px-2 md:px-6 px-2 text-center rounded-sm lg:max-w-md lg:text-left">
                         <h1 className="lg:text-5xl md:text-5xl font-bold text-4xl text-white lg:leading-loose leading-12">
                             Why choose Vedic Energie?
                         </h1>
@@ -66,7 +66,7 @@ const EnergyResidency = () => {
                     </div>
 
                     <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                        <img src={img1} alt="energy-residency" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" style={{
+                        <img src={img1} alt="energy-residency" className="object-cover h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" style={{
                             boxShadow: '17px 15px 35px 8px white',
 
                         }} />

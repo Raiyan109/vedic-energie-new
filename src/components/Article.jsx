@@ -16,12 +16,12 @@ const Article = ({ article, id }) => {
                     <h3>
                         <a
                             href="#"
-                            className="text-green hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
+                            className="text-blue hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
                         >
                             {article.title}
                         </a>
                     </h3>
-                    <p className='text-md font-normal text-green'>{article.date}</p>
+                    <p className='text-md font-normal text-blue'>{article.date}</p>
                     <p className="text-primary mb-7 text-sm leading-relaxed py-10">
                         {article.body}
                     </p>
