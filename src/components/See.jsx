@@ -12,7 +12,7 @@ scroll-snap-align:center;
 const See = () => {
     return (
         <Section>
-            <div className='flex flex-col justify-center items-center py-32 px-5'>
+            <div className='flex flex-col justify-center items-center py-32 px-10'>
                 <h1 className="see lg:pt-4 md:pt-3 pt-7 text-5xl font-bold text-white">SEE WHAT WE CAN DO FOR YOU
                 </h1>
                 <h1 className="text-3xl text-white uppercase py-5">Schedule Your <span className='text-yellow'>First Meeting</span>

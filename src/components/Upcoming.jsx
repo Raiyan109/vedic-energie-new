@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import bg from '../assets/wave-bg-blue.png'
-import img from '../assets/solar-pa.png'
+import img from '../assets/Home energy monitors.jpg'
 import GetAQuote from './GetAQuote';
 
 

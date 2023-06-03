@@ -1,5 +1,5 @@
 import React from 'react';
-import bgHero from '../assets/banner-white2.png'
+import bgHero from '../assets/mesmerizing-shot-crystal-blue-ocean-waves.jpg'
 import { CgInfinity } from 'react-icons/cg'
 import infinityImg from '../assets/infinity-symbol-2.png'
 import './style.css'
@@ -11,10 +11,11 @@ const Hero = () => {
             {/* <div
                 className='absolute inset-0 bg-[#444444]/75'
             ></div> */}
-            {/* <div
+            <div
                 className="absolute inset-0  bg-transparent bg-gradient-to-r from-black/75 to-white/35 bg-blend-overlay "
-            ></div> */}
-            {/* <div className="absolute inset-0 bg-white/75 top-96 bottom-96 right-80 left-80 spray-div"></div> */}
+            ></div>
+            <div className="absolute inset-0 bg-[#f0f0f0] opacity-90 lg:top-[400px] lg:right-[800px] lg:left-[800px] md:top-96 md:bottom-96 md:right-80 md:left-80 top-[460px] bottom-[430px] right-40 left-32 spray-div"></div>
+            {/* <div class="egg-shape"></div> */}
 
             <div className='h-screen flex justify-center items-center bg-cover bg-no-repeat' id='banner' style={{ backgroundImage: `url(${bgHero})` }} >
                 <section className="dark:bg-gray-800 dark:text-gray-100">

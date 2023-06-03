@@ -26,7 +26,7 @@ const Articles = () => {
                         </div>
                     </div>
                     <div className="flex items-center justify-center">
-                        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-20">
+                        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-32">
                             {
                                 Blogs.map(article =>
                                     <Article key={article.id} article={article} id={article.id} />
