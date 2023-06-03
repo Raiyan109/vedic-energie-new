@@ -1,5 +1,5 @@
 import React from 'react';
-import bgHero from '../assets/banner-img-with-white-circle.png'
+import bgHero from '../assets/banner-white2.png'
 import { CgInfinity } from 'react-icons/cg'
 import infinityImg from '../assets/infinity-symbol-2.png'
 import './style.css'
