@@ -65,7 +65,7 @@ export default function PieChart({ airPercentage, geyserPercentage, washingPerce
         <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5 text-center mb-24">High Energy Consumption Wattage <br /> of the Devices</h1>
         <div className="container flex lg:flex-row  flex-col lg:mx-0 md:mx-auto mx-auto">
           <div className='lg:max-w-2xl max-w-lg mx-auto mb-16'>
-            <h2 className='lg:text-2xl md:text-xl text-lg leading-relaxed text-blue lg:text-left text-center px-6'>By comparing the user's energy consumption with the state's per capita energy consumption, the calculator provides a benchmark for the user to evaluate their own energy usage. If the user's consumption is significantly higher than the state's average, it suggests that they might have opportunities for energy-saving improvements</h2>
+            <h2 className='lg:text-2xl md:text-xl text-lg leading-relaxed text-blue lg:text-left text-center px-6'>The pie chart helps identify the specific devices or appliances that contribute significantly to overall energy consumption. Devices with larger slices in the pie chart indicate higher energy consumption and may be good targets for energy efficiency improvements.</h2>
           </div>
           <div className='lg:w-96 lg:h-96 w-[600px] h-80 flex justify-center items-center lg:pr-0 pr-16 md:mx-auto '>
             {chartData && (

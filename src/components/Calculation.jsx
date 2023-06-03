@@ -247,7 +247,7 @@ const Calculation = () => {
 
                         <div className='container flex lg:flex-row  flex-col lg:justify-between lg:items-center mx-auto lg:px-14 px-7 lg:space-y-0 md:space-y-12 space-y-0'>
                             <div className='lg:max-w-2xl max-w-lg mx-auto mb-16'>
-                                <h2 className='lg:text-2xl md:text-xl text-lg leading-relaxed text-blue lg:text-left text-center'>By comparing the user's energy consumption with the state's per capita energy consumption, the calculator provides a benchmark for the user to evaluate their own energy usage. If the user's consumption is significantly higher than the state's average, it suggests that they might have opportunities for energy-saving improvements</h2>
+                                <h2 className='lg:text-2xl md:text-xl text-lg leading-relaxed text-blue lg:text-left text-center'>By comparing the user's energy consumption with the state's per capita energy consumption, the calculator provides a benchmark for the user to evaluate their own energy usage. If the user's consumption is significantly higher than the state's average, it suggests that they might have opportunities for energy-saving improvements.</h2>
                             </div>
                             <div className="">
                                 <ColoredGauge value={fixedResult5000} capitaValue={avgConsumptionData} />
