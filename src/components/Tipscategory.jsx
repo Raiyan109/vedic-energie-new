@@ -35,7 +35,12 @@ export default function Tipscategory() {
         <summary
           className="flex cursor-pointer items-center justify-between rounded-lg"
         >
-          <h3 className="w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 1:</h3>
+          <div className="flex flex-col">
+            <h3 className="w-full h-[162px] not-italic font-semibold text-2xl leading-10 pt-3 ml-[50px] -mb-20 text-indigo underline">Category 1:</h3>
+            <div className="max-w-4xl pl-12 mb-2 pr-12">
+              <span className="text-xs text-gray">This category can directly impact users' energy consumption if they follow it, irrespective of their current state. These are the most cost effective tips to achieve energy efficiency.</span>
+            </div>
+          </div>
 
           <span className="block group-open:hidden mr-3">
             <svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +73,12 @@ export default function Tipscategory() {
         <summary
           className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 text-gray-900"
         >
-          <h3 className=" w-[1303px] h-[162px] not-italic font-semibold text-2xl leading-10 pt-[60px] ml-[50px] text-indigo underline">Category 2:</h3>
+          <div className="flex flex-col">
+            <h3 className="w-full h-[162px] not-italic font-semibold text-2xl leading-10 pt-3 ml-[50px] -mb-20 text-indigo underline">Category 2:</h3>
+            <div className="max-w-4xl pl-12 mb-2 pr-12">
+              <span className="text-xs text-gray">This category requires a little more effort and money from users to make them energy efficient.</span>
+            </div>
+          </div>
 
           <span className="block group-open:hidden mr-3">
             <svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">

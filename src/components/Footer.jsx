@@ -146,7 +146,7 @@ const Footer = () => {
                                         </a>
                                     </li>
 
-                                    <li>
+                                    <li className='mr-20'>
                                         <a
                                             className="flex items-center justify-center gap-3"
                                             href="/"
@@ -160,15 +160,15 @@ const Footer = () => {
                                     </li>
                                 </ul>
                             </div>
-                            <div>
-                                <a
-                                    href="/"
-                                >
-                                    <iframe className='py-5' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109060.53116613768!2d81.54933879141241!3d21.213079179947787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dc214e07cc6b%3A0xad8281733d2dcbe7!2sRaipur%2C%20Chhattisgarh%20492013!5e0!3m2!1sen!2sin!4v1681626250643!5m2!1sen!2sin" width="330" height="197" ></iframe>
-                                </a>
-                            </div>
-                        </div>
 
+                        </div>
+                        <div>
+                            <a
+                                href="/"
+                            >
+                                <iframe className='py-5' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109060.53116613768!2d81.54933879141241!3d21.213079179947787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dc214e07cc6b%3A0xad8281733d2dcbe7!2sRaipur%2C%20Chhattisgarh%20492013!5e0!3m2!1sen!2sin!4v1681626250643!5m2!1sen!2sin" width="330" height="197" ></iframe>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <footer className="flex justify-center items-center p-4 bg-lightBlue lg:text-sm text-[10px] font-semibold">
