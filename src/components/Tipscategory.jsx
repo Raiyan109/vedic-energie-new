@@ -10,7 +10,7 @@ export default function Tipscategory() {
       <h5 className="lg:text-6xl md:text-4xl font-semibold tracking-tight text-3xl text-white text-center mb-24 capitalize">Tips that can save energy and money
       </h5>
       <div className="flex justify-center items-center">
-        <button type="button" className="rounded-full px-4 mr-2 bg-green text-white p-2 leading-none flex items-center lg:hidden md:block">
+        <button type="button" className="rounded-full px-4 mr-2 bg-blue text-white p-2 leading-none flex items-center lg:hidden md:block">
           Step 3
         </button>
       </div>

@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import SpeedOMeter from './SpeedOMeter';
 import Meter from './Meter';
 import UserMeter from './UserMeter';
-import bg from '../assets/ellipse.png'
+import bg from '../assets/bg-energy-meter.png'
 import UserGauge from './UserGauge';
 import CapitaGauge from './CapitaGauge';
 import { Arced } from './Arced';
@@ -127,7 +127,7 @@ const Calculation = () => {
     return (
         <Section>
 
-            <section className="bg-orange">
+            <section className="bg-blue">
                 <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                     {/* <div>
                         <h2 className='text-center text-2xl font-bold text-lightBlue'>Energy Calculator</h2>
@@ -237,6 +237,7 @@ const Calculation = () => {
                     </div>
                 </div>
             </section>
+
             {
                 showEnergyMeter && (
                     <div className='box h-auto p-10'>
@@ -244,41 +245,17 @@ const Calculation = () => {
                             <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-lightBlue py-5">Energy Meter</h1>
                         </div>
 
-                        <div className='lg:flex md:grid md:grid-cols-1 justify-center items-center grid grid-cols-1'>
-                            {/* <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} /> */}
-
-                            {/* <CapitaGauge conData={avgConsumptionData} /> */}
-                            {/* <UserGauge userData={result} key={result} /> */}
-
-                            {/* <SpeedOMeter userData={result} key={result} /> */}
-
-                            <div className="p-10">
-                                {/* <Arced value={result} capitaValue={avgConsumptionData} /> */}
-
-                                {/* <BlurryGauge value={result} capitaValue={avgConsumptionData} /> */}
-
-
-                                <ColoredGauge value={fixedResult5000} capitaValue={avgConsumptionData} />
-
+                        <div className='container flex lg:flex-row  flex-col lg:justify-between lg:items-center mx-auto lg:px-14 px-7 lg:space-y-0 md:space-y-12 space-y-0'>
+                            <div className='lg:max-w-2xl max-w-lg mx-auto mb-16'>
+                                <h2 className='lg:text-2xl md:text-xl text-lg leading-relaxed text-blue lg:text-left text-center'>By comparing the user's energy consumption with the state's per capita energy consumption, the calculator provides a benchmark for the user to evaluate their own energy usage. If the user's consumption is significantly higher than the state's average, it suggests that they might have opportunities for energy-saving improvements</h2>
                             </div>
-
-                            {/* <div className='flex justify-center items-center'>
-
-                        <div className='max-w-md rounded-2xl text-[#1A2421] backdrop-blur-lg [ p-2 md:p-10 lg:p-10 ] [ bg-gradient-to-b from-white/60 to-white/30 ]
-                            [ border-[1px] border-solid border-white border-opacity-30 ]   [ shadow-black/70 shadow-2xl ] mt-10'>
-                            <h1 className='text-xl font-semibold text-lightgreen text-center uppercase mb-10'>{message}</h1>
-                            <p className='mb-6'>Per Capita Consumption data : <span className='text-orange font-bold'>
-                                {avgConsumptionData.data}</span></p>
-                            <p className=''>Your Consumption data : <span className='text-orange font-bold'>
-                                {result}</span></p>
+                            <div className="">
+                                <ColoredGauge value={fixedResult5000} capitaValue={avgConsumptionData} />
+                            </div>
                         </div>
-                    </div> */}
-                        </div>
-
                     </div>
                 )
             }
-
         </Section>
     );
 };
@@ -294,7 +271,7 @@ select {
     outline:0;
     box-shadow:none;
     border:0!important;
-    background: #FFB951;
+    background: #05386B;
     color:#FEFFCD;
     background-image: none;
     flex: 1;
