@@ -45,7 +45,7 @@ const Footer3 = () => {
                                 </li> */}
                                             <li>
                                                 <a
-                                                    href="/"
+                                                    href="https://www.instagram.com/vedic_energie/?igshid=MzRlODBiNWFlZA%3D%3D"
                                                     rel="noreferrer"
                                                     target="_blank"
                                                     className="transition hover:opacity-75 text-xl"
@@ -55,7 +55,7 @@ const Footer3 = () => {
                                             </li>
                                             <li>
                                                 <a
-                                                    href="/"
+                                                    href="https://twitter.com/vedic_energie?t=bd_PdgRja_QjDqDj5Cq9bw&s=09"
                                                     rel="noreferrer"
                                                     target="_blank"
                                                     className="transition hover:opacity-75 text-xl"
@@ -80,7 +80,7 @@ const Footer3 = () => {
                         </div>
                         <div className='flex lg:flex-row md:flex-col flex-col space-x-9 '>
                             {/* contact */}
-                            <div className='flex justify-center items-center'>
+                            <div className='flex justify-center items-center lg:pl-0 md:pl-12 pl-7'>
                                 <div>
                                     <h2 className="title-font font-medium text-blue underline tracking-widest text-md uppercase mb-3 lg:-ml-16 ml-0 lg:mt-0 mt-12 text-center">Contact</h2>
 
@@ -122,7 +122,7 @@ const Footer3 = () => {
                                 </div>
                             </div>
                             {/* map */}
-                            <div className='flex justify-center items-center'>
+                            <div className='flex justify-center items-center lg:pr-0 md:pr-0 pr-8'>
                                 <a
                                     href="/"
                                 >
