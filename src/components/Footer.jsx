@@ -91,7 +91,7 @@ const Footer = () => {
                                 </li> */}
                                     <li>
                                         <a
-                                            href="/"
+                                            href="https://www.instagram.com/vedic_energie/?igshid=MzRlODBiNWFlZA%3D%3D"
                                             rel="noreferrer"
                                             target="_blank"
                                             className="transition hover:opacity-75 text-xl"
@@ -101,7 +101,7 @@ const Footer = () => {
                                     </li>
                                     <li>
                                         <a
-                                            href="/"
+                                            href="https://twitter.com/vedic_energie?t=bd_PdgRja_QjDqDj5Cq9bw&s=09"
                                             rel="noreferrer"
                                             target="_blank"
                                             className="transition hover:opacity-75 text-xl"
