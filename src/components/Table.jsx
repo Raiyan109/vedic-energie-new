@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from "react"
 import styles from '../components/checkboxToggle.module.css'
 import '../components/style.css'
-import { customTableItems, tableItems } from '../constants';
+import { customMachines, customTableItems, tableItems } from '../constants';
 import AddButton from './AddButton';
 import CalculateButton from './CalculateButton';
 import FinalCalculate from './FinalCalculate';
@@ -21,6 +21,7 @@ import PieChart from './PieChart';
 import OvenConsumption from './Consumptions/OvenConsumption';
 import FridgeConsumption from './Consumptions/FridgeConsumption';
 import LightConsumption from './Consumptions/LightConsumption';
+import CustomMachines from './CustomMachines';
 
 const Table = () => {
     // const [selectedItem, setSelectedItem] = useState(0)
@@ -447,6 +448,49 @@ const Table = () => {
                                 </tbody>
                             </table >
                         </div>
+
+
+                        {/* Custom Machines Section */}
+                        <div className="lg:max-w-none max-w-xl mt-8 py-6">
+                            <h3 className="text-blue lg:text-2xl font-bold text-xl">
+                                If You Want To Add Other Machines You Can Customize It Here
+                            </h3>
+                        </div>
+
+                        <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4'>
+                            <table className="lg:w-1/3 table-auto text-left border-separate border-spacing-y-3">
+
+                                <tbody className="text-blue py-3">
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        <td className="  whitespace-nowrap font-semibold">
+                                            <select name="watt" id="watt"
+                                                className='w-52 h-12 bg-[#EBEBEB] rounded-md flex justify-center items-center text-xl text-lightBlue select'>
+                                                {customMachines.map(item => (
+                                                    <option value={item.name}>{item.name}</option>
+                                                ))}
+                                            </select>
+                                        </td>
+                                        <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
+                                            <label className={styles.toggleSwitch}>
+                                                <input
+                                                    type="checkbox"
+                                                    checked={isWashingOn}
+                                                    onChange={handleWashingToggle}
+                                                />
+                                                <span className={styles.toggleSwitchSlider}></span>
+                                            </label>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <AddButton text='Add' />
+                        </div>
+
+
+
+
                         <div className='py-20 flex justify-center items-center'>
                             <FinalCalculate handleClick={handleFinalCalculateClick} />
                         </div>
@@ -454,17 +498,19 @@ const Table = () => {
                 </div >
             </div >
 
-            {showPieChart && (
-                <PieChart
-                    airPercentage={airTotal}
-                    geyserPercentage={geyserTotal}
-                    washingPercentage={washingTotal}
-                    ovenPercentage={ovenTotal}
-                    fridgePercentage={fridgeTotal}
-                    lightPercentage={lightsTotal}
-                />
-            )}
-        </div>
+            {
+                showPieChart && (
+                    <PieChart
+                        airPercentage={airTotal}
+                        geyserPercentage={geyserTotal}
+                        washingPercentage={washingTotal}
+                        ovenPercentage={ovenTotal}
+                        fridgePercentage={fridgeTotal}
+                        lightPercentage={lightsTotal}
+                    />
+                )
+            }
+        </div >
     );
 };
 

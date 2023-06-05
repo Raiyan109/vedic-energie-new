@@ -1,7 +1,7 @@
 import React from 'react';
 import bgHero from '../assets/mesmerizing-shot-crystal-blue-ocean-waves.jpg'
 import { CgInfinity } from 'react-icons/cg'
-import infinityImg from '../assets/infinity-symbol-2.png'
+import infinityImg from '../assets/infinity-with-white.png'
 import './style.css'
 
 const Hero = () => {
@@ -11,7 +11,7 @@ const Hero = () => {
             <div
                 className="absolute inset-0  bg-transparent bg-gradient-to-r from-black/75 to-white/35 bg-blend-overlay "
             ></div>
-            <div className="absolute inset-0 bg-[#f0f0f0] opacity-90 lg:top-[400px] lg:right-[800px] lg:left-[800px] md:top-96 md:bottom-96 md:right-80 md:left-80 top-[460px] bottom-[430px] right-40 left-32 spray-div"></div>
+            {/* <div className="absolute inset-0 bg-[#f0f0f0] opacity-90 lg:top-[400px] lg:right-[800px] lg:left-[800px] md:top-96 md:bottom-96 md:right-80 md:left-80 top-[460px] bottom-[430px] right-40 left-32 spray-div"></div> */}
             {/* <div class="egg-shape"></div> */}
 
             <div className='h-screen flex justify-center items-center bg-cover bg-no-repeat' id='banner' style={{ backgroundImage: `url(${bgHero})` }} >
