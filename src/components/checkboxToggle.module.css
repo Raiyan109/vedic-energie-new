@@ -9,7 +9,7 @@
     text-indent: -9999px;
     width: 70px;
     height: 30px;
-    background: grey;
+    background: #D9D9D9;
     display: block;
     border-radius: 100px;
     position: relative;
@@ -21,20 +21,21 @@
     position: absolute;
     top: 5px;
     left: 5px;
-    width: 20px;
-    height: 20px;
-    background: #fff;
+    width: 22px;
+    height: 22px;
+    background: #61DC96;
     border-radius: 90px;
     transition: 0.4s;
 }
 
 .toggle input:checked+label {
-    background: #bada55;
+    background: #FEFFCD;
 }
 
 .toggle input:checked+label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
+    background: #FFB951;
 }
 
 /* .toggle label:active:after {
@@ -61,7 +62,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: gray;
+    background-color: #D9D9D9;
     transition: 0.4s;
     border-radius: 34px;
 }
@@ -73,15 +74,16 @@
     height: 22px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background: #61DC96;
     transition: 0.4s;
     border-radius: 50%;
 }
 
 .toggleSwitch input:checked+.toggleSwitchSlider {
-    background-color: #bada55;
+    background: #FEFFCD;
 }
 
 .toggleSwitch input:checked+.toggleSwitchSlider:before {
     transform: translateX(38px);
+    background: #FFB951;
 }

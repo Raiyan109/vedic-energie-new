@@ -606,3 +606,67 @@ export const perCapitaEnergyConsumptionData = [
         "name": "West Bengal", "data": 176.9817362
     },
 ]
+
+
+export const Category1 = [
+    { "id": 1, "item": 'Using LED light bulbs in homes and buildings is only one of many ways to reduce energy costs and CO2 emissions, and achieve substantial reductions in electricity bills.' },
+
+    { "id": 2, "item": 'Utilize natural light by using electronic chokes and regulators.' },
+    { "id": 3, "item": 'Use of light-colored, loose weave curtains on windows to allow daylight and also decorate with lighter colors that reflected daylight. ' },
+    { "id": 4, "item": 'Use of task-lighting, i.e. focus the light where you need it.' },
+    { "id": 5, "item": 'Installing exhaust fans at higher elevation than ceiling fans.' },
+    { "id": 6, "item": 'Start using solar water heaters; the initial investments for upgrades typically pay for themselves through saved energy bills in just a few years.' },
+    { "id": 7, "item": 'Install Insulation and timer in water heaters to reduce wastage of heat.' },
+    { "id": 8, "item": 'Use cloth napkins and rags instead of paper towels in the kitchen.' },
+    { "id": 9, "item": 'The so-called zero bulb uses 12 to 15-watt power, so do not keep it on overnight as a night bulb.' },
+    { "id": 10, "item": 'Do not allow the refrigerator to frost. Whenever the frost gets more than 5mm thick, defrost the refrigerator. Defrosting the refrigerator 5-6 times a year can reduce power consumption drastically.' },
+    { "id": 11, "item": 'Battery chargers such as those for cell phones, laptops, and digital cameras draw power whenever they are plugged in and are very inefficient to pull the plug and save electricity.' },
+    { "id": 12, "item": 'Plant trees around your house. Planting trees and shrubs to shade AC units but not to block the airflow. A unit operating in the shade uses as much as 10% less electricity than the same operating in the sun.' },
+    { "id": 13, "item": 'Set the thermostat of AC at 26 degree celsius for optimal cooling. Prefer AC having automatic temperature cut-off. And keeping regulators at a low cool position.' },
+    { "id": 14, "item": 'During summer, keep the thermostat at high. The less difference between the indoor and outdoor temperatures, the lower will be the energy consumption.' },
+    { "id": 15, "item": 'Clean AC filter every month.' },
+    { "id": 16, "item": 'Roof-garden can reduce the load on AC.' },
+]
+
+export const Category2 = [
+    { "id": 1, "item": 'Install motion sensors to avoid wastage of electricity.' },
+
+    { "id": 2, "item": 'Replace old model appliances with new ones as they are more efficient.' },
+    { "id": 3, "item": 'Check Energy Efficiency Ratio (EER) before purchasing an Air conditioner, and close the doors while using AC. turn off the AC half an hour before leaving the room. ' },
+    { "id": 4, "item": 'Use of Star-rating app (linked to standards and labeling database). It will allow users to compare personalized energy saving devices across the same class and get real-time feedback from consumers so that they can make informed purchase decisions. ' },
+    { "id": 5, "item": '5-star brushless DC (BLDC) motor ceiling fan - consumes an average of 32 watts, 36% less than AC induction motors ceiling fan. Energy performance of ceiling fans:', "img": 'https://i.ibb.co/pQf9cJg/category2img3.png' },
+    { "id": 6, "item": 'UJALA programme LED bulbs by EESL (9 watt bulb with luminosity of 900 lumens ; cost - Rs. 80 per bulb)' },
+    { "id": 7, "item": '5 star refrigerators consume 30-35% less energy compared to 3-star refrigerators. (example -180L direct cool refrigerator-  energy consumption range <138KWh/year for 5 star as compared to 172-215KWh/year for 3 star refrigerator). Energy performance of direct cool refrigerators:', "img": 'https://i.ibb.co/1b55FWf/category2img2.png', "text": 'Energy performance of frost-free refrigerators:', "img2": 'https://i.ibb.co/1b55FWf/category2img2.png', "text2": 'Installing a 5-star rated TV (32-inch LED with aspect ratio 0f 16:9) consumes 45-50% less electricity as compared to a 3-star rated TV.' },
+
+]
+
+
+
+
+export const Blogs = [
+    {
+        "id": 1,
+        "image": 'https://i.ibb.co/zJ10N0G/greenwashing.png',
+        "title": 'Green Washing',
+        "date": "December, 2022",
+        "body": "Throughout the generations of advancement and capitalism which has led to world of perceptions, the perceptions portrayed by giant multinational companies. The idea behind such perception is playing with the human behaviour, that to make it expensive and ‘seems’ like legit. The era of mass production with cutting edge technology has no doubt led to the growth of economics, but it also creates a vicious cycle of cutting down the cost so much so that quality of the product degrades further, harming not just the society but also the nature. For long, this process has been rampant and to the fact both MNC’s and the society realised the impact of such product. The society became sceptical about such products and MNC’s tricked us with their ‘too good to be true products,’ ‘sustainable and eco-friendly’ products."
+    },
+    {
+        "id": 2,
+        "image": 'https://i.ibb.co/cxVyJPP/food-1024x577.jpg',
+        "title": 'Emissions from Food Industry',
+        "date": "December, 2022",
+        "body": "The food Industry is not just one of the largest industries but is very important too. As food is our daily requirement, but the Food Industry is causing hazards and harm to nature. The production of food articles involves the steps like growing, processing, packaging, storing, and transporting all these steps cause pollution to nature and contribute to greenhouse gases. Processes like cultivation results and the production of methane, nitrous oxide, carbon dioxide, and other gas which is caused by use of fertilizers, pesticides, and the cutting of forests. The very next step of the process is packaging which requires a lot of paper, aluminum, and other materials, the production of which is harmful to nature. The process does not end here, the transportation of food is also a threat to nature as it involves air pollution in the process of transportation."
+    },
+    {
+        "id": 3,
+        "image": 'https://i.ibb.co/vx9hSYs/sustain-report-1024x577.jpg',
+        "title": 'Sustainability Reporting',
+        "date": "December, 2022",
+        "body": "Sustainability reporting is a disclosure of a company’s progress towards its Environment, Social and Economic (ESG) goals. This report includes the approach to mitigate the dangers or adapt to them, and the financial implications involved in this procedure. Sustainability reporting allows companies to reflect on the three parameters and report in a transparent manner their positive and negative consequences. Being a sort of social responsibility, it can strengthen both brand reputation and profits. Businesses cannot survive in the long run unless they operate in a lawful and socially responsible as well as sustainable manner. Businesses cannot survive in the long run unless they operate in a lawful and socially responsible as well as sustainable manner. Businesses cannot survive in the long run unless they operate."
+    }
+]
+
+
+// https://i.ibb.co/1b55FWf/category2img2.png
+// https://i.ibb.co/zr960SF/catagory2img1.png

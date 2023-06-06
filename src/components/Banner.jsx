@@ -1,14 +1,14 @@
 import React from 'react';
-import bg from '../assets/back.jpg'
+// import bg from '../assets/back.jpg'
 import styled from 'styled-components';
 import styles from './banner.module.css'
 
 
-const Section = styled.div`
-background-image: url(${bg});
-height: 100vh;
+// const Section = styled.div`
+// // background-image: url(${bg});
+// height: 100vh;
 
-`
+// `
 
 const Banner = () => {
     return (

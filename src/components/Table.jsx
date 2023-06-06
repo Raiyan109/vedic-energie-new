@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useState } from "react"
 import styles from '../components/checkboxToggle.module.css'
-import { customTableItems, tableItems } from '../constants';
+import '../components/style.css'
+import { customMachines, customTableItems, tableItems } from '../constants';
 import AddButton from './AddButton';
 import CalculateButton from './CalculateButton';
 import FinalCalculate from './FinalCalculate';
@@ -20,6 +21,7 @@ import PieChart from './PieChart';
 import OvenConsumption from './Consumptions/OvenConsumption';
 import FridgeConsumption from './Consumptions/FridgeConsumption';
 import LightConsumption from './Consumptions/LightConsumption';
+import CustomMachines from './CustomMachines';
 
 const Table = () => {
     // const [selectedItem, setSelectedItem] = useState(0)
@@ -34,9 +36,6 @@ const Table = () => {
     const [isHeaterOn, setIsHeaterOn] = useState(false)
     const [showPieChart, setShowPieChart] = useState(false);
 
-    const handleFinalCalculateClick = () => {
-        setShowPieChart(true);
-    };
 
 
     // Watt and Consumption calculation states
@@ -104,27 +103,27 @@ const Table = () => {
 
     useEffect(() => {
         setGeyserTotal(+geyserSelectedWattage * +geyserSelectedConsumptionTime);
-        console.log(geyserTotal);
+        // console.log(geyserTotal);
     }, [geyserSelectedWattage, geyserSelectedConsumptionTime]);
 
     useEffect(() => {
         setWashingTotal(+washingSelectedWattage * +washingSelectedConsumptionTime);
-        console.log(washingTotal);
+        // console.log(washingTotal);
     }, [washingSelectedWattage, washingSelectedConsumptionTime]);
 
     useEffect(() => {
         setOvenTotal(+ovenSelectedWattage * +ovenSelectedConsumptionTime);
-        console.log(ovenTotal);
+        // console.log(ovenTotal);
     }, [ovenSelectedWattage, ovenSelectedConsumptionTime]);
 
     useEffect(() => {
         setFridgeTotal(+fridgeSelectedWattage * +fridgeSelectedConsumptionTime);
-        console.log(fridgeTotal);
+        // console.log(fridgeTotal);
     }, [fridgeSelectedWattage, fridgeSelectedConsumptionTime]);
 
     useEffect(() => {
         setLightsTotal(+lightSelectedWattage * +lightSelectedConsumptionTime);
-        console.log(lightsTotal);
+        // console.log(lightsTotal);
     }, [lightSelectedWattage, lightSelectedConsumptionTime]);
 
     const handleACWattageSelect = (event) => {
@@ -184,18 +183,27 @@ const Table = () => {
     // const geyserPercentage = (geyserTotal / totalWattHours * 100).toFixed(2);
     // const washingPercentage = (washingTotal / totalWattHours * 100).toFixed(2);
 
+    // Function for the final calculate button
+    const handleFinalCalculateClick = () => {
+        setShowPieChart(true);
+    };
+
+
     return (
         <div>
-            <div className="bg-orange py-5">
+            <div className="relative bg-gradient-to-b from-white via-white to-lightBlue py-5">
                 <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                     <div className='overflow'>
+                        <button type="button" className="rounded-full px-4 mr-2 bg-blue text-white p-2 leading-none flex items-center lg:hidden md:block">
+                            Step 2
+                        </button>
                         <div className='w-full flex items-center justify-center gap-x-20 py-5'>
                             <button
-                                className={isAirConditionerOn ? `bg-blue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-blue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
+                                className={isAirConditionerOn ? `bg-lightBlue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-lightBlue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
                                 onClick={handleSummerClick}>Summer</button>
 
                             <button
-                                className={isGeyserOn ? `bg-blue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-blue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
+                                className={isGeyserOn ? `bg-lightBlue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-lightBlue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
                                 onClick={handleWinterClick}>Winter</button>
                         </div>
 
@@ -207,13 +215,18 @@ const Table = () => {
                                         <th className="py-4 pr-6 pl-5">Status</th>
                                         <th className="py-4 pr-6 pl-5">Watts</th>
                                         <th className="py-4 pr-6 pl-5">Consumption Time</th>
-                                        <th className="py-4 pr-6 pl-5">Assumptions</th>
+                                        {/* <th className="py-4 pr-6 pl-5">Assumptions</th> */}
                                     </tr>
                                 </thead>
 
+                                {/* Vertical text */}
+                                <div class="justify-center items-center absolute -right-44 top-[340px] lg:block md:hidden hidden">
+                                    <h1 className='transform -rotate-90 text-[#e8f4f8] w-[500px] text-[150px] font-bold uppercase vertical2'>Step 2</h1>
+                                </div>
+
                                 <tbody className="text-blue py-3">
                                     {/* Air Condition */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Air Conditioner</td>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                             <div className={styles.toggle}>
@@ -257,14 +270,14 @@ const Table = () => {
                                                 </select>
                                             </Select>
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             AC Total: {isAirConditionerOn ? airTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
 
                                     {/* Geyser */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">Geyser</td>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                             <div className={styles.toggle}>
@@ -291,14 +304,14 @@ const Table = () => {
                                                 handleConsumptionTimeSelect={handleGeyserConsumptionTimeSelect}
                                             />
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             Geyser Total: {isGeyserOn ? geyserTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
 
                                     {/* Washing Machine */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5 py-6  whitespace-nowrap font-semibold">Washing Machine</td>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                             <label className={styles.toggleSwitch}>
@@ -325,14 +338,14 @@ const Table = () => {
                                                 handleConsumptionTimeSelect={handleWashingConsumptionTimeSelect}
                                             />
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             Washing Total: {isWashingOn ? washingTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
 
                                     {/* Microwave Oven */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Microwave Oven</td>
                                         <td className="pr-6 pl-5 whitespace-nowrap font-semibold">
                                             <label className={styles.toggleSwitch}>
@@ -359,14 +372,14 @@ const Table = () => {
                                                 handleConsumptionTimeSelect={handleOvenConsumptionTimeSelect}
                                             />
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             Oven Total: {isMicroWaveOn ? ovenTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
 
                                     {/* Fridge */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Fridge</td>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                             <label className={styles.toggleSwitch}>
@@ -393,14 +406,14 @@ const Table = () => {
                                                 handleConsumptionTimeSelect={handleFridgeConsumptionTimeSelect}
                                             />
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             Fridge Total: {isFridgeOn ? fridgeTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
 
                                     {/* Lights */}
-                                    <tr className='odd:bg-gray even:bg-lightGray'>
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                         <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Lights</td>
                                         <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                             <label className={styles.toggleSwitch}>
@@ -427,14 +440,57 @@ const Table = () => {
                                                 handleConsumptionTimeSelect={handleLightConsumptionTimeSelect}
                                             />
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <Assumptions />
                                             Light Total: {isLightsOn ? lightsTotal.toFixed(2) : ""}
-                                        </td>
+                                        </td> */}
                                     </tr>
                                 </tbody>
                             </table >
                         </div>
+
+
+                        {/* Custom Machines Section */}
+                        <div className="lg:max-w-none max-w-xl mt-8 py-6">
+                            <h3 className="text-blue lg:text-2xl font-bold text-xl">
+                                If You Want To Add Other Machines You Can Customize It Here
+                            </h3>
+                        </div>
+
+                        <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4'>
+                            <table className="lg:w-1/3 table-auto text-left border-separate border-spacing-y-3">
+
+                                <tbody className="text-blue py-3">
+                                    <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        <td className="  whitespace-nowrap font-semibold">
+                                            <select name="watt" id="watt"
+                                                className='w-52 h-12 bg-[#EBEBEB] rounded-md flex justify-center items-center text-xl text-lightBlue select'>
+                                                {customMachines.map(item => (
+                                                    <option value={item.name}>{item.name}</option>
+                                                ))}
+                                            </select>
+                                        </td>
+                                        <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
+                                            <label className={styles.toggleSwitch}>
+                                                <input
+                                                    type="checkbox"
+                                                    checked={isWashingOn}
+                                                    onChange={handleWashingToggle}
+                                                />
+                                                <span className={styles.toggleSwitchSlider}></span>
+                                            </label>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <AddButton text='Add' />
+                        </div>
+
+
+
+
                         <div className='py-20 flex justify-center items-center'>
                             <FinalCalculate handleClick={handleFinalCalculateClick} />
                         </div>
@@ -442,17 +498,19 @@ const Table = () => {
                 </div >
             </div >
 
-            {showPieChart && (
-                <PieChart
-                    airPercentage={airTotal}
-                    geyserPercentage={geyserTotal}
-                    washingPercentage={washingTotal}
-                    ovenPercentage={ovenTotal}
-                    fridgePercentage={fridgeTotal}
-                    lightPercentage={lightsTotal}
-                />
-            )}
-        </div>
+            {
+                showPieChart && (
+                    <PieChart
+                        airPercentage={airTotal}
+                        geyserPercentage={geyserTotal}
+                        washingPercentage={washingTotal}
+                        ovenPercentage={ovenTotal}
+                        fridgePercentage={fridgeTotal}
+                        lightPercentage={lightsTotal}
+                    />
+                )
+            }
+        </div >
     );
 };
 
@@ -468,7 +526,7 @@ select {
     box-shadow:none;
     border:0!important;
     color:#FEFFCD;
-    background-image: none;
+    // background-image: none;
     flex: 1;
     padding: 0 .5em;
     cursor:pointer;
@@ -482,4 +540,5 @@ select {
     border:none;
     border-bottom: 1px solid #FEFFCD;
  }
+ 
 `

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Link, NavLink } from 'react-router-dom';
 import GetAQuote from './GetAQuote';
-import logo from '../assets/homelogo.png';
+import logo from '../assets/logo-without-border.png';
 // import { HashLink as NavLink } from 'react-router-hash-link';
 import './style.css'
 import styles from './style.module.css'
@@ -67,12 +67,12 @@ const Header = () => {
             <nav style={{ marginTop: "-25px" }} className="px-2 sm:px-4">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <Link className="flex items-center" to='/'>
-                        <img src={logo} alt='header-logo' style={{ width: "70px", height: "70px", backgroundColor: "white", paddingTop: "-110px" }}></img>
+                        <img src={logo} alt='header-logo' style={{ width: "70px", height: "70px" }}></img>
                     </Link>
 
                     <button
                         onClick={() => setMenu(!menu)}
-                        className="items-center md:hidden text-lightGreen text-2xl"
+                        className="items-center md:hidden text-white text-2xl"
                     >
                         {menu ? <FaTimes /> : <FaBars />}
                         <span className="sr-only">Open main menu</span>
@@ -93,16 +93,16 @@ const Header = () => {
 
 
                             <li className={activeLink === 'banner' ? 'active' : ''}>
-                                <a href="#banner" onClick={(e) => handleClick(e, 'banner')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Home</a>
+                                <a href="#banner" onClick={(e) => handleClick(e, 'banner')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>Home</a>
                             </li>
                             <li className={activeLink === 'efficient' ? 'active' : ''}>
-                                <a href="#efficient" onClick={(e) => handleClick(e, 'efficient')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>About Us</a>
+                                <a href="#efficient" onClick={(e) => handleClick(e, 'efficient')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>About Us</a>
                             </li>
                             <li className={activeLink === 'energyRes' ? 'active' : ''}>
-                                <a href="#energyRes" onClick={(e) => handleClick(e, 'energyRes')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Services</a>
+                                <a href="#energyRes" onClick={(e) => handleClick(e, 'energyRes')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>Services</a>
                             </li>
                             <li className={activeLink === 'article' ? 'active' : ''}>
-                                <a href="#article" onClick={(e) => handleClick(e, 'article')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>Blog</a>
+                                <a href="#article" onClick={(e) => handleClick(e, 'article')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>Blog</a>
                             </li>
 
                             {/*  */}
@@ -164,21 +164,21 @@ const Header = () => {
                                     Contact
                                 </NavLink>
                             </li> */}
-                            <li className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>
+                            <li className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>
                                 <NavLink
                                     to="/energyCalc"
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
-                                            borderBottom: isActive ? 'solid 5px lightGreen' : 'none',
-                                            color: isActive ? 'lightGreen' : '#1D6126',
+                                            borderBottom: isActive ? 'solid 5px #EBE667' : 'none',
+                                            color: isActive ? '#EBE667' : 'white',
                                         };
                                     }}
                                 >
                                     Calculation
                                 </NavLink>
                             </li>
-                            <li><GetAQuote /></li>
+                            <li><GetAQuote backgroundColor='#FFFFFF' color='#2F45B7' /></li>
 
 
                         </ul>

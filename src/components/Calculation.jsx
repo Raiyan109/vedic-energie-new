@@ -8,15 +8,20 @@ import styled from 'styled-components';
 import SpeedOMeter from './SpeedOMeter';
 import Meter from './Meter';
 import UserMeter from './UserMeter';
-import bg from '../assets/ellipse.png'
+import bg from '../assets/bg-energy-meter.png'
 import UserGauge from './UserGauge';
 import CapitaGauge from './CapitaGauge';
 import { Arced } from './Arced';
+import BlurryGauge from './BlurryGauge';
+import ColoredGauge from './ColoredGauge';
 
 const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
     const [unitRangeValue, setUnitRangeValue] = useState(100)
     const [result, setResult] = useState(0);
+    const [result5000, setResult5000] = useState(0);
+    const [peopleRangeValue5000, setPeopleRangeValue5000] = useState(5)
+    const [unitRangeValue5000, setUnitRangeValue5000] = useState(100)
     const [statesId, setStatesId] = useState('')
     // const [district, setDistrict] = useState([])
     const [city, setCity] = useState([])
@@ -26,18 +31,39 @@ const Calculation = () => {
     const [conDataId, setConDataId] = useState('')
     const [selectedItem, setSelectedItem] = useState(null);
     const [selectedEnergyData, setSelectedEnergyData] = useState(null);
+    const [showEnergyMeter, setShowEnergyMeter] = useState(false);
 
     const handlePeopleRange = (e) => {
         setPeopleRangeValue(e.target.value);
         const perCapitaEnergyConsumption = calculateEnergyConsumption(unitRangeValue, e.target.value);
         console.log(perCapitaEnergyConsumption);
+
+        setPeopleRangeValue5000(e.target.value);
+        const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(unitRangeValue5000, e.target.value);
+        console.log(perCapitaEnergyConsumption5000);
     }
 
     const handleUnitRange = (e) => {
         setUnitRangeValue(e.target.value);
         const perCapitaEnergyConsumption = calculateEnergyConsumption(e.target.value, peopleRangeValue);
         console.log(perCapitaEnergyConsumption);
+
+        setUnitRangeValue5000(e.target.value);
+        const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(e.target.value, peopleRangeValue5000);
+        console.log(perCapitaEnergyConsumption5000);
     }
+
+    // const handlePeopleRange5000 = (e) => {
+    //     setPeopleRangeValue5000(e.target.value);
+    //     const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(unitRangeValue5000, e.target.value);
+    //     console.log(perCapitaEnergyConsumption5000);
+    // }
+
+    // const handleUnitRange5000 = (e) => {
+    //     setUnitRangeValue5000(e.target.value);
+    //     const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(e.target.value, peopleRangeValue5000);
+    //     console.log(perCapitaEnergyConsumption5000);
+    // }
 
     // To calculate the per User energy consumption
     const calculateEnergyConsumption = (unitConsumed, numberOfPeople) => {
@@ -48,6 +74,18 @@ const Calculation = () => {
         const energyConsumption = (unitConsumed * 12) / numberOfPeople;
         setResult(energyConsumption);
     }
+
+    const calculateEnergyConsumption5000 = (unitConsumed5000, numberOfPeople5000) => {
+        const energyConsumption5000 = (unitConsumed5000 * 12) / numberOfPeople5000;
+        if (energyConsumption5000 >= 5000) {
+            setResult5000(5000);
+        } else {
+            setResult5000(energyConsumption5000);
+        }
+    }
+
+    const fixedResult5000 = result5000.toFixed()
+
 
     const handleStates = (e) => {
         const getStateId = e.target.value
@@ -78,17 +116,25 @@ const Calculation = () => {
         setConDataId(conDataId)
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        alert('Get State id' + statesId + ' And ' + districtId)
-    }
+    const handleGoToEnergyMeter = () => {
+        setShowEnergyMeter(true);
+    };
+
+    const message =
+        result > avgConsumptionData.data
+            ? <p className='text-[#FF0000]'>Your consumption crossed the capita consumption</p>
+            : <p className='text-green'>Your consumption is OK</p>;
     return (
         <Section>
-            <section className="bg-orange">
+
+            <section className="bg-blue">
                 <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
-                    <div>
+                    {/* <div>
                         <h2 className='text-center text-2xl font-bold text-lightBlue'>Energy Calculator</h2>
-                    </div>
+                    </div> */}
+                    <button type="button" className="rounded-full px-4 mr-2 bg-green text-white p-2 leading-none flex items-center lg:hidden md:block">
+                        Step 1
+                    </button>
                     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                         <div>
                             <span>
@@ -132,6 +178,7 @@ const Calculation = () => {
                                 </div>
 
 
+
                                 <div className='grid lg:grid-cols-1 grid-cols-1 lg:gap-x-40 gap-7 py-10'>
                                     <div className='flex justify-start items-center gap-x-12'>
                                         {/* Slider range people count */}
@@ -146,7 +193,7 @@ const Calculation = () => {
 
                                     <div className='flex justify-start items-center gap-x-12'>
                                         {/* Slider range Units Consumed */}
-                                        <UnitRangeSlider min='10' max='1000' value={unitRangeValue} handleUnitRange={handleUnitRange}
+                                        <UnitRangeSlider min='10' max='1500' value={unitRangeValue} handleUnitRange={handleUnitRange}
                                             text='Units consumed per month'
                                         />
 
@@ -156,7 +203,12 @@ const Calculation = () => {
                                     </div>
                                 </div>
                                 {/* <div>Result: {result}</div> */}
-
+                                {/* Vertical text */}
+                                <div className='lg:block md:hidden hidden'>
+                                    <div className="flex justify-center items-center absolute -right-44 -bottom-96">
+                                        <h1 className='transform lg:-rotate-90 md:rotate-0 rotate-0  text-[#E58C07] w-[500px] text-[150px] font-bold uppercase vertical'>Step 1</h1>
+                                    </div>
+                                </div>
 
                             </div>
                             {/*  Billed unit per month */}
@@ -180,48 +232,30 @@ const Calculation = () => {
                                 </label>
                             </div>
 
-
-                            <LetsGoButton />
-
+                            <LetsGoButton handleClick={handleGoToEnergyMeter} />
                         </div>
                     </div>
                 </div>
             </section>
 
-            <div className='box h-auto p-10'>
-                <div className='flex justify-center items-center py-14'>
-                    <h1 className='underline text-4xl text-indigo font-bold lg:max-w-none max-w-lg text-center'>Per Capita Energy Consumption
-                        W.R.T State</h1>
-                </div>
+            {
+                showEnergyMeter && (
+                    <div className='box h-auto p-10'>
+                        <div className='flex justify-center items-center py-14'>
+                            <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-lightBlue py-5">Energy Meter</h1>
+                        </div>
 
-                <div className='lg:flex md:grid md:grid-cols-1 justify-center items-center grid grid-cols-1'>
-                    {/* <Meter conData={avgConsumptionData} userData={result} key={avgConsumptionData.data_id} /> */}
-
-                    {/* <CapitaGauge conData={avgConsumptionData} /> */}
-                    {/* <UserGauge userData={result} key={result} /> */}
-
-                    {/* <SpeedOMeter userData={result} key={result} /> */}
-
-                    <div className="p-10">
-                        <Arced value={result} capitaValue={avgConsumptionData} />
-                    </div>
-
-                    <div className='flex justify-center items-center'>
-
-                        <div className='max-w-md rounded-2xl text-[#1A2421] backdrop-blur-lg [ p-2 md:p-10 lg:p-10 ] [ bg-gradient-to-b from-white/60 to-white/30 ]
-                            [ border-[1px] border-solid border-white border-opacity-30 ]   [ shadow-black/70 shadow-2xl ] mt-10'>
-                            <h1 className='text-xl font-semibold text-lightgreen text-center uppercase mb-10'>Consumption Data</h1>
-                            <p className='mb-6'>Per Capita Consumption data : <span className='text-orange font-bold'>
-                                {avgConsumptionData.data}</span></p>
-                            <p className=''>Your Consumption data : <span className='text-orange font-bold'>
-                                {result}</span></p>
+                        <div className='container flex lg:flex-row  flex-col lg:justify-between lg:items-center mx-auto lg:px-14 px-7 lg:space-y-0 md:space-y-12 space-y-0'>
+                            <div className='lg:max-w-2xl max-w-lg mx-auto mb-16'>
+                                <h2 className='lg:text-2xl md:text-xl text-lg leading-relaxed text-blue lg:text-left text-center'>By comparing the user's energy consumption with the state's per capita energy consumption, the calculator provides a benchmark for the user to evaluate their own energy usage. If the user's consumption is significantly higher than the state's average, it suggests that they might have opportunities for energy-saving improvements.</h2>
+                            </div>
+                            <div className="">
+                                <ColoredGauge value={fixedResult5000} capitaValue={avgConsumptionData} />
+                            </div>
                         </div>
                     </div>
-                </div>
-
-            </div>
-
-
+                )
+            }
         </Section>
     );
 };
@@ -237,7 +271,7 @@ select {
     outline:0;
     box-shadow:none;
     border:0!important;
-    background: #FFB951;
+    background: #05386B;
     color:#FEFFCD;
     background-image: none;
     flex: 1;
@@ -246,6 +280,10 @@ select {
     font-size: 1em;
     font-family: 'Open Sans', sans-serif;
  }
+//  select:focus {
+//     box-shadow:  30px 30px 76px #c3c3c3,
+//              -30px -30px 76px #FFB951;
+//   }
  select::-ms-expand {
     display: none;
  }
@@ -262,5 +300,8 @@ select {
     background-size: cover; 
     background-position: center; 
     
+ }
+ .vertical{
+  -webkit-text-stroke: 4px white;
  }
 `
