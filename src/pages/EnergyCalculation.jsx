@@ -1,6 +1,6 @@
 import React, { useReducer, useRef, useState } from 'react';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Footer3 from '../components/Footer3';
 import CircleProgressBar from '../components/CircleProgressBar';
 import CalculateButton from '../components/CalculateButton';
 import Calculation from '../components/Calculation';
@@ -79,7 +79,7 @@ const EnergyCalculation = () => {
             <Table />
             {/* <Piechart /> */}
             <Tipscategory />
-            <Footer />
+            <Footer3 />
         </Section >
     );
 };
