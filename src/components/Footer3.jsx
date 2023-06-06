@@ -6,7 +6,7 @@ import { ImLocation2 } from 'react-icons/im'
 import { MdEmail } from 'react-icons/md'
 import { Link } from 'react-router-dom';
 import clss from './style.module.css';
-import pic from '../assets/footerlogo.png';
+import pic from '../assets/new-logo.jpg';
 
 const Footer3 = () => {
     return (
