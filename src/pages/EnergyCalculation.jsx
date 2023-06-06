@@ -1,98 +1,86 @@
-import React from 'react';
+import React, { useReducer, useRef, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { BsFillSunFill } from 'react-icons/bs'
-import { FaCanadianMapleLeaf } from 'react-icons/fa'
-import Toggle from '../components/Toggle';
-import Input from '../components/Input';
-
+import CircleProgressBar from '../components/CircleProgressBar';
+import CalculateButton from '../components/CalculateButton';
+import Calculation from '../components/Calculation';
+import { useCalc } from '../context/CalcProvider';
+import Table from '../components/Table';
+import { actionTypes } from '../state/CalcState/actionTypes';
+import Piechart from '../components/PieChart';
+import Tipscategory from '../components/Tipscategory';
+import SpeedOMeter from '../components/SpeedOMeter';
+import Meter from '../components/Meter';
+import bg from '../assets/ellipse.png'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import BackToHome from '../components/BackToHome';
+const Section = styled.div`
+background-image: url(${bg});
+height: 120vh;
+background-repeat: no-repeat;
+background-size: cover; 
+background-position: center; 
+@media only screen and (max-width:700px){
+    height:auto;
+    
+}
+`
 const EnergyCalculation = () => {
+    const { state, dispatch } = useCalc()
+
+    // const ref = useRef(null)
+    // const handleGoToCalcPage = () => {
+    //     setGoToCalc(prevState => !prevState)
+    //     ref.current?.scrollIntoView({ behavior: 'smooth' })
+    // }
+
+    const [showStateSelect, setShowStateSelect] = useState(false);
+
+    const handleGoToStateSelectClick = () => {
+        setShowStateSelect(true);
+    };
     return (
-        <div>
+        <Section >
             <Header />
-            <section className="bg-lightYellow p-32">
-                <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
-                    <div>
-                        <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">Aliquip definiebas ad est</h2>
-                        <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-400">Quando cetero his ne, eum admodum sapientem ut.</p>
-                    </div>
+            <div>
+                <div>
+                    <div className="container flex flex-col justify-center p-6 mx-auto py-40 md:py-42 lg:py-46 lg:flex-row lg:justify-between">
+                        <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+                            <h1 className="text-5xl font-semibold sm:text-6xl text-white lg:leading-loose leading-12">Energy Calculator For Your <span className='text-black'>Home</span> And <span className='text-black'>Industry</span>
+                            </h1>
 
-                    <div className='flex justify-between items-center text-xl'>
-                        <button type="button" className="px-8 py-3 font-semibold rounded bg-orange ">
-                            <div className='flex justify-between items-center gap-4'>
-                                <BsFillSunFill />
-                                <h3>Summer</h3>
+                            <p className="mt-6 mb-8 text-lg sm:mb-12">You can have an estimate about your energy bills according to your usage
+                            </p>
+
+                            <div>
+                                <button
+                                    onClick={handleGoToStateSelectClick}
+                                    className='w-[137px] h-[50px] bg-orange rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-lightYellow hover:text-orange hover:transition-all'>Calculate</button>
                             </div>
-                        </button>
-                        <button type="button" className="px-8 py-3 font-semibold rounded bg-blue text-white">
-                            <div className='flex justify-between items-center gap-4'>
-                                <FaCanadianMapleLeaf />
-                                <h3>Winter</h3>
-                            </div>
-                        </button>
-                    </div>
-
-
-                    <div class="flex flex-col">
-                        <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
-                            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                                <div class="overflow-hidden">
-                                    <table class="min-w-full">
-
-                                        <tbody>
-                                            <tr class="bg-gray-100 border-b">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Air conditioner</td>
-                                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                    <Toggle />
-                                                </td>
-                                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                    <Input />
-                                                </td>
-
-                                            </tr>
-                                            <tr class="bg-white border-b">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Heat pump</td>
-                                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                    <Toggle />
-                                                </td>
-                                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                    <Input />
-                                                </td>
-
-                                            </tr>
-                                            <tr class="bg-gray-100 border-b">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Hot Tub</td>
-                                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                    <Toggle />
-                                                </td>
-                                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                    <Input />
-                                                </td>
-
-                                            </tr>
-                                            <tr class="bg-white border-b">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Clothes dryer</td>
-                                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                    <Toggle />
-                                                </td>
-                                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                    <Input />
-                                                </td>
-
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            {/* <BackToHome /> */}
+                        </div>
+                        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                            <CircleProgressBar className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                         </div>
                     </div>
-
                 </div>
-            </section>
+            </div>
+
+            <div>
+                {/* {goToCalc ? <Calculation ref={ref} /> : ''} */}
+
+                {showStateSelect && (
+                    <Calculation />
+                )}
+            </div>
+            {/* <Meter /> */}
+            {/* <SpeedOMeter /> */}
+            <Table />
+            {/* <Piechart /> */}
+            <Tipscategory />
             <Footer />
-        </div>
+        </Section >
     );
 };
 

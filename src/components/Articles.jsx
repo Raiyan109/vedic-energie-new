@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import img from '../assets/article.png'
+import greenWashingImg from '../assets/greenwashing.png'
+import foodImg from '../assets/food_1024x577.jpg'
+import sustainReportImg from '../assets/sustain-report_1024x577.jpg'
+import { Link } from 'react-router-dom';
+import { Blogs } from '../constants';
+import Article from './Article';
 
 const Section = styled.div`
 
@@ -8,115 +14,30 @@ scroll-snap-align:center;
 `
 const Articles = () => {
     return (
-        <Section className='bg-gradient-to-b from-yellow via-lightGreen to-green'>
-            <div className='flex flex-col justify-center items-center mb-4'>
+        <Section className='bg-gradient-to-b from-[#E7EDFB] via-[#8F9CDA] to-[#354AB9]'>
 
-                <h1 id='article' className="text-3xl font-bold text-green" style={{ marginTop: "70px" }}>Recent Articles
-
-                </h1>
-                <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-10">
-                    <div class="container mx-auto">
-                        <div class="flex flex-wrap">
-                            <div class="w-full px-4 md:w-1/2 xl:w-1/3 ">
-                                <div class="overflow-hidden bg-white mb-10">
-                                    <img
-                                        src={img}
-                                    />
-                                    <div class="p-6 text-left sm:p-9 md:p-7 xl:p-9">
-                                        <h3>
-                                            <a
-                                                href="#"
-                                                class="text-primary hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
-                                            >
-                                                Sustainable Fashion
-                                            </a>
-                                            <p className='text-md font-normal text-primary'>Published On December, 2022</p>
-                                        </h3>
-                                        <p class="text-primary mb-7 text-sm leading-relaxed py-10">
-                                            It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when
-                                            looking at its layout. The point of using Lorem Ipsum is
-                                            that it has a more-or-less normal distribution of letters,
-                                            as opposed to using 'Content here, content here',
-                                            making it look like readable English. Many desktop
-                                            publishing packages and web page editors now use
-                                            Lorem Ipsum as their default model text, and a search
-                                            for 'lorem ipsum' will uncover many web sites still in
-                                            their infancy. Various versions have evolved over the
-                                            years, sometimes by accident, sometimes on purpose
-                                            (injected humour and the like).
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w-full px-4 md:w-1/2 xl:w-1/3 ">
-                                <div class="mb-10 overflow-hidden bg-white">
-                                    <img
-                                        src={img}
-                                    />
-                                    <div class="p-6 text-left sm:p-9 md:p-7 xl:p-9">
-                                        <h3>
-                                            <a
-                                                href="#"
-                                                class="text-primary hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
-                                            >
-                                                Sustainable Fashion
-                                            </a>
-                                            <p className='text-md font-normal text-primary'>Published On December, 2022</p>
-                                        </h3>
-                                        <p class="text-primary mb-7 text-sm leading-relaxed py-10">
-                                            It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when
-                                            looking at its layout. The point of using Lorem Ipsum is
-                                            that it has a more-or-less normal distribution of letters,
-                                            as opposed to using 'Content here, content here',
-                                            making it look like readable English. Many desktop
-                                            publishing packages and web page editors now use
-                                            Lorem Ipsum as their default model text, and a search
-                                            for 'lorem ipsum' will uncover many web sites still in
-                                            their infancy. Various versions have evolved over the
-                                            years, sometimes by accident, sometimes on purpose
-                                            (injected humour and the like).
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w-full px-4 md:w-1/2 xl:w-1/3 ">
-                                <div class="mb-10 overflow-hidden bg-white">
-                                    <img
-                                        src={img}
-                                    />
-                                    <div class="p-6 text-left sm:p-9 md:p-7 xl:p-9">
-                                        <h3>
-                                            <a
-                                                href="#"
-                                                class="text-primary hover:text-dark mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
-                                            >
-                                                Sustainable Fashion
-                                            </a>
-                                            <p className='text-md font-normal text-primary'>Published On December, 2022</p>
-                                        </h3>
-                                        <p class="text-primary mb-7 text-sm leading-relaxed py-10">
-                                            It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when
-                                            looking at its layout. The point of using Lorem Ipsum is
-                                            that it has a more-or-less normal distribution of letters,
-                                            as opposed to using 'Content here, content here',
-                                            making it look like readable English. Many desktop
-                                            publishing packages and web page editors now use
-                                            Lorem Ipsum as their default model text, and a search
-                                            for 'lorem ipsum' will uncover many web sites still in
-                                            their infancy. Various versions have evolved over the
-                                            years, sometimes by accident, sometimes on purpose
-                                            (injected humour and the like).
-                                        </p>
-                                    </div>
-                                </div>
+            <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20 px-4">
+                <div className="container mx-auto">
+                    <div className="-mx-4 flex flex-wrap justify-center">
+                        <div className="w-full px-4">
+                            <div className="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
+                                <h1 id='article' className="text-3xl font-bold text-blue">Recent Articles</h1>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                    <div className="flex items-center justify-center">
+                        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-32">
+                            {
+                                Blogs.map(article =>
+                                    <Article key={article.id} article={article} id={article.id} />
+                                )
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
         </Section>
     );
 };
