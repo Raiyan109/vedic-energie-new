@@ -1,56 +1,60 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment/moment';
 import LetsGoButton from './LetsGoButton';
 import statesData from '../../public/states.json'
 import UnitRangeSlider from './UnitRangeSlider';
 import PeopleRangeSlider from './PeopleRangeSlider';
 import styled from 'styled-components';
-import SpeedOMeter from './SpeedOMeter';
-import Meter from './Meter';
-import UserMeter from './UserMeter';
 import bg from '../assets/bg-energy-meter.png'
-import UserGauge from './UserGauge';
-import CapitaGauge from './CapitaGauge';
-import { Arced } from './Arced';
-import BlurryGauge from './BlurryGauge';
 import ColoredGauge from './ColoredGauge';
+import CalcProvider, { CALC_CONTEXT } from '../context/CalcProvider';
 
 const Calculation = () => {
     const [peopleRangeValue, setPeopleRangeValue] = useState(5)
     const [unitRangeValue, setUnitRangeValue] = useState(100)
     const [result, setResult] = useState(0);
+
     const [result5000, setResult5000] = useState(0);
     const [peopleRangeValue5000, setPeopleRangeValue5000] = useState(5)
     const [unitRangeValue5000, setUnitRangeValue5000] = useState(100)
+
     const [statesId, setStatesId] = useState('')
     // const [district, setDistrict] = useState([])
+    const [stateName, setStateName] = useState('')
+    const [stateData, setStateData] = useState('')
     const [city, setCity] = useState([])
     const [avgConsumptionData, setAvgConsumptionData] = useState([])
     // const [districtId, setDistrictId] = useState('')
     const [cityId, setCityId] = useState('')
     const [conDataId, setConDataId] = useState('')
-    const [selectedItem, setSelectedItem] = useState(null);
+    // const [selectedItem, setSelectedItem] = useState(null);
     const [selectedEnergyData, setSelectedEnergyData] = useState(null);
     const [showEnergyMeter, setShowEnergyMeter] = useState(false);
+    const [rs, setRs] = useState('')
+    const [error, setError] = useState('')
+
+    const { step1Data } = useContext(CALC_CONTEXT)
+    console.log(step1Data);
 
     const handlePeopleRange = (e) => {
         setPeopleRangeValue(e.target.value);
         const perCapitaEnergyConsumption = calculateEnergyConsumption(unitRangeValue, e.target.value);
-        console.log(perCapitaEnergyConsumption);
+        // console.log(perCapitaEnergyConsumption);
 
         setPeopleRangeValue5000(e.target.value);
         const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(unitRangeValue5000, e.target.value);
-        console.log(perCapitaEnergyConsumption5000);
+        // console.log(perCapitaEnergyConsumption5000);
     }
 
     const handleUnitRange = (e) => {
         setUnitRangeValue(e.target.value);
         const perCapitaEnergyConsumption = calculateEnergyConsumption(e.target.value, peopleRangeValue);
-        console.log(perCapitaEnergyConsumption);
+        // console.log(perCapitaEnergyConsumption);
 
         setUnitRangeValue5000(e.target.value);
         const perCapitaEnergyConsumption5000 = calculateEnergyConsumption5000(e.target.value, peopleRangeValue5000);
-        console.log(perCapitaEnergyConsumption5000);
+        // console.log(perCapitaEnergyConsumption5000);
     }
 
     // const handlePeopleRange5000 = (e) => {
@@ -89,15 +93,20 @@ const Calculation = () => {
 
     const handleStates = (e) => {
         const getStateId = e.target.value
+        setStateData(e.target.value)
         // const getDistrictData = statesData.find(state => state.state_id === getStateId)?.districts
+
         const getCityData = statesData.find(state => state.state_id === getStateId)?.cities
+        // const getStateData = statesData.find(state => state.state_id === getStateId[0]).state_name
+        // setStateName(getStateData)
+        // console.log(stateName);
         // setDistrict(getDistrictData)
         setCity(getCityData)
         setStatesId(getStateId)
 
         const getAvgEnergyData = statesData.find(state => state.state_id === getStateId)?.energyData
         setAvgConsumptionData(getAvgEnergyData[0])
-        console.log(avgConsumptionData);
+        // console.log(avgConsumptionData);
         setStatesId(getStateId)
         setSelectedEnergyData(null); // set selected energy data to null
     }
@@ -120,6 +129,49 @@ const Calculation = () => {
         setShowEnergyMeter(true);
     };
 
+    const mappedCity = city.find(item => item.city_id === cityId)?.city_name || city[0]?.city_name;
+    // console.log(mappedCity);
+
+
+    const mappedStateData = avgConsumptionData?.data
+    // console.log(mappedStateData);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const getStateData = statesData.find(state => state.state_id === stateData)?.state_name
+        setStateName(getStateData)
+        // console.log(stateName);
+
+        const step1 = {
+            state: getStateData,
+            city: mappedCity,
+            peopleCount: peopleRangeValue,
+            units: unitRangeValue,
+            amount: rs,
+            userTotal: mappedStateData,
+            stateTotal: result
+        }
+
+        console.log(getStateData, mappedCity, peopleRangeValue, unitRangeValue, mappedStateData, result);
+
+        const response = await fetch('https://vedic-backend-new-2-raiyan109.vercel.app/api/step1', {
+            method: 'POST',
+            body: JSON.stringify(step1),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        const json = await response.json()
+
+        if (!response.ok) {
+            setError(json.error)
+        }
+        if (response.ok) {
+            setError(null)
+            console.log('New calculation added', json);
+        }
+    }
+
     const message =
         result > avgConsumptionData.data
             ? <p className='text-[#FF0000]'>Your consumption crossed the capita consumption</p>
@@ -136,105 +188,147 @@ const Calculation = () => {
                         Step 1
                     </button>
                     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
-                        <div>
-                            <span>
-                                <Link to='#' className='text-lightBlue mr-2'>Residency</Link>
-                                |
-                                <Link to='#' className='text-lightYellow ml-2'>Commercial</Link>
-                            </span>
-                            <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator for Your Home</h3>
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <span>
+                                    <Link to='#' className='text-lightBlue mr-2'>Residency</Link>
+                                    |
+                                    <Link to='#' className='text-lightYellow ml-2'>Commercial</Link>
+                                </span>
+                                <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator for Your Home</h3>
 
-                            <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 gap-7 py-10'>
-
-
-                                {/*  STATE */}
-                                <div className="select">
-                                    <select defaultValue="State" name="state" id="state" onChange={(e) => handleStates(e)}>
-                                        <option disabled>State</option>
-                                        {
-                                            statesData.map((data, idx) => (
-                                                <option value={data.state_id} key={idx}>{data.state_name}</option>
-                                            ))
-                                        }
-                                    </select>
-                                </div>
+                                <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 gap-7 py-10'>
 
 
-
-                                {/* Cities */}
-                                <div className="select">
-                                    <select defaultValue='City' name="city" id="city" onChange={(e) => handleCities(e)}>
-                                        <option disabled>
-                                            City
-                                        </option>
-
-                                        {
-                                            city?.map((item, idx) => (
-                                                <option value={item.city_id} key={idx}>{item.city_name}</option>
-                                            ))
-                                        }
-
-                                    </select>
-                                </div>
+                                    {/*  STATE */}
+                                    <div className="select">
+                                        <select defaultValue="State" name="state" id="state" onChange={(e) => handleStates(e)}>
+                                            <option disabled>State</option>
+                                            {
+                                                statesData.map((data, idx) => (
+                                                    <option value={data.state_id} key={idx}>{data.state_name}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </div>
 
 
 
-                                <div className='grid lg:grid-cols-1 grid-cols-1 lg:gap-x-40 gap-7 py-10'>
-                                    <div className='flex justify-start items-center gap-x-12'>
-                                        {/* Slider range people count */}
-                                        <PeopleRangeSlider min='1' max={20} value={peopleRangeValue} handlePeopleRange={handlePeopleRange}
-                                            text='No of People in Your Home'
-                                        />
+                                    {/* Cities */}
+                                    <div className="select">
+                                        <select defaultValue='City' name="city" id="city" onChange={(e) => handleCities(e)}>
+                                            <option disabled>
+                                                City
+                                            </option>
 
-                                        <div className='pt-6'>
-                                            <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{peopleRangeValue}</div>
+                                            {
+                                                city?.map((item, idx) => (
+                                                    <option value={item.city_id} key={idx}>{item.city_name}</option>
+                                                ))
+                                            }
+
+                                        </select>
+                                    </div>
+
+
+
+                                    <div className='grid lg:grid-cols-1 grid-cols-1 lg:gap-x-40 gap-7 py-10'>
+                                        <div className='flex justify-start items-center gap-x-12'>
+                                            {/* Slider range people count */}
+                                            <PeopleRangeSlider min='1' max={20} value={peopleRangeValue} handlePeopleRange={handlePeopleRange}
+                                                text='No of People in Your Home'
+                                            />
+
+                                            <div className='pt-6'>
+                                                <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{peopleRangeValue}</div>
+                                            </div>
+                                        </div>
+
+                                        <div className='flex justify-start items-center gap-x-12'>
+                                            {/* Slider range Units Consumed */}
+                                            <UnitRangeSlider min='10' max='1500' value={unitRangeValue} handleUnitRange={handleUnitRange}
+                                                text='Units consumed per month'
+                                            />
+
+                                            <div className='pt-6'>
+                                                <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{unitRangeValue}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* <div>Result: {result}</div> */}
+                                    {/* Vertical text */}
+                                    <div className='lg:block md:hidden hidden'>
+                                        <div className="flex justify-center items-center absolute -right-44 -bottom-96">
+                                            <h1 className='transform lg:-rotate-90 md:rotate-0 rotate-0  text-[#E58C07] w-[500px] text-[150px] font-bold uppercase vertical'>Step 1</h1>
                                         </div>
                                     </div>
 
-                                    <div className='flex justify-start items-center gap-x-12'>
-                                        {/* Slider range Units Consumed */}
-                                        <UnitRangeSlider min='10' max='1500' value={unitRangeValue} handleUnitRange={handleUnitRange}
-                                            text='Units consumed per month'
-                                        />
+                                </div>
+                                {/*  Billed unit per month */}
 
-                                        <div className='pt-6'>
-                                            <div className='w-20 h-9 bg-lightYellow flex justify-center items-center text-xl text-rgbaHeader'>{unitRangeValue}</div>
+                                <div className='max-w-md'>
+                                    <label
+                                        htmlFor="BilledUnitsPerMonth"
+                                        className="relative block overflow-hidden border-b-2 border-lightYellow pt-2"
+                                    >
+                                        <div className='flex justify-center items-center gap-2 text-lightYellow'>
+                                            <span>&#x20B9;</span>
+                                            <input
+                                                style={{ background: 'transparent' }}
+                                                type="number"
+                                                onChange={(e) => setRs(e.target.value)}
+                                                value={rs}
+                                                id="BilledUnitsPerMonth"
+                                                // placeholder="Billed Units per Month"
+                                                className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md"
+                                                pattern="^Rs\d+(\.\d{1,2})?$" placeholder="Enter amount in Rs"
+                                            />
                                         </div>
-                                    </div>
-                                </div>
-                                {/* <div>Result: {result}</div> */}
-                                {/* Vertical text */}
-                                <div className='lg:block md:hidden hidden'>
-                                    <div className="flex justify-center items-center absolute -right-44 -bottom-96">
-                                        <h1 className='transform lg:-rotate-90 md:rotate-0 rotate-0  text-[#E58C07] w-[500px] text-[150px] font-bold uppercase vertical'>Step 1</h1>
-                                    </div>
+                                    </label>
                                 </div>
 
+                                <LetsGoButton handleClick={handleGoToEnergyMeter} />
                             </div>
-                            {/*  Billed unit per month */}
-
-                            <div className='max-w-md'>
-                                <label
-                                    htmlFor="BilledUnitsPerMonth"
-                                    className="relative block overflow-hidden border-b-2 border-lightYellow pt-2"
-                                >
-                                    <div className='flex justify-center items-center gap-2 text-lightYellow'>
-                                        <span>&#x20B9;</span>
-                                        <input
-                                            style={{ background: 'transparent' }}
-                                            type="number"
-                                            id="BilledUnitsPerMonth"
-                                            // placeholder="Billed Units per Month"
-                                            className="peer h-8 w-full border-none p-0 placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md"
-                                            pattern="^Rs\d+(\.\d{1,2})?$" placeholder="Enter amount in Rs"
-                                        />
-                                    </div>
-                                </label>
-                            </div>
-
-                            <LetsGoButton handleClick={handleGoToEnergyMeter} />
-                        </div>
+                            {error && <div className='text-xl text-orange'>{error.message}</div>}
+                        </form>
                     </div>
+
+                    {
+
+                        <table className="w-full table-auto text-left border-separate border-spacing-y-3">
+                            <thead className="text-blue uppercase font-medium bg-lightYellow">
+                                <tr>
+                                    <th className="py-4 pr-6 pl-5">State</th>
+                                    <th className="py-4 pr-6">City</th>
+                                    <th className="py-4 pr-6">People Count</th>
+                                    <th className="py-4 pr-6">Units</th>
+                                    <th className="py-4 pr-6">Rs.</th>
+                                    <th className="py-4 pr-6">User Total</th>
+                                    <th className="py-4 pr-6">State Total</th>
+                                    <th className="py-4 pr-6">Calculation time</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-blue py-3">
+                                {
+                                    step1Data && step1Data.map((data, idx) => (
+                                        <tr key={idx} className='odd:bg-gray even:bg-lightGray'>
+                                            <td className="pr-6 pl-5  whitespace-nowrap font-semibold">{data.state}</td>
+                                            <td className="pr-6  whitespace-nowrap">{data.city}</td>
+                                            <td className="pr-6  whitespace-nowrap">
+                                                <span className='py-2 px-3 rounded-full font-semibold text-xs'>{data.peopleCount}</span>
+                                            </td>
+                                            <td className="pr-6  whitespace-nowrap">{data.units}</td>
+                                            <td className="pr-6  whitespace-nowrap">{data.amount}</td>
+                                            <td className="pr-6  whitespace-nowrap">{data.userTotal}</td>
+                                            <td className="pr-6  whitespace-nowrap">{data.stateTotal}</td>
+                                            <td className="pr-6  whitespace-nowrap">{moment(data.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+
+                    }
                 </div>
             </section>
 
