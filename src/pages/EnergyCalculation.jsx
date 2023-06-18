@@ -2,19 +2,16 @@ import React, { useReducer, useRef, useState } from 'react';
 import Header from '../components/Header';
 import Footer3 from '../components/Footer3';
 import CircleProgressBar from '../components/CircleProgressBar';
-import CalculateButton from '../components/CalculateButton';
+
 import Calculation from '../components/Calculation';
 import { useCalc } from '../context/CalcProvider';
 import Table from '../components/Table';
-import { actionTypes } from '../state/CalcState/actionTypes';
-import Piechart from '../components/PieChart';
+
 import Tipscategory from '../components/Tipscategory';
-import SpeedOMeter from '../components/SpeedOMeter';
-import Meter from '../components/Meter';
+
 import bg from '../assets/ellipse.png'
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import BackToHome from '../components/BackToHome';
+
 const Section = styled.div`
 background-image: url(${bg});
 height: 120vh;
