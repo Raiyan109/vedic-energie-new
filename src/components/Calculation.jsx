@@ -298,6 +298,7 @@ const Calculation = () => {
                         <table className="w-full table-auto text-left border-separate border-spacing-y-3">
                             <thead className="text-blue uppercase font-medium bg-lightYellow">
                                 <tr>
+                                    <th className="py-4 pr-6 pl-5">Index</th>
                                     <th className="py-4 pr-6 pl-5">State</th>
                                     <th className="py-4 pr-6">City</th>
                                     <th className="py-4 pr-6">People Count</th>
@@ -312,6 +313,7 @@ const Calculation = () => {
                                 {
                                     step1Data && step1Data.map((data, idx) => (
                                         <tr key={idx} className='odd:bg-gray even:bg-lightGray'>
+                                            <td className="pr-6 pl-9  whitespace-nowrap">{idx + 1}</td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">{data.state}</td>
                                             <td className="pr-6  whitespace-nowrap">{data.city}</td>
                                             <td className="pr-6  whitespace-nowrap">
@@ -321,7 +323,8 @@ const Calculation = () => {
                                             <td className="pr-6  whitespace-nowrap">{data.amount}</td>
                                             <td className="pr-6  whitespace-nowrap">{data.userTotal}</td>
                                             <td className="pr-6  whitespace-nowrap">{data.stateTotal}</td>
-                                            <td className="pr-6  whitespace-nowrap">{moment(data.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</td>
+                                            <td className="pr-6  whitespace-nowrap">{moment(data.createdAt).format('MMMM Do, h:mm a')}</td>
+
                                         </tr>
                                     ))
                                 }

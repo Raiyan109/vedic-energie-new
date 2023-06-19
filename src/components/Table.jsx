@@ -517,7 +517,7 @@ const Table = () => {
 
 
                             {/* Custom Machines Section */}
-                            {/* <div className="lg:max-w-none max-w-xl mt-8 py-6">
+                            <div className="lg:max-w-none max-w-xl mt-8 py-6">
                                 <h3 className="text-blue lg:text-2xl font-bold text-xl">
                                     If You Want To Add Other Machines You Can Customize It Here
                                 </h3>
@@ -552,15 +552,11 @@ const Table = () => {
                                 </table>
 
                                 <AddButton text='Add' />
-                            </div> */}
-
-
-
-
-                            <div className='py-20 flex justify-center items-center'>
-                                <FinalCalculate handleClick={handleFinalCalculateClick} />
                             </div>
                         </form>
+                        <div className='py-20 flex justify-center items-center'>
+                            <FinalCalculate handleClick={handleFinalCalculateClick} />
+                        </div>
                         {/*  */}
                         {
                             <div className='overflow-x-auto'>

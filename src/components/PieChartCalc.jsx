@@ -59,7 +59,23 @@ export default function PieChartCalc({ airPercentage, geyserPercentage, washingP
         },
       ],
     });
+
+    // Send the percentageValue to the backend
+    // const percentageValue = calculatePercentageValue(filteredData);
+    // if (percentageValue !== null) {
+    //   sendPercentageValue(percentageValue);
+    // }
+
   }, [airPercentage, geyserPercentage, washingPercentage, ovenPercentage, fridgePercentage, lightPercentage]);
+
+  // const calculatePercentageValue = (filteredData) => {
+  //   const totalValue = filteredData.reduce((total, { value }) => total + value, 0);
+  //   if (totalValue !== 0) {
+  //     const percentageValue = ((filteredData[0].value / totalValue) * 100).toFixed(0);
+  //     return percentageValue;
+  //   }
+  //   return null;
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -159,7 +175,9 @@ export default function PieChartCalc({ airPercentage, geyserPercentage, washingP
             </div>
 
           </div>
-          <button>Submit to backend</button>
+          <div className='flex justify-center items-center'>
+            <button className='w-[137px] h-[50px] bg-orange rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-yellow hover:transition-all p-2'>Submit to backend</button>
+          </div>
         </form>
       </div>
 
