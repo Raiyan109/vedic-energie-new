@@ -15,6 +15,7 @@ import NotFound from '../pages/NotFound'
 import Calculation from "../components/Calculation";
 import SpeedOMeter from "../components/SpeedOMeter";
 import ArticleDetail from "../components/ArticleDetail";
+import AdminPanel from "../components/AdminPanel";
 
 
 const routes = createBrowserRouter([
@@ -77,6 +78,10 @@ const routes = createBrowserRouter([
     {
         path: '/energySaving',
         element: <EnergySaving />
+    },
+    {
+        path: '/admin',
+        element: <AdminPanel />
     },
     {
         path: '*',

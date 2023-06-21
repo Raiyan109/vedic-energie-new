@@ -34,8 +34,8 @@ const Calculation = () => {
     const [rs, setRs] = useState('')
     const [error, setError] = useState('')
 
-    const { step1Data } = useContext(CALC_CONTEXT)
-    console.log(step1Data);
+
+
 
     const handlePeopleRange = (e) => {
         setPeopleRangeValue(e.target.value);
@@ -293,45 +293,7 @@ const Calculation = () => {
                         </form>
                     </div>
 
-                    {
 
-                        <table className="w-full table-auto text-left border-separate border-spacing-y-3">
-                            <thead className="text-blue uppercase font-medium bg-lightYellow">
-                                <tr>
-                                    <th className="py-4 pr-6 pl-5">Index</th>
-                                    <th className="py-4 pr-6 pl-5">State</th>
-                                    <th className="py-4 pr-6">City</th>
-                                    <th className="py-4 pr-6">People Count</th>
-                                    <th className="py-4 pr-6">Units</th>
-                                    <th className="py-4 pr-6">Rs.</th>
-                                    <th className="py-4 pr-6">User Total</th>
-                                    <th className="py-4 pr-6">State Total</th>
-                                    <th className="py-4 pr-6">Calculation time</th>
-                                </tr>
-                            </thead>
-                            <tbody className="text-blue py-3">
-                                {
-                                    step1Data && step1Data.map((data, idx) => (
-                                        <tr key={idx} className='odd:bg-gray even:bg-lightGray'>
-                                            <td className="pr-6 pl-9  whitespace-nowrap">{idx + 1}</td>
-                                            <td className="pr-6 pl-5  whitespace-nowrap font-semibold">{data.state}</td>
-                                            <td className="pr-6  whitespace-nowrap">{data.city}</td>
-                                            <td className="pr-6  whitespace-nowrap">
-                                                <span className='py-2 px-3 rounded-full font-semibold text-xs'>{data.peopleCount}</span>
-                                            </td>
-                                            <td className="pr-6  whitespace-nowrap">{data.units}</td>
-                                            <td className="pr-6  whitespace-nowrap">{data.amount}</td>
-                                            <td className="pr-6  whitespace-nowrap">{data.userTotal}</td>
-                                            <td className="pr-6  whitespace-nowrap">{data.stateTotal}</td>
-                                            <td className="pr-6  whitespace-nowrap">{moment(data.createdAt).format('MMMM Do, h:mm a')}</td>
-
-                                        </tr>
-                                    ))
-                                }
-                            </tbody>
-                        </table>
-
-                    }
                 </div>
             </section>
 

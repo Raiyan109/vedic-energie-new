@@ -63,8 +63,7 @@ const Table = () => {
     const [lightsTotal, setLightsTotal] = useState(0)
     const [heaterTotal, setHeaterTotal] = useState(0)
 
-    const { step2Data } = useContext(CALC_CONTEXT)
-    console.log(step2Data);
+
 
     const handleSummerClick = () => {
         setIsAirConditionerOn(true);
@@ -557,32 +556,7 @@ const Table = () => {
                         <div className='py-20 flex justify-center items-center'>
                             <FinalCalculate handleClick={handleFinalCalculateClick} />
                         </div>
-                        {/*  */}
-                        {
-                            <div className='overflow-x-auto'>
-                                <table className="w-full table-auto text-left border-separate border-spacing-y-3">
-                                    <thead className="text-blue uppercase font-medium bg-lightYellow">
-                                        <tr>
-                                            {/* <th className="py-4 pr-6 pl-5">Machine Name</th> */}
-                                            <th className="py-4 pr-6 pl-5">Consumption time</th>
-                                            <th className="py-4 pr-6 pl-9">Machine Names</th>
-                                            <th className="py-4 pr-6 pl-9">Consumptions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="text-blue py-3">
-                                        {
-                                            step2Data && step2Data.map((data, idx) => (
-                                                <tr key={idx} className='odd:bg-gray even:bg-lightGray'>
-                                                    <td className="pr-6  whitespace-nowrap pl-5">{moment(data.createdAt).format('MMMM Do YYYY, h:mm a')}</td>
-                                                    <td className="pr-6  whitespace-nowrap pl-5">{data.consumptionTitles.join(", ")}</td>
-                                                    <td className="pr-6  whitespace-nowrap">{data.consumptionValues.join(", ")}</td>
-                                                </tr>
-                                            ))
-                                        }
-                                    </tbody>
-                                </table>
-                            </div>
-                        }
+
                     </div>
                 </div >
             </div >

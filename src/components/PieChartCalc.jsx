@@ -19,9 +19,6 @@ export default function PieChartCalc({ airPercentage, geyserPercentage, washingP
   console.log(ovenPercentage);
 
   const [chartData, setChartData] = useState(null);
-  const [consumptionValues, setConsumptionValues] = useState('')
-  const [consumptionTitles, setConsumptionTitles] = useState('')
-  const [error, setError] = useState('')
 
   useEffect(() => {
     const data = [
