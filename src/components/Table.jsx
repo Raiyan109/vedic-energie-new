@@ -8,7 +8,6 @@ import CalculateButton from './CalculateButton';
 import FinalCalculate from './FinalCalculate';
 import { AirConWattRanges } from '../constants/index';
 import { AirConsTimes } from '../constants/index';
-import Assumptions from './Assumptions';
 import GeyserInput from './WattInputs/GeyserInput';
 import WashingInput from './WattInputs/WashingInput';
 import MicroWaveInput from './WattInputs/MicroWaveInput';
@@ -22,8 +21,6 @@ import FridgeConsumption from './Consumptions/FridgeConsumption';
 import LightConsumption from './Consumptions/LightConsumption';
 import CustomMachines from './CustomMachines';
 import PieChartCalc from './PieChartCalc';
-import { CALC_CONTEXT } from '../context/CalcProvider';
-import moment from 'moment';
 
 const Table = () => {
     // const [selectedItem, setSelectedItem] = useState(0)
@@ -556,7 +553,6 @@ const Table = () => {
                         <div className='py-20 flex justify-center items-center'>
                             <FinalCalculate handleClick={handleFinalCalculateClick} />
                         </div>
-
                     </div>
                 </div >
             </div >

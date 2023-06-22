@@ -10,7 +10,7 @@ const Container = styled.div`
 
 function App() {
   useEffect(() => {
-    ReactGA.initialize('G-EERQNM32EJ');
+    ReactGA.initialize('G-0DRLFVFJH1');
     ReactGA.pageview('/');
   }, [])
   return (

@@ -8,7 +8,7 @@ const CalcProvider = ({ children }) => {
 
     const [step1Data, setStep1Data] = useState([])
     const [step2Data, setStep2Data] = useState([])
-
+    // Step 1 GET
     useEffect(() => {
         const fetchStep1 = async () => {
             const response = await fetch('https://vedic-backend-new-2-raiyan109.vercel.app/api/step1')
@@ -21,7 +21,7 @@ const CalcProvider = ({ children }) => {
         }
         fetchStep1()
     }, [])
-
+    // Step 2 GET
     useEffect(() => {
         const fetchStep2 = async () => {
             const response = await fetch('https://vedic-backend-new-2-raiyan109.vercel.app/api/step2')
@@ -34,6 +34,9 @@ const CalcProvider = ({ children }) => {
         }
         fetchStep2()
     }, [])
+
+    // Step 2 POST
+
 
     const value = {
         state,

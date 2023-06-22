@@ -65,16 +65,11 @@ const EnergyCalculation = () => {
             </div>
 
             <div>
-                {/* {goToCalc ? <Calculation ref={ref} /> : ''} */}
-
                 {showStateSelect && (
                     <Calculation />
                 )}
             </div>
-            {/* <Meter /> */}
-            {/* <SpeedOMeter /> */}
             <Table />
-            {/* <Piechart /> */}
             <Tipscategory />
             <Footer3 />
         </Section >
