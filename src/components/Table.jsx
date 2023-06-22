@@ -513,13 +513,13 @@ const Table = () => {
 
 
                             {/* Custom Machines Section */}
-                            <div className="lg:max-w-none max-w-xl mt-8 py-6">
+                            {/* <div className="lg:max-w-none max-w-xl mt-8 py-6">
                                 <h3 className="text-blue lg:text-2xl font-bold text-xl">
                                     If You Want To Add Other Machines You Can Customize It Here
                                 </h3>
-                            </div>
+                            </div> */}
 
-                            <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4'>
+                            {/* <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4'>
                                 <table className="lg:w-1/3 table-auto text-left border-separate border-spacing-y-3">
 
                                     <tbody className="text-blue py-3">
@@ -548,7 +548,7 @@ const Table = () => {
                                 </table>
 
                                 <AddButton text='Add' />
-                            </div>
+                            </div> */}
                         </form>
                         <div className='py-20 flex justify-center items-center'>
                             <FinalCalculate handleClick={handleFinalCalculateClick} />
