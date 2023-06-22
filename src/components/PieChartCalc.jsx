@@ -76,48 +76,48 @@ export default function PieChartCalc({ airPercentage, geyserPercentage, washingP
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const ConsumptionData = [
-      { label: 'Air Conditioner', value: airPercentage },
-      { label: 'Geyser', value: geyserPercentage },
-      { label: 'Washing Machine', value: washingPercentage },
-      { label: 'Oven', value: ovenPercentage },
-      { label: 'Fridge', value: fridgePercentage },
-      { label: 'Lights', value: lightPercentage },
-    ];
+    // const ConsumptionData = [
+    //   { label: 'Air Conditioner', value: airPercentage },
+    //   { label: 'Geyser', value: geyserPercentage },
+    //   { label: 'Washing Machine', value: washingPercentage },
+    //   { label: 'Oven', value: ovenPercentage },
+    //   { label: 'Fridge', value: fridgePercentage },
+    //   { label: 'Lights', value: lightPercentage },
+    // ];
 
-    const filteredData = ConsumptionData
-      .filter(({ value }) => value !== null && value !== 0)
-      .map(({ label, value }) => ({ label, value }));
-    const consumptionValue = filteredData.map(({ value }) => value)
+    // const filteredData = ConsumptionData
+    //   .filter(({ value }) => value !== null && value !== 0)
+    //   .map(({ label, value }) => ({ label, value }));
+    // const consumptionValue = filteredData.map(({ value }) => value)
 
-    const consumptionTitle = filteredData.map(({ label }) => label);
+    // const consumptionTitle = filteredData.map(({ label }) => label);
 
-    const step2 = {
-      consumptionValues: consumptionValue,
-      consumptionTitles: consumptionTitle,
-    };
-
-
-    const response = await fetch('https://vedic-backend-new-2-raiyan109.vercel.app/api/step2', {
-      method: 'POST',
-      body: JSON.stringify(step2),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    const json = await response.json()
+    // const step2 = {
+    //   consumptionValues: consumptionValue,
+    //   consumptionTitles: consumptionTitle,
+    // };
 
 
+    // const response = await fetch('https://vedic-backend-new-2-raiyan109.vercel.app/api/step2', {
+    //   method: 'POST',
+    //   body: JSON.stringify(step2),
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   }
+    // })
+    // const json = await response.json()
 
-    if (response.ok) {
-      // setError(null)
-      console.log('New calculation added', json);
-      const res = await fetch('https://vedic-backend-new-2-raiyan109.vercel.app/api/step2');
-      const data = await res.json();
-    }
-    else {
 
-    }
+
+    // if (response.ok) {
+    //   // setError(null)
+    //   console.log('New calculation added', json);
+    //   const res = await fetch('https://vedic-backend-new-2-raiyan109.vercel.app/api/step2');
+    //   const data = await res.json();
+    // }
+    // else {
+
+    // }
   }
 
   return (
@@ -172,9 +172,9 @@ export default function PieChartCalc({ airPercentage, geyserPercentage, washingP
             </div>
 
           </div>
-          <div className='flex justify-center items-center'>
+          {/* <div className='flex justify-center items-center'>
             <button className='w-[137px] h-[50px] bg-orange rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-yellow hover:transition-all p-2'>Submit to backend</button>
-          </div>
+          </div> */}
         </form>
       </div>
 

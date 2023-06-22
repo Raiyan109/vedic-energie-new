@@ -191,62 +191,48 @@ const Table = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        // const step2 = {
-        //     aCSelectedWattage,
-        //     geyserSelectedWattage,
-        //     washingSelectedWattage,
-        //     ovenSelectedWattage,
-        //     fridgeSelectedWattage,
-        //     lightSelectedWattage,
-        //     aCSelectedConsumptionTime,
-        //     geyserSelectedConsumptionTime,
-        //     washingSelectedConsumptionTime,
-        //     ovenSelectedConsumptionTime,
-        //     fridgeSelectedConsumptionTime,
-        //     lightSelectedConsumptionTime,
-        //     airTotal,
-        //     geyserTotal,
-        //     washingTotal,
-        //     ovenTotal,
-        //     fridgeTotal,
-        //     lightsTotal
-        // }
+        const ConsumptionData = [
+            { label: 'Air Conditioner', value: airTotal },
+            { label: 'Geyser', value: geyserTotal },
+            { label: 'Washing Machine', value: washingTotal },
+            { label: 'Oven', value: ovenTotal },
+            { label: 'Fridge', value: fridgeTotal },
+            { label: 'Lights', value: lightsTotal },
+        ];
 
-        // console.log(aCSelectedWattage,
-        //     geyserSelectedWattage,
-        //     washingSelectedWattage,
-        //     ovenSelectedWattage,
-        //     fridgeSelectedWattage,
-        //     lightSelectedWattage,
-        //     aCSelectedConsumptionTime,
-        //     geyserSelectedConsumptionTime,
-        //     washingSelectedConsumptionTime,
-        //     ovenSelectedConsumptionTime,
-        //     fridgeSelectedConsumptionTime,
-        //     lightSelectedConsumptionTime,
-        //     airTotal,
-        //     geyserTotal,
-        //     washingTotal,
-        //     ovenTotal,
-        //     fridgeTotal,
-        //     lightsTotal);
+        const filteredData = ConsumptionData
+            .filter(({ value }) => value !== null && value !== 0)
+            .map(({ label, value }) => ({ label, value }));
+        const consumptionValue = filteredData.map(({ value }) => value)
 
-        // const response = await fetch('http://localhost:5000/api/step2', {
-        //     method: 'POST',
-        //     body: JSON.stringify(step2),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // })
-        // const json = await response.json()
+        const consumptionTitle = filteredData.map(({ label }) => label);
 
-        // if (!response.ok) {
-        //     setError(json.error)
-        // }
-        // if (response.ok) {
-        //     setError(null)
-        //     console.log('New calculation added', json);
-        // }
+        const step2 = {
+            consumptionValues: consumptionValue,
+            consumptionTitles: consumptionTitle,
+        };
+
+
+        const response = await fetch('https://vedic-backend-new-2-raiyan109.vercel.app/api/step2', {
+            method: 'POST',
+            body: JSON.stringify(step2),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        const json = await response.json()
+
+
+
+        if (response.ok) {
+            // setError(null)
+            console.log('New calculation added', json);
+            const res = await fetch('https://vedic-backend-new-2-raiyan109.vercel.app/api/step2');
+            const data = await res.json();
+        }
+        else {
+
+        }
     }
 
 
@@ -549,10 +535,11 @@ const Table = () => {
 
                                 <AddButton text='Add' />
                             </div> */}
+                            <div className='py-20 flex justify-center items-center'>
+                                <FinalCalculate handleClick={handleFinalCalculateClick} />
+                            </div>
                         </form>
-                        <div className='py-20 flex justify-center items-center'>
-                            <FinalCalculate handleClick={handleFinalCalculateClick} />
-                        </div>
+
                     </div>
                 </div >
             </div >
