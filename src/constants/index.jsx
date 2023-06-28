@@ -667,6 +667,14 @@ export const Blogs = [
     }
 ]
 
+export const CategoryOfCustomer = [
+    { "name": "Industrial" },
+    { "name": "Residential" },
+    { "name": "Institutional" },
+    { "name": "Commercial" },
+    { "name": "Government" },
+    { "name": "Social Sector" }
+];
 
 // https://i.ibb.co/1b55FWf/category2img2.png
 // https://i.ibb.co/zr960SF/catagory2img1.png

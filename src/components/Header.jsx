@@ -92,8 +92,22 @@ const Header = () => {
 
 
 
-                            <li className={activeLink === 'banner' ? 'active' : ''}>
-                                <a href="#banner" onClick={(e) => handleClick(e, 'banner')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>Home</a>
+                            {/* <li className={activeLink === 'banner' ? 'active' : ''}>
+                                <a href="/" onClick={(e) => handleClick(e, 'banner')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>Home</a>
+                            </li> */}
+                            <li className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>
+                                <NavLink
+                                    to="/"
+                                    className={styles.navLink}
+                                    style={({ isActive, isPending }) => {
+                                        return {
+                                            borderBottom: isActive ? 'solid 5px #EBE667' : 'none',
+                                            color: isActive ? '#EBE667' : 'white',
+                                        };
+                                    }}
+                                >
+                                    Home
+                                </NavLink>
                             </li>
                             <li className={activeLink === 'efficient' ? 'active' : ''}>
                                 <a href="#efficient" onClick={(e) => handleClick(e, 'efficient')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>About Us</a>

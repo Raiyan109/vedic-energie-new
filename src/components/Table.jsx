@@ -572,7 +572,7 @@ select {
     box-shadow:none;
     border:0!important;
     color:#FEFFCD;
-    // background-image: none;
+    background-image: none;
     flex: 1;
     padding: 0 .5em;
     cursor:pointer;

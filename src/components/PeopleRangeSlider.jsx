@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const PeopleRangeSlider = ({ peopleRangeValue, handlePeopleRange, min, max, text }) => {
+const PeopleRangeSlider = ({ value, handlePeopleRange, min, max, text }) => {
     return (
         <div className='pt-3'>
             <span className='text-lightYellow text-md'>{text}</span>
@@ -10,7 +10,7 @@ const PeopleRangeSlider = ({ peopleRangeValue, handlePeopleRange, min, max, text
                     <Slider id="slider" type="range"
                         min={min}
                         max={max}
-                        defaultValue={peopleRangeValue}
+                        defaultValue={value}
                         onChange={handlePeopleRange}
                         className="" />
                 </label>

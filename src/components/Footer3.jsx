@@ -108,7 +108,7 @@ const Footer3 = () => {
                                             <li className='mr-52'>
                                                 <a
                                                     className="flex items-center justify-center gap-3"
-                                                    href="/"
+                                                    href="tel:+91 98439 37773"
                                                 >
                                                     <h3 className='text-xl text-blue'><BsFillTelephoneFill /></h3>
                                                     <span className='text-blue text-sm text-left'>+91 98439 37773</span>
