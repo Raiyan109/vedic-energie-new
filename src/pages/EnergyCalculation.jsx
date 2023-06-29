@@ -12,6 +12,7 @@ import Tipscategory from '../components/Tipscategory';
 import bg from '../assets/ellipse.png'
 import styled from 'styled-components';
 import RoofSolarCalculator from '../components/RoofSolarCalculator';
+import SolarCalculator from '../components/SolarCalculator';
 
 const Section = styled.div`
 background-image: url(${bg});
@@ -71,7 +72,7 @@ const EnergyCalculation = () => {
                 )}
             </div>
             <Table />
-            <RoofSolarCalculator />
+            <SolarCalculator />
             <Tipscategory />
             <Footer3 />
         </Section >

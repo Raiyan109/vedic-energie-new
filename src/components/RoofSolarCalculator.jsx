@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import SolarPanelCapSlider from './SolarPanelCapSlider';
 import statesData from '../../public/states.json'
 import { CategoryOfCustomer } from '../constants';
 
@@ -8,26 +7,51 @@ import { CategoryOfCustomer } from '../constants';
 const RoofSolarCalculator = () => {
     const [totalArea, setTotalArea] = useState(false)
     const [solarPanelCapacity, setSolarPanelCapacity] = useState(false)
+    const [budget, setBudget] = useState(false)
     const [solarPanelCapacityRange, setSolarPanelCapacityRange] = useState('')
     const [solarInputValue, setSolarInputValue] = useState('')
-    const [budget, setBudget] = useState(false)
     const [budgetRange, setBudgetRange] = useState('')
     const [budgetInputValue, setBudgetInputValue] = useState('')
     const [averageElectricityCostRange, setAverageElectricityCostRange] = useState('')
     const [averageElectricityCostValue, setAverageElectricityCostValue] = useState('')
+    const [roofTopAreaPercentageRange, setRoofTopAreaPercentageRange] = useState('')
+    const [roofTopAreaPercentageValue, setRoofTopAreaPercentageValue] = useState('')
     const solarPanelSlider = useRef(null)
     const budgetSlider = useRef(null)
     const averageElectricityCostSlider = useRef(null)
+    const roofTopAreaPercentageSlider = useRef(null)
 
     const totalAreaClick = () => {
-        setTotalArea(!totalArea)
-    }
+        if (totalArea) {
+            setTotalArea(false);
+        } else {
+            setTotalArea(true);
+            setSolarPanelCapacity(false);
+            setBudget(false);
+        }
+    };
+
     const solarPanelCapacityClick = () => {
-        setSolarPanelCapacity(!solarPanelCapacity)
-    }
+        if (solarPanelCapacity) {
+            setSolarPanelCapacity(false)
+        }
+        else {
+            setSolarPanelCapacity(true)
+            setBudget(false)
+            setTotalArea(false)
+        }
+    };
+
     const budgetClick = () => {
-        setBudget(!budget)
-    }
+        if (budget) {
+            setBudget(false)
+        }
+        else {
+            setBudget(true)
+            setSolarPanelCapacity(false)
+            setTotalArea(false)
+        }
+    };
 
     const handleSolarPanelCapacityRange = (e) => {
         setSolarPanelCapacityRange(e.target.value);
@@ -42,7 +66,10 @@ const RoofSolarCalculator = () => {
     const handleAverageElectricityCostRange = (e) => {
         setAverageElectricityCostRange(e.target.value);
         setAverageElectricityCostValue(averageElectricityCostSlider.current.value)
-
+    }
+    const handleRoofTopAreaPercentageRange = (e) => {
+        setRoofTopAreaPercentageRange(e.target.value);
+        setRoofTopAreaPercentageValue(roofTopAreaPercentageSlider.current.value)
     }
 
     const handleSolarCapacityNumberInput = (e) => {
@@ -55,6 +82,9 @@ const RoofSolarCalculator = () => {
 
     const handleAverageElectricityCostNumberInput = (e) => {
         setAverageElectricityCostValue(e.target.value)
+    }
+    const handleRoofTopAreaPercentageNumberInput = (e) => {
+        setRoofTopAreaPercentageValue(e.target.value)
     }
 
     const handleStates = (e) => {
@@ -78,38 +108,71 @@ const RoofSolarCalculator = () => {
                     <form onClick={handleSubmit}>
                         <ol className='list-decimal text-white mb-10'>
                             <li className='mb-10'>
-                                <h1>Choose one of the following:</h1>
+                                {/* <h1>Choose one of the following:</h1> */}
                                 <div className="block min-h-6 pl-7">
-                                    <label>
+                                    <div>
                                         <input type="checkbox"
                                             checked={totalArea}
                                             onChange={totalAreaClick}
+                                            className='checkbox'
                                         />
-                                        <label for="checkbox-1" className="cursor-pointer select-none text-white ml-4">Total roof top area</label>
-                                        <div className={totalArea ? 'block' : 'hidden'}>
-                                            <div className='py-4'>
-                                                <label>
+                                        <span className="cursor-pointer select-none text-white ml-4">Total roof top area</span>
+                                        {totalArea && (
+                                            <div>
+                                                <div className='py-4'>
+                                                    {/* <label> */}
                                                     <input type="number" className="placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md select"
                                                         pattern="^Rs\d+(\.\d{1,2})?$" placeholder="Enter amount in Rs" />
                                                     <label for="" className="cursor-pointer select-none text-white ml-4">
                                                         <input id="" type="checkbox"
                                                         />
-                                                        <label for="" className="cursor-pointer select-none text-white ml-4">Sq. m.</label>
+                                                        <span className="cursor-pointer select-none text-white ml-4">Sq. m.</span>
                                                         <input id="" type="checkbox"
                                                         />
-                                                        <label for="" className="cursor-pointer select-none text-white ml-4">Sq. Feet</label>
+                                                        <span className="cursor-pointer select-none text-white ml-4">Sq. Feet</span>
                                                     </label>
-                                                </label>
+                                                    <label>
+                                                        <div className='pt-6 flex  items-center'>
+                                                            <input type='number'
+                                                                placeholder="% of Roof Top Area available"
+                                                                value={roofTopAreaPercentageValue}
+                                                                onInput={handleRoofTopAreaPercentageNumberInput}
+                                                                className="placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md select" />
+                                                            <p className='text-white ml-5'>%</p>
+                                                        </div>
+
+                                                        {/* Slider range people count */}
+                                                        <input id="slider" type="range"
+                                                            onInput={handleRoofTopAreaPercentageRange}
+                                                            value={roofTopAreaPercentageValue}
+                                                            list="markers"
+                                                            min={1}
+                                                            max={100}
+                                                            step='1'
+                                                            ref={roofTopAreaPercentageSlider}
+                                                            className="" />
+                                                        {/* <datalist id="markers">
+                                                <option value="0"></option>
+                                                <option value="25"></option>
+                                                <option value="50"></option>
+                                                <option value="75"></option>
+                                                <option value="100"></option>
+                                            </datalist> */
+                                                        }
+
+                                                    </label>
+                                                    {/* </label> */}
+                                                </div>
                                             </div>
-                                        </div>
-                                    </label>
+                                        )}
+                                    </div>
                                     <p className='text-white'>OR</p>
                                     <label>
                                         <input type="checkbox"
                                             checked={solarPanelCapacity}
                                             onChange={solarPanelCapacityClick}
                                         />
-                                        <label className="cursor-pointer select-none text-white ml-4">Solar Panel Capacity</label>
+                                        <span className="cursor-pointer select-none text-white ml-4">Solar Panel Capacity</span>
                                         <div className={solarPanelCapacity ? 'block' : 'hidden'}>
                                             <div className='py-4'>
                                                 <label>
@@ -117,7 +180,7 @@ const RoofSolarCalculator = () => {
                                                         <input type='number'
                                                             value={solarInputValue}
                                                             onInput={handleSolarCapacityNumberInput}
-                                                            className='w-50 h-9 flex justify-center items-center text-xl text-rgbaHeader' />
+                                                            className="placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md select" />
                                                         <p className='text-white ml-5'>kW</p>
                                                     </div>
 
@@ -151,7 +214,7 @@ const RoofSolarCalculator = () => {
                                             checked={budget}
                                             onChange={budgetClick}
                                         />
-                                        <label className="cursor-pointer select-none text-white ml-4">Your Budget</label>
+                                        <span className="cursor-pointer select-none text-white ml-4">Your Budget</span>
                                         <div className={budget ? 'block' : 'hidden'}>
                                             <div className='py-4'>
                                                 <label>
@@ -190,7 +253,7 @@ const RoofSolarCalculator = () => {
                             </li>
 
                             <li className='mb-10'>
-                                <h1>Select State and Customer Category</h1>
+                                <h1>Select State</h1>
                                 {/*  STATE */}
                                 <div className="select mb-10">
                                     <select defaultValue="State" name="state" id="state" onChange={(e) => handleStates(e)}>
@@ -202,6 +265,11 @@ const RoofSolarCalculator = () => {
                                         }
                                     </select>
                                 </div>
+
+                            </li>
+
+                            <li className='mb-10'>
+                                <h1>Select Customer Category</h1>
                                 {/*  Category of Customer */}
                                 <div className="select">
                                     <select defaultValue="Select Category of Customer" name="category" id="category" >
@@ -214,7 +282,6 @@ const RoofSolarCalculator = () => {
                                     </select>
                                 </div>
                             </li>
-
                             <li>
                                 <h1>What is your average Electricity cost?</h1>
 
@@ -263,11 +330,26 @@ export default RoofSolarCalculator;
 
 const Section = styled.div`
  .select {
-    width: 100%;
+    width: 40%;
     height: 2em;
     background: transparent;
     border:none;
     border-bottom: 1px solid #FEFFCD;
+ }
+ .checkbox{
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+    transition: border-color 0.2s;
+
+  &:checked {
+    border-color: blue;
+    background-color: pink;
+  }
  }
 
 `
