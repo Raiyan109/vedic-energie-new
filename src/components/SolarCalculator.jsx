@@ -24,6 +24,90 @@ const SolarCalculator = () => {
     const averageElectricityCostSlider = useRef(null)
     const roofTopAreaPercentageSlider = useRef(null)
 
+    // calculation states
+    const [rooftopArea, setRooftopArea] = useState('');
+  const [state, setState] = useState('');
+  const [customerCategory, setCustomerCategory] = useState('');
+  const [electricityCost, setElectricityCost] = useState('');
+  const [powerPlantSize, setPowerPlantSize] = useState(0);
+  const [plantCost, setPlantCost] = useState(0);
+  const [electricityGeneration, setElectricityGeneration] = useState(0);
+  const [financialSaving, setFinancialSaving] = useState(0);
+  const [co2Mitigated, setCO2Mitigated] = useState(0);
+  const [equivalentPlanting, setEquivalentPlanting] = useState(0);
+
+//   calculation functions 
+const handleRooftopAreaChange = (event) => {
+    setRooftopArea(event.target.value);
+  };
+
+  const handleStateChange = (event) => {
+    setState(event.target.value);
+  };
+
+  const handleCustomerCategoryChange = (event) => {
+    setCustomerCategory(event.target.value);
+  };
+
+  const handleElectricityCostChange = (event) => {
+    setElectricityCost(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Perform calculations based on rooftopArea, state, customerCategory, electricityCost, and other data
+    const powerPlantSize = calculatePowerPlantSize();
+    const plantCost = calculatePlantCost();
+    const electricityGeneration = calculateElectricityGeneration();
+    const financialSaving = calculateFinancialSaving();
+    const co2Mitigated = calculateCO2Mitigated();
+    const equivalentPlanting = calculateEquivalentPlanting();
+
+    setPowerPlantSize(powerPlantSize);
+    setPlantCost(plantCost);
+    setElectricityGeneration(electricityGeneration);
+    setFinancialSaving(financialSaving);
+    setCO2Mitigated(co2Mitigated);
+    setEquivalentPlanting(equivalentPlanting);
+  };
+
+//   Calculation controllers
+
+const calculatePowerPlantSize = () => {
+    // Perform power plant size calculation based on rooftopArea and other factors
+    // Replace this with your actual calculation logic
+    return parseFloat(rooftopArea) * 0.1;
+  };
+
+  const calculatePlantCost = () => {
+    // Perform plant cost calculation based on powerPlantSize and customerCategory
+    // Replace this with your actual calculation logic
+    return parseFloat(powerPlantSize) * 1000;
+  };
+
+  const calculateElectricityGeneration = () => {
+    // Perform electricity generation calculation based on powerPlantSize and averageSunlightHours
+    // Replace this with your actual calculation logic
+    return parseFloat(powerPlantSize) * 5;
+  };
+
+  const calculateFinancialSaving = () => {
+    // Perform financial saving calculation based on electricityGeneration and electricityCost
+    // Replace this with your actual calculation logic
+    return parseFloat(electricityGeneration) * parseFloat(electricityCost);
+  };
+
+  const calculateCO2Mitigated = () => {
+    // Perform CO2 mitigation calculation based on electricityGeneration and CO2EmissionFactor
+    // Replace this with your actual calculation logic
+    return parseFloat(electricityGeneration) * 0.5;
+  };
+
+  const calculateEquivalentPlanting = () => {
+    // Perform equivalent planting calculation based on CO2Mitigated and PlantingEquivalentFactor
+    // Replace this with your actual calculation logic
+    return parseFloat(co2Mitigated) * 10;
+  };
 
     const handleCheckbox1Change = () => {
         if (checkbox1Checked) {
@@ -111,10 +195,6 @@ const SolarCalculator = () => {
         console.log(e.target.value);
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
-
     return (
         <section className="bg-blue">
             <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
@@ -161,7 +241,7 @@ const SolarCalculator = () => {
                                                         placeholder="% of Roof Top Area available"
                                                         value={roofTopAreaPercentageValue}
                                                         onInput={handleRoofTopAreaPercentageNumberInput}
-                                                        className="placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md select text-black" />
+                                                        className="focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md select text-black" />
                                                     <p className='text-white ml-5'>%</p>
                                                 </div>
 
