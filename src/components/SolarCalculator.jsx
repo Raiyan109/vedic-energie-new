@@ -36,6 +36,11 @@ const SolarCalculator = () => {
   const [co2Mitigated, setCO2Mitigated] = useState(0);
   const [equivalentPlanting, setEquivalentPlanting] = useState(0);
 
+//    for rooftop calculations
+const [roofArea, setRoofArea] = useState('');
+const [percentageUsed, setPercentageUsed] = useState(0);
+
+
 //   calculation functions 
 const handleRooftopAreaChange = (event) => {
     setRooftopArea(event.target.value);
@@ -56,7 +61,9 @@ const handleRooftopAreaChange = (event) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Perform calculations based on rooftopArea, state, customerCategory, electricityCost, and other data
-    const powerPlantSize = calculatePowerPlantSize();
+    const powerPlantSize = calculatePowerPlantSize(parseFloat(roofArea),
+    parseFloat(roofTopAreaPercentageValue),
+    sqMeterChecked);
     const plantCost = calculatePlantCost();
     const electricityGeneration = calculateElectricityGeneration();
     const financialSaving = calculateFinancialSaving();
@@ -73,10 +80,28 @@ const handleRooftopAreaChange = (event) => {
 
 //   Calculation controllers
 
-const calculatePowerPlantSize = () => {
+const convertToSquareMeter = (roofAreaInSquareFeet) => {
+    // Convert roofArea from square feet to square meters
+    // Replace this with your actual conversion logic
+    const conversionFactor = 0.092903; // Conversion factor from square feet to square meters
+    const roofAreaInSquareMeters = roofAreaInSquareFeet * conversionFactor;
+    return roofAreaInSquareMeters;
+  };
+  
+
+const calculatePowerPlantSize = (roofArea, roofTopAreaPercentageValue, isSqMeter) => {
     // Perform power plant size calculation based on rooftopArea and other factors
     // Replace this with your actual calculation logic
-    return parseFloat(rooftopArea) * 0.1;
+    // return parseFloat(rooftopArea) * 0.1;
+    let convertedArea = roofArea;
+  if (isSqMeter) {
+    // Convert roofArea to square meter if it is in square feet
+    convertedArea = convertToSquareMeter(roofArea);
+  }
+
+  // Calculate the size of the power plant based on the convertedArea and the percentageUsed
+  const powerPlantSize = convertedArea * (roofTopAreaPercentageValue / 100);
+  return powerPlantSize.toFixed(1);
   };
 
   const calculatePlantCost = () => {
@@ -189,6 +214,7 @@ const calculatePowerPlantSize = () => {
     }
     const handleRoofTopAreaPercentageNumberInput = (e) => {
         setRoofTopAreaPercentageValue(e.target.value)
+        setPercentageUsed(e.target.value)
     }
 
     const handleStates = (e) => {
@@ -217,7 +243,12 @@ const calculatePowerPlantSize = () => {
                                     <div>
                                         <div className='py-4'>
                                             {/* <label> */}
-                                            <input type="number" className='text-black' />
+                                            <input
+                                                type="number"
+                                                className="text-black"
+                                                value={roofArea}
+                                                onChange={(e) => setRoofArea(e.target.value)}
+                                                />
                                             <label>
                                                 <input
                                                     type="checkbox"
@@ -267,6 +298,7 @@ const calculatePowerPlantSize = () => {
                                             </label>
                                             {/* </label> */}
                                         </div>
+                                        {powerPlantSize}
                                     </div>
                                 )}
 
