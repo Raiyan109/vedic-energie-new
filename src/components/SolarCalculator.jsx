@@ -83,11 +83,12 @@ const handleRooftopAreaChange = (event) => {
     sqMeterChecked);
     const powerPlantSizeBySolarCapacity = calculatePowerPlantSizeBySolarCapacity(parseInt(solarInputValue))
     const powerPlantSizeByBudget = calculatePowerPlantSizeByBudget(parseInt(budgetInputValue))
-    const plantCost = calculatePlantCost();
-    const electricityGeneration = calculateElectricityGeneration();
-    const financialSaving = calculateFinancialSaving();
-    const co2Mitigated = calculateCO2Mitigated();
-    const equivalentPlanting = calculateEquivalentPlanting();
+    const plantCost = calculatePlantCost(parseFloat(result));
+    const electricityGeneration = calculateElectricityGeneration(parseFloat(result));
+    const financialSaving = calculateFinancialSaving(parseFloat(result),
+    parseFloat(averageElectricityCostValue));
+    const co2Mitigated = calculateCO2Mitigated(parseFloat(result));
+    const equivalentPlanting = calculateEquivalentPlanting(parseFloat(result));
 
     setPowerPlantSize(powerPlantSize);
     setSolarPanelCapacity(powerPlantSizeBySolarCapacity)
@@ -96,6 +97,7 @@ const handleRooftopAreaChange = (event) => {
     setElectricityGeneration(electricityGeneration);
     setFinancialSaving(financialSaving);
     setCO2Mitigated(co2Mitigated);
+    console.log(co2Mitigated);
     setEquivalentPlanting(equivalentPlanting);
   };
 
@@ -134,34 +136,49 @@ const budgetResult = budgetInputValue / 50000;
 return budgetResult
     }
 
-  const calculatePlantCost = () => {
+  const calculatePlantCost = (result) => {
+    console.log(result);
     // Perform plant cost calculation based on powerPlantSize and customerCategory
     // Replace this with your actual calculation logic
-    return parseFloat(powerPlantSize) * 1000;
+     const costResult =  result * 50000;
+     console.log(costResult);
+     return costResult
   };
 
-  const calculateElectricityGeneration = () => {
+  const calculateElectricityGeneration = (result) => {
     // Perform electricity generation calculation based on powerPlantSize and averageSunlightHours
     // Replace this with your actual calculation logic
-    return parseFloat(powerPlantSize) * 5;
+    const elecGenTotal = result * 5.5 * 20 * 10
+    console.log(`Annual : ${elecGenTotal} kWh`);
+    console.log(`Life time (25 years) : ${elecGenTotal *25} kWh`);
+    return elecGenTotal;
   };
 
-  const calculateFinancialSaving = () => {
+  const calculateFinancialSaving = (result,averageElectricityCostValue) => {
     // Perform financial saving calculation based on electricityGeneration and electricityCost
     // Replace this with your actual calculation logic
-    return parseFloat(electricityGeneration) * parseFloat(electricityCost);
+    const financialSavingTotal = result * 5.5 * 20 * averageElectricityCostValue
+    console.log(`Monthly : Rs. ${financialSavingTotal}`);
+    console.log(`Annually : Rs. ${financialSavingTotal * 10}`);
+    console.log(`Life time (25 years) : Rs. ${financialSavingTotal * 10 * 25}`);
+    return financialSavingTotal;
   };
 
-  const calculateCO2Mitigated = () => {
+  const calculateCO2Mitigated = (result) => {
     // Perform CO2 mitigation calculation based on electricityGeneration and CO2EmissionFactor
     // Replace this with your actual calculation logic
-    return parseFloat(electricityGeneration) * 0.5;
+    const co2Lifetime = result * 31
+    
+    console.log(`CO2 Mitigated lifetime ${co2Lifetime} tonnes`);
+    return co2Lifetime;
   };
 
-  const calculateEquivalentPlanting = () => {
+  const calculateEquivalentPlanting = (result) => {
     // Perform equivalent planting calculation based on CO2Mitigated and PlantingEquivalentFactor
     // Replace this with your actual calculation logic
-    return parseFloat(co2Mitigated) * 10;
+    const co2EqToPlanting = result * 49
+    console.log(`CO2 Mitigated equivelant to planting ${co2EqToPlanting} Teak trees over the life time`);
+    return co2EqToPlanting;
   };
 
     const handleCheckbox1Change = () => {
@@ -507,14 +524,15 @@ return budgetResult
                             <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-lightBlue py-5">Solar Calculation Result</h1>
                         </div>
 
-                        <div className='container flex lg:flex-row  flex-col lg:justify-between lg:items-center mx-auto lg:px-14 px-7 lg:space-y-0 md:space-y-12 space-y-0'>
+                        {/* <div className='container flex lg:flex-row  flex-col lg:justify-between lg:items-center mx-auto lg:px-14 px-7 lg:space-y-0 md:space-y-12 space-y-0'> */}
                             {/* <div className='lg:max-w-2xl max-w-lg mx-auto mb-16'>
                                 <h2 className='lg:text-2xl md:text-xl text-lg leading-relaxed text-blue lg:text-left text-center'>By comparing the user's energy consumption with the state's per capita energy consumption, the calculator provides a benchmark for the user to evaluate their own energy usage. If the user's consumption is significantly higher than the state's average, it suggests that they might have opportunities for energy-saving improvements.</h2>
                             </div> */}
                             <div className="">
-                                <SolarCalculatorResult powerPlantSize={result} />
+                                <SolarCalculatorResult powerPlantSize={result} plantCost={plantCost}
+electricityGeneration={electricityGeneration} financialSaving={financialSaving} co2Mitigated={co2Mitigated} equivalentPlanting={equivalentPlanting} />
                             </div>
-                        </div>
+                        {/* </div> */}
                     </div>
                 )
             }
