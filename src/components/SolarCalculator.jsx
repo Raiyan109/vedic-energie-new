@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import statesData from '../../public/states.json'
 import { CategoryOfCustomer } from '../constants';
+import SolarCalculatorResult from './SolarCalculatorResult';
 
 const SolarCalculator = () => {
     const [checkbox1Checked, setCheckbox1Checked] = useState(false);
@@ -9,8 +10,6 @@ const SolarCalculator = () => {
     const [sqMeterChecked, setSqMeterChecked] = useState(false);
     const [sqFeetChecked, setSqFeetChecked] = useState(false);
     const [totalArea, setTotalArea] = useState(false)
-    const [solarPanelCapacity, setSolarPanelCapacity] = useState(false)
-    const [budget, setBudget] = useState(false)
     const [solarPanelCapacityRange, setSolarPanelCapacityRange] = useState('')
     const [solarInputValue, setSolarInputValue] = useState('')
     const [budgetRange, setBudgetRange] = useState('')
@@ -30,11 +29,16 @@ const SolarCalculator = () => {
   const [customerCategory, setCustomerCategory] = useState('');
   const [electricityCost, setElectricityCost] = useState('');
   const [powerPlantSize, setPowerPlantSize] = useState(0);
+  const [solarPanelCapacity, setSolarPanelCapacity] = useState(0);
+  const [budgetResult, setBudgetResult] = useState(0)
   const [plantCost, setPlantCost] = useState(0);
   const [electricityGeneration, setElectricityGeneration] = useState(0);
   const [financialSaving, setFinancialSaving] = useState(0);
   const [co2Mitigated, setCO2Mitigated] = useState(0);
   const [equivalentPlanting, setEquivalentPlanting] = useState(0);
+
+  const [showSolarCalculationResult, setShowSolarCalculationResult] = useState(false);
+  const [result, setResult] = useState(0)
 
 //    for rooftop calculations
 const [roofArea, setRoofArea] = useState('');
@@ -60,10 +64,25 @@ const handleRooftopAreaChange = (event) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    let calculatedSize = 0;
+
+  if (checkbox1Checked) {
+    calculatedSize = calculatePowerPlantSize(parseFloat(roofArea), parseFloat(roofTopAreaPercentageValue), sqMeterChecked);
+  } else if (checkbox2Checked) {
+    calculatedSize = calculatePowerPlantSizeBySolarCapacity(parseInt(solarInputValue));
+  } else if (checkbox3Checked) {
+    calculatedSize = calculatePowerPlantSizeByBudget(parseInt(budgetInputValue));
+  }
+
+  // Set the calculated power plant size
+  setResult(calculatedSize);
     // Perform calculations based on rooftopArea, state, customerCategory, electricityCost, and other data
     const powerPlantSize = calculatePowerPlantSize(parseFloat(roofArea),
     parseFloat(roofTopAreaPercentageValue),
     sqMeterChecked);
+    const powerPlantSizeBySolarCapacity = calculatePowerPlantSizeBySolarCapacity(parseInt(solarInputValue))
+    const powerPlantSizeByBudget = calculatePowerPlantSizeByBudget(parseInt(budgetInputValue))
     const plantCost = calculatePlantCost();
     const electricityGeneration = calculateElectricityGeneration();
     const financialSaving = calculateFinancialSaving();
@@ -71,6 +90,8 @@ const handleRooftopAreaChange = (event) => {
     const equivalentPlanting = calculateEquivalentPlanting();
 
     setPowerPlantSize(powerPlantSize);
+    setSolarPanelCapacity(powerPlantSizeBySolarCapacity)
+    setBudgetResult(powerPlantSizeByBudget)
     setPlantCost(plantCost);
     setElectricityGeneration(electricityGeneration);
     setFinancialSaving(financialSaving);
@@ -103,6 +124,15 @@ const calculatePowerPlantSize = (roofArea, roofTopAreaPercentageValue, isSqMeter
   const powerPlantSize = convertedArea * (roofTopAreaPercentageValue / 100);
   return powerPlantSize.toFixed(1);
   };
+
+    const  calculatePowerPlantSizeBySolarCapacity = (solarInputValue) =>{
+        return solarInputValue
+    }
+
+    const calculatePowerPlantSizeByBudget = (budgetInputValue) =>{
+const budgetResult = budgetInputValue / 50000;
+return budgetResult
+    }
 
   const calculatePlantCost = () => {
     // Perform plant cost calculation based on powerPlantSize and customerCategory
@@ -221,7 +251,13 @@ const calculatePowerPlantSize = (roofArea, roofTopAreaPercentageValue, isSqMeter
         console.log(e.target.value);
     }
 
+    const handleGoToSolarCalculationResult = () => {
+        setShowSolarCalculationResult(true);
+    };
+
     return (
+        <section>
+            
         <section className="bg-blue">
             <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                 <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Solar Roof Top Calculator</h3>
@@ -298,7 +334,7 @@ const calculatePowerPlantSize = (roofArea, roofTopAreaPercentageValue, isSqMeter
                                             </label>
                                             {/* </label> */}
                                         </div>
-                                        {powerPlantSize}
+                                        power Plant size by rooftop area: {powerPlantSize}
                                     </div>
                                 )}
 
@@ -342,8 +378,10 @@ const calculatePowerPlantSize = (roofArea, roofTopAreaPercentageValue, isSqMeter
                                 <option value="100"></option>
                             </datalist> */
                                         }
+                                        power Plant size by Solar panel capacity: {solarInputValue}
 
                                     </label>
+
                                 )}
 
                                 {/* checkbox 3 */}
@@ -386,6 +424,7 @@ const calculatePowerPlantSize = (roofArea, roofTopAreaPercentageValue, isSqMeter
                                                 <option value="100"></option>
                                             </datalist> */
                                         }
+                                        Power plant size by budget {budgetResult}
 
                                     </label>
                                 )}
@@ -456,11 +495,30 @@ const calculatePowerPlantSize = (roofArea, roofTopAreaPercentageValue, isSqMeter
                             </label>
                         </li>
                     </ol>
-                    <button className='w-[137px] h-[50px] bg-lightYellow rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-yellow hover:transition-all'>Calculate</button>
+                    <button onClick={handleGoToSolarCalculationResult} className='w-[137px] h-[50px] bg-lightYellow rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-yellow hover:transition-all'>Calculate</button>
                 </form>
             </div>
 
         </section>
+        {
+                showSolarCalculationResult && (
+                    <div className='box h-auto p-10'>
+                        <div className='flex justify-center items-center py-14'>
+                            <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-lightBlue py-5">Solar Calculation Result</h1>
+                        </div>
+
+                        <div className='container flex lg:flex-row  flex-col lg:justify-between lg:items-center mx-auto lg:px-14 px-7 lg:space-y-0 md:space-y-12 space-y-0'>
+                            {/* <div className='lg:max-w-2xl max-w-lg mx-auto mb-16'>
+                                <h2 className='lg:text-2xl md:text-xl text-lg leading-relaxed text-blue lg:text-left text-center'>By comparing the user's energy consumption with the state's per capita energy consumption, the calculator provides a benchmark for the user to evaluate their own energy usage. If the user's consumption is significantly higher than the state's average, it suggests that they might have opportunities for energy-saving improvements.</h2>
+                            </div> */}
+                            <div className="">
+                                <SolarCalculatorResult powerPlantSize={result} />
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+                                    </section>
     );
 };
 
