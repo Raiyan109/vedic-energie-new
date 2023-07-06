@@ -112,28 +112,28 @@ const convertToSquareMeter = (roofAreaInSquareFeet) => {
   };
   
 
-const calculatePowerPlantSize = (roofArea, roofTopAreaPercentageValue, isSqMeter) => {
+  const calculatePowerPlantSize = (roofArea) => {
     // Perform power plant size calculation based on rooftopArea and other factors
     // Replace this with your actual calculation logic
     // return parseFloat(rooftopArea) * 0.1;
-    let convertedArea = roofArea;
-  if (isSqMeter) {
-    // Convert roofArea to square meter if it is in square feet
-    convertedArea = convertToSquareMeter(roofArea);
-  }
+    // let convertedArea = roofArea;
+    // if (isSqMeter) {
+      
+    //     convertedArea = convertToSquareMeter(roofArea);
+    // }
 
   // Calculate the size of the power plant based on the convertedArea and the percentageUsed
-  const powerPlantSize = convertedArea * (roofTopAreaPercentageValue / 100);
-  return powerPlantSize.toFixed(1);
+    const powerPlantSize = roofArea  / 110;
+    return powerPlantSize.toFixed(1);
   };
 
-    const  calculatePowerPlantSizeBySolarCapacity = (solarInputValue) =>{
+    const calculatePowerPlantSizeBySolarCapacity = (solarInputValue) =>{
         return solarInputValue
     }
 
     const calculatePowerPlantSizeByBudget = (budgetInputValue) =>{
-const budgetResult = budgetInputValue / 50000;
-return budgetResult
+        const budgetResult = budgetInputValue / 50000;
+        return budgetResult
     }
 
   const calculatePlantCost = (result) => {
@@ -276,18 +276,22 @@ return budgetResult
         <section>
             
         <section className="bg-blue">
-            <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
-                <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Solar Roof Top Calculator</h3>
+           <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
+           <div className='bg-orange py-10'>
+                <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5 text-center">Solar Roof Top Calculator</h3>
+            <div className='px-10'>
                 <form onSubmit={handleSubmit}>
                     <ol className='list-decimal mb-10 text-white'>
                         <li>
-                            <p className='text-white'>Choose one of the following</p>
-                            <div>
+                            <p className='text-white text-xl'>Choose one of the following</p>
+                            <div className='flex justify-start items-center space-x-32 py-5'>
+                                <div>
                                 <label className='text-white'>
                                     <input
                                         type="checkbox"
                                         checked={checkbox1Checked}
                                         onChange={handleCheckbox1Change}
+                                        className='mr-2'
                                     />
                                     Total Rooftop Area
                                 </label>
@@ -302,7 +306,7 @@ return budgetResult
                                                 value={roofArea}
                                                 onChange={(e) => setRoofArea(e.target.value)}
                                                 />
-                                            <label>
+                                            {/* <label>
                                                 <input
                                                     type="checkbox"
                                                     checked={sqMeterChecked}
@@ -318,8 +322,8 @@ return budgetResult
                                                     onChange={sqFeetChange}
                                                 />
                                                 Sq. Feet
-                                            </label>
-                                            <label>
+                                            </label> */}
+                                            {/* <label>
                                                 <div className='pt-6 flex  items-center'>
                                                     <input type='number'
                                                         placeholder="% of Roof Top Area available"
@@ -329,7 +333,7 @@ return budgetResult
                                                     <p className='text-white ml-5'>%</p>
                                                 </div>
 
-                                                {/* Slider range people count */}
+                                                
                                                 <input id="slider" type="range"
                                                     onInput={handleRoofTopAreaPercentageRange}
                                                     value={roofTopAreaPercentageValue}
@@ -339,30 +343,26 @@ return budgetResult
                                                     step='1'
                                                     ref={roofTopAreaPercentageSlider}
                                                     className="" />
-                                                {/* <datalist id="markers">
-                                                        <option value="0"></option>
-                                                        <option value="25"></option>
-                                                        <option value="50"></option>
-                                                        <option value="75"></option>
-                                                        <option value="100"></option>
-                                                    </datalist> */
-                                                }
-
-                                            </label>
+                                               
+                                            </label> */}
                                             {/* </label> */}
                                         </div>
                                         power Plant size by rooftop area: {powerPlantSize}
                                     </div>
                                 )}
+                                </div>
 
                                 {/* checkbox 2 */}
-                                <p className='text-white'>OR</p>
+                                <p className='text-white'>(OR)</p>
                                 <br />
+                                <div>
                                 <label className='text-white'>
                                     <input
                                         type="checkbox"
                                         checked={checkbox2Checked}
                                         onChange={handleCheckbox2Change}
+                                        className='mr-2'
+
                                     />
                                     Solar Panel Capacity
                                 </label>
@@ -400,15 +400,18 @@ return budgetResult
                                     </label>
 
                                 )}
+                                </div>
 
                                 {/* checkbox 3 */}
-                                <p className='text-white'>OR</p>
+                                <p className='text-white'>(OR)</p>
                                 <br />
+                                <div>
                                 <label className='text-white'>
                                     <input
                                         type="checkbox"
                                         checked={checkbox3Checked}
                                         onChange={handleCheckbox3Change}
+                                        className='mr-2'
                                     />
                                     Your Budget
                                 </label>
@@ -445,12 +448,14 @@ return budgetResult
 
                                     </label>
                                 )}
+                                </div>
                             </div>
                         </li>
 
-                        <li className='mb-10'>
-                            <h1>Select State</h1>
+                        <li>
+                            <h1 className='text-xl'>Select State and Customer Category</h1>
                             {/*  STATE */}
+                            <div className='flex justify-start items-center pt-5 space-x-32'>
                             <div className="select mb-10 text-black">
                                 <select defaultValue="State" name="state" id="state" onChange={(e) => handleStates(e)}>
                                     <option disabled>State</option>
@@ -461,14 +466,10 @@ return budgetResult
                                     }
                                 </select>
                             </div>
-
-                        </li>
-
-                        <li className='mb-10'>
-                            <h1>Select Customer Category</h1>
-                            {/*  Category of Customer */}
-                            <div className="select text-black">
-                                <select defaultValue="Select Category of Customer" name="category" id="category" >
+                            
+                            <div className="select mb-10 text-black">
+                                <select defaultValue="Select Category of Customer" 
+                                name="category" id="category" >
                                     <option disabled>Select Category of Customer</option>
                                     {
                                         CategoryOfCustomer.map((data, idx) => (
@@ -477,17 +478,19 @@ return budgetResult
                                     }
                                 </select>
                             </div>
+                            </div>
                         </li>
-                        <li>
-                            <h1>What is your average Electricity cost?</h1>
 
+                        
+                        <li>
+                            <h1 className='text-xl'>What is your average Electricity cost?</h1>
                             <label>
                                 <div className='pt-6 flex  items-center'>
                                     <input type='number'
                                         value={averageElectricityCostValue}
                                         onInput={handleAverageElectricityCostNumberInput}
                                         className='w-50 h-9 flex justify-center items-center text-xl text-rgbaHeader' />
-                                    <p className='text-white ml-5'>kW</p>
+                                    <p className='text-white ml-5'>Rs.</p>
                                 </div>
 
                                 {/* Slider range people count */}
@@ -514,7 +517,9 @@ return budgetResult
                     </ol>
                     <button onClick={handleGoToSolarCalculationResult} className='w-[137px] h-[50px] bg-lightYellow rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-yellow hover:transition-all'>Calculate</button>
                 </form>
+</div>
             </div>
+           </div>
 
         </section>
         {
