@@ -8,6 +8,9 @@ const CalcProvider = ({ children }) => {
 
     const [step1Data, setStep1Data] = useState([])
     const [step2Data, setStep2Data] = useState([])
+
+    // Modal state
+    const [showModal,setShowModal] = useState(false)
     // Step 1 GET
     useEffect(() => {
         const fetchStep1 = async () => {
@@ -42,7 +45,9 @@ const CalcProvider = ({ children }) => {
         state,
         step1Data,
         step2Data,
-        dispatch
+        dispatch,
+        showModal,
+        setShowModal
     }
     return (
         <CALC_CONTEXT.Provider value={value}>

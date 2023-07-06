@@ -1,7 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import statesData from '../../public/states.json'
 import { CategoryOfCustomer } from '../constants';
 import SolarCalculatorResult from './SolarCalculatorResult';
+import { CALC_CONTEXT } from '../context/CalcProvider';
+import SolarModal from './SolarModal';
 
 const SolarCalculator = () => {
     const [checkbox1Checked, setCheckbox1Checked] = useState(false);
@@ -43,6 +45,8 @@ const SolarCalculator = () => {
 //    for rooftop calculations
 const [roofArea, setRoofArea] = useState('');
 const [percentageUsed, setPercentageUsed] = useState(0);
+
+const { showModal,setShowModal } = useContext(CALC_CONTEXT)
 
 
 //   calculation functions 
@@ -101,27 +105,17 @@ const handleRooftopAreaChange = (event) => {
     setEquivalentPlanting(equivalentPlanting);
   };
 
+  useEffect(()=>{
+    const plantCost = calculatePlantCost(parseFloat(result));
+    const electricityGeneration = calculateElectricityGeneration(parseFloat(result));
+    const financialSaving = calculateFinancialSaving(parseFloat(result),
+    parseFloat(averageElectricityCostValue));
+    const co2Mitigated = calculateCO2Mitigated(parseFloat(result));
+    const equivalentPlanting = calculateEquivalentPlanting(parseFloat(result));
+  },[result])
+
 //   Calculation controllers
-
-const convertToSquareMeter = (roofAreaInSquareFeet) => {
-    // Convert roofArea from square feet to square meters
-    // Replace this with your actual conversion logic
-    const conversionFactor = 0.092903; // Conversion factor from square feet to square meters
-    const roofAreaInSquareMeters = roofAreaInSquareFeet * conversionFactor;
-    return roofAreaInSquareMeters;
-  };
-  
-
   const calculatePowerPlantSize = (roofArea) => {
-    // Perform power plant size calculation based on rooftopArea and other factors
-    // Replace this with your actual calculation logic
-    // return parseFloat(rooftopArea) * 0.1;
-    // let convertedArea = roofArea;
-    // if (isSqMeter) {
-      
-    //     convertedArea = convertToSquareMeter(roofArea);
-    // }
-
   // Calculate the size of the power plant based on the convertedArea and the percentageUsed
     const powerPlantSize = roofArea  / 110;
     return powerPlantSize.toFixed(1);
@@ -284,90 +278,92 @@ const convertToSquareMeter = (roofAreaInSquareFeet) => {
                     <ol className='list-decimal mb-10 text-white'>
                         <li>
                             <p className='text-white text-xl'>Choose one of the following</p>
-                            <div className='flex justify-start items-center space-x-32 py-5'>
+                            <div className='grid lg:grid-cols-3 grid-cols-1 py-5'>
                                 <div>
-                                <label className='text-white'>
-                                    <input
-                                        type="checkbox"
-                                        checked={checkbox1Checked}
-                                        onChange={handleCheckbox1Change}
-                                        className='mr-2'
-                                    />
-                                    Total Rooftop Area
-                                </label>
-                                <br />
-                                {checkbox1Checked && (
-                                    <div>
-                                        <div className='py-4'>
-                                            {/* <label> */}
+                                    <div className='flex lg:flex-row flex-col lg:justify-between pr-5'>
+                                        <label className='text-white'>
                                             <input
-                                                type="number"
-                                                className="text-black"
-                                                value={roofArea}
-                                                onChange={(e) => setRoofArea(e.target.value)}
+                                                type="checkbox"
+                                                checked={checkbox1Checked}
+                                                onChange={handleCheckbox1Change}
+                                                className='mr-2'
                                                 />
-                                            {/* <label>
-                                                <input
-                                                    type="checkbox"
-                                                    checked={sqMeterChecked}
-                                                    onChange={sqMeterChange}
-
-                                                />
-                                                Sq. M.
-                                            </label>
-                                            <label>
-                                                <input
-                                                    type="checkbox"
-                                                    checked={sqFeetChecked}
-                                                    onChange={sqFeetChange}
-                                                />
-                                                Sq. Feet
-                                            </label> */}
-                                            {/* <label>
-                                                <div className='pt-6 flex  items-center'>
-                                                    <input type='number'
-                                                        placeholder="% of Roof Top Area available"
-                                                        value={roofTopAreaPercentageValue}
-                                                        onInput={handleRoofTopAreaPercentageNumberInput}
-                                                        className="focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md select text-black" />
-                                                    <p className='text-white ml-5'>%</p>
-                                                </div>
-
-                                                
-                                                <input id="slider" type="range"
-                                                    onInput={handleRoofTopAreaPercentageRange}
-                                                    value={roofTopAreaPercentageValue}
-                                                    list="markers"
-                                                    min={1}
-                                                    max={100}
-                                                    step='1'
-                                                    ref={roofTopAreaPercentageSlider}
-                                                    className="" />
-                                               
-                                            </label> */}
-                                            {/* </label> */}
-                                        </div>
-                                        power Plant size by rooftop area: {powerPlantSize}
+                                            Total Rooftop Area
+                                        </label>
+                                        <p className='text-white text-xs'>(OR)</p>
                                     </div>
-                                )}
+                                    {checkbox1Checked && (
+                                        <div>
+                                            <div className='py-4'>
+                                                {/* <label> */}
+                                                <input
+                                                    type="number"
+                                                    className="text-black"
+                                                    placeholder='Square Feet'
+                                                    value={roofArea}
+                                                    onChange={(e) => setRoofArea(e.target.value)}
+                                                    />
+                                                {/* <label>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={sqMeterChecked}
+                                                        onChange={sqMeterChange}
+
+                                                    />
+                                                    Sq. M.
+                                                </label>
+                                                <label>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={sqFeetChecked}
+                                                        onChange={sqFeetChange}
+                                                    />
+                                                    Sq. Feet
+                                                </label> */}
+                                                {/* <label>
+                                                    <div className='pt-6 flex  items-center'>
+                                                        <input type='number'
+                                                            placeholder="% of Roof Top Area available"
+                                                            value={roofTopAreaPercentageValue}
+                                                            onInput={handleRoofTopAreaPercentageNumberInput}
+                                                            className="focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md select text-black" />
+                                                        <p className='text-white ml-5'>%</p>
+                                                    </div>
+
+                                                    
+                                                    <input id="slider" type="range"
+                                                        onInput={handleRoofTopAreaPercentageRange}
+                                                        value={roofTopAreaPercentageValue}
+                                                        list="markers"
+                                                        min={1}
+                                                        max={100}
+                                                        step='1'
+                                                        ref={roofTopAreaPercentageSlider}
+                                                        className="" />
+                                                
+                                                </label> */}
+                                                {/* </label> */}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
-
                                 {/* checkbox 2 */}
-                                <p className='text-white'>(OR)</p>
-                                <br />
                                 <div>
-                                <label className='text-white'>
-                                    <input
-                                        type="checkbox"
-                                        checked={checkbox2Checked}
-                                        onChange={handleCheckbox2Change}
-                                        className='mr-2'
+                                   <div className='flex lg:flex-row flex-col lg:justify-between pr-5'>
+                                        <label className='text-white'>
+                                            <input
+                                                type="checkbox"
+                                                checked={checkbox2Checked}
+                                                onChange={handleCheckbox2Change}
+                                                className='mr-2'
 
-                                    />
-                                    Solar Panel Capacity
-                                </label>
-                                <br />
-                                {checkbox2Checked && (
+                                                />
+                                            Solar Panel Capacity
+                                        </label>
+                                        <p className='text-white text-xs'>(OR)</p>
+                                  </div>
+                                
+                                 {checkbox2Checked && (
                                     <label>
                                         <div className='pt-6 flex  items-center'>
                                             <input type='number'
@@ -395,26 +391,22 @@ const convertToSquareMeter = (roofAreaInSquareFeet) => {
                                 <option value="100"></option>
                             </datalist> */
                                         }
-                                        power Plant size by Solar panel capacity: {solarInputValue}
-
                                     </label>
 
                                 )}
                                 </div>
-
                                 {/* checkbox 3 */}
-                                <p className='text-white'>(OR)</p>
-                                <br />
                                 <div>
-                                <label className='text-white'>
-                                    <input
-                                        type="checkbox"
-                                        checked={checkbox3Checked}
-                                        onChange={handleCheckbox3Change}
-                                        className='mr-2'
-                                    />
-                                    Your Budget
-                                </label>
+                                  
+                                    <label className='text-white'>
+                                        <input
+                                            type="checkbox"
+                                            checked={checkbox3Checked}
+                                            onChange={handleCheckbox3Change}
+                                            className='mr-2'
+                                        />
+                                        Your Budget
+                                    </label>
                                 <br />
                                 {checkbox3Checked && (
                                     <label>
@@ -444,8 +436,6 @@ const convertToSquareMeter = (roofAreaInSquareFeet) => {
                                                 <option value="100"></option>
                                             </datalist> */
                                         }
-                                        Power plant size by budget {budgetResult}
-
                                     </label>
                                 )}
                                 </div>
@@ -455,29 +445,29 @@ const convertToSquareMeter = (roofAreaInSquareFeet) => {
                         <li>
                             <h1 className='text-xl'>Select State and Customer Category</h1>
                             {/*  STATE */}
-                            <div className='flex justify-start items-center pt-5 space-x-32'>
-                            <div className="select mb-10 text-black">
-                                <select defaultValue="State" name="state" id="state" onChange={(e) => handleStates(e)}>
-                                    <option disabled>State</option>
-                                    {
-                                        statesData.map((data, idx) => (
-                                            <option value={data.state_id} key={idx}>{data.state_name}</option>
-                                        ))
-                                    }
-                                </select>
-                            </div>
+                            <div className='grid lg:grid-cols-3 grid-cols-1 pt-5'>
+                                <div className="select mb-10 text-black">
+                                    <select defaultValue="State" name="state" id="state" onChange={(e) => handleStates(e)}>
+                                        <option disabled>State</option>
+                                        {
+                                            statesData.map((data, idx) => (
+                                                <option value={data.state_id} key={idx}>{data.state_name}</option>
+                                            ))
+                                        }
+                                    </select>
+                                </div>
                             
-                            <div className="select mb-10 text-black">
-                                <select defaultValue="Select Category of Customer" 
-                                name="category" id="category" >
-                                    <option disabled>Select Category of Customer</option>
-                                    {
-                                        CategoryOfCustomer.map((data, idx) => (
-                                            <option value={data.name} key={idx}>{data.name}</option>
-                                        ))
-                                    }
-                                </select>
-                            </div>
+                                <div className="select mb-10 text-black">
+                                    <select defaultValue="Select Category of Customer" 
+                                    name="category" id="category" >
+                                        <option disabled>Select Category of Customer</option>
+                                        {
+                                            CategoryOfCustomer.map((data, idx) => (
+                                                <option value={data.name} key={idx}>{data.name}</option>
+                                            ))
+                                        }
+                                    </select>
+                                </div>
                             </div>
                         </li>
 
@@ -515,32 +505,35 @@ const convertToSquareMeter = (roofAreaInSquareFeet) => {
                             </label>
                         </li>
                     </ol>
-                    <button onClick={handleGoToSolarCalculationResult} className='w-[137px] h-[50px] bg-lightYellow rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-yellow hover:transition-all'>Calculate</button>
+                    <button onClick={() => setShowModal(true)} className='w-[137px] h-[50px] bg-lightYellow rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-yellow hover:transition-all'>Calculate</button>
                 </form>
 </div>
             </div>
            </div>
 
         </section>
-        {
+        {/* {
                 showSolarCalculationResult && (
                     <div className='box h-auto p-10'>
                         <div className='flex justify-center items-center py-14'>
                             <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-lightBlue py-5">Solar Calculation Result</h1>
                         </div>
 
-                        {/* <div className='container flex lg:flex-row  flex-col lg:justify-between lg:items-center mx-auto lg:px-14 px-7 lg:space-y-0 md:space-y-12 space-y-0'> */}
-                            {/* <div className='lg:max-w-2xl max-w-lg mx-auto mb-16'>
-                                <h2 className='lg:text-2xl md:text-xl text-lg leading-relaxed text-blue lg:text-left text-center'>By comparing the user's energy consumption with the state's per capita energy consumption, the calculator provides a benchmark for the user to evaluate their own energy usage. If the user's consumption is significantly higher than the state's average, it suggests that they might have opportunities for energy-saving improvements.</h2>
-                            </div> */}
+                      
                             <div className="">
                                 <SolarCalculatorResult powerPlantSize={result} plantCost={plantCost}
-electricityGeneration={electricityGeneration} financialSaving={financialSaving} co2Mitigated={co2Mitigated} equivalentPlanting={equivalentPlanting} />
+                                     electricityGeneration={electricityGeneration} financialSaving={financialSaving} co2Mitigated={co2Mitigated} equivalentPlanting={equivalentPlanting} />
                             </div>
-                        {/* </div> */}
+                        
                     </div>
-                )
-            }
+                                            )
+        } */}
+
+        {showModal ? (
+            <>
+           <SolarModal powerPlantSize={result} plantCost={plantCost} electricityGeneration={electricityGeneration} financialSaving={financialSaving} co2Mitigated={co2Mitigated} equivalentPlanting={equivalentPlanting} />
+            </>
+        ):null}
                                     </section>
     );
 };
