@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useReducer, useState } from 'react';
+import React, { createContext, useContext, useEffect, useReducer, useRef, useState } from 'react';
 import { calcReducer, initialState } from '../state/CalcState/calcReducer';
 
 export const CALC_CONTEXT = createContext()
@@ -11,6 +11,9 @@ const CalcProvider = ({ children }) => {
 
     // Modal state
     const [showModal,setShowModal] = useState(false)
+
+    // Ref to close modal on click outside of modal
+    
     // Step 1 GET
     useEffect(() => {
         const fetchStep1 = async () => {

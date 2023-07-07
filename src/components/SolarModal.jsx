@@ -1,15 +1,34 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { CALC_CONTEXT } from '../context/CalcProvider';
+import EMICalculator from './EMICalculator';
 
 const SolarModal = ({powerPlantSize,plantCost,electricityGeneration,financialSaving,co2Mitigated,equivalentPlanting}) => {
+    console.log(powerPlantSize);
     const {showModal,setShowModal} = useContext(CALC_CONTEXT)
+
+    const modalRef = useRef();
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+          if (modalRef.current && !modalRef.current.contains(event.target)) {
+            setShowModal(false);
+          }
+        };
+    
+        document.addEventListener('mousedown', handleClickOutside);
+    
+        return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+        };
+      }, [setShowModal]);
+
     return (
         <div>
             
           <div
             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
           >
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
+            <div className="relative w-auto my-6 mx-auto max-w-3xl" ref={modalRef}>
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
@@ -79,6 +98,11 @@ const SolarModal = ({powerPlantSize,plantCost,electricityGeneration,financialSav
                         <p>{equivalentPlanting.toFixed()} Teak trees over the life time.</p>
                     </div>
                   </div>
+                </div>
+
+                {/* EMI */}
+                <div>
+                    <EMICalculator plantCost={plantCost} />
                 </div>
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
