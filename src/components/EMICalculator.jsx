@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const EMICalculator = ({plantCost}) => {
-    const [loanAmount, setLoanAmount] = useState(0);
+const EMICalculator = ({ plantCost }) => {
+  const [loanAmount, setLoanAmount] = useState(0);
   const [interestRate, setInterestRate] = useState(8.75);
   const [loanPeriod, setLoanPeriod] = useState(10);
   const [emi, setEmi] = useState(0);
@@ -35,40 +35,40 @@ const EMICalculator = ({plantCost}) => {
   useEffect(() => {
     calculateEmi();
   }, [plantCost, interestRate, loanPeriod]);
-    return (
-        <>
-            <div className="relative p-6 flex-auto">
-                        <div className='bg-lightGreen p-5'>
-                            <h1 className='text-xl text-center'>EMI Calculator</h1>
-                            <div className='flex'>
-                                <h3>Cost of the solar plant : </h3>
-                                <input value={plantCost} type="text" onChange={handlePlantCostChange} />
-                            </div>
-                            <div className='flex'>
-                                <h3>Loan Amount : </h3>
-                                <input value={plantCost} type="text" disabled />
-                                Rs.
-                            </div>
-                            <div className='flex'>
-                                <h3>Loan Interest rate : </h3>
-                                <input value={interestRate} type="text" onChange={handleInterestRateChange} />
-                                %
-                            </div>
-                            <div className='flex'>
-                                <h3>Loan Period in years : </h3>
-                                <input value={loanPeriod} type="text" onChange={handleLoanPeriodChange} />
-                                years
-                            </div>
-                            <div className='flex'>
-                                <h3>EMI per month : </h3>
-                                {emi.toFixed(2)}
-                            </div>
-                            <button onClick={calculateEmi} className='bg-white text-lightGreen p-2 rounded-lg mt-8'>EMI Calculate</button>
-                        </div>
-                   
-                </div>
-        </>
-    );
+  return (
+    <>
+      <div className="relative p-6 flex-auto">
+        <div className='bg-orange p-5'>
+          <h1 className='text-xl text-center'>EMI Calculator</h1>
+          <div className='flex'>
+            <h3>Cost of the solar plant : </h3>
+            <input value={plantCost} type="text" onChange={handlePlantCostChange} />
+          </div>
+          <div className='flex'>
+            <h3>Loan Amount : </h3>
+            <input value={plantCost} type="text" disabled />
+            Rs.
+          </div>
+          <div className='flex'>
+            <h3>Loan Interest rate : </h3>
+            <input value={interestRate} type="text" onChange={handleInterestRateChange} />
+            %
+          </div>
+          <div className='flex'>
+            <h3>Loan Period in years : </h3>
+            <input value={loanPeriod} type="text" onChange={handleLoanPeriodChange} />
+            years
+          </div>
+          <div className='flex'>
+            <h3>EMI per month : </h3>
+            {emi.toFixed(2)}
+          </div>
+          <button onClick={calculateEmi} className='bg-lightYellow hover:bg-yellow p-3 rounded-lg mt-8'>EMI Calculate</button>
+        </div>
+
+      </div>
+    </>
+  );
 };
 
 export default EMICalculator;
