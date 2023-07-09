@@ -6,6 +6,7 @@ const EMICalculator = ({ plantCost }) => {
   const [interestRate, setInterestRate] = useState(8.75);
   const [loanPeriod, setLoanPeriod] = useState(10);
   const [emi, setEmi] = useState(0);
+  const [showEmiResult, setShowEmiResult] = useState(false)
 
   const handlePlantCostChange = (event) => {
     const newValue = parseFloat(event.target.value) || 0;
@@ -31,6 +32,7 @@ const EMICalculator = ({ plantCost }) => {
         Math.pow(1 + ratePerMonth, months)) /
       (Math.pow(1 + ratePerMonth, months) - 1);
     setEmi(emiCalculation || 0);
+    setShowEmiResult(true)
   };
 
   useEffect(() => {
@@ -39,25 +41,25 @@ const EMICalculator = ({ plantCost }) => {
   return (
     <Section>
       <div className="relative p-6 flex-auto">
-        <div className='bg-orange p-5'>
+        <div className='bg-orange p-5 space-y-3'>
           <h1 className='text-3xl text-center mb-4'>EMI Calculator</h1>
           <div className='flex'>
             <h3>Cost of the solar plant : </h3>
-            <input value={plantCost} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-4' type="text" onChange={handlePlantCostChange} /> Rs.
+            <input value={plantCost} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-6 mr-2' type="text" onChange={handlePlantCostChange} /> Rs.
           </div>
           <div className='flex'>
             <h3>Loan Amount : </h3>
-            <input value={plantCost} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-20' type="text" disabled />
+            <input value={plantCost} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-24 mr-2' type="text" disabled />
             Rs.
           </div>
           <div className='flex'>
             <h3>Loan Interest rate : </h3>
-            <input value={interestRate} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-12' type="text" onChange={handleInterestRateChange} />
+            <input value={interestRate} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-16 mr-2' type="text" onChange={handleInterestRateChange} />
             %
           </div>
           <div className='flex'>
             <h3>Loan Period in years : </h3>
-            <input value={loanPeriod} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-7' type="text" onChange={handleLoanPeriodChange} />
+            <input value={loanPeriod} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-10 mr-2' type="text" onChange={handleLoanPeriodChange} />
             years
           </div>
           <div className='flex'>

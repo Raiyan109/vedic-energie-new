@@ -1,4 +1,3 @@
-import Assumptions from "../components/Assumptions";
 import Consumption from "../components/Consumption";
 import AirConsumption from "../components/Consumptions/GeyserConsumption";
 import CustomMachines from "../components/CustomMachines";
@@ -74,43 +73,37 @@ export const tableItems = [
                 name: "Air Conditioner",
                 status: <SummerSwitch />,
                 watt: <AirConWattInput />,
-                consumption: <AirConsumption />,
-                assumptions: <Assumptions />
+                consumption: <AirConsumption />
             },
             {
                 name: "Geyser",
                 status: <WinterSwitch />,
                 watt: <GeyserInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
             {
                 name: "Washing Machine",
                 status: <SummerSwitch />,
                 watt: <WashingInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
             {
                 name: "Microwave",
                 status: <SummerSwitch />,
                 watt: <MicroWaveInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
             {
                 name: "Fridge",
                 status: <SummerSwitch />,
                 watt: <FridgeInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
             {
                 name: "Lights",
                 status: <SummerSwitch />,
                 watt: <LightsInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
         ]
     },
@@ -123,43 +116,37 @@ export const tableItems = [
                 name: "Air Conditioner",
                 status: <SummerSwitch />,
                 watt: <AirConWattInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
             {
                 name: "Geyser",
                 status: <WinterSwitch />,
                 watt: <AirConWattInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
             {
                 name: "Washing Machine",
                 status: <SummerSwitch />,
                 watt: <AirConWattInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
             {
                 name: "Microwave",
                 status: <SummerSwitch />,
                 watt: <AirConWattInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
             {
                 name: "Fridge",
                 status: <SummerSwitch />,
                 watt: <AirConWattInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
             {
                 name: "Lights",
                 status: <SummerSwitch />,
                 watt: <AirConWattInput />,
-                consumption: <Consumption />,
-                assumptions: <Assumptions />
+                consumption: <Consumption />
             },
         ]
     }

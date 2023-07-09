@@ -10,7 +10,7 @@ import Articles from '../components/Articles';
 import Affiliate from '../components/Affiliate';
 import BackToTopButton from '../components/BackToTopButton';
 import Hero from '../components/Hero';
-import Footer3 from '../components/Footer3';
+import Footer from '../components/Footer';
 
 
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
             <Brands /> */}
             <See />
             <Articles />
-            <Footer3 />
+            <Footer />
             <BackToTopButton />
         </div>
     );

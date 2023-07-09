@@ -1,14 +1,11 @@
 import React, { useReducer, useRef, useState } from 'react';
 import Header from '../components/Header';
-import Footer3 from '../components/Footer3';
+import Footer from '../components/Footer';
 import CircleProgressBar from '../components/CircleProgressBar';
-
 import Calculation from '../components/Calculation';
 import { useCalc } from '../context/CalcProvider';
 import Table from '../components/Table';
-
 import Tipscategory from '../components/Tipscategory';
-
 import bg from '../assets/ellipse.png'
 import styled from 'styled-components';
 import RoofSolarCalculator from '../components/RoofSolarCalculator';
@@ -74,7 +71,7 @@ const EnergyCalculation = () => {
             <Table />
             <SolarCalculator />
             <Tipscategory />
-            <Footer3 />
+            <Footer />
         </Section >
     );
 };
