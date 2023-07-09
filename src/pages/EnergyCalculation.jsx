@@ -67,9 +67,9 @@ const EnergyCalculation = () => {
             </div>
 
             <div>
-                {showStateSelect && (
-                    <Calculation />
-                )}
+                {/* {showStateSelect && ( */}
+                <Calculation />
+                {/* )} */}
             </div>
             <Table />
             <SolarCalculator />

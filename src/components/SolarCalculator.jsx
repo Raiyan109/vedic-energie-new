@@ -417,7 +417,7 @@ const SolarCalculator = () => {
                                     <li>
                                         <h1 className='text-xl'>Select State and Customer Category</h1>
                                         {/*  STATE */}
-                                        <div className='grid lg:grid-cols-3 grid-cols-1 pt-5'>
+                                        <div className='grid lg:grid-cols-2 grid-cols-1 pt-5 gap-12'>
                                             <div className="select mb-10 text-black">
                                                 <select defaultValue="State" className='input' name="state" id="state" onChange={(e) => handleStates(e)}>
                                                     <option disabled>State</option>
@@ -452,7 +452,7 @@ const SolarCalculator = () => {
                                                 <input type='number'
                                                     value={averageElectricityCostValue}
                                                     onInput={handleAverageElectricityCostNumberInput}
-                                                    className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md select text-black' />
+                                                    className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black' />
                                                 <p className='text-white ml-5'>Rs.</p>
                                             </div>
 
@@ -509,7 +509,14 @@ const Section = styled.div`
     display: none;
  }
  .select {
-    width: 100%;
+    width: 80%;
+    height: 2em;
+    background: transparent;
+    border:none;
+    border-bottom: 1px solid #FEFFCD;
+ }
+ .averageSelect{
+    width: 40%;
     height: 2em;
     background: transparent;
     border:none;

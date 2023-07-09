@@ -87,22 +87,22 @@ const Footer3 = () => {
                                     <div className=''>
                                         <ul className=" space-y-3 text-sm">
                                             <li>
-                                                <a
+                                                <p
                                                     className="flex items-center justify-center gap-3"
                                                     href="/"
                                                 >
                                                     <h3 className='text-xl text-blue'><ImLocation2 /></h3>
                                                     <span className='text-blue text-sm text-left'>Room- 3, B-20, Wallfort city, Raipur, Chhatisgarh</span>
-                                                </a>
+                                                </p>
                                             </li>
                                             <li className='mr-32'>
-                                                <a
+                                                <p
                                                     className="flex items-center justify-center gap-3"
                                                     href="/"
                                                 >
                                                     <h3 className='text-xl text-blue'><MdEmail /></h3>
                                                     <span className='text-blue text-sm text-left'>contact@vedicenergie.com</span>
-                                                </a>
+                                                </p>
                                             </li>
 
                                             <li className='mr-52'>

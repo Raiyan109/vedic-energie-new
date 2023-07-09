@@ -26,14 +26,14 @@ const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financia
     <div>
 
       <div
-        className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+        className="flex justify-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
       >
         <div className="relative w-auto my-6 mx-auto max-w-3xl" ref={modalRef}>
           {/*content*/}
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             {/*header*/}
             <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-              <h3 className="text-3xl font-semibold">
+              <h3 className="text-3xl font-semibold lg:text-left text-center">
                 Solar Rooftop Calculator
               </h3>
               {/* <button
@@ -49,55 +49,62 @@ const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financia
             </div>
             {/*body*/}
             <div className="relative p-6 flex-auto">
-              <div className='flex'>
-                <div className='bg-blue text-white flex-1'>
-                  <div className='p-5'>
-                    <div className='flex gap-4'>
-                      <span>1 .</span>
-                      <h1>Size of power plant:</h1>
-                    </div>
-                    <div className='flex gap-4'>
-                      <span>2 .</span>
-                      <h1>Cost of the plant:</h1>
-                    </div>
-                    <div className='flex gap-4 h-16 mb-4'>
-                      <span>3 .</span>
-                      <div>
-                        <h1>Total electricity generation from solar plant</h1>
-                        <h3>Annual :</h3>
-                        <h3>Life-time (25 years) :</h3>
-                      </div>
-                    </div>
-                    <div className='flex gap-4 h-16'>
-                      <span>4 .</span>
-                      <div>
-                        <h1>Financial savings</h1>
-                        <h3>Monthly :</h3>
-                        <h3>Annually :</h3>
-                        <h3>Life-time (25 years) :</h3>
-                      </div>
-                    </div>
-                    <div className='flex gap-4 h-16 mt-9 border-t-2'>
-                      {/* <span>5 .</span> */}
-                      <div>
-                        <h1 className='font-bold'>Carbon dioxide emissions mitigated is</h1>
-                        <h1 className='font-bold'>This installation will be equivalent to planting</h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className='bg-orange text-white flex-2'>
-                  <p className='mt-5'>{powerPlantSize} kW</p>
-                  <p className='mb-6'>{plantCost} Rs.</p>
-                  <p className=''>{electricityGeneration} kWh</p>
-                  <p className='mb-8'>{`${electricityGeneration * 25} kWh`}</p>
-                  <p>Rs. {financialSaving}</p>
-                  <p>Rs. {`${financialSaving * 10}`}</p>
-                  <p>Rs. {`${financialSaving * 10 * 25}`}</p>
-                  <p className='border-t-2 mt-1'>{co2Mitigated} Tonnes</p>
-                  <p>{equivalentPlanting.toFixed()} Teak trees over the life time.</p>
-                </div>
-              </div>
+              <table className='mb-7'>
+                <tbody>
+                  <tr>
+                    <td className='bg-blue text-white p-2'>1. Size of power plant :</td>
+                    <td className='bg-orange text-white w-32 p-2'>{powerPlantSize} kW</td>
+                  </tr>
+                  {/* Cost */}
+                  <tr>
+                    <td className='bg-blue text-white p-2'>2. Cost of the plant :</td>
+                    <td className='bg-orange text-white p-2'>Rs. {plantCost}</td>
+                  </tr>
+                  {/* Total Electricity generation */}
+                  <tr>
+                    <td className='bg-blue text-white p-2'>2. Total electricity generation from solar plant :</td>
+                    <td className='bg-orange text-white p-2'></td>
+                  </tr>
+                  <tr>
+                    <td className='bg-blue text-white p-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Annual :</td>
+                    <td className='bg-orange text-white p-2'>{electricityGeneration} kWh</td>
+                  </tr>
+                  <tr>
+                    <td className='bg-blue text-white p-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Life-Time (25 years):</td>
+                    <td className='bg-orange text-white p-2'>{`${electricityGeneration * 25} kWh`}</td>
+                  </tr>
+                  {/* Financial saving */}
+                  <tr>
+                    <td className='bg-blue text-white p-2'>3. Financial savings :</td>
+                    <td className='bg-orange text-white p-2'></td>
+                  </tr>
+                  <tr>
+                    <td className='bg-blue text-white p-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monthly :</td>
+                    <td className='bg-orange text-white p-2'>Rs. {financialSaving}</td>
+                  </tr>
+                  <tr>
+                    <td className='bg-blue text-white p-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Annual :</td>
+                    <td className='bg-orange text-white p-2'>Rs. {`${financialSaving * 10}`}</td>
+                  </tr>
+                  <tr>
+                    <td className='bg-blue text-white p-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Life-Time (25 years):</td>
+                    <td className='bg-orange text-white p-2'>Rs. {`${financialSaving * 10 * 25}`}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table>
+                <tbody>
+                  <tr>
+                    <td className='bg-blue text-white p-4 w-96'>Carbon dioxide emissions mitigate is</td>
+                    <td className='bg-orange text-white p-4 w-32'>{co2Mitigated} Tonnes</td>
+                  </tr>
+                  <tr>
+                    <td className='bg-blue text-white p-4 w-96'>This installation will be equivalent to planting</td>
+                    <td className='bg-orange text-white p-4 w-32'>{equivalentPlanting.toFixed()} Teak trees over the life time.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             {/* EMI */}

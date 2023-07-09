@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
 const EMICalculator = ({ plantCost }) => {
   const [loanAmount, setLoanAmount] = useState(0);
@@ -36,27 +37,27 @@ const EMICalculator = ({ plantCost }) => {
     calculateEmi();
   }, [plantCost, interestRate, loanPeriod]);
   return (
-    <>
+    <Section>
       <div className="relative p-6 flex-auto">
         <div className='bg-orange p-5'>
-          <h1 className='text-xl text-center'>EMI Calculator</h1>
+          <h1 className='text-3xl text-center mb-4'>EMI Calculator</h1>
           <div className='flex'>
             <h3>Cost of the solar plant : </h3>
-            <input value={plantCost} type="text" onChange={handlePlantCostChange} />
+            <input value={plantCost} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-4' type="text" onChange={handlePlantCostChange} /> Rs.
           </div>
           <div className='flex'>
             <h3>Loan Amount : </h3>
-            <input value={plantCost} type="text" disabled />
+            <input value={plantCost} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-20' type="text" disabled />
             Rs.
           </div>
           <div className='flex'>
             <h3>Loan Interest rate : </h3>
-            <input value={interestRate} type="text" onChange={handleInterestRateChange} />
+            <input value={interestRate} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-12' type="text" onChange={handleInterestRateChange} />
             %
           </div>
           <div className='flex'>
             <h3>Loan Period in years : </h3>
-            <input value={loanPeriod} type="text" onChange={handleLoanPeriodChange} />
+            <input value={loanPeriod} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-7' type="text" onChange={handleLoanPeriodChange} />
             years
           </div>
           <div className='flex'>
@@ -67,8 +68,18 @@ const EMICalculator = ({ plantCost }) => {
         </div>
 
       </div>
-    </>
+    </Section>
   );
 };
 
 export default EMICalculator;
+
+const Section = styled.div`
+ .averageSelect{
+    width: 40%;
+    height: 2em;
+    background: transparent;
+    border:none;
+    border-bottom: 1px solid #FEFFCD;
+ }
+`
