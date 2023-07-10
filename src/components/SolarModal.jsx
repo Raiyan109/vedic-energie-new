@@ -48,55 +48,55 @@ const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financia
             </div>
             {/*body*/}
             <div className="relative p-6 flex-auto">
-              <table className='mb-7'>
+              <table className='mb-7 w-[560px]'>
                 <tbody>
                   <tr>
-                    <td className='bg-blue text-white p-2'>1. Size of power plant :</td>
-                    <td className='bg-orange text-white w-32 p-2'>{powerPlantSize} kW</td>
+                    <td className='bg-blue text-white p-2 w-96'>1. Size of power plant :</td>
+                    <td className='bg-orange text-white w-32 p-2'>{powerPlantSize.toFixed()} kW</td>
                   </tr>
                   {/* Cost */}
                   <tr>
-                    <td className='bg-blue text-white p-2'>2. Cost of the plant :</td>
-                    <td className='bg-orange text-white p-2'>Rs. {plantCost}</td>
+                    <td className='bg-blue text-white p-2 w-96'>2. Cost of the plant :</td>
+                    <td className='bg-orange text-white p-2 w-32'>Rs. {plantCost.toFixed()}</td>
                   </tr>
                   {/* Total Electricity generation */}
                   <tr>
-                    <td className='bg-blue text-white p-2'>2. Total electricity generation from solar plant :</td>
-                    <td className='bg-orange text-white p-2'></td>
+                    <td className='bg-blue text-white p-2 w-96'>2. Total electricity generation from solar plant:</td>
+                    <td className='bg-orange text-white p-2 w-32'></td>
                   </tr>
                   <tr>
-                    <td className='bg-blue text-white p-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Annual :</td>
-                    <td className='bg-orange text-white p-2'>{electricityGeneration} kWh</td>
+                    <td className='bg-blue text-white p-2 w-96'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Annual :</td>
+                    <td className='bg-orange text-white p-2 w-32'>{electricityGeneration.toFixed()} kWh</td>
                   </tr>
                   <tr>
-                    <td className='bg-blue text-white p-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Life-Time (25 years):</td>
-                    <td className='bg-orange text-white p-2'>{`${electricityGeneration * 25} kWh`}</td>
+                    <td className='bg-blue text-white p-2 w-96'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Life-Time (25 years):</td>
+                    <td className='bg-orange text-white p-2 w-32'>{`${electricityGeneration.toFixed() * 25} kWh`}</td>
                   </tr>
                   {/* Financial saving */}
                   <tr>
-                    <td className='bg-blue text-white p-2'>3. Financial savings :</td>
-                    <td className='bg-orange text-white p-2'></td>
+                    <td className='bg-blue text-white p-2 w-96'>3. Financial savings :</td>
+                    <td className='bg-orange text-white p-2 w-32'></td>
                   </tr>
                   <tr>
-                    <td className='bg-blue text-white p-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monthly :</td>
-                    <td className='bg-orange text-white p-2'>Rs. {financialSaving}</td>
+                    <td className='bg-blue text-white p-2 w-96'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monthly :</td>
+                    <td className='bg-orange text-white p-2 w-32'>Rs. {financialSaving.toFixed()}</td>
                   </tr>
                   <tr>
-                    <td className='bg-blue text-white p-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Annual :</td>
-                    <td className='bg-orange text-white p-2'>Rs. {`${financialSaving * 10}`}</td>
+                    <td className='bg-blue text-white p-2 w-96'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Annual :</td>
+                    <td className='bg-orange text-white p-2 w-32'>Rs. {`${financialSaving.toFixed() * 10}`}</td>
                   </tr>
                   <tr>
-                    <td className='bg-blue text-white p-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Life-Time (25 years):</td>
-                    <td className='bg-orange text-white p-2'>Rs. {`${financialSaving * 10 * 25}`}</td>
+                    <td className='bg-blue text-white p-2 w-96'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Life-Time (25 years):</td>
+                    <td className='bg-orange text-white p-2 w-32'>Rs. {`${financialSaving.toFixed() * 10 * 25}`}</td>
                   </tr>
                 </tbody>
               </table>
 
-              <table>
+              <table className='w-[560px]'>
                 <tbody>
                   <tr>
                     <td className='bg-blue text-white p-4 w-96'>Carbon dioxide emissions mitigate is</td>
-                    <td className='bg-orange text-white p-4 w-32'>{co2Mitigated} Tonnes</td>
+                    <td className='bg-orange text-white p-4 w-32'>{co2Mitigated.toFixed()} Tonnes</td>
                   </tr>
                   <tr>
                     <td className='bg-blue text-white p-4 w-96'>This installation will be equivalent to planting</td>
@@ -107,7 +107,7 @@ const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financia
             </div>
 
             {/* EMI */}
-            <div>
+            <div className='w-[610px]'>
               <EMICalculator plantCost={plantCost} />
             </div>
             {/*footer*/}
