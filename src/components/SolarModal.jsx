@@ -47,7 +47,7 @@ const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financia
             </div>
             {/*body*/}
             <div className="relative p-6 flex-auto">
-              <table className='mb-7 w-[560px]'>
+              <table className='mb-7'>
                 <tbody>
                   <tr>
                     <td className='bg-blue text-white p-2 w-96'>1. Size of power plant :</td>
@@ -91,7 +91,7 @@ const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financia
                 </tbody>
               </table>
 
-              <table className='w-[560px]'>
+              <table>
                 <tbody>
                   <tr>
                     <td className='bg-blue text-white p-4 w-96'>Carbon dioxide emissions mitigate is</td>
@@ -106,7 +106,7 @@ const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financia
             </div>
 
             {/* EMI */}
-            <div className='w-[610px]'>
+            <div>
               <EMICalculator plantCost={plantCost} />
             </div>
             {/*footer*/}
