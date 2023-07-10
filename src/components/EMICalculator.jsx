@@ -59,7 +59,7 @@ const EMICalculator = ({ plantCost }) => {
           </div>
           <div className='flex'>
             <h3>Loan Period in years : </h3>
-            <input value={loanPeriod} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black ml-10 mr-2' type="text" onChange={handleLoanPeriodChange} />
+            <input value={loanPeriod} className='placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md averageSelect text-black md:ml-10 ml-14 mr-2' type="text" onChange={handleLoanPeriodChange} />
             years
           </div>
           <div className='flex'>

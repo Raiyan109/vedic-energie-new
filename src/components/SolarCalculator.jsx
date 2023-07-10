@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import statesData from '../../public/states.json'
 import { CategoryOfCustomer } from '../constants';
-import SolarCalculatorResult from './SolarCalculatorResult';
 import { CALC_CONTEXT } from '../context/CalcProvider';
 import SolarModal from './SolarModal';
 import styled from 'styled-components';
