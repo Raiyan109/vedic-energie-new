@@ -179,7 +179,7 @@ const Calculation = () => {
     return (
         <Section>
 
-            <section className="bg-blue">
+            <section className="bg-blue relative">
                 <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                     {/* <div>
                         <h2 className='text-center text-2xl font-bold text-lightBlue'>Energy Calculator</h2>
@@ -258,7 +258,7 @@ const Calculation = () => {
                                     {/* <div>Result: {result}</div> */}
                                     {/* Vertical text */}
                                     <div className='lg:block md:hidden hidden'>
-                                        <div className="flex justify-center items-center absolute -right-44 -bottom-96">
+                                        <div className="flex justify-center items-center absolute -right-44 top-80">
                                             <h1 className='transform lg:-rotate-90 md:rotate-0 rotate-0  text-[#E58C07] w-[500px] text-[150px] font-bold uppercase vertical'>Step 1</h1>
                                         </div>
                                     </div>
