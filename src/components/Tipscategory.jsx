@@ -15,7 +15,7 @@ export default function Tipscategory() {
       <h5 className="lg:text-6xl md:text-4xl font-semibold tracking-tight text-3xl text-white text-center mb-24 capitalize">Tips that can save energy and money
       </h5>
       {/* Vertical text */}
-      <div class="justify-center items-center absolute -right-44 top-[270px] lg:block md:hidden hidden">
+      <div class="justify-center items-center absolute -right-44 top-[240px] lg:block md:hidden hidden">
         <h1 className='transform -rotate-90 text-[#e8f4f8] w-[500px] text-[150px] font-bold uppercase vertical2'>Step 3</h1>
       </div>
 
