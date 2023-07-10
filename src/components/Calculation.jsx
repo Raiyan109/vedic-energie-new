@@ -256,6 +256,7 @@ const Calculation = () => {
                                         </div>
                                     </div>
                                     {/* <div>Result: {result}</div> */}
+
                                     {/* Vertical text */}
                                     <div className='lg:block md:hidden hidden'>
                                         <div className="flex justify-center items-center absolute -right-44 top-80">
