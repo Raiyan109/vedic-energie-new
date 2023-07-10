@@ -6,15 +6,14 @@ import { Category2 } from "../constants";
 export default function Tipscategory() {
 
   return (
-    <div className="bg-orange py-[100px] relative">
-      <h5 className="lg:text-6xl md:text-4xl font-semibold tracking-tight text-3xl text-white text-center mb-24 capitalize">Tips that can save energy and money
-      </h5>
-      <div className="flex justify-center items-center">
+    <div className="bg-orange py-[90px] relative">
+      <div className="flex justify-start items-center pl-4 pb-4">
         <button type="button" className="rounded-full px-4 mr-2 bg-blue text-white p-2 leading-none flex items-center lg:hidden md:block">
           Step 3
         </button>
       </div>
-
+      <h5 className="lg:text-6xl md:text-4xl font-semibold tracking-tight text-3xl text-white text-center mb-24 capitalize">Tips that can save energy and money
+      </h5>
       {/* Vertical text */}
       <div class="justify-center items-center absolute -right-44 top-[270px] lg:block md:hidden hidden">
         <h1 className='transform -rotate-90 text-[#e8f4f8] w-[500px] text-[150px] font-bold uppercase vertical2'>Step 3</h1>

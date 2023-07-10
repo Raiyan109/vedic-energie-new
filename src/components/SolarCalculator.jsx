@@ -256,12 +256,21 @@ const SolarCalculator = () => {
 
     return (
         <Section>
-            <section className="bg-blue">
+            <section className="bg-blue relative">
                 <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                     <div className='bg-orange py-10'>
+                        <div className="flex justify-start items-center pl-4 pb-4">
+                            <button type="button" className="rounded-full px-4 mr-2 bg-blue text-white p-2 leading-none flex items-center lg:hidden md:block">
+                                Step 4
+                            </button>
+                        </div>
                         <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5 text-center">Solar Roof Top Calculator</h3>
                         <div className='px-10'>
                             <form onSubmit={handleSubmit}>
+                                {/* Vertical text */}
+                                <div class="justify-center items-center absolute -right-44 top-[230px] lg:block md:hidden hidden">
+                                    <h1 className='transform -rotate-90 text-[#e8f4f8] w-[500px] text-[150px] font-bold uppercase vertical2'>Step 4</h1>
+                                </div>
                                 <ol className='list-decimal mb-10 text-white'>
                                     <li>
                                         <p className='text-white text-xl'>Choose one of the following</p>
@@ -521,4 +530,5 @@ const Section = styled.div`
     border:none;
     border-bottom: 1px solid #FEFFCD;
  }
+ 
 `

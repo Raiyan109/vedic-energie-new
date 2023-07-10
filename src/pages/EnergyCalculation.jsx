@@ -68,8 +68,8 @@ const EnergyCalculation = () => {
                 {/* )} */}
             </div>
             <Table />
-            <SolarCalculator />
             <Tipscategory />
+            <SolarCalculator />
             <Footer />
         </Section >
     );
