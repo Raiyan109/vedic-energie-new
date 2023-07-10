@@ -8,7 +8,6 @@ import Table from '../components/Table';
 import Tipscategory from '../components/Tipscategory';
 import bg from '../assets/ellipse.png'
 import styled from 'styled-components';
-import RoofSolarCalculator from '../components/RoofSolarCalculator';
 import SolarCalculator from '../components/SolarCalculator';
 
 const Section = styled.div`

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { CALC_CONTEXT } from '../context/CalcProvider';
 import EMICalculator from './EMICalculator';
+import { AiFillCloseSquare } from "react-icons/ai";
 
 const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financialSaving, co2Mitigated, equivalentPlanting }) => {
   console.log(powerPlantSize);
@@ -36,16 +37,14 @@ const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financia
               <h3 className="text-3xl font-semibold lg:text-left text-center">
                 Solar Rooftop Calculator
               </h3>
-              {/* <button
-                    className="p-1 ml-auto bg-yellow border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <div className='flex justify-center items-center'>
-                        <span className="bg-yellow pb-3 text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
-                        ×
-                        </span>
-                    </div>
-                  </button> */}
+              <button
+                className="p-1 ml-auto border-0 text-orange float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                onClick={() => setShowModal(false)}
+              >
+                <div className='flex justify-center items-center'>
+                  <AiFillCloseSquare />
+                </div>
+              </button>
             </div>
             {/*body*/}
             <div className="relative p-6 flex-auto">
