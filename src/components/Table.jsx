@@ -268,7 +268,7 @@ const Table = () => {
                                     </thead>
 
                                     {/* Vertical text */}
-                                    <div class="justify-center items-center absolute -right-44 top-[340px] lg:block md:hidden hidden">
+                                    <div className="justify-center items-center absolute -right-44 top-[340px] lg:block md:hidden hidden">
                                         <h1 className='transform -rotate-90 text-[#e8f4f8] w-[500px] text-[140px] font-bold uppercase vertical2'>Step 2</h1>
                                     </div>
 

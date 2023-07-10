@@ -4,7 +4,6 @@ import EMICalculator from './EMICalculator';
 import { AiFillCloseSquare } from "react-icons/ai";
 
 const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financialSaving, co2Mitigated, equivalentPlanting }) => {
-  console.log(powerPlantSize);
   const { showModal, setShowModal } = useContext(CALC_CONTEXT)
 
   const modalRef = useRef();
@@ -52,7 +51,7 @@ const SolarModal = ({ powerPlantSize, plantCost, electricityGeneration, financia
                 <tbody>
                   <tr>
                     <td className='bg-blue text-white p-2 w-96'>1. Size of power plant :</td>
-                    <td className='bg-orange text-white w-32 p-2'>{powerPlantSize.toFixed()} kW</td>
+                    <td className='bg-orange text-white w-32 p-2'>{powerPlantSize} kW</td>
                   </tr>
                   {/* Cost */}
                   <tr>

@@ -12,7 +12,7 @@ const Footer = () => {
     return (
         <>
             <footer>
-                <footer class="text-blue body-font pl-12 md:py-6 lg:px-0 md:-px-2 px-20 py-10">
+                <footer className="text-blue body-font pl-12 md:py-6 lg:px-0 md:-px-2 px-20 py-10">
                     <div className='flex lg:flex-row md:flex-row flex-col  lg:justify-around md:justify-center justify-center md:space-y-7 space-y-6 md:space-x-4 space-x-9'>
                         <div className='flex lg:flex-row md:flex-col flex-col space-x-9 md:space-y-7 space-y-5 md:space-x-4'>
                             {/* image */}

@@ -47,6 +47,15 @@ const SolarCalculator = () => {
 
 
     //   calculation functions 
+    const handleRoofArea = (e) => {
+        if (e.target.value < 1) {
+            setRoofArea(1)
+        }
+        else {
+            setRoofArea(e.target.value)
+        }
+    }
+
     const handleStateChange = (event) => {
         setState(event.target.value);
     };
@@ -76,7 +85,6 @@ const SolarCalculator = () => {
         setElectricityGeneration(electricityGeneration);
         setFinancialSaving(financialSaving);
         setCO2Mitigated(co2Mitigated);
-        console.log(co2Mitigated);
         setEquivalentPlanting(equivalentPlanting);
     };
 
@@ -95,7 +103,6 @@ const SolarCalculator = () => {
 
         // Set the calculated power plant size
         setResult(calculatedSize);
-
         performCalculations()
     };
 
@@ -109,20 +116,7 @@ const SolarCalculator = () => {
     }, [result])
 
     //   Calculation controllers
-
-
-
     const calculatePowerPlantSize = (roofArea) => {
-        // Perform power plant size calculation based on rooftopArea and other factors
-        // Replace this with your actual calculation logic
-        // return parseFloat(rooftopArea) * 0.1;
-        // let convertedArea = roofArea;
-        // if (isSqMeter) {
-
-        //     convertedArea = convertToSquareMeter(roofArea);
-        // }
-
-        // Calculate the size of the power plant based on the convertedArea and the percentageUsed
         const powerPlantSize = roofArea / 110;
         return powerPlantSize.toFixed(1);
     };
@@ -226,15 +220,30 @@ const SolarCalculator = () => {
 
 
     const handleSolarCapacityNumberInput = (e) => {
-        setSolarInputValue(e.target.value)
+        if (e.target.value < 1) {
+            setSolarInputValue(1)
+        }
+        else {
+            setSolarInputValue(e.target.value)
+        }
     }
 
     const handleBudgetNumberInput = (e) => {
-        setBudgetInputValue(e.target.value)
+        if (e.target.value < 1) {
+            setBudgetInputValue(1)
+        }
+        else {
+            setBudgetInputValue(e.target.value)
+        }
     }
 
     const handleAverageElectricityCostNumberInput = (e) => {
-        setAverageElectricityCostValue(e.target.value)
+        if (e.target.value < 1) {
+            setAverageElectricityCostValue(1)
+        }
+        else {
+            setAverageElectricityCostValue(e.target.value)
+        }
     }
     // const handleRoofTopAreaPercentageNumberInput = (e) => {
     //     setRoofTopAreaPercentageValue(e.target.value)
@@ -268,7 +277,7 @@ const SolarCalculator = () => {
                         <div className='px-10'>
                             <form onSubmit={handleSubmit}>
                                 {/* Vertical text */}
-                                <div class="justify-center items-center absolute -right-44 top-[230px] lg:block md:hidden hidden">
+                                <div className="justify-center items-center absolute -right-44 top-[230px] lg:block md:hidden hidden">
                                     <h1 className='transform -rotate-90 text-[#e8f4f8] w-[500px] text-[150px] font-bold uppercase vertical2'>Step 4</h1>
                                 </div>
                                 <ol className='list-decimal mb-10 text-white'>
@@ -297,7 +306,7 @@ const SolarCalculator = () => {
                                                                 className="placeholder-lightYellow focus:border-lightYellow focus:outline-none focus:ring-0 sm:text-md select text-black"
                                                                 placeholder='Square Feet'
                                                                 value={roofArea}
-                                                                onChange={(e) => setRoofArea(e.target.value)}
+                                                                onChange={handleRoofArea}
                                                             />
                                                             {/* <label>
                                                                 <input
