@@ -14,11 +14,13 @@ function App() {
     ReactGA.pageview('/');
   }, [])
   return (
-    <CalcProvider>
-      <Container>
-        <RouterProvider router={routes} />
-      </Container>
-    </CalcProvider>
+    <div className='overflow-x-hidden'>
+      <CalcProvider>
+        <Container>
+          <RouterProvider router={routes} />
+        </Container>
+      </CalcProvider>
+    </div>
   )
 }
 
