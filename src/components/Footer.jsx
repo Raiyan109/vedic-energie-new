@@ -21,12 +21,7 @@ const Footer = () => {
                                     <img src={pic} width='150' height='150' className='' alt='footer-logo' />
                                 </a>
                             </div>
-                            {/* paragraph */}
-                            <div className='flex justify-center items-center'>
-                                <div className='max-w-md'>
-                                    <p className='text-sm w-full'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                                </div>
-                            </div>
+                           
                             {/* social link */}
                             <div className='flex justify-center items-center'>
                                 <div>
