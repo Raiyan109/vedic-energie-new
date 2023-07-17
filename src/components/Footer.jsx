@@ -21,7 +21,12 @@ const Footer = () => {
                                     <img src={pic} width='150' height='150' className='' alt='footer-logo' />
                                 </a>
                             </div>
-                           
+                           {/* paragraph */}
+                           <div className='flex justify-center items-center'>
+                                <div className='max-w-md'>
+                                    <p className='text-sm w-full'></p>
+                                </div>
+                            </div>
                             {/* social link */}
                             <div className='flex justify-center items-center'>
                                 <div>
