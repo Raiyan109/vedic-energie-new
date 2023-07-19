@@ -92,7 +92,7 @@ const Footer = () => {
                                                     href="/"
                                                 >
                                                     <h3 className='text-xl text-blue'><ImLocation2 /></h3>
-                                                    <span className='text-blue text-sm text-left'>Room- 3, B-20, Wallfort city, Raipur, Chhatisgarh</span>
+                                                    <span className='text-blue text-sm text-left'>201, 2nd Floor, opposite Maple Green Society Ring Road No. 1 Raipur Chhattisgarh</span>
                                                 </p>
                                             </li>
                                             <li className='mr-32'>
@@ -136,7 +136,7 @@ const Footer = () => {
 
                 <footer className="flex justify-center items-center p-4 bg-lightBlue lg:text-sm text-[10px] font-semibold">
                     <div>
-                        <p className='text-white'>COPYRIGHT © 2023 VEDIC ENERGIES | ALL RIGHTS RESERVED | PRIVACY | SITEMAP | LEGAL | COPYRIGHT | ACCESSIBILITY</p>
+                        <p className='text-white'>COPYRIGHT © 2023 VEDIC ENERGIES | ALL RIGHTS RESERVED</p>
                     </div>
                 </footer>
             </footer>

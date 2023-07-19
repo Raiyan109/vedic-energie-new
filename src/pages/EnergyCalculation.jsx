@@ -9,6 +9,7 @@ import Tipscategory from '../components/Tipscategory';
 import bg from '../assets/ellipse.png'
 import styled from 'styled-components';
 import SolarCalculator from '../components/SolarCalculator';
+import CalculationHeader from '../components/CalculationHeader';
 
 const Section = styled.div`
 background-image: url(${bg});
@@ -37,7 +38,7 @@ const EnergyCalculation = () => {
     };
     return (
         <Section >
-            <Header />
+            <Header></Header>
             <div>
                 <div>
                     <div className="container flex flex-col justify-center p-6 mx-auto py-40 md:py-42 lg:py-46 lg:flex-row lg:justify-between">
