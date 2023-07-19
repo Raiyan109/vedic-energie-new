@@ -92,7 +92,7 @@ const Footer = () => {
                                                     href="/"
                                                 >
                                                     <h3 className='text-xl text-blue'><ImLocation2 /></h3>
-                                                    <span className='text-blue text-sm text-left'>201, 2nd Floor, opposite Maple Green Society Ring Road No. 1 Raipur Chhattisgarh</span>
+                                                    <span className='text-blue text-sm text-left'>201, 2nd Floor, opposite Maple Green Society Ring Road No.1 Raipur Chhattisgarh</span>
                                                 </p>
                                             </li>
                                             <li className='mr-32'>
