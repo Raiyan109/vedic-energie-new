@@ -478,8 +478,8 @@ const SolarCalculator = () => {
                                                 onInput={handleAverageElectricityCostRange}
                                                 value={averageElectricityCostValue}
                                                 list="markers"
-                                                min={4}
-                                                max={20}
+                                                min={1000}
+                                                max={10000}
                                                 step='.25'
                                                 ref={averageElectricityCostSlider}
                                                 className="" />

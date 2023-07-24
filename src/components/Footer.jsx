@@ -28,11 +28,11 @@ const Footer = () => {
                                 </div>
                             </div>
                             {/* social link */}
-                            <div className='flex justify-center items-center lg:pl-60'>
+                            <div className='flex justify-center items-start lg:pl-60'>
                                 <div>
                                     <h3 className='uppercase underline font-medium text-blue mt-4 ml-3'>Social Links</h3>
                                     <div>
-                                        <ul className="flex gap-6 mt-8 lg:justify-start md:justify-start justify-center">
+                                        <ul className="flex gap-6 mt-8 lg:justify-end md:justify-end justify-end">
                                             {/* <li>
                                     <a
                                         href="/"
