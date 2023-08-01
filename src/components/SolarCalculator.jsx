@@ -126,12 +126,12 @@ const SolarCalculator = () => {
     }
 
     const calculatePowerPlantSizeByBudget = (budgetInputValue) => {
-        const budgetResult = budgetInputValue / 50000;
+        const budgetResult = budgetInputValue / 83000;
         return budgetResult
     }
 
     const calculatePlantCost = (result) => {
-        const costResult = result * 50000;
+        const costResult = result * 83000;
         return costResult
     };
 

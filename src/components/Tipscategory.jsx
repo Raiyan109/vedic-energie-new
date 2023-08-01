@@ -37,7 +37,7 @@ export default function Tipscategory() {
           <div className="flex flex-col">
             <h3 className="w-full h-[162px] not-italic font-semibold text-2xl leading-10 pt-3 ml-[50px] -mb-20 text-indigo underline">Category 1:</h3>
             <div className="max-w-4xl pl-12 mb-2 pr-12">
-              <span className="text-xs text-gray">This category can directly impact users' energy consumption if they follow it, irrespective of their current state. These are the most cost effective tips to achieve energy efficiency.</span>
+              <span className="text-1xs text-green italic font-semibold ">This category can directly impact users' energy consumption if they follow it, irrespective of their current state. These are the most cost effective tips to achieve energy efficiency.</span>
             </div>
           </div>
 
@@ -75,7 +75,7 @@ export default function Tipscategory() {
           <div className="flex flex-col">
             <h3 className="w-full h-[162px] not-italic font-semibold text-2xl leading-10 pt-3 ml-[50px] -mb-20 text-indigo underline">Category 2:</h3>
             <div className="max-w-4xl pl-12 mb-2 pr-12">
-              <span className="text-xs text-gray">This category requires a little more effort and money from users to make them energy efficient.</span>
+              <span className="text-1xs italic text-green font-semibold">This category requires a little more effort and money from users to make them energy efficient.</span>
             </div>
           </div>
 

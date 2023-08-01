@@ -6,6 +6,7 @@ import logo from '../assets/logo-without-border.png';
 // import { HashLink as NavLink } from 'react-router-hash-link';
 import './style.css'
 import styles from './style.module.css'
+import Contact from '../pages/Contact'
 
 const Header = () => {
     const [menu, setMenu] = useState(false)
@@ -192,7 +193,7 @@ const Header = () => {
                                     Calculation
                                 </NavLink>
                             </li>
-                            <li><GetAQuote backgroundColor='#FFFFFF' color='#2F45B7' /></li>
+                            <li><Link to ='/Contact' ><GetAQuote backgroundColor='#FFFFFF' color='#2F45B7' /></Link></li>
 
 
                         </ul>
