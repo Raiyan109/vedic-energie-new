@@ -191,9 +191,9 @@ const Calculation = () => {
                         <form onSubmit={handleSubmit}>
                             <div>
                                 <span>
-                                    <Link to='#' className='text-lightBlue mr-2'>Residency</Link>
-                                    |
-                                    <Link to='#' className='text-lightYellow ml-2'>Commercial</Link>
+                                    <Link to='#' className='text-lightYellow mr-2' >Residency</Link>
+                                   {/* |
+                                    <Link to='#' className='text-lightYellow ml-2'>Commercial</Link> */}
                                 </span>
                                 <h3 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5">Energy Usage Calculator for Your Home</h3>
 

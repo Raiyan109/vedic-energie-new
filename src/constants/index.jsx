@@ -165,47 +165,167 @@ export const customTableItems = [
 ];
 
 export const customMachines = [
-    { "name": "Heater" },
-    { "name": "Cooler" },
-    { "name": "Heater" },
-    { "name": "Fans" },
+    { "name": "Table fan" },
+    { "name": "LED" },
+    { "name": "Printer Small" },
+    { "name": "Juicer Mixer Grinder" },
+    { "name":"Toaster"},
+    { "name":"Vaccume Cleaner"},
+    { "name":"Exhaust Fan"},
+    { "name":"Phone Charger"},
+    { "name":"Set top Box"},
+    { "name":"Wifi Router"},
+    { "name":"Water Purifier"},
+    { "name":"Dish Waasher"},
+    { "name":"Speaker"},
+    { "name":"Coffe Maker"},
+    { "name":"CCTv Camera"},
+    { "name":"Kettle"}
 ];
 
 
 // Watts
 export const AirConWattRanges = [
+    { "range": 0},
     { "range": 1000 },
     { "range": 1500 },
     { "range": 2000 },
     { "range": 2500 },
 ];
 export const GeyserWattRanges = [
+    { "range": 0},
     { "range": 1000 },
     { "range": 1500 },
     { "range": 2000 },
     { "range": 2500 },
 ];
 export const WashingWattRanges = [
+    { "range": 0},
     { "range": 400 },
     { "range": 3000 }
 ];
 export const MicroWaveWattRanges = [
+    { "range": 0},
     { "range": 600 },
     { "range": 1200 },
     { "range": 3000 }
 ];
 export const FridgeWattRanges = [
+    { "range": 0},
     { "range": 100 },
     { "range": 250 }
 ];
 export const LightsWattRanges = [
+    { "range": 0},
     { "range": 7 },
     { "range": 23 }
 ];
+export const CeilingFanWattRanges = [
+    { "range": 0},
+    {"range": 75},
+    {"range": 35 }
+]
+export const TvWattRanges = [
+    { "range": 0},
+    {"range": 40},
+    {"range": 60},
+    {"range": 80},
+    {"range": 100},
+    {"range": 120}
+]
+export const LaptopWattRanges = [
+    { "range": 0},
+    {"range": 40},
+    {"range": 60},
+    {"range": 80},
+    {"range": 100}
+]
+export const IronWattRanges = [
+    { "range": 0},
+    { "range": 600 },
+    { "range": 1200 }
+];
 
+export const WattRanges = [
+    {"range": 0},
+    {"range": 40},
+    {"range": 60},
+    {"range": 80},
+    {"range": 100}
+]
+
+//No of Loads
+export const AirConLoads = [
+    { "range": 0},
+    {"range": 1 },
+    {"range": 2 },
+    {"range": 3 },
+];
+export const GeyserLoads = [
+    { "range": 0},
+    {"range": 1},
+    {"range": 2},
+    {"range": 3}
+];
+export const WashingLoads = [
+    { "range": 0},
+    {"range": 1},
+    {"range": 2}
+];
+export const MicroWaveLoads = [
+    { "range": 0},
+    {"range": 1},
+    {"range": 2}
+];
+export const FridgeLoads = [
+    { "range": 0},
+    {"range": 1},
+    {"range": 2}
+];
+export const LightsLoads = [
+    { "range": 0},
+    {"range": 1},
+    {"range": 2},
+    {"range": 3},
+    {"range": 4},
+    {"range": 5}
+];
+export const CeilingFanLoads = [
+    { "range": 0},
+    {"range": 1},
+    {"range": 2},
+    {"range": 3},
+    {"range": 4},
+    {"range": 5}
+];
+export const TvLoads = [
+    { "range": 0},
+    {"range": 1},
+    {"range": 2},
+    {"range": 3},
+    {"range": 4}
+]
+export const LaptopLoads = [
+    { "range": 0},
+    {"range": 1},
+    {"range": 2},
+    {"range": 3},
+    {"range": 4}
+]
+export const IronLoads = [
+    { "range": 0},
+    {"range": 1},
+    {"range": 2}
+]
+export const OtherMLoads = [
+    {"range": 0},
+    {"range": 1},
+    {"range": 2}
+]
 
 // Consumption times
 export const AirConsTimes = [
+    { "range": 0, "name": '0'},
     { "range": 0.1666666667, "name": '10 Minutes' },
     { "range": 2, "name": '2 Hours' },
     { "range": 3, "name": '3 Hours' },
@@ -225,6 +345,7 @@ export const AirConsTimes = [
 ];
 
 export const GeyserConsTimes = [
+    { "range": 0, "name": '0'},
     {
         "range": 0.08333333333,
         "name": "5 Minutes"
@@ -276,6 +397,7 @@ export const GeyserConsTimes = [
 ]
 
 export const MicrowaveConsTimes = [
+    { "range": 0, "name": '0'},
     {
         "range": 0.08333333333,
         "name": "5 Minutes"
@@ -327,6 +449,7 @@ export const MicrowaveConsTimes = [
 ]
 
 export const WashingMachineConsTimes = [
+    { "range": 0, "name": '0'},
     {
         "range": 0.1666666667,
         "name": "10 Minutes"
@@ -446,6 +569,7 @@ export const WashingMachineConsTimes = [
 ]
 
 export const FridgeConsTimes = [
+    { "range": 0, "name": '0'},
     { "range": 12, "name": '12 Hours' },
     { "range": 13, "name": '13 Hours' },
     { "range": 14, "name": '14 Hours' },
@@ -462,6 +586,7 @@ export const FridgeConsTimes = [
 ]
 
 export const LightConsTimes = [
+    { "range": 0, "name": '0'},
     { "range": 1, "name": '1 Hours' },
     { "range": 2, "name": '2 Hours' },
     { "range": 3, "name": '3 Hours' },
@@ -478,6 +603,145 @@ export const LightConsTimes = [
     { "range": 14, "name": '14 Hours' },
     { "range": 15, "name": '15 Hours' },
     { "range": 16, "name": '16 Hours' },
+]
+
+export const CeilingFanConsTimes = [
+    { "range": 0, "name": '0'},
+    { "range": 3, "name": '3 Hours' },
+    { "range": 4, "name": '4 Hours' },
+    { "range": 5, "name": '5 Hours' },
+    { "range": 6, "name": '6 Hours' },
+    { "range": 7, "name": '7 Hours' },
+    { "range": 8, "name": '8 Hours' },
+    { "range": 9, "name": '9 Hours' },
+    { "range": 10, "name": '10 Hours' },
+    { "range": 11, "name": '11 Hours' },
+    { "range": 12, "name": '12 Hours' },
+    { "range": 13, "name": '13 Hours' },
+    { "range": 14, "name": '14 Hours' },
+    { "range": 15, "name": '15 Hours' },
+    { "range": 16, "name": '16 Hours' },
+    { "range": 17, "name": '17 Hours' },
+    { "range": 18, "name": '18 Hours' }
+]
+export const TvConsTimes = [
+    { "range": 0, "name": '0'},
+    { "range": 3, "name": '3 Hours' },
+    { "range": 4, "name": '4 Hours' },
+    { "range": 5, "name": '5 Hours' },
+    { "range": 6, "name": '6 Hours' },
+    { "range": 7, "name": '7 Hours' },
+    { "range": 8, "name": '8 Hours' }
+]
+export const IronConsTimes = [
+    { "range": 0, "name": '0'},
+    {
+        "range": 0.1666666667,
+        "name": "10 Minutes"
+    },
+    {
+        "range": 0.25,
+        "name": "15 Minutes"
+    },
+    {
+        "range": 0.33333333333,
+        "name": "20 Minutes"
+    },
+    {
+        "range": 0.41666666666,
+        "name": "25 Minutes"
+    },
+    {
+        "range": 0.5,
+        "name": "30 Minutes"
+    },
+    {
+        "range": 0.58333333333,
+        "name": "35 Minutes"
+    },
+    {
+        "range": 0.66666666666,
+        "name": "40 Minutes"
+    },
+    {
+        "range": 0.75,
+        "name": "45 Minutes"
+    },
+    {
+        "range": 0.83333333333,
+        "name": "50 Minutes"
+    },
+    {
+        "range": 0.91666666666,
+        "name": "55 Minutes"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour"
+    }
+]
+export const LaptopTimes= [
+    { "range": 0, "name": '0'},
+    { "range": 3, "name": '3 Hours' },
+    { "range": 4, "name": '4 Hours' },
+    { "range": 5, "name": '5 Hours' },
+    { "range": 6, "name": '6 Hours' },
+    { "range": 7, "name": '7 Hours' },
+    { "range": 8, "name": '8 Hours' },
+    { "range": 9, "name": '9 Hours' },
+    { "range": 10, "name": '10 Hours' },
+    { "range": 11, "name": '11 Hours' }
+]
+export const OtherMConsTimes = [
+    { "range": 0, "name": '0'},
+    {
+        "range": 0.08333333333,
+        "name": "5 Minutes"
+    },
+    {
+        "range": 0.1666666667,
+        "name": "10 Minutes"
+    },
+    {
+        "range": 0.25,
+        "name": "15 Minutes"
+    },
+    {
+        "range": 0.33333333333,
+        "name": "20 Minutes"
+    },
+    {
+        "range": 0.41666666666,
+        "name": "25 Minutes"
+    },
+    {
+        "range": 0.5,
+        "name": "30 Minutes"
+    },
+    {
+        "range": 0.58333333333,
+        "name": "35 Minutes"
+    },
+    {
+        "range": 0.66666666666,
+        "name": "40 Minutes"
+    },
+    {
+        "range": 0.75,
+        "name": "45 Minutes"
+    },
+    {
+        "range": 0.83333333333,
+        "name": "50 Minutes"
+    },
+    {
+        "range": 0.91666666666,
+        "name": "55 Minutes"
+    },
+    {
+        "range": 1,
+        "name": "1 Hour"
+    },
 ]
 
 export const perCapitaEnergyConsumptionData = [

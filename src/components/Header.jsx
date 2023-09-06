@@ -9,9 +9,17 @@ import styles from './style.module.css'
 import Contact from '../pages/Contact'
 
 const Header = () => {
+    const [isMenuVisible, setMenuVisibility] = useState(false);
     const [menu, setMenu] = useState(false)
     const [color, setColor] = useState(false)
     const [activeLink, setActiveLink] = useState("");
+
+    const handleMouseEnter = () => {
+        setMenuVisibility(true);
+    }
+    const handleMouseLeave = () => {
+        setMenuVisibility(false);
+    }
 
     const handleClick = (event, targetSection) => {
         event.preventDefault();
@@ -62,7 +70,7 @@ const Header = () => {
 
     return (
 
-        <div className={color ? 'bg-rgbaHeader transition-all fixed w-full h-[100px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
+        <div className={color ? 'bg-rgbaHeader transition-all  w-full h-[100px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
 
 
             <nav style={{ marginTop: "-25px" }} className="px-2 sm:px-4">
@@ -193,7 +201,7 @@ const Header = () => {
                                     Calculation
                                 </NavLink>
                             </li>
-                            <li><Link to ='/Contact' ><GetAQuote backgroundColor='#FFFFFF' color='#2F45B7' /></Link></li>
+                          {/*  <li><Link to ='/Contact' ><GetAQuote backgroundColor='#FFFFFF' color='#2F45B7' /></Link></li> */}
 
 
                         </ul>

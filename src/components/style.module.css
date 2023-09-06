@@ -51,3 +51,16 @@
     opacity: 1;
     filter: saturate(1);
 }
+
+.menu-bar {
+    position: relative;
+}
+
+.menu {
+    position: absolute;
+    top: -100%;
+    transition: top 0.3s ease;
+}
+.menu.visible {
+    top: 100%; /* Show the menu when it's visible */
+  }

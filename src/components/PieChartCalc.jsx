@@ -15,7 +15,7 @@ background-size: cover;
 background-position: center; 
 `
 
-export default function PieChartCalc({ airPercentage, geyserPercentage, washingPercentage, ovenPercentage, fridgePercentage, lightPercentage }) {
+export default function PieChartCalc({ airPercentage, geyserPercentage, washingPercentage, ovenPercentage, fridgePercentage, lightPercentage,ceilingFanPercentage,tvPercentage,laptopPercentage, ironPercentage, otherMPercentage }) {
   console.log(ovenPercentage);
 
   const [chartData, setChartData] = useState(null);
@@ -28,6 +28,11 @@ export default function PieChartCalc({ airPercentage, geyserPercentage, washingP
       { label: 'Oven', value: ovenPercentage },
       { label: 'Fridge', value: fridgePercentage },
       { label: 'Lights', value: lightPercentage },
+      { label: 'Ceiling Fan', value: ceilingFanPercentage},
+      { lable: 'Tv', value: tvPercentage},
+      { lable: 'Laptop', value: laptopPercentage},
+      { lable: 'Iron', value: ironPercentage},
+      { lable: 'Other', value: otherMPercentage}
     ];
 
     const filteredData = data
@@ -63,7 +68,7 @@ export default function PieChartCalc({ airPercentage, geyserPercentage, washingP
     //   sendPercentageValue(percentageValue);
     // }
 
-  }, [airPercentage, geyserPercentage, washingPercentage, ovenPercentage, fridgePercentage, lightPercentage]);
+  }, [airPercentage, geyserPercentage, washingPercentage, ovenPercentage, fridgePercentage, lightPercentage, ceilingFanPercentage, tvPercentage, laptopPercentage, ironPercentage, otherMPercentage]);
 
   // const calculatePercentageValue = (filteredData) => {
   //   const totalValue = filteredData.reduce((total, { value }) => total + value, 0);
