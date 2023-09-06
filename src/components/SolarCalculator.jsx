@@ -463,7 +463,7 @@ const SolarCalculator = () => {
 
 
                                     <li>
-                                        <h1 className='text-xl'>What is your average Electricity cost?</h1>
+                                        <h1 className='text-xl'>What is your average per unit cost of electricity?</h1>
                                         <label>
                                             <div className='pt-6 flex  items-center'>
                                                 <input type='number'
