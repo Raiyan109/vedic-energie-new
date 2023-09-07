@@ -59,7 +59,7 @@ const EnergyResidency = () => {
                         </p>
                         <div className="text-white flex lg:justify-start md:justify-center justify-center items-center">
                             <ul className="list-disc flex flex-col justify-center items-start">
-                                <li>Solar panel Consultation</li>
+                                <li>Solar panel Consultation And Installation</li>
                                 <li>Energy Calculator</li>
                             </ul>
                         </div>
