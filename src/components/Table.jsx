@@ -343,6 +343,18 @@ const Table = () => {
         setSelectedConsumptionTime(event.target.value);
     }
 
+    const [rows, initRows] = useState([]);
+    const addRowTable = () => {
+        const data = {
+            CustomMachines: " ",
+            SelectedWattage: " ",
+            SelectedLoads: " ",
+            SelectedConsumptionTime: " ",
+            
+        }
+        initRows([...rows, data]);
+    };
+   
 
 
     // The sum of total watt hours for all devices
@@ -371,7 +383,7 @@ const Table = () => {
             { label: 'Ceiling Fan', value: ceilingFantotal},
             { label: 'TV', value: tvTotal},
             { lable: 'Laptop', value: laptopTotal},
-            { lable: 'Iron', value: iron}
+            { lable: 'Iron', value: ironTotal}
         ];
 
         const filteredData = ConsumptionData
@@ -889,7 +901,7 @@ const Table = () => {
                                     If You Want To Add Other Machines You Can Customize It Here
                                 </h3>
                             </div> 
-
+                            
                              <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4'>
                                 <table className="lg:w-1/3 table-auto text-left border-separate border-spacing-y-3">
 
@@ -938,7 +950,7 @@ const Table = () => {
                                     </tbody>
                                 </table>
 
-                                <AddButton text='Add' />
+                                <AddButton text='Add' onClick = {addRowTable} />
                             </div> 
                             <div className='py-20 flex justify-center items-center'>
                                 <FinalCalculate handleClick={handleFinalCalculateClick} />
