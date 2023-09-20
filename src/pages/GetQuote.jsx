@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../context/AuthProvider/AuthProvider';
+
+import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider/AuthProvider';
 
 
 const GetQuote = () => {
-  const {createUser,updateUser}=useContext(AuthContext);
+ const {createUser,updateUser}=useContext(AuthContext);
   const navigate=useNavigate();
 const handleSubmit=event=>{
      event.preventDefault();
