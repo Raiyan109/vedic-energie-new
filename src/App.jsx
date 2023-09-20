@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import CalcProvider from './context/CalcProvider';
 import ReactGA from 'react-ga'
 import { useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 const Container = styled.div`
 `;
@@ -20,6 +21,7 @@ function App() {
           <RouterProvider router={routes} />
         </Container>
       </CalcProvider>
+      <Toaster></Toaster>
     </div>
   )
 }

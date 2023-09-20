@@ -237,7 +237,7 @@ const Header = () => {
                 <button className="modal-close absolute top-4 right-4 text-2xl" onClick={closeModal}>
                     &times;
                 </button>
-                <GetQuote></GetQuote>
+                <GetQuote setModalOpen={setModalOpen}></GetQuote>
             </div>
         </div>
     )}
