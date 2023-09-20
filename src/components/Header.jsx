@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import GetAQuote from './GetAQuote';
 import logo from '../assets/logo-without-border.png';
 // import { HashLink as NavLink } from 'react-router-hash-link';
 import './style.css'
 import styles from './style.module.css'
 import Contact from '../pages/Contact'
+import GetQuote from '../pages/GetQuote';
+
 
 const Header = () => {
     const [isMenuVisible, setMenuVisibility] = useState(false);
     const [menu, setMenu] = useState(false)
     const [color, setColor] = useState(false)
     const [activeLink, setActiveLink] = useState("");
+    const [isModalOpen, setModalOpen] = useState(false);
 
     const handleMouseEnter = () => {
         setMenuVisibility(true);
@@ -29,7 +32,6 @@ const Header = () => {
             behavior: 'smooth'
         });
     };
-
     useEffect(() => {
         const handleScroll = () => {
             const section1 = document.getElementById('banner');
@@ -65,7 +67,13 @@ const Header = () => {
         }
     }
     window.addEventListener('scroll', changeColor)
+    const openModal = () => {
+        setModalOpen(true);
+    }
 
+    const closeModal = () => {
+        setModalOpen(false);
+    }
 
 
     return (
@@ -201,6 +209,20 @@ const Header = () => {
                                     Calculation
                                 </NavLink>
                             </li>
+                            <li onClick={openModal} className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>
+                                <NavLink
+                                    // to="/getAQuote"
+                                    className={styles.navLink}
+                                    style={({ isActive, isPending }) => {
+                                        return {
+                                            borderBottom: isActive ? 'solid 5px #EBE667' : 'none',
+                                            color: isActive ? '#EBE667' : 'white',
+                                        };
+                                    }}y
+                                >
+                                    Get Quote
+                                </NavLink>
+                            </li>
                           {/*  <li><Link to ='/Contact' ><GetAQuote backgroundColor='#FFFFFF' color='#2F45B7' /></Link></li> */}
 
 
@@ -208,6 +230,17 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
+               {isModalOpen && (
+               <div className="modal-overlay fixed inset-0 flex items-center justify-center z-50">
+                <div className="modal bg-white p-8 rounded-lg shadow-lg relative lg:w-1/3 md:w-2/3 w-4/5">
+                {/* Close button inside the modal */}
+                <button className="modal-close absolute top-4 right-4 text-2xl" onClick={closeModal}>
+                    &times;
+                </button>
+                <GetQuote></GetQuote>
+            </div>
+        </div>
+    )}
 
         </div>
     );
