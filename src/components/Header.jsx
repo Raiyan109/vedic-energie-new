@@ -211,7 +211,7 @@ const Header = () => {
                             </li>
                             <li onClick={openModal} className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>
                                 <NavLink
-                                    // to="/getAQuote"
+
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
