@@ -1,13 +1,12 @@
-
-import { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { AuthContext } from '../context/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthProvider/AuthProvider';
 
 
 const GetQuote = () => {
- const {createUser,updateUser}=useContext(AuthContext);
-  const navigate=useNavigate();
+  const {createUser,updateUser}=useContext(AuthContext);
+  const [signUpError, setSignUpError] = useState('');
 const handleSubmit=event=>{
      event.preventDefault();
      const form=event.target;
@@ -42,7 +41,10 @@ const handleSubmit=event=>{
           saveUser(name,email,data.data.display_url,number)
         })
       })
-      .catch(error=>console.log(error))
+      .catch(error=>{
+        setSignUpError(error.message)
+      });
+      setSignUpError('')
      })
      .catch(error=>console.log(error))
      const saveUser = (name, email, photo,number) => {
@@ -60,7 +62,6 @@ const handleSubmit=event=>{
           if(data.acknowledged){
             toast.success('User Created Successfully');
             form.reset();
-            navigate('/');
           }
           
         })
@@ -70,7 +71,7 @@ const handleSubmit=event=>{
        
         <div className="modal">
           <div className="modal-box relative">
-            <h3 className="text-xl font-bold text-center">
+            <h3  className="text-2xl font-bold text-center">
               <span>Please Register </span>    
                 </h3>
                   <form 
@@ -83,7 +84,6 @@ const handleSubmit=event=>{
                       placeholder='Type Your Name'
                       className="w-full px-3 py-2 border rounded-md"
                     />
-        
                     <input
                       name="email"
                       type="email"
@@ -110,6 +110,7 @@ const handleSubmit=event=>{
                       type="number"
                       placeholder="Type Your Number"
                       className="w-full px-3 py-2 border rounded-md"
+                      required
                     />
                     <button
                      type="submit"
@@ -119,7 +120,7 @@ const handleSubmit=event=>{
                       Submit
                    </button>
                   </form>
-            
+                  {signUpError && <p className='font-medium my-2' style={{color:'#FF0000'}}>{signUpError}</p>}
           </div>
         </div>
        

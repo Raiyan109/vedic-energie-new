@@ -24,6 +24,7 @@
     "react-dom": "^18.2.0",
     "react-ga": "^3.3.1",
     "react-gauge-chart": "^0.4.1",
+    "react-hook-form": "^7.46.1",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.10.0",
