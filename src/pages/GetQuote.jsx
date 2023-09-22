@@ -3,51 +3,23 @@ import { AuthContext } from '../context/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 
 const GetQuote = ({ setModalOpen }) => {
-  const { createUser, updateUser } = useContext(AuthContext);
-  const [signUpError, setSignUpError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
 
-    const form = event.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const password = form.password.value;
-    const image = form.image.files[0];
-    const number = form.number.value;
-
-    const formData = new FormData();
-    formData.append('image', image);
-
-    const imgbbApiKey = '99128c73e69356c6d49c12da0a678056';
-    const url = `https://api.imgbb.com/1/upload?key=${imgbbApiKey}`;
-
     try {
-      const imageResponse = await fetch(url, {
-        method: 'POST',
-        body: formData,
-      });
-      const imageData = await imageResponse.json();
-      const photoURL = imageData.data.display_url;
-
-      const result = await createUser(email, password);
-      const user = result.user;
-
-      const userInfo = {
-        displayName: name,
-        photoURL,
-        phoneNumber: number,
-      };
-
-      await updateUser(userInfo);
-
+      const form = event.target;
+      const name = form.name.value;
+      const email = form.email.value;
+      const number = form.number.value;
+      const message = form.message.value;
       const userObject = {
         name,
         email,
-        photo: photoURL,
         number,
+        message
       };
 
       const saveUserResponse = await fetch('https://vedic-energie-server.vercel.app/users', {
@@ -62,10 +34,11 @@ const GetQuote = ({ setModalOpen }) => {
 
       if (saveUserData.acknowledged) {
         setModalOpen(false);
-        toast.success('User Created Successfully');
+        toast.success('Message send to Mongodb successfully');
       }
     } catch (error) {
-      setSignUpError(error.message);
+      console.error('Error:', error);
+      toast.error('An error occurred while creating the user');
     } finally {
       setIsLoading(false);
     }
@@ -75,7 +48,7 @@ const GetQuote = ({ setModalOpen }) => {
     <div className="modal">
       <div className="modal-box relative">
         <h3 className="text-2xl font-bold text-center">
-          <span>Please Register</span>
+          <span>Let's Talk!</span>
         </h3>
         {isLoading ? (
           <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin my-8 mx-auto"></div>
@@ -93,27 +66,19 @@ const GetQuote = ({ setModalOpen }) => {
               placeholder="Type Your Email"
               className="w-full px-3 py-2 border rounded-md"
             />
-            <input
-              name="password"
-              type="password"
-              placeholder="Type Your Password"
-              className="w-full px-3 py-2 border rounded-md"
-            />
-            <input
-              placeholder="Upload your Product image"
-              type="file"
-              name="image"
-              accept="image/*"
-              className="w-full px-3 py-2 border rounded-md"
-              style={{ color: '#98A2B3' }}
-              required
-            />
+            
             <input
               name="number"
               type="number"
               placeholder="Type Your Number"
               className="w-full px-3 py-2 border rounded-md"
               required
+            />
+            <textarea
+              name="message"
+              placeholder="Type Your Message"
+              rows="3" // Set the number of rows here
+              className="w-full px-3 py-2 border rounded-md"
             />
             <button
               type="submit"
@@ -123,11 +88,6 @@ const GetQuote = ({ setModalOpen }) => {
               Submit
             </button>
           </form>
-        )}
-        {signUpError && (
-          <p className="font-medium my-2" style={{ color: '#FF0000' }}>
-            {signUpError}
-          </p>
         )}
       </div>
     </div>
