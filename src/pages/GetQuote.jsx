@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import { AuthContext } from '../context/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 
 const GetQuote = ({ setModalOpen }) => {
@@ -22,7 +21,7 @@ const GetQuote = ({ setModalOpen }) => {
         message
       };
 
-      const saveUserResponse = await fetch('https://vedic-energie-server.vercel.app/users', {
+      const saveUserResponse = await fetch('https://vedic-energie-server.vercel.app/usermessage', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -38,7 +37,7 @@ const GetQuote = ({ setModalOpen }) => {
       }
     } catch (error) {
       console.error('Error:', error);
-      toast.error('An error occurred while creating the user');
+      toast.error('An error occured while data passing mongodb');
     } finally {
       setIsLoading(false);
     }
