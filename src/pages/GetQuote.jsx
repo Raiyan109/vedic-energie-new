@@ -56,26 +56,26 @@ const GetQuote = ({ setModalOpen }) => {
             <input
               type="text"
               name="name"
-              placeholder="Type Your Name"
+              placeholder="Name"
               className="w-full px-3 py-2 border rounded-md"
             />
             <input
               name="email"
               type="email"
-              placeholder="Type Your Email"
+              placeholder="Email"
               className="w-full px-3 py-2 border rounded-md"
             />
             
             <input
               name="number"
               type="number"
-              placeholder="Type Your Number"
+              placeholder="Contact Number"
               className="w-full px-3 py-2 border rounded-md"
               required
             />
             <textarea
               name="message"
-              placeholder="Type Your Message"
+              placeholder="Message"
               rows="3" // Set the number of rows here
               className="w-full px-3 py-2 border rounded-md"
             />
