@@ -232,7 +232,7 @@ const Header = () => {
             </nav>
                {isModalOpen && (
                <div className="modal-overlay fixed inset-0 flex items-center justify-center z-50">
-                <div className="modal bg-white p-8 rounded-lg shadow-lg relative lg:w-1/3 md:w-2/3 w-4/5">
+                <div className="modal bg-orange p-8 rounded-lg shadow-lg relative lg:w-1/3 md:w-2/3 w-4/5">
                 {/* Close button inside the modal */}
                 <button className="modal-close absolute top-4 right-4 text-2xl" onClick={closeModal}>
                     &times;

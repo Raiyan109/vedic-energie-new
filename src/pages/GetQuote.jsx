@@ -33,11 +33,11 @@ const GetQuote = ({ setModalOpen }) => {
 
       if (saveUserData.acknowledged) {
         setModalOpen(false);
-        toast.success('Message send successfully');
+        toast.success('Message sent successfully');
       }
     } catch (error) {
       console.error('Error:', error);
-      toast.error('An error occured');
+      toast.error('An error occurred');
     } finally {
       setIsLoading(false);
     }
@@ -46,8 +46,8 @@ const GetQuote = ({ setModalOpen }) => {
   return (
     <div className="modal">
       <div className="modal-box relative">
-        <h3 className="text-2xl font-bold text-center">
-          <span>Let's Talk!</span>
+        <h3 className="text-3xl font-bold text-center">
+          <span className='text-white'>Let's Talk!</span>
         </h3>
         {isLoading ? (
           <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin my-8 mx-auto"></div>
@@ -57,32 +57,30 @@ const GetQuote = ({ setModalOpen }) => {
               type="text"
               name="name"
               placeholder="Name"
-              className="w-full px-3 py-2 border rounded-md"
-            />
-            <input
+              className="w-full px-3 py-2 border rounded-md bg-orange text-white border-white focus:border-white focus:ring focus:ring-white"
+            /> 
+              <input
               name="email"
               type="email"
               placeholder="Email"
-              className="w-full px-3 py-2 border rounded-md"
+              className="w-full px-3 py-2 border rounded-md bg-orange text-white border-white focus:border-white focus:ring focus:ring-white" 
             />
-            
             <input
               name="number"
               type="number"
               placeholder="Contact Number"
-              className="w-full px-3 py-2 border rounded-md"
+              className="w-full px-3 py-2 border rounded-md bg-orange text-white border-white focus:border-white focus:ring focus:ring-white" 
               required
             />
             <textarea
               name="message"
               placeholder="Message"
-              rows="3" // Set the number of rows here
-              className="w-full px-3 py-2 border rounded-md"
+              rows="3"
+              className="w-full px-3 py-2 border rounded-md bg-orange text-white border-white focus:border-white focus:ring focus:ring-white" 
             />
             <button
               type="submit"
-              className="mx-auto lg:w-[137px] lg:h-[50px] md:w-[105px] md:h-[40px] w-[90px] h-[30px] lg:my-0 my-3 text-lightBlue rounded-md lg:text-[18px] md:text-sm text-xs hover:bg-lightYellow hover:text-navyBlue hover:transition-all"
-              style={{ backgroundColor: 'rgb(47, 69, 183)', color: 'rgb(240, 239, 255)' }}
+              className="mx-auto w-[137px] h-[50px] bg-lightYellow rounded-md lg:text-[18px] md:text-sm sm:text-[18px] hover:bg-yellow hover:transition-all"
             >
               Submit
             </button>
