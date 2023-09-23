@@ -33,11 +33,11 @@ const GetQuote = ({ setModalOpen }) => {
 
       if (saveUserData.acknowledged) {
         setModalOpen(false);
-        toast.success('Message send to Mongodb successfully');
+        toast.success('Message send successfully');
       }
     } catch (error) {
       console.error('Error:', error);
-      toast.error('An error occured while data passing mongodb');
+      toast.error('An error occured');
     } finally {
       setIsLoading(false);
     }
