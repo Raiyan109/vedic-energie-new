@@ -57,26 +57,26 @@ const GetQuote = ({ setModalOpen }) => {
               type="text"
               name="name"
               placeholder="Name"
-              className="w-full px-3 py-2 border rounded-md bg-orange text-white border-white focus:border-white focus:ring focus:ring-white"
+              className="w-full px-3 py-2 border rounded-md bg-orange placeholder-white border-white focus:border-white focus:ring focus:ring-white"
             /> 
               <input
               name="email"
               type="email"
               placeholder="Email"
-              className="w-full px-3 py-2 border rounded-md bg-orange text-white border-white focus:border-white focus:ring focus:ring-white" 
+              className="w-full px-3 py-2 border rounded-md bg-orange placeholder-white border-white focus:border-white focus:ring focus:ring-white" 
             />
             <input
               name="number"
               type="number"
               placeholder="Contact Number"
-              className="w-full px-3 py-2 border rounded-md bg-orange text-white border-white focus:border-white focus:ring focus:ring-white" 
+              className="w-full px-3 py-2 border rounded-md bg-orange placeholder-white border-white focus:border-white focus:ring focus:ring-white" 
               required
             />
             <textarea
               name="message"
               placeholder="Message"
               rows="3"
-              className="w-full px-3 py-2 border rounded-md bg-orange text-white border-white focus:border-white focus:ring focus:ring-white" 
+              className="w-full px-3 py-2 border rounded-md bg-orange placeholder-white border-white focus:border-white focus:ring focus:ring-white" 
             />
             <button
               type="submit"
