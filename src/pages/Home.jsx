@@ -11,7 +11,7 @@ import Affiliate from '../components/Affiliate';
 import BackToTopButton from '../components/BackToTopButton';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
-import SendMail from './SendMail/SendMail';
+
 
 
 const Home = () => {
@@ -28,7 +28,6 @@ const Home = () => {
             <Brands /> */}
             <See />
             <Articles />
-            <SendMail/>
             <Footer />
             <BackToTopButton />
         </div>

@@ -15,6 +15,7 @@ import NotFound from '../pages/NotFound'
 import Calculation from "../components/Calculation";
 import ArticleDetail from "../components/ArticleDetail";
 import AdminPanel from "../components/AdminPanel";
+import GetQuote from "../pages/GetQuote";
 
 
 const routes = createBrowserRouter([
@@ -44,7 +45,7 @@ const routes = createBrowserRouter([
     },
     {
         path: '/getAQuote',
-        element: <div>Get A Quote</div>
+        element:<GetQuote></GetQuote>
     },
     {
         path: '/energyCalc',

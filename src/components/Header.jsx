@@ -211,7 +211,7 @@ const Header = () => {
                             </li>
                             <li onClick={openModal} className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>
                                 <NavLink
-
+                                to='/getAQuote'
                                     className={styles.navLink}
                                     style={({ isActive, isPending }) => {
                                         return {
@@ -230,18 +230,6 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
-               {isModalOpen && (
-               <div className="modal-overlay fixed inset-0 flex items-center justify-center z-50">
-                <div className="modal bg-orange p-8 rounded-lg shadow-lg relative lg:w-1/3 md:w-2/3 w-4/5">
-                {/* Close button inside the modal */}
-                <button className="modal-close absolute top-4 right-4 text-2xl" onClick={closeModal}>
-                    &times;
-                </button>
-                <GetQuote setModalOpen={setModalOpen}></GetQuote>
-            </div>
-        </div>
-    )}
-
         </div>
     );
 };
