@@ -6,10 +6,12 @@ const Shop = () => {
     return (
         <div>
             <Header></Header>
-            <section className=''>
+           
+           <section className=''>
            <h1>Hello</h1>
       
             </section>
+           
             <Footer></Footer>
         </div>
     );
