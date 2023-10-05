@@ -30,7 +30,7 @@ const Footer = () => {
                             {/* social link */}
                             <div className='flex justify-center items-start lg:pl-60'>
                                 <div>
-                                    <h3 className='uppercase underline font-medium text-blue mt-4 ml-3'>Social Links</h3>
+                                    <h3 className='uppercase underline font-medium text-blue text-center mt-4 ml-3'>Social Links</h3>
                                     <div>
                                         <ul className="flex gap-6 mt-8 lg:justify-end md:justify-end justify-end">
                                             {/* <li>
@@ -80,37 +80,37 @@ const Footer = () => {
                         </div>
                         <div className='flex lg:flex-row md:flex-col flex-col space-x-9 '>
                             {/* contact */}
-                            <div className='flex justify-center items-center lg:pl-0 md:pl-12 pl-7'>
+                            <div className='flex justify-center items-center lg:pl-0 md:pl-12 pl-2'>
                                 <div>
                                     <h2 className="title-font font-medium text-blue underline tracking-widest text-md uppercase mb-3 lg:-ml-16 ml-0 lg:mt-0 mt-12 text-center">Contact</h2>
 
                                     <div className=''>
-                                        <ul className=" space-y-3 text-sm">
+                                        <ul className="space-y-3 text-sm">
                                             <li>
                                                 <p
-                                                    className="flex items-center justify-center gap-3"
+                                                    className="flex items-center justify-center gap-3 "
                                                     href="/"
                                                 >
-                                                    <h3 className='text-xl text-blue'><ImLocation2 /></h3>
+                                                    <span className='text-xl text-blue'><ImLocation2 /></span>
                                                     <span className='text-blue text-sm text-left'>201, 2nd Floor, opposite Maple Green Society<br></br> Ring Road No.1,kushalpur,Raipur Chhattisgarh</span>
                                                 </p>
                                             </li>
-                                            <li className='mr-32'>
+                                            <li className='mr-32  pl-2'>
                                                 <p
                                                     className="flex items-center justify-center gap-3"
                                                     href="/"
                                                 >
-                                                    <h3 className='text-xl text-blue'><MdEmail /></h3>
+                                                    <span className='text-xl text-blue'><MdEmail /></span>
                                                     <span className='text-blue text-sm text-left'>contact@vedicenergie.com</span>
                                                 </p>
                                             </li>
 
-                                            <li className='mr-52'>
+                                            <li className='mr-52 pl-2'>
                                                 <a
                                                     className="flex items-center justify-center gap-3"
                                                     href="tel:+91 98439 37773"
                                                 >
-                                                    <h3 className='text-xl text-blue'><BsFillTelephoneFill /></h3>
+                                                    <span className='text-xl text-blue'><BsFillTelephoneFill /></span>
                                                     <span className='text-blue text-sm text-left'>+91 98439 37773</span>
                                                 </a>
                                             </li>
