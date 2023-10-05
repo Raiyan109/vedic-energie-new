@@ -209,6 +209,20 @@ const Header = () => {
                                     Calculation
                                 </NavLink>
                             </li>
+                            <li className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>
+                                <NavLink
+                                to='/shop'
+                                    className={styles.navLink}
+                                    style={({ isActive, isPending }) => {
+                                        return {
+                                            borderBottom: isActive ? 'solid 5px #EBE667' : 'none',
+                                            color: isActive ? '#EBE667' : 'white',
+                                        };
+                                    }}y
+                                >
+                                    Shop
+                                </NavLink>
+                            </li>
                             <li onClick={openModal} className='block lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-lightBlue'>
                                 <NavLink
                                 to='/getAQuote'

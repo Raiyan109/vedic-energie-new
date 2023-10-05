@@ -11,13 +11,14 @@ import Affiliate from '../components/Affiliate';
 import BackToTopButton from '../components/BackToTopButton';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
+import Shop from './Shop';
 
 
 
 const Home = () => {
     return (
         <div className='font-Poppins overflow-x-hidden'>
-            <Header />
+            <Header /> 
             <Hero />
             {/* <Banner /> */}
             <Efficient />
@@ -28,7 +29,7 @@ const Home = () => {
             <Brands /> */}
             <See />
             <Articles />
-            <Footer />
+             <Footer /> 
             <BackToTopButton />
         </div>
     );

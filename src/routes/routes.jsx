@@ -10,79 +10,85 @@ import EnergySupply from '../pages/EnergySupply'
 import RenewableEnergy from '../pages/RenewableEnergy'
 import ReduceEnergy from '../pages/ReduceEnergy'
 import EnergySaving from '../pages/EnergySaving'
-
 import NotFound from '../pages/NotFound'
 import Calculation from "../components/Calculation";
 import ArticleDetail from "../components/ArticleDetail";
 import AdminPanel from "../components/AdminPanel";
 import GetQuote from "../pages/GetQuote";
+import Shop from "../pages/Shop";
 
 
 const routes = createBrowserRouter([
-    {
-        path: '/',
-        element: <Home />
-    },
-    {
-        path: '/about',
-        element: <About />
-    },
-    {
-        path: '/services',
-        element: <Services />
-    },
-    {
-        path: '/blog',
-        element: <Blog />
-    },
-    {
-        path: '/blog/:id',
-        element: <ArticleDetail />
-    },
-    {
-        path: '/contact',
-        element: <Contact />
-    },
-    {
-        path: '/getAQuote',
-        element:<GetQuote></GetQuote>
-    },
-    {
-        path: '/energyCalc',
-        element: <EnergyCalculation />
-    },
-    {
-        path: '/calcStep1',
-        element: <Calculation />
-    },
-    {
-        path: '/energyDemand',
-        element: <EnergyDemandManagement />
-    },
-    {
-        path: '/energySupply',
-        element: <EnergySupply />
-    },
-    {
-        path: '/renewable',
-        element: <RenewableEnergy />
-    },
-    {
-        path: '/reduce',
-        element: <ReduceEnergy />
-    },
-    {
-        path: '/energySaving',
-        element: <EnergySaving />
-    },
-    {
-        path: '/admin',
-        element: <AdminPanel />
-    },
-    {
-        path: '*',
-        element: <NotFound />
-    },
+        {
+            path: '/',
+            element: <Home />
+        },
+        {
+            path: '/about',
+            element: <About />
+        },
+        {
+            path: '/services',
+            element: <Services />
+        },
+        {
+            path: '/blog',
+            element: <Blog />
+        },
+        {
+            path: '/blog/:id',
+            element: <ArticleDetail />
+        },
+        {
+            path: '/contact',
+            element: <Contact />
+        },
+        {
+            path: '/getAQuote',
+            element:<GetQuote></GetQuote>
+        },
+        {
+            path:'/shop',
+            element:<Shop></Shop>
+        },
+        {
+            path: '/energyCalc',
+            element: <EnergyCalculation />
+        },
+        {
+            path: '/calcStep1',
+            element: <Calculation />
+        },
+        {
+            path: '/energyDemand',
+            element: <EnergyDemandManagement />
+        },
+        {
+            path: '/energySupply',
+            element: <EnergySupply />
+        },
+        {
+            path: '/renewable',
+            element: <RenewableEnergy />
+        },
+        {
+            path: '/reduce',
+            element: <ReduceEnergy />
+        },
+        {
+            path: '/energySaving',
+            element: <EnergySaving />
+        },
+        {
+            path: '/admin',
+            element: <AdminPanel />
+        },
+        {
+            path: '*',
+            element: <NotFound />
+        },
+    
+   
 
 ])
 
