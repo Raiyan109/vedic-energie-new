@@ -1,3 +1,44 @@
 [
-    
+  {
+    "id":"01",
+    "name":"Monocrystalline",
+    "image":"https://i.ibb.co/0Gz2fN5/s1.webp",
+    "price":"20k"
+  },
+  {
+    "id":"02",
+    "name":"High efficiency ",
+    "image":"https://i.ibb.co/S5fwDQR/s11.jpg",
+    "price":"25k"
+  },
+  {
+    "id":"03",
+    "name":"Thin-film",
+    "image":"https://i.ibb.co/hMpNsmm/s3.webp",
+    "price":"22k"
+  },
+  {
+    "id":"04",
+    "name":"Lower costs",
+    "image":"https://i.ibb.co/G0RcxSq/s4.webp",
+    "price":"26k"
+  },
+  {
+    "id":"05",
+    "name":"Portable and flexible",
+    "image":"https://i.ibb.co/xgfQX6Q/s5.webp",
+    "price":"28k"
+  },
+  {
+    "id":"06",
+    "name":"Higher costs",
+    "image":"https://i.ibb.co/ct82kCm/s6.webp",
+    "price":"23k"
+  },
+  {
+    "id":"07",
+    "name":"Lower efficiency ",
+    "image":"https://i.ibb.co/P5R3PM8/s7.webp",
+    "price":"21k"
+  }
 ]
