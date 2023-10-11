@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import bg from '../assets/solarbg2.png'
 const Shop = () => {
  const [data,setData]=useState([]);
  useEffect(()=>{
@@ -14,22 +13,25 @@ const Shop = () => {
     return (
         <div className=''>
             <Header/>
-           <section className=' flex items-center h-full bg-cover bg-center bg-no-repeat p-32  ' style={{ backgroundImage: `url(${bg})` }}>
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 '>
+           <section className='container mx-auto flex items-center h-full p-32' >
+           <div className="flex w-full grid grid-cols-1 gap-6 overflow-hidden bg-white rounded-lg shadow-lg">
             {
               data.map(solar=>
-                <div key={solar.id} className='container flex flex-col item-center justify-center m-4'>
-            <div className="w-full max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-        <img className="object-cover w-full h-56" src={solar.image} alt="avatar" />
-        <div className="py-5 text-center">
-          <a href="#" className="block text-xl font-bold text-gray-800" tabIndex={0} role="link">{solar.name}</a>
-          <span className="text-sm text-gray-700 dark:text-gray-200">{solar.price}</span>
-        </div>
-      </div>
-            </div>
+                <div key={solar.id} className="flex overflow-hidden bg-white rounded-lg shadow-lg">
+                <div className="w-1/3 bg-cover" style={{backgroundImage: `url(${solar.image})`}} />
+                <div className="w-2/3 p-4 md:p-4">
+                  <h1 className="text-xl font-bold text-gray-800 my-2">{solar.name}</h1>
+                  <p className='text-md'>
+                    {solar.pros}
+                  </p>
+                  <p className=" text-md font-semibold text-gray-600 my-2">Price: {solar.price}</p>
+                </div>
+              </div>
                 )
             }
-            </div>
+          
+       </div>   
+            
            </section>
             <Footer/>
         </div>
