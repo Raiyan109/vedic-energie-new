@@ -14,7 +14,7 @@ const Shop = () => {
         <div className='bg-blue-500'>
             <Header/>
            <section className='container mx-auto flex items-center h-full p-32 ' >
-           <div className="flex w-full grid grid-cols-1 gap-6 overflow-hidden rounded-lg shadow-lg">
+           <div className="flex w-2/3 mx-auto grid grid-cols-1 gap-6 overflow-hidden rounded-lg shadow-lg">
             {
               data.map(solar=>
                 <div key={solar.id} className="flex overflow-hidden bg-white rounded-lg shadow-lg">
