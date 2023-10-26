@@ -16,6 +16,7 @@ import ArticleDetail from "../components/ArticleDetail";
 import AdminPanel from "../components/AdminPanel";
 import GetQuote from "../pages/GetQuote";
 import Shop from "../pages/Shop";
+import ProductDetail from "../pages/ProductDetail";
 
 
 const routes = createBrowserRouter([
@@ -40,6 +41,10 @@ const routes = createBrowserRouter([
             element: <ArticleDetail />
         },
         {
+           path:'productdetails/:id',
+           element:<ProductDetail></ProductDetail>
+        },
+        {
             path: '/contact',
             element: <Contact />
         },
@@ -51,6 +56,10 @@ const routes = createBrowserRouter([
             path:'/shop',
             element:<Shop></Shop>
         },
+        {
+            path:'/shop/:id',
+            element:<ProductDetail></ProductDetail>
+         },
         {
             path: '/energyCalc',
             element: <EnergyCalculation />
