@@ -16,7 +16,7 @@ const ProductDetail = () => {
     return (
         <div className=''>
             <Header/>
-            <section className='bg-orange mx-auto lg:p-32 text-black'>
+            <section className='bg-blue mx-auto lg:p-32 text-white'>
              {
                 productDetails.map(product=><div key={product._id}>
                     <div className='lg:flex'>
@@ -24,19 +24,19 @@ const ProductDetail = () => {
                         <img src={product.productImage} alt="" />
                     </div>
                     <div className='lg:w-1/2 w-full lg:p-0 p-8'>
-                     <h1 className='text-2xl text-blue font-semibold'>{product.productName}</h1>
+                     <h1 className='text-2xl text-yellow font-semibold'>{product.productName}</h1>
                      <p className='my-3'>
                         <span>Brand: </span>
                         <span>{product.brand}</span>
                      </p>
                      <div className='my-5'>
-                        <h3 className='font-semibold text-blue'>{product.hp1}</h3>
+                        <h3 className='font-semibold text-yellow'>{product.hp1}</h3>
                         <p className='my-2'>{product.p1}</p>
-                        <h3 className='font-semibold text-blue'>{product.hp2}</h3>
+                        <h3 className='font-semibold text-yellow'>{product.hp2}</h3>
                         <p className='my-2'>{product.p2}</p>
-                        <h3 className='font-semibold text-blue'>{product.hp3}</h3>
+                        <h3 className='font-semibold text-yellow'>{product.hp3}</h3>
                         <p className='my-2'>{product.p3}</p>
-                        <h3 className='font-semibold text-blue'>{product.hp4}</h3>
+                        <h3 className='font-semibold text-yellow'>{product.hp4}</h3>
                         <p className='my-2'>{product.p4}</p>
                         <p className='my-2'>{product.p5}</p>
                         <p className='my-2'>{product.p6}</p>
@@ -51,7 +51,7 @@ const ProductDetail = () => {
                         <span className='mr-2'>MRP: </span>
                         <span className='line-through mr-2'>{product.oldPrice} </span>
                         <span className='mr-2'>{product.newPrice}</span>
-                        <span className='text-blue'>{product.inclusive}</span>
+                        <span className='text-yellow'>{product.inclusive}</span>
                      </p>
                      <div className='my-6'>
                      <button
@@ -71,8 +71,8 @@ const ProductDetail = () => {
                      </div>
                      </div>
                      <div className='lg:p-0 p-8'>
-                        <h1 className='text-2xl text-blue font-semibold text-center lg:my-12'>Description</h1>
-                        <h2 className='text-3xl text-blue font-semibold my-6'>{product.productName}</h2>
+                        <h1 className='text-2xl text-yellow font-semibold text-center lg:my-12'>Description</h1>
+                        <h2 className='text-3xl text-yellow font-semibold my-6'>{product.productName}</h2>
                         <p className='my-3'>{product.para2}</p>
                         <p className='my-2'>{product.para3}</p>
                         <p className='my-2'>
@@ -80,16 +80,16 @@ const ProductDetail = () => {
                         <p>{product.pb2}</p>
                         </p>
                         <div>
-                            <h3 className='text-2xl text-blue font-semibold my-3'>{product.features}</h3>
+                            <h3 className='text-2xl text-yellow font-semibold my-3'>{product.features}</h3>
                             <p className='my-2'>
-                                <h4 className='text-blue'>{product.hb2}</h4>
+                                <h4 className='text-yellow'>{product.hb2}</h4>
                                 <p>{product.bp2}</p>
                                 </p>
                                 <p className='my-2'>
-                                <h4 className='text-blue'>{product.hb3}</h4>
+                                <h4 className='text-yellow'>{product.hb3}</h4>
                                 <p>{product.bp3}</p>
                                 </p>
-                                <h4 className='text-blue'>{product.hb4}</h4>
+                                <h4 className='text-yellow'>{product.hb4}</h4>
                                 <p>{product.bp4}</p>
                                 <p className='my-1'>{product.b1}</p>
                                 <p className='my-1'>{product.b2}</p>
@@ -100,7 +100,7 @@ const ProductDetail = () => {
                                 <p className='my-1'>{product.b71}</p>
                         </div>
                         <div className='my-3'>
-                        <h3 className='text-2xl text-blue font-semibold my-3'>{product.advantage}</h3>
+                        <h3 className='text-2xl text-yellow font-semibold my-3'>{product.advantage}</h3>
                         <p className='my-1'>{product.b1}</p>
                                 <p className='my-1'>{product.ab1}</p>
                                 <p className='my-1'>{product.ab2}</p>
@@ -108,22 +108,22 @@ const ProductDetail = () => {
                                 <p className='my-1'>{product.ab4}</p>
                          </div>
                         <div>
-                            <h3 className='text-2xl text-blue font-semibold my-3'>{product.efficiency}</h3>
+                            <h3 className='text-2xl text-yellow font-semibold my-3'>{product.efficiency}</h3>
                             <p>{product.ep}</p>
-                            <h3 className='text-2xl text-blue font-semibold my-3'>{product.protection}</h3>
+                            <h3 className='text-2xl text-yellow font-semibold my-3'>{product.protection}</h3>
                             <p>{product.pp}</p>
-                            <h3 className='text-2xl text-blue font-semibold my-3'>{product.atmosphere}</h3>
+                            <h3 className='text-2xl text-yellow font-semibold my-3'>{product.atmosphere}</h3>
                             <p>{product.ap}</p>
                         </div>
                         <div className='my-3'>
-                        <p className='text-blue font-semibold my-2'>{product.g1}</p>
-                        <p className='text-blue font-semibold my-2'>{product.g2}</p>
-                        <p className='text-blue font-semibold my-2'>{product.applications}</p>
+                        <p className='text-yellow font-semibold my-2'>{product.g1}</p>
+                        <p className='text-yellow font-semibold my-2'>{product.g2}</p>
+                        <p className='text-yellow font-semibold my-2'>{product.applications}</p>
                         </div>
-                        <p className='text-2xl text-blue font-semibold my-3'>{product.warranty}</p>
+                        <p className='text-2xl text-yellow font-semibold my-3'>{product.warranty}</p>
                             <p className='my-1'>{product.b7}</p>
                             <p className='my-1'>{product.b8}</p>
-                            <p className='text-2xl text-blue font-semibold my-1'>{product.range}</p>
+                            <p className='text-2xl text-yellow font-semibold my-1'>{product.range}</p>
                             <p className='my-1'>{product.b9}</p>
                             <p className='my-1'>{product.wp}</p>
                      </div>
