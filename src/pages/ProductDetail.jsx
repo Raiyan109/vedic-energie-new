@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import {  Link, useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -59,8 +59,10 @@ const ProductDetail = () => {
 
                 <button
                 className='px-3 py-2 uppercase text-sm bg-yellow text-black hover:text-blue md:text-sm font-semibold hover:bg-orange hover:transition-all m-2'>Buy Now</button>
+                
                         <button
-                className='px-3 py-2 uppercase text-sm bg-yellow text-black hover:text-blue md:text-sm font-semibold hover:bg-orange hover:transition-all m-2'>Contact Us</button>
+                className='px-3 py-2 uppercase text-sm bg-yellow text-black hover:text-blue md:text-sm font-semibold hover:bg-orange hover:transition-all m-2'> <Link to='/getAQuote'>Contact Us</Link> </button>
+                
                      </div>
                      <p className='text-sm'>
                         <p className='my-1'>{product.para}</p>
