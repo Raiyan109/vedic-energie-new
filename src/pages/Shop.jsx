@@ -21,17 +21,22 @@ const Shop = () => {
                     {
                         data.map(solar => (
                             <div key={solar._id} className="flex overflow-hidden rounded-lg shadow-lg">
-                                <div className="w-full max-w-xs overflow-hidden  bg-yellow">
+                                <div className="w-full max-w-xs overflow-hidden bg-yellow">
                                     <div className="h-56 relative">
                                         <img className="object-cover w-full h-full" src={solar.image} alt="avatar" />
                                     </div>
                                     <div className="py-5 my-2">
                                         <a href="#" className="block text-xl font-bold text-center" tabIndex={0} role="link">{solar.name}</a>
-                                        <span className="text-sm text-black font-semibold mx-6">
+                                        <span className="text-sm text-black font-semibold mx-6 my-2">
                                             <span className='mr-2'>Price: </span>
                                             <span className='line-through mr-2'>{solar.oldPrice} </span>
                                             <span className='mr-2'>{solar.newPrice}</span>
                                         </span>
+                                        <div className='my-3 text-center flex justify-center'> {/* Use flex and justify-center for horizontal alignment */}
+                                            <Link to={`/shop/${solar._id}`}>
+                                                <button className='bg-blue text-white rounded-md px-2 py-1 text-sm'>READ MORE</button>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
