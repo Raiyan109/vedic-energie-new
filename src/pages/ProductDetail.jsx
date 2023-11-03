@@ -54,14 +54,13 @@ const ProductDetail = () => {
                         <span className='text-yellow'>{product.inclusive}</span>
                      </p>
                      <div className='my-6'>
-                     <button
-                className='px-3 py-2 uppercase text-sm bg-blue text-white md:text-sm font-semibold hover:transition-all m-2'>Add to cart</button>
+                     <button className='px-3 py-1 bg-orange uppercase font-semibold text-sm text-black hover:bg-yellow hover:transition-all mr-2'>Add to cart</button>
 
                 <button
-                className='px-3 py-2 uppercase text-sm bg-blue text-white md:text-sm font-semibold hover:transition-all m-2'>Buy Now</button>
+                className='px-3 py-1 bg-orange uppercase font-semibold text-sm text-black hover:bg-yellow hover:transition-all mr-2'>Buy Now</button>
                 
                         <button
-                className='px-3 py-2 uppercase text-sm bg-blue text-white md:text-sm font-semibold hover:transition-all m-2'> <Link to='/getAQuote'>Contact Us</Link> </button>
+                className='px-3 py-1 bg-orange uppercase font-semibold text-sm text-black hover:bg-yellow hover:transition-all'> <Link to='/getAQuote'>Contact Us</Link> </button>
                 
                      </div>
                      <p className='text-sm'>
@@ -75,6 +74,7 @@ const ProductDetail = () => {
                         <h2 className='text-3xl text-yellow font-semibold my-6'>{product.productName}</h2>
                         <p className='my-3'>{product.para2}</p>
                         <p className='my-2'>{product.para3}</p>
+                        <p className='my-2 text-yellow'>{product.eligibility}</p>
                         <p className='my-2'>
                         <p>{product.pb1}</p>
                         <p>{product.pb2}</p>
@@ -101,7 +101,6 @@ const ProductDetail = () => {
                         </div>
                         <div className='my-3'>
                         <h3 className='text-2xl text-yellow font-semibold my-3'>{product.advantage}</h3>
-                        <p className='my-1'>{product.b1}</p>
                                 <p className='my-1'>{product.ab1}</p>
                                 <p className='my-1'>{product.ab2}</p>
                                 <p className='my-1'>{product.ab3}</p>
