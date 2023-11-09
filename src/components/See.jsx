@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -22,7 +23,9 @@ const See = () => {
                     effective, environment oriented and educationally impactful. Schedule a meeting
                     with us and take your first step towards becoming energy efficient.
                 </p>
+                <Link to='/getAQuote'>
                 <button className='w-[137px] h-[50px] bg-yellow text-green rounded-md p-1 text-sm'>SCHEDULE NOW</button>
+                </Link>
             </div>
         </Section>
     );

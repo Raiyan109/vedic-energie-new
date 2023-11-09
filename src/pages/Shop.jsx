@@ -3,13 +3,22 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
+const Spinner = () => (
+    <div className="mx-auto border-t-4 border-yellow border-solid border-1/4 w-16 h-16 rounded-full animate-spin">
+      {/* Add your spinner design or loading text here */}
+  </div>
+  );
+  
 const Shop = () => {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         fetch('https://vedic-energie-server-6c3c7yp8s-polyakhtar.vercel.app/products')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);
+                setLoading(false);
             });
     }, []);
 
@@ -17,6 +26,10 @@ const Shop = () => {
         <div className=' '>
             <Header />
             <section className='bg-blue mx-auto flex items-center h-full lg:p-32 pb-10 pt-32' >
+            {loading ? (
+                    <Spinner /> // Show spinner when loading is true
+                ) : (
+
                 <div className="flex lg:mx-auto mx-auto grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-6 overflow-hidden rounded-lg shadow-lg">
                     {
                         data.map(solar => (
@@ -44,6 +57,7 @@ const Shop = () => {
                     }
 
                 </div>
+                )}
             </section>
             <Footer />
         </div>

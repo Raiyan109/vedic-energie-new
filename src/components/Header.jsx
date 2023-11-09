@@ -78,10 +78,10 @@ const Header = () => {
 
     return (
 
-        <div className={color ? 'bg-rgbaHeader transition-all  w-full h-[100px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
+        <div style={{backgroundColor:"#05386B"}} className={color ? 'bg-rgbaHeader transition-all  w-full h-[100px] z-10 p-10' : 'fixed w-full h-[90px] z-10 p-10'}>
 
 
-            <nav style={{ marginTop: "-25px" }} className="px-2 sm:px-4">
+            <nav style={{ marginTop: "-30px" }} className="px-2 sm:px-4">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <Link className="flex items-center" to='/'>
                         <img src={logo} alt='header-logo' style={{ width: "70px", height: "70px" }}></img>
