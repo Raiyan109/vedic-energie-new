@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import GetAQuote from './GetAQuote';
+// import GetAQuote from './GetAQuote';
 import logo from '../assets/logo-without-border.png';
 // import { HashLink as NavLink } from 'react-router-hash-link';
 import './style.css'
@@ -132,9 +132,9 @@ const Header = () => {
                             <li className={activeLink === 'energyRes' ? 'active' : ''}>
                                 <a href="#energyRes" onClick={(e) => handleClick(e, 'energyRes')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>Services</a>
                             </li>
-                            <li className={activeLink === 'article' ? 'active' : ''}>
+                            {/* <li className={activeLink === 'article' ? 'active' : ''}>
                                 <a href="#article" onClick={(e) => handleClick(e, 'article')} className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-white'>Blog</a>
-                            </li>
+                            </li> */}
 
                             {/*  */}
                             {/* <li className='block py-2 lg:pr-4 lg:pl-3 lg:text-xl md:text-sm text-xl font-bold text-green'>

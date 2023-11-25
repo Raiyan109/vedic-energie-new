@@ -41,8 +41,6 @@ const ProductDetail = () => {
                                                 <div className='lg:w-1/2 w-full lg:p-0 p-8'>
                                                     <h1 className='text-2xl text-yellow font-semibold'>{product.productName}</h1>
                                                     <p className='my-3'>
-                                                        <span>Brand: </span>
-                                                        <span>{product.brand}</span>
                                                     </p>
                                                     <div className='my-5'>
                                                         <h3 className='font-semibold text-yellow'>{product.hp1}</h3>

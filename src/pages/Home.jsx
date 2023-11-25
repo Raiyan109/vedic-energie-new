@@ -6,7 +6,7 @@ import Efficient from '../components/Efficient';
 import EnergyResidency from '../components/EnergyResidency';
 import Upcoming from '../components/Upcoming';
 import See from '../components/See';
-import Articles from '../components/Articles';
+// import Articles from '../components/Articles';
 import Affiliate from '../components/Affiliate';
 import BackToTopButton from '../components/BackToTopButton';
 import Hero from '../components/Hero';
@@ -28,7 +28,7 @@ const Home = () => {
             {/* <Client />
             <Brands /> */}
             <See />
-            <Articles />
+            {/* <Articles /> */}
              <Footer /> 
             <BackToTopButton />
         </div>
