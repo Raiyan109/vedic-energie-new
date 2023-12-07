@@ -28,12 +28,12 @@ select {
  }
 `
 
-const GeyserConsumption = ({ geyserSelectedConsumptionTime, isGeyserOn, handleConsumptionTimeSelect }) => {
+const GeyserConsumption = ({ geyserSelectedConsumptionTime, isCFL, handleConsumptionTimeSelect }) => {
     return (
         <>
             <Section>
                 <select name="watt" id="watt" value={geyserSelectedConsumptionTime}
-                    disabled={!isGeyserOn}
+                    disabled={!isCFL}
                     onChange={handleConsumptionTimeSelect}
                     className='w-36 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
 

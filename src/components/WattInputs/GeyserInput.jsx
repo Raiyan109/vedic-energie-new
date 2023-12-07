@@ -27,13 +27,13 @@ select {
     border-bottom: 1px solid #FEFFCD;
  }
 `
-const GeyserInput = ({ geyserSelectedWattage, isGeyserOn, handleWattageSelect }) => {
+const GeyserInput = ({ geyserSelectedWattage, isCFL, handleWattageSelect }) => {
     return (
         <>
             <Section>
                 <select name="watt" id="watt"
                     value={geyserSelectedWattage}
-                    disabled={!isGeyserOn}
+                    disabled={!isCFL}
                     onChange={handleWattageSelect}
                     className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
                     {

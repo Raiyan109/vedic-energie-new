@@ -28,13 +28,13 @@ select {
  }
 `
 
-const GeyserNoOfLoads = ({geyserSelectedLoads, isGeyserOn, handleLoadsSelect}) => {
+const GeyserNoOfLoads = ({geyserSelectedLoads, isCFL, handleLoadsSelect}) => {
   return (
     <div>
         <Section>
                 <select name="loads" id="loads"
                     value={geyserSelectedLoads}
-                    disabled={!isGeyserOn}
+                    disabled={!isCFL}
                     onChange={handleLoadsSelect}
                     className='w-16 h-8 bg-lightGreen rounded-md flex justify-center items-center text-xl text-rgbaHeader select'>
                     {
