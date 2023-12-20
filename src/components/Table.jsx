@@ -84,8 +84,8 @@ const Table = () => {
     const [isCCTVCameraOn, setIsCCTVCameraOn] = useState(false);
     const [isBlenderOn, setIsBlenderOn] = useState(false);
     const [isKettleOn, setIsKettleOn] = useState(false);
-    const [showPieChart,setShowPieChart]=useState(false);
-   
+    const [showPieChart, setShowPieChart] = useState(false);
+
 
 
 
@@ -93,118 +93,119 @@ const Table = () => {
     const [SelectedWattage, setSelectedWattage] = useState("");
     const [SelectedLoads, setSelectedLoads] = useState("");
     const [SelectedConsumptionTime, setSelectedConsumptionTime] = useState("");
-    const [tubelightSelectedWattage, setTubelightSelectedWattage] = useState("");
+    const [tubelightSelectedWattage, setTubelightSelectedWattage] = useState(40);
     const [tubelightSelectedLoads, setTubelightSelectedLoads] = useState("");
     const [tubelightSelectedConsumptionTime, setTubelightSelectedConsumptionTime] = useState("");
-    const [cflSelectedWattage, setCFLSelectedWattage] = useState('')
+    const [cflSelectedWattage, setCFLSelectedWattage] = useState(30)
     const [cflSelectedLoads, setCFLSelectedLoads] = useState('')
     const [cflSelectedConsumptionTime, setCFLSelectedConsumptionTime] = useState('')
-    const [LEDSelectedWattage, setLEDSelectedWattage] = useState('')
+    const [LEDSelectedWattage, setLEDSelectedWattage] = useState(9)
     const [LEDselectedLoads, setLEDSelectedLoads] = useState("")
     const [LEDSelectedConsumptionTime, setLEDSelectedConsumptionTime] = useState('');
-    const [bulbSelectedWattage, setBulbSelectedWattage] = useState("");
+    const [bulbSelectedWattage, setBulbSelectedWattage] = useState(60);
     const [bulbSelectedLoads, setBulbSelectedLoads] = useState("");
     const [bulbSelectedConsumptionTime, setBulbSelectedConsumptionTime] = useState("");
-    const [ceilingFanSelectddWattage, setCeilingfanSelectedWattage] = useState("");
+    const [ceilingFanSelectddWattage, setCeilingfanSelectedWattage] = useState(75);
     const [ceilingFanSelectedLoads, setCeilingFanSelectedLoads] = useState("");
     const [ceilingFanSelectedConsumptionTime, setceilingFanSelectedConsumptionTime] = useState("");
-    const [tableFanSelectddWattage, setTablefanSelectedWattage] = useState("");
+    const [tableFanSelectddWattage, setTablefanSelectedWattage] = useState(50);
     const [tableFanSelectedLoads, setTableFanSelectedLoads] = useState("");
     const [tableFanSelectedConsumptionTime, setTableFanSelectedConsumptionTime] = useState("");
-    const [roomCoolerSelectddWattage, setRoomCoolerSelectedWattage] = useState("");
+    const [roomCoolerSelectddWattage, setRoomCoolerSelectedWattage] = useState(250);
     const [roomCoolerSelectedLoads, setRoomCoolerSelectedLoads] = useState("");
-    const [roomCoolerSelectedConsumptionTime, setRoomCoolerSelectedConsumptionTime] = useState("");
-    const [refigeratorSelectddWattage, setRefigeratorSelectedWattage] = useState("");
+    const [roomCoolerSelectedConsumptionTime, setRoomCoolerSelectedConsumptionTime] = useState();
+    const [refigeratorSelectddWattage, setRefigeratorSelectedWattage] = useState(500);
     const [refigeratorSelectedLoads, setRefigeratorSelectedLoads] = useState("");
     const [refigeratorSelectedConsumptionTime, setRefigeratorSelectedConsumptionTime] = useState("");
-    const [tvSelectedWattage, setTvSelectedWattage] = useState("");
+    const [tvSelectedWattage, setTvSelectedWattage] = useState(100);
     const [tvSelectedLoads, setTvSelectedLoads] = useState("");
     const [tvSelectedConsumptionTime, setTvSelectedConsumtiontime] = useState("");
-    const [laptopSelectedWattage, setLaptopSelectedWattage] = useState("");
+    const [laptopSelectedWattage, setLaptopSelectedWattage] = useState(100);
     const [laptopSelectedLoads, setLaptopSelectedLoads] = useState("");
     const [laptopSelectedConsumptionTime, setLaptopSelectedConsumption] = useState("");
-    const [computerSelectedWattage, setComputerSelectedWattage] = useState("");
+    const [computerSelectedWattage, setComputerSelectedWattage] = useState(200);
     const [computerSelectedLoads, setComputerSelectedLoads] = useState("");
     const [computerSelectedConsumptionTime, setComputerSelectedConsumption] = useState("");
-    const [printerSmallSelectedWattage, setPrinterSmallSelectedWattage] = useState("");
+    const [printerSmallSelectedWattage, setPrinterSmallSelectedWattage] = useState(200);
     const [printerSmallSelectedLoads, setPrinterSmallSelectedLoads] = useState("");
     const [printerSmallSelectedConsumptionTime, setPrinterSmallSelectedConsumption] = useState("");
-    const [microWaveSelectedWattage, setMicroWaveSelectedWattage] = useState("");
+    const [microWaveSelectedWattage, setMicroWaveSelectedWattage] = useState(1400);
     const [microWaveSelectedLoads, setMicroWaveSelectedLoads] = useState("");
     const [microWaveSelectedConsumptionTime, setMicroWaveSelectedConsumption] = useState("");
-    const [juicerMixerSelectedWattage, setJuicerMixerSelectedWattage] = useState("");
+    const [juicerMixerSelectedWattage, setJuicerMixerSelectedWattage] = useState(800);
     const [juicerMixerSelectedLoads, setJuicerMixerSelectedLoads] = useState("");
     const [juicerMixerSelectedConsumptionTime, setJuicerMixerSelectedConsumption] = useState("");
-    const [toasterSelectedWattage, setToasterSelectedWattage] = useState("");
+    const [toasterSelectedWattage, setToasterSelectedWattage] = useState(800);
     const [toasterSelectedLoads, setToasterSelectedLoads] = useState("");
     const [toasterSelectedConsumptionTime, setToasterSelectedConsumption] = useState("");
-    const [geyserSelectedWattage, setGeyserSelectedWattage] = useState("");
+    const [geyserSelectedWattage, setGeyserSelectedWattage] = useState(2200);
     const [geyserSelectedLoads, setGeyserSelectedLoads] = useState("");
     const [geyserSelectedConsumptionTime, setGeyserSelectedConsumption] = useState("");
-    const [ac1TonSelectedWattage, setAc1TonSelectedWattage] = useState("");
+    const [ac1TonSelectedWattage, setAc1TonSelectedWattage] = useState(1200);
     const [ac1TonSelectedLoads, setAc1TonSelectedLoads] = useState("");
     const [ac1TonSelectedConsumptionTime, setAc1TonSelectedConsumption] = useState("");
-    const [ac15TonSelectedWattage, setAc15TonSelectedWattage] = useState("");
+    const [ac15TonSelectedWattage, setAc15TonSelectedWattage] = useState(1700);
     const [ac15TonSelectedLoads, setAc15TonSelectedLoads] = useState("");
     const [ac15TonSelectedConsumptionTime, setAc15TonSelectedConsumption] = useState("");
-    const [ac2TonSelectedWattage, setAc2TonSelectedWattage] = useState("");
+    const [ac2TonSelectedWattage, setAc2TonSelectedWattage] = useState(2300);
     const [ac2TonSelectedLoads, setAc2TonSelectedLoads] = useState("");
     const [ac2TonSelectedConsumptionTime, setAc2TonSelectedConsumption] = useState("");
-    const [washingMachineSelectedWattage, setWashingMachineSelectedWattage] = useState("");
+    const [washingMachineSelectedWattage, setWashingMachineSelectedWattage] = useState(1000);
     const [washingMachineSelectedLoads, setWashingMachineSelectedLoads] = useState("");
     const [washingMachineSelectedConsumptionTime, setWashingMachineSelectedConsumption] = useState("");
-    const [ironSelectedConsumptionTime, setIronSelectedConsumption] = useState("");
+    const [ironSelectedWattage, setIronSelectedWattage] = useState(1200);
+    const [ironSelectedConsumptionTime, setIronSelectedConsumption] = useState();
     const [ironSelectedLoads, setIronSelectedLoads] = useState("");
-    const [ironSelectedWattage, setIronSelectedWattage] = useState("");
+    const [vaccumCleanerSelectedWattage, setVaccumCleanerSelectedWattage] = useState(1400);
     const [vaccumCleanerSelectedConsumptionTime, setVaccumCleanerSelectedConsumption] = useState("");
     const [vaccumCleanerSelectedLoads, setVaccumCleanerSelectedLoads] = useState("");
-    const [vaccumCleanerSelectedWattage, setVaccumCleanerSelectedWattage] = useState("");
+    const [exhaustFansSelectedWattage, setExhaustFansSelectedWattage] = useState(40);
     const [exhaustFansSelectedConsumptionTime, setExhaustFansSelectedConsumption] = useState("");
     const [exhaustFansSelectedLoads, setExhaustFansSelectedLoads] = useState("");
-    const [exhaustFansSelectedWattage, setExhaustFansSelectedWattage] = useState("");
+    const [phoneChargerSelectedWattage, setPhoneChargerSelectedWattage] = useState(40);
     const [phoneChargerSelectedConsumptionTime, setPhoneChargerSelectedConsumption] = useState("");
     const [phoneChargerSelectedLoads, setPhoneChargerSelectedLoads] = useState("");
-    const [phoneChargerSelectedWattage, setPhoneChargerSelectedWattage] = useState("");
+    const [setTopBoxSelectedWattage, setSetTopBoxSelectedWattage] = useState(40);
     const [setTopBoxSelectedConsumptionTime, setSetTopBoxSelectedConsumption] = useState("");
     const [setTopBoxSelectedLoads, setSetTopBoxSelectedLoads] = useState("");
-    const [setTopBoxSelectedWattage, setSetTopBoxSelectedWattage] = useState("");
+    const [wifiRouterSelectedWattage, setWifiRouterSelectedWattage] = useState(20);
     const [wifiRouterSelectedConsumptionTime, setWifiRouterSelectedConsumption] = useState("");
     const [wifiRouterSelectedLoads, setWifiRouterSelectedLoads] = useState("");
-    const [wifiRouterSelectedWattage, setWifiRouterSelectedWattage] = useState("");
+    const [waterPurifierSelectedWattage, setWaterPurifierSelectedWattage] = useState(90);
     const [waterPurifierSelectedConsumptionTime, setWaterPurifierSelectedConsumption] = useState("");
     const [waterPurifierSelectedLoads, setWaterPurifierSelectedLoads] = useState("");
-    const [waterPurifierSelectedWattage, setWaterPurifierSelectedWattage] = useState("");
+    const [airPurifierSelectedWattage, setAirPurifierSelectedWattage] = useState(215);
     const [airPurifierSelectedConsumptionTime, setAirPurifierSelectedConsumption] = useState("");
     const [airPurifierSelectedLoads, setAirPurifierSelectedLoads] = useState("");
-    const [airPurifierSelectedWattage, setAirPurifierSelectedWattage] = useState("");
+    const [hairApplianceSelectedWattage, setHairApplianceSelectedWattage] = useState(1600);
     const [hairApplianceSelectedConsumptionTime, setHairApplianceSelectedConsumption] = useState("");
     const [hairApplianceSelectedLoads, setHairApplianceSelectedLoads] = useState("");
-    const [hairApplianceSelectedWattage, setHairApplianceSelectedWattage] = useState("");
+    const [dishWasherSelectedWattage, setDishWasherSelectedWattage] = useState(1800);
     const [dishWasherSelectedConsumptionTime, setDishWasherSelectedConsumption] = useState("");
     const [dishWasherSelectedLoads, setDishWasherSelectedLoads] = useState("");
-    const [dishWasherSelectedWattage, setDishWasherSelectedWattage] = useState("");
+    const [inductionCooktopSelectedWattage, setInductionCooktopSelectedWattage] = useState(2500);
     const [inductionCooktopSelectedConsumptionTime, setInductionCooktopSelectedConsumption] = useState("");
     const [inductionCooktopSelectedLoads, setInductionCooktopSelectedLoads] = useState("");
-    const [inductionCooktopSelectedWattage, setInductionCooktopSelectedWattage] = useState("");
-    const [speakerSelectedWattage, setSpeakerSelectedWattage] = useState("");
+    const [speakerSelectedWattage, setSpeakerSelectedWattage] = useState(80);
     const [speakerSelectedLoads, setSpeakerSelectedLoads] = useState("");
     const [speakerSelectedConsumptionTime, setSpeakerSelectedConsumptionTime] = useState("");
-    const [coffeeMakerSelectedWattage, setCoffeeMakerSelectedWattage] = useState("");
+    const [coffeeMakerSelectedWattage, setCoffeeMakerSelectedWattage] = useState(1300);
     const [coffeeMakerSelectedLoads, setCoffeeMakerSelectedLoads] = useState("");
     const [coffeeMakerSelectedConsumptionTime, setCoffeeMakerSelectedConsumptionTime] = useState("");
-    const [cctvCameraSelectedWattage, setCCTVCameraSelectedWattage] = useState("");
+    const [cctvCameraSelectedWattage, setCCTVCameraSelectedWattage] = useState(100);
     const [cctvCameraSelectedLoads, setCCTVCameraSelectedLoads] = useState("");
     const [cctvCameraSelectedConsumptionTime, setCCTVCameraSelectedConsumptionTime] = useState("");
-    const [blenderSelectedWattage, setBlenderSelectedWattage] = useState("");
+    const [blenderSelectedWattage, setBlenderSelectedWattage] = useState(420);
     const [blenderSelectedLoads, setBlenderSelectedLoads] = useState("");
     const [blenderSelectedConsumptionTime, setBlenderSelectedConsumptionTime] = useState("");
-    const [kettleSelectedWattage, setKettleSelectedWattage] = useState("");
+    const [kettleSelectedWattage, setKettleSelectedWattage] = useState(1200);
     const [kettleSelectedLoads, setKettleSelectedLoads] = useState("");
     const [kettleSelectedConsumptionTime, setKettleSelectedConsumptionTime] = useState("");
-   
+
 
     // State variables for total sum
-    const [airTotal, setAirTotal] = useState(0);
+    const [tubeLightTotal, setTubeLightTotal] = useState(0);
+    const [cflTotal, setCflTotal]=useState(0);
     const [LEDTotal, setLEDTotal] = useState(0)
     const [bulbTotal, setBulbTotal] = useState(0);
     const [ceilingFantotal, setCeilingFanTotal] = useState(0);
@@ -239,8 +240,8 @@ const Table = () => {
     const [cctvCameraTotal, setCCTVCameraTotal] = useState(0);
     const [blenderTotal, setBlenderTotal] = useState(0);
     const [kettleTotal, setKettleTotal] = useState(0);
-   
-   
+
+
 
 
     // const handleSummerClick = () => {
@@ -262,7 +263,6 @@ const Table = () => {
     const handleTubelighToggle = () => {
         setIsTubelightOn(!isTubelightOn)
     }
-
     const handleCFLToggle = () => {
         setIsCFLOn(!isCFLOn)
     }
@@ -368,125 +368,6 @@ const Table = () => {
     const handleKettleToggle = () => {
         setIsKettleOn(!isKettleOn)
     }
-
-    // Watt and Consumption calculation functions
-    useEffect(() => {
-        setAirTotal(+tubelightSelectedWattage * +tubelightSelectedLoads * +tubelightSelectedConsumptionTime);
-    }, [tubelightSelectedWattage, tubelightSelectedLoads, tubelightSelectedConsumptionTime]);
-
-    useEffect(() => {
-        setGeyserTotal(+cflSelectedWattage * +cflSelectedLoads * +cflSelectedConsumptionTime);
-        // console.log(geyserTotal);
-    }, [cflSelectedWattage, cflSelectedLoads, cflSelectedConsumptionTime]);
-    useEffect(() => {
-        setLEDTotal(+LEDSelectedWattage * +LEDselectedLoads * +LEDSelectedConsumptionTime);
-        // console.log(LEDTotal);
-    }, [LEDSelectedWattage, LEDSelectedConsumptionTime]);
-    useEffect(() => {
-        setBulbTotal(+bulbSelectedWattage * +bulbSelectedLoads * +bulbSelectedConsumptionTime);
-        // console.log(bulbTotal);
-    }, [bulbSelectedWattage, bulbSelectedLoads, bulbSelectedConsumptionTime]);
-    useEffect(() => {
-        setCeilingFanTotal(+ceilingFanSelectddWattage * +ceilingFanSelectedLoads * +ceilingFanSelectedConsumptionTime);
-    }, [ceilingFanSelectddWattage, ceilingFanSelectedLoads, ceilingFanSelectedConsumptionTime]);
-    useEffect(() => {
-        setTableFanTotal(+tableFanSelectddWattage * +tableFanSelectedLoads * +tableFanSelectedConsumptionTime);
-    }, [tableFanSelectddWattage, tableFanSelectedLoads, tableFanSelectedConsumptionTime]);
-    useEffect(() => {
-        setRoomCoolerTotal(+roomCoolerSelectddWattage * +roomCoolerSelectedLoads * +roomCoolerSelectedConsumptionTime);
-    }, [roomCoolerSelectddWattage, roomCoolerSelectedLoads, roomCoolerSelectedConsumptionTime]);
-    useEffect(() => {
-        setRefigeratorTotal(+refigeratorSelectddWattage * +refigeratorSelectedLoads * +refigeratorSelectedConsumptionTime);
-    }, [refigeratorSelectddWattage, refigeratorSelectedLoads, refigeratorSelectedConsumptionTime]);
-    useEffect(() => {
-        setTvTotal(+tvSelectedWattage * +tvSelectedLoads * +tvSelectedConsumptionTime);
-    }, [tvSelectedWattage, tvSelectedLoads, tvSelectedConsumptionTime]);
-    useEffect(() => {
-        setLaptopTotal(+laptopSelectedWattage * +laptopSelectedLoads * +laptopSelectedConsumptionTime);
-    }, [laptopSelectedWattage, laptopSelectedLoads, laptopSelectedConsumptionTime]);
-    useEffect(() => {
-        setComputerTotal(+computerSelectedWattage * +computerSelectedLoads * +computerSelectedConsumptionTime);
-    }, [computerSelectedWattage, computerSelectedLoads, computerSelectedConsumptionTime]);
-    useEffect(() => {
-        setPrinterSmallTotal(+printerSmallSelectedWattage * +printerSmallSelectedLoads * +printerSmallSelectedConsumptionTime);
-    }, [printerSmallSelectedWattage, printerSmallSelectedLoads, printerSmallSelectedConsumptionTime]);
-    useEffect(() => {
-        setMicroWaveTotal(+microWaveSelectedWattage * +microWaveSelectedLoads * +microWaveSelectedConsumptionTime);
-    }, [microWaveSelectedWattage, microWaveSelectedLoads, microWaveSelectedConsumptionTime]);
-    useEffect(() => {
-        setJuicerMixerTotal(+juicerMixerSelectedWattage * +juicerMixerSelectedLoads * +juicerMixerSelectedConsumptionTime);
-    }, [juicerMixerSelectedWattage, juicerMixerSelectedLoads, juicerMixerSelectedConsumptionTime]);
-    useEffect(() => {
-        setToasterTotal(+toasterSelectedWattage * +toasterSelectedLoads * +toasterSelectedConsumptionTime);
-    }, [toasterSelectedWattage, toasterSelectedLoads, toasterSelectedConsumptionTime]);
-    useEffect(() => {
-        setGeyserTotal(+geyserSelectedWattage * +geyserSelectedLoads * +geyserSelectedConsumptionTime);
-    }, [geyserSelectedWattage, geyserSelectedLoads, geyserSelectedConsumptionTime]);
-    useEffect(() => {
-        setAc1TonTotal(+ac1TonSelectedWattage * +ac1TonSelectedLoads * +ac1TonSelectedConsumptionTime);
-    }, [ac1TonSelectedWattage, ac1TonSelectedLoads, ac1TonSelectedConsumptionTime]);
-    useEffect(() => {
-        setAc15TonTotal(+ac15TonSelectedWattage * +ac15TonSelectedLoads * +ac15TonSelectedConsumptionTime);
-    }, [ac15TonSelectedWattage, ac15TonSelectedLoads, ac15TonSelectedConsumptionTime]);
-    useEffect(() => {
-        setAc2TonTotal(+ac2TonSelectedWattage * +ac2TonSelectedLoads * +ac2TonSelectedConsumptionTime);
-    }, [ac2TonSelectedWattage, ac2TonSelectedLoads, ac2TonSelectedConsumptionTime]);
-    useEffect(() => {
-        setWashingMachineTotal(+washingMachineSelectedWattage * +washingMachineSelectedLoads * +washingMachineSelectedConsumptionTime);
-    }, [washingMachineSelectedWattage, washingMachineSelectedLoads, washingMachineSelectedConsumptionTime]);
-    useEffect(() => {
-        setIronTotal(+ironSelectedWattage * +ironSelectedLoads * +ironSelectedConsumptionTime);
-    }, [ironSelectedWattage, ironSelectedLoads, ironSelectedConsumptionTime]);
-    useEffect(() => {
-        setVaccumCleanerTotal(+vaccumCleanerSelectedWattage * +vaccumCleanerSelectedLoads * +vaccumCleanerSelectedConsumptionTime);
-    }, [vaccumCleanerSelectedWattage, vaccumCleanerSelectedLoads, vaccumCleanerSelectedConsumptionTime]);
-    useEffect(() => {
-        setExhaustFansTotal(+exhaustFansSelectedWattage * +exhaustFansSelectedLoads * +exhaustFansSelectedConsumptionTime);
-    }, [exhaustFansSelectedWattage, exhaustFansSelectedLoads, exhaustFansSelectedConsumptionTime]);
-    useEffect(() => {
-        setPhoneChargerTotal(+phoneChargerSelectedWattage * +phoneChargerSelectedLoads * +phoneChargerSelectedConsumptionTime);
-    }, [phoneChargerSelectedWattage, phoneChargerSelectedLoads, phoneChargerSelectedConsumptionTime]);
-    useEffect(() => {
-        setSetTopBoxTotal(+setTopBoxSelectedWattage * +setTopBoxSelectedLoads * +setTopBoxSelectedConsumptionTime);
-    }, [setTopBoxSelectedWattage, setTopBoxSelectedLoads, setTopBoxSelectedConsumptionTime]);
-    useEffect(() => {
-        setWifiRouterTotal(+wifiRouterSelectedWattage * +wifiRouterSelectedLoads * +wifiRouterSelectedConsumptionTime);
-    }, [wifiRouterSelectedWattage, wifiRouterSelectedLoads, wifiRouterSelectedConsumptionTime]);
-    useEffect(() => {
-        setWaterPurifierTotal(+waterPurifierSelectedWattage * +waterPurifierSelectedLoads * +waterPurifierSelectedConsumptionTime);
-    }, [waterPurifierSelectedWattage, waterPurifierSelectedLoads, waterPurifierSelectedConsumptionTime]);
-    useEffect(() => {
-        setAirPurifierTotal(+airPurifierSelectedWattage * +airPurifierSelectedLoads * +airPurifierSelectedConsumptionTime);
-    }, [airPurifierSelectedWattage, airPurifierSelectedLoads, airPurifierSelectedConsumptionTime]);
-    useEffect(() => {
-        setHairApplianceTotal(+hairApplianceSelectedWattage * +hairApplianceSelectedLoads * +hairApplianceSelectedConsumptionTime);
-    }, [hairApplianceSelectedWattage, hairApplianceSelectedLoads, hairApplianceSelectedConsumptionTime]);
-    useEffect(() => {
-        setDishWasherTotal(+dishWasherSelectedWattage * +dishWasherSelectedLoads * +dishWasherSelectedConsumptionTime);
-    }, [dishWasherSelectedWattage, dishWasherSelectedLoads, dishWasherSelectedConsumptionTime]);
-    useEffect(() => {
-        setInductionCooktopTotal(+inductionCooktopSelectedWattage * +inductionCooktopSelectedLoads * +inductionCooktopSelectedConsumptionTime);
-    }, [inductionCooktopSelectedWattage, inductionCooktopSelectedLoads, inductionCooktopSelectedConsumptionTime]);
-    useEffect(() => {
-        setSpeakerTotal(+speakerSelectedWattage * +speakerSelectedLoads * +speakerSelectedConsumptionTime);
-        // console.log(ovenTotal);
-    }, [speakerSelectedWattage, speakerSelectedLoads, speakerSelectedConsumptionTime]);
-    useEffect(() => {
-        setCoffeeMakerTotal(+coffeeMakerSelectedWattage * +coffeeMakerSelectedLoads * +coffeeMakerSelectedConsumptionTime);
-        // console.log(lightsTotal);
-    }, [coffeeMakerSelectedWattage, coffeeMakerSelectedLoads, coffeeMakerSelectedConsumptionTime]);
-    useEffect(() => {
-        setCCTVCameraTotal(+cctvCameraSelectedWattage * +cctvCameraSelectedLoads * +cctvCameraSelectedConsumptionTime);
-        // console.log(lightsTotal);
-    }, [cctvCameraSelectedWattage, cctvCameraSelectedLoads, cctvCameraSelectedConsumptionTime]);
-    useEffect(() => {
-        setBlenderTotal(+blenderSelectedWattage * +blenderSelectedLoads * +blenderSelectedConsumptionTime);
-        // console.log(ovenTotal);
-    }, [blenderSelectedWattage, blenderSelectedLoads, blenderSelectedConsumptionTime]);
-    useEffect(() => {
-        setKettleTotal(+kettleSelectedWattage * +kettleSelectedLoads * +kettleSelectedConsumptionTime);
-        // console.log(ovenTotal);
-    }, [kettleSelectedWattage, kettleSelectedLoads, kettleSelectedConsumptionTime]);
 
 
     // Watt
@@ -610,6 +491,7 @@ const Table = () => {
     }
     const handleTubelightLoadsSelect = (event) => {
         setTubelightSelectedLoads(event.target.value);
+        console.log(event.target.value);
     };
     const handleCFLLoadsSelect = (event) => {
         setCFLSelectedLoads(event.target.value);
@@ -726,8 +608,7 @@ const Table = () => {
     }
     const handleTubelightConsumptionTimeSelect = (event) => {
         setTubelightSelectedConsumptionTime(event.target.value);
-    };
-
+    }
     const handleCFLConsumptionTimeSelect = (event) => {
         setCFLSelectedConsumptionTime(event.target.value)
     };
@@ -834,6 +715,126 @@ const Table = () => {
         setKettleSelectedConsumptionTime(event.target.value);
     };
 
+    // Watt and Consumption calculation functions
+    useEffect(() => {
+        setTubeLightTotal(+tubelightSelectedWattage * +tubelightSelectedLoads * +tubelightSelectedConsumptionTime);
+    }, [tubelightSelectedWattage, tubelightSelectedLoads, tubelightSelectedConsumptionTime]);
+    useEffect(() => {
+        setCflTotal(+cflSelectedWattage * +cflSelectedLoads * +cflSelectedConsumptionTime);
+    }, [cflSelectedWattage, cflSelectedLoads, cflSelectedConsumptionTime]);
+    useEffect(() => {
+        setGeyserTotal(+cflSelectedWattage * +cflSelectedLoads * +cflSelectedConsumptionTime);
+        // console.log(geyserTotal);
+    }, [cflSelectedWattage, cflSelectedLoads, cflSelectedConsumptionTime]);
+    useEffect(() => {
+        setLEDTotal(+LEDSelectedWattage * +LEDselectedLoads * +LEDSelectedConsumptionTime);
+        // console.log(LEDTotal);
+    }, [LEDSelectedWattage, LEDSelectedConsumptionTime]);
+    useEffect(() => {
+        setBulbTotal(+bulbSelectedWattage * +bulbSelectedLoads * +bulbSelectedConsumptionTime);
+        // console.log(bulbTotal);
+    }, [bulbSelectedWattage, bulbSelectedLoads, bulbSelectedConsumptionTime]);
+    useEffect(() => {
+        setCeilingFanTotal(+ceilingFanSelectddWattage * +ceilingFanSelectedLoads * +ceilingFanSelectedConsumptionTime);
+    }, [ceilingFanSelectddWattage, ceilingFanSelectedLoads, ceilingFanSelectedConsumptionTime]);
+    useEffect(() => {
+        setTableFanTotal(+tableFanSelectddWattage * +tableFanSelectedLoads * +tableFanSelectedConsumptionTime);
+    }, [tableFanSelectddWattage, tableFanSelectedLoads, tableFanSelectedConsumptionTime]);
+    useEffect(() => {
+        setRoomCoolerTotal(+roomCoolerSelectddWattage * +roomCoolerSelectedLoads * +roomCoolerSelectedConsumptionTime);
+    }, [roomCoolerSelectddWattage, roomCoolerSelectedLoads, roomCoolerSelectedConsumptionTime]);
+    useEffect(() => {
+        setRefigeratorTotal(+refigeratorSelectddWattage * +refigeratorSelectedLoads * +refigeratorSelectedConsumptionTime);
+    }, [refigeratorSelectddWattage, refigeratorSelectedLoads, refigeratorSelectedConsumptionTime]);
+    useEffect(() => {
+        setTvTotal(+tvSelectedWattage * +tvSelectedLoads * +tvSelectedConsumptionTime);
+    }, [tvSelectedWattage, tvSelectedLoads, tvSelectedConsumptionTime]);
+    useEffect(() => {
+        setLaptopTotal(+laptopSelectedWattage * +laptopSelectedLoads * +laptopSelectedConsumptionTime);
+    }, [laptopSelectedWattage, laptopSelectedLoads, laptopSelectedConsumptionTime]);
+    useEffect(() => {
+        setComputerTotal(+computerSelectedWattage * +computerSelectedLoads * +computerSelectedConsumptionTime);
+    }, [computerSelectedWattage, computerSelectedLoads, computerSelectedConsumptionTime]);
+    useEffect(() => {
+        setPrinterSmallTotal(+printerSmallSelectedWattage * +printerSmallSelectedLoads * +printerSmallSelectedConsumptionTime);
+    }, [printerSmallSelectedWattage, printerSmallSelectedLoads, printerSmallSelectedConsumptionTime]);
+    useEffect(() => {
+        setMicroWaveTotal(+microWaveSelectedWattage * +microWaveSelectedLoads * +microWaveSelectedConsumptionTime);
+    }, [microWaveSelectedWattage, microWaveSelectedLoads, microWaveSelectedConsumptionTime]);
+    useEffect(() => {
+        setJuicerMixerTotal(+juicerMixerSelectedWattage * +juicerMixerSelectedLoads * +juicerMixerSelectedConsumptionTime);
+    }, [juicerMixerSelectedWattage, juicerMixerSelectedLoads, juicerMixerSelectedConsumptionTime]);
+    useEffect(() => {
+        setToasterTotal(+toasterSelectedWattage * +toasterSelectedLoads * +toasterSelectedConsumptionTime);
+    }, [toasterSelectedWattage, toasterSelectedLoads, toasterSelectedConsumptionTime]);
+    useEffect(() => {
+        setGeyserTotal(+geyserSelectedWattage * +geyserSelectedLoads * +geyserSelectedConsumptionTime);
+    }, [geyserSelectedWattage, geyserSelectedLoads, geyserSelectedConsumptionTime]);
+    useEffect(() => {
+        setAc1TonTotal(+ac1TonSelectedWattage * +ac1TonSelectedLoads * +ac1TonSelectedConsumptionTime);
+    }, [ac1TonSelectedWattage, ac1TonSelectedLoads, ac1TonSelectedConsumptionTime]);
+    useEffect(() => {
+        setAc15TonTotal(+ac15TonSelectedWattage * +ac15TonSelectedLoads * +ac15TonSelectedConsumptionTime);
+    }, [ac15TonSelectedWattage, ac15TonSelectedLoads, ac15TonSelectedConsumptionTime]);
+    useEffect(() => {
+        setAc2TonTotal(+ac2TonSelectedWattage * +ac2TonSelectedLoads * +ac2TonSelectedConsumptionTime);
+    }, [ac2TonSelectedWattage, ac2TonSelectedLoads, ac2TonSelectedConsumptionTime]);
+    useEffect(() => {
+        setWashingMachineTotal(+washingMachineSelectedWattage * +washingMachineSelectedLoads * +washingMachineSelectedConsumptionTime);
+    }, [washingMachineSelectedWattage, washingMachineSelectedLoads, washingMachineSelectedConsumptionTime]);
+    useEffect(() => {
+        setIronTotal(+ironSelectedWattage * +ironSelectedLoads * +ironSelectedConsumptionTime);
+    }, [ironSelectedWattage, ironSelectedLoads, ironSelectedConsumptionTime]);
+    useEffect(() => {
+        setVaccumCleanerTotal(+vaccumCleanerSelectedWattage * +vaccumCleanerSelectedLoads * +vaccumCleanerSelectedConsumptionTime);
+    }, [vaccumCleanerSelectedWattage, vaccumCleanerSelectedLoads, vaccumCleanerSelectedConsumptionTime]);
+    useEffect(() => {
+        setExhaustFansTotal(+exhaustFansSelectedWattage * +exhaustFansSelectedLoads * +exhaustFansSelectedConsumptionTime);
+    }, [exhaustFansSelectedWattage, exhaustFansSelectedLoads, exhaustFansSelectedConsumptionTime]);
+    useEffect(() => {
+        setPhoneChargerTotal(+phoneChargerSelectedWattage * +phoneChargerSelectedLoads * +phoneChargerSelectedConsumptionTime);
+    }, [phoneChargerSelectedWattage, phoneChargerSelectedLoads, phoneChargerSelectedConsumptionTime]);
+    useEffect(() => {
+        setSetTopBoxTotal(+setTopBoxSelectedWattage * +setTopBoxSelectedLoads * +setTopBoxSelectedConsumptionTime);
+    }, [setTopBoxSelectedWattage, setTopBoxSelectedLoads, setTopBoxSelectedConsumptionTime]);
+    useEffect(() => {
+        setWifiRouterTotal(+wifiRouterSelectedWattage * +wifiRouterSelectedLoads * +wifiRouterSelectedConsumptionTime);
+    }, [wifiRouterSelectedWattage, wifiRouterSelectedLoads, wifiRouterSelectedConsumptionTime]);
+    useEffect(() => {
+        setWaterPurifierTotal(+waterPurifierSelectedWattage * +waterPurifierSelectedLoads * +waterPurifierSelectedConsumptionTime);
+    }, [waterPurifierSelectedWattage, waterPurifierSelectedLoads, waterPurifierSelectedConsumptionTime]);
+    useEffect(() => {
+        setAirPurifierTotal(+airPurifierSelectedWattage * +airPurifierSelectedLoads * +airPurifierSelectedConsumptionTime);
+    }, [airPurifierSelectedWattage, airPurifierSelectedLoads, airPurifierSelectedConsumptionTime]);
+    useEffect(() => {
+        setHairApplianceTotal(+hairApplianceSelectedWattage * +hairApplianceSelectedLoads * +hairApplianceSelectedConsumptionTime);
+    }, [hairApplianceSelectedWattage, hairApplianceSelectedLoads, hairApplianceSelectedConsumptionTime]);
+    useEffect(() => {
+        setDishWasherTotal(+dishWasherSelectedWattage * +dishWasherSelectedLoads * +dishWasherSelectedConsumptionTime);
+    }, [dishWasherSelectedWattage, dishWasherSelectedLoads, dishWasherSelectedConsumptionTime]);
+    useEffect(() => {
+        setInductionCooktopTotal(+inductionCooktopSelectedWattage * +inductionCooktopSelectedLoads * +inductionCooktopSelectedConsumptionTime);
+    }, [inductionCooktopSelectedWattage, inductionCooktopSelectedLoads, inductionCooktopSelectedConsumptionTime]);
+    useEffect(() => {
+        setSpeakerTotal(+speakerSelectedWattage * +speakerSelectedLoads * +speakerSelectedConsumptionTime);
+        // console.log(ovenTotal);
+    }, [speakerSelectedWattage, speakerSelectedLoads, speakerSelectedConsumptionTime]);
+    useEffect(() => {
+        setCoffeeMakerTotal(+coffeeMakerSelectedWattage * +coffeeMakerSelectedLoads * +coffeeMakerSelectedConsumptionTime);
+        // console.log(lightsTotal);
+    }, [coffeeMakerSelectedWattage, coffeeMakerSelectedLoads, coffeeMakerSelectedConsumptionTime]);
+    useEffect(() => {
+        setCCTVCameraTotal(+cctvCameraSelectedWattage * +cctvCameraSelectedLoads * +cctvCameraSelectedConsumptionTime);
+        // console.log(lightsTotal);
+    }, [cctvCameraSelectedWattage, cctvCameraSelectedLoads, cctvCameraSelectedConsumptionTime]);
+    useEffect(() => {
+        setBlenderTotal(+blenderSelectedWattage * +blenderSelectedLoads * +blenderSelectedConsumptionTime);
+        // console.log(ovenTotal);
+    }, [blenderSelectedWattage, blenderSelectedLoads, blenderSelectedConsumptionTime]);
+    useEffect(() => {
+        setKettleTotal(+kettleSelectedWattage * +kettleSelectedLoads * +kettleSelectedConsumptionTime);
+        // console.log(ovenTotal);
+    }, [kettleSelectedWattage, kettleSelectedLoads, kettleSelectedConsumptionTime]);
 
 
     const [rows, initRows] = useState([]);
@@ -903,7 +904,7 @@ const Table = () => {
             { lable: 'CCTV Camera', value: cctvCameraTotal },
             { label: 'Blender', value: blenderTotal },
             { label: 'Kettle', value: kettleTotal }
-            
+
         ];
 
         const filteredData = ConsumptionData
@@ -1002,15 +1003,12 @@ const Table = () => {
                                                 <Select>
                                                     <input name="watt"
                                                         id="watt"
-                                                        value={40}
+                                                        defaultValue={40}
                                                         disabled={!isTubelightOn}
                                                         onChange={handleTubelightWattageSelect}
                                                         className={`w-16 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isTubelightOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
-
-
                                                 </Select>
-
                                             </td>
                                             {/*<AirconNo Of loads / > */}
                                             <td>
@@ -1020,9 +1018,7 @@ const Table = () => {
                                                         onChange={handleTubelightLoadsSelect}
                                                         className={`w-16 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isTubelightOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
-
                                                 </Select>
-
                                             </td>
                                             {/* <AirConsumption /> */}
                                             <td>
@@ -1032,21 +1028,19 @@ const Table = () => {
                                                         onChange={handleTubelightConsumptionTimeSelect}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isTubelightOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
-
-
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
-                                                    <input name="watt" id="watt"
+                                                    <input
+                                                        name="watt"
+                                                        id="watt"
+                                                        value={tubeLightTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isTubelightOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
-
-
                                                 </Select>
                                             </td>
                                         </tr>
-
 
                                         {/* CFL */}
 
@@ -1103,7 +1097,9 @@ const Table = () => {
                                             </td>
                                             <td>
                                                 <Select>
-                                                    <input name="watt" id="watt"
+                                                    <input name="watt"
+                                                        id="watt"
+                                                        value={cflTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isCFLOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
 
@@ -1166,7 +1162,9 @@ const Table = () => {
                                             </td>
                                             <td>
                                                 <Select>
-                                                    <input name="watt" id="watt"
+                                                    <input name="watt" 
+                                                      id="watt"
+                                                      value={LEDTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isLEDOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
 
@@ -1229,6 +1227,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={bulbTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isBulbOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
 
@@ -1283,6 +1282,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={ceilingFantotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isCeilingFanOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -1336,6 +1336,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={tableFantotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isTableFanOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -1389,6 +1390,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={roomCoolerTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isRoomCoolerOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -1442,6 +1444,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={refigeratorTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isRefigeratorOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -1495,6 +1498,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={tvTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isTvOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -1548,6 +1552,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={laptopTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isLaptopOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -1600,6 +1605,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={computerTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isComputerOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -1652,6 +1658,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={printerSmallTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isPrinterSmallOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -1705,14 +1712,15 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={microWaveTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isMicroWaveOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Juicer Mixer Grinder  */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Juicer Mixer Grinder  */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Juicer Mixer Grinder</td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                                 <label className={styles.toggleSwitch}>
@@ -1758,14 +1766,15 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={juicerMixerTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isJuicerMixerOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                          {/* Toaster  */}
-                                          <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Toaster  */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Toaster</td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                                 <label className={styles.toggleSwitch}>
@@ -1811,6 +1820,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={toasterTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isToasterOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -1864,6 +1874,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={geyserTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isGeyserOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -1917,14 +1928,15 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={ac1TonTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isAc1TonOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* AC 1.5 Ton   */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* AC 1.5 Ton   */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">AC 1.5 Ton</td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                                 <label className={styles.toggleSwitch}>
@@ -1970,14 +1982,15 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={ac15TonTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isAc15TonOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* AC 2 Ton   */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* AC 2 Ton   */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">AC 2 Ton</td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                                 <label className={styles.toggleSwitch}>
@@ -2023,14 +2036,15 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={ac2TonTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isAc2TonOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Washing Machine   */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Washing Machine   */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Washing Machine</td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                                 <label className={styles.toggleSwitch}>
@@ -2076,14 +2090,15 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={washingMachineTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isWashingMachineOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Iron   */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Iron   */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Iron
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2130,6 +2145,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={ironTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isIronOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -2184,14 +2200,15 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={vaccumCleanerTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isVaccumCleanerOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Exhaust Fans  */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Exhaust Fans  */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Exhaust Fans
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2238,14 +2255,15 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={exhaustFansTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isExhaustFansOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Phone Charger */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Phone Charger */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Phone Charger
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2292,14 +2310,15 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={phoneChargerTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isPhoneChargerOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                          {/* Set Top Box */}
-                                          <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Set Top Box */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Set Top Box
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2346,6 +2365,7 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={setTopBoxTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isSetTopBoxOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -2400,14 +2420,15 @@ const Table = () => {
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={wifiRouterTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isWifiRouterOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Water Purifier */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Water Purifier */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Water Purifier
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2447,21 +2468,22 @@ const Table = () => {
                                                     <input name="watt" id="watt" value={waterPurifierSelectedConsumptionTime}
                                                         disabled={!isWaterPurifierOn}
                                                         onChange={handleWaterPurifierConsumptionTimeSelect}
-                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isWaterPurifierOn  ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
+                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isWaterPurifierOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={waterPurifierTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isWaterPurifierOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Air Purifier */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Air Purifier */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Air Purifier
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2501,22 +2523,23 @@ const Table = () => {
                                                     <input name="watt" id="watt" value={airPurifierSelectedConsumptionTime}
                                                         disabled={!isAirPurifierOn}
                                                         onChange={handleAirPurifierConsumptionTimeSelect}
-                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isAirPurifierOn  ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
+                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isAirPurifierOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={airPurifierTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isAirPurifierOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Hair Appliance */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
-                                            <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Hair Appliance 
+                                        {/* Hair Appliance */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                            <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Hair Appliance
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                                 <label className={styles.toggleSwitch}>
@@ -2555,22 +2578,23 @@ const Table = () => {
                                                     <input name="watt" id="watt" value={hairApplianceSelectedConsumptionTime}
                                                         disabled={!isHairApplianceOn}
                                                         onChange={handleHairApplianceConsumptionTimeSelect}
-                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isHairApplianceOn  ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
+                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isHairApplianceOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={hairApplianceTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isHairApplianceOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Dish Washer */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
-                                            <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Dish Washer 
+                                        {/* Dish Washer */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                            <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Dish Washer
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
                                                 <label className={styles.toggleSwitch}>
@@ -2609,21 +2633,22 @@ const Table = () => {
                                                     <input name="watt" id="watt" value={dishWasherSelectedConsumptionTime}
                                                         disabled={!isDishWasherOn}
                                                         onChange={handleDishWasherConsumptionTimeSelect}
-                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isDishWasherOn  ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
+                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isDishWasherOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={dishWasherTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isDishWasherOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Induction Cooktop  */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Induction Cooktop  */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Induction Cooktop
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2663,21 +2688,22 @@ const Table = () => {
                                                     <input name="watt" id="watt" value={inductionCooktopSelectedConsumptionTime}
                                                         disabled={!isInductionCooktopOn}
                                                         onChange={handleInductionCooktopConsumptionTimeSelect}
-                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isInductionCooktopOn  ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
+                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isInductionCooktopOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={inductionCooktopTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isInductionCooktopOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Speaker */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Speaker */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Speaker
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2717,21 +2743,22 @@ const Table = () => {
                                                     <input name="watt" id="watt" value={speakerSelectedConsumptionTime}
                                                         disabled={!isSpeakerOn}
                                                         onChange={handleSpeakerConsumptionTimeSelect}
-                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isSpeakerOn  ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
+                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isSpeakerOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={speakerTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isSpeakerOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Coffee Maker */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Coffee Maker */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Coffee Maker
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2771,21 +2798,22 @@ const Table = () => {
                                                     <input name="watt" id="watt" value={coffeeMakerSelectedConsumptionTime}
                                                         disabled={!isCoffeeMakerOn}
                                                         onChange={handleCoffeeMakerConsumptionTimeSelect}
-                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isCoffeeMakerOn  ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
+                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isCoffeeMakerOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={coffeeMakerTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isCoffeeMakerOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                          {/* CCTV Camera */}
-                                          <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* CCTV Camera */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">CCTV Camera
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2825,21 +2853,22 @@ const Table = () => {
                                                     <input name="watt" id="watt" value={cctvCameraSelectedConsumptionTime}
                                                         disabled={!isCCTVCameraOn}
                                                         onChange={handleCCTVCameraConsumptionTimeSelect}
-                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isCCTVCameraOn  ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
+                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isCCTVCameraOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={cctvCameraTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isCCTVCameraOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                          {/* Blender */}
-                                          <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Blender */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Blender
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2879,21 +2908,22 @@ const Table = () => {
                                                     <input name="watt" id="watt" value={blenderSelectedConsumptionTime}
                                                         disabled={!isBlenderOn}
                                                         onChange={handleBlenderConsumptionTimeSelect}
-                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isBlenderOn  ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
+                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isBlenderOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={blenderTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isBlenderOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                         </tr>
 
-                                         {/* Kettle  */}
-                                         <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
+                                        {/* Kettle  */}
+                                        <tr className='odd:bg-[#EBEBEB] even:bg-[#F8F6F6]'>
                                             <td className="pr-6 pl-5 py-6 whitespace-nowrap font-semibold">Kettle
                                             </td>
                                             <td className="pr-6 pl-5  whitespace-nowrap font-semibold">
@@ -2933,13 +2963,14 @@ const Table = () => {
                                                     <input name="watt" id="watt" value={kettleSelectedConsumptionTime}
                                                         disabled={!isKettleOn}
                                                         onChange={handleKettleConsumptionTimeSelect}
-                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isKettleOn  ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
+                                                        className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isKettleOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
                                             </td>
                                             <td>
                                                 <Select>
                                                     <input name="watt" id="watt"
+                                                    value={kettleTotal}
                                                         className={`w-24 p-1 ml-4 text-white h-8 outline-none rounded-md flex justify-center items-center text-xl text-rgbaHeader select${isKettleOn ? ' bg-lightGreen' : ' bg-lightGreen opacity-50'}`}
                                                     />
                                                 </Select>
@@ -3025,7 +3056,7 @@ const Table = () => {
             {
                 showPieChart && (
                     <PieChartCalc
-                        airPercentage={airTotal}
+                        airPercentage={tubeLightTotal}
                         geyserPercentage={geyserTotal}
                         LEDPercentage={LEDTotal}
                         ovenPercentage={ovenTotal}
