@@ -829,11 +829,9 @@ const Table = () => {
     }, [cctvCameraSelectedWattage, cctvCameraSelectedLoads, cctvCameraSelectedConsumptionTime]);
     useEffect(() => {
         setBlenderTotal(+blenderSelectedWattage * +blenderSelectedLoads * +blenderSelectedConsumptionTime);
-        // console.log(ovenTotal);
     }, [blenderSelectedWattage, blenderSelectedLoads, blenderSelectedConsumptionTime]);
     useEffect(() => {
         setKettleTotal(+kettleSelectedWattage * +kettleSelectedLoads * +kettleSelectedConsumptionTime);
-        // console.log(ovenTotal);
     }, [kettleSelectedWattage, kettleSelectedLoads, kettleSelectedConsumptionTime]);
 
 
@@ -3059,14 +3057,11 @@ const Table = () => {
                         airPercentage={tubeLightTotal}
                         geyserPercentage={geyserTotal}
                         LEDPercentage={LEDTotal}
-                        ovenPercentage={ovenTotal}
                         bulbPercentage={bulbTotal}
-                        lightPercentage={lightsTotal}
                         ceilingFanPercentage={ceilingFantotal}
                         tvPercentage={tvTotal}
                         laptopPercentage={laptopTotal}
                         ironPercentage={ironTotal}
-                        otherMPercentage={otherMTotal}
                     />
                 )
             }
