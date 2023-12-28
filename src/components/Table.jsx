@@ -3034,8 +3034,6 @@ const Table = () => {
                                         </tr>
                                     </tbody>
                                 </table>
-
-                                <AddButton text='Add' onClick={addRowTable} />
                             </div>
                             <div className='py-20 flex justify-center items-center'>
                                 <FinalCalculate handleClick={handleFinalCalculateClick} />
