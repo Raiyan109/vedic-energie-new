@@ -15,24 +15,49 @@ background-size: cover;
 background-position: center; 
 `
 
-export default function PieChartCalc({ airPercentage, geyserPercentage, washingPercentage, ovenPercentage, fridgePercentage, lightPercentage,ceilingFanPercentage,tvPercentage,laptopPercentage, ironPercentage, otherMPercentage }) {
-  console.log(ovenPercentage);
+export default function PieChartCalc({ tubePercentage, cflPercentage, LEDPercentage, bulbPercentage, ceilingFanPercentage, tableFanPercentage, roomCoolerPercentage, regrigeratorPercentage, tvPercentage, laptopPercentage, computerPercentage, printerSmallPercentage, microWavePercentage, juicerMixerPercentage, toasterPercentage, geyserPercentage, ac1TonPercentage, ac15TonPercentage, ac2TonPercentage, washingMachinePercentage, ironPercentage, vaccumCleanerPercentage, exhaustFansPercentage, phoneChargerPercentage, setTopBoxPercentage, wifiRouterPercentage, waterPurifierPercentage,airPurifierPercentage, hairAppliancePercentage, dishWasherPercentage, inductionCooktopPercentage, speakerPercentage, coffeeMakerPercentage, cctvCameraPercentage, blenderPercentage, kettlePercentage }) {
+  console.log(tubePercentage);
 
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
     const data = [
-      { label: 'Air Conditioner', value: airPercentage },
+      { label: 'Tubelight', value: tubePercentage },
+      { label: 'CFL', value: cflPercentage },
+      { label: 'LED Machine', value: LEDPercentage },
+      { label: 'Bulb', value: bulbPercentage },
+      { label: 'Ceiling Fan', value: ceilingFanPercentage },
+      { label: 'Table Fan', value: tableFanPercentage },
+      { label: 'Room Cooler', value: roomCoolerPercentage },
+      { label: 'Refigerator', value: regrigeratorPercentage },
+      { label: 'TV', value: tvPercentage },
+      { label: 'Laptop', value: laptopPercentage },
+      { label: 'Computer', value: computerPercentage },
+      { label: 'Printer Small', value: printerSmallPercentage },
+      { label: 'Microwave', value: microWavePercentage },
+      { label: 'Juicer Mixer Grinder', value: juicerMixerPercentage },
+      { label: 'Toaster', value: toasterPercentage },
       { label: 'Geyser', value: geyserPercentage },
-      { label: 'Washing Machine', value: washingPercentage },
-      { label: 'Oven', value: ovenPercentage },
-      { label: 'Fridge', value: fridgePercentage },
-      { label: 'Lights', value: lightPercentage },
-      { label: 'Ceiling Fan', value: ceilingFanPercentage},
-      { lable: 'Tv', value: tvPercentage},
-      { lable: 'Laptop', value: laptopPercentage},
-      { lable: 'Iron', value: ironPercentage},
-      { lable: 'Other', value: otherMPercentage}
+      { label: 'AC 1 Ton', value: ac1TonPercentage },
+      { label: 'AC 1.5 Ton', value: ac15TonPercentage },
+      { label: 'AC 2 Ton', value: ac2TonPercentage },
+      { label: 'Washing Machine', value: washingMachinePercentage },
+      { label: 'Iron', value: ironPercentage },
+      { label: 'Vaccum Cleaner', value: vaccumCleanerPercentage },
+      { label: 'Exhaust Fans', value: exhaustFansPercentage },
+      { label: 'Phone Charger', value: phoneChargerPercentage },
+      { label: 'Set Top Box', value: setTopBoxPercentage },
+      { label: 'Wifi Router', value: wifiRouterPercentage },
+      { labele: 'Water Purifier', value: waterPurifierPercentage },
+      { label: 'Air Purifier', value: airPurifierPercentage },
+      { label: 'Hair Appliance', value: hairAppliancePercentage },
+      { label: 'Dish Washer', value: dishWasherPercentage },
+      { label: 'Induction Cooktop', value: inductionCooktopPercentage },
+      { label: 'Speaker', value: speakerPercentage },
+      { label: 'Coffee Maker', value: coffeeMakerPercentage },
+      { label: 'CCTV Camera', value: cctvCameraPercentage },
+      { label: 'Blender', value: blenderPercentage },
+      { label: 'Kettle', value: kettlePercentage }
     ];
 
     const filteredData = data
@@ -68,7 +93,7 @@ export default function PieChartCalc({ airPercentage, geyserPercentage, washingP
     //   sendPercentageValue(percentageValue);
     // }
 
-  }, [airPercentage, geyserPercentage, washingPercentage, ovenPercentage, fridgePercentage, lightPercentage, ceilingFanPercentage, tvPercentage, laptopPercentage, ironPercentage, otherMPercentage]);
+  }, [tubePercentage, cflPercentage, LEDPercentage, bulbPercentage, ceilingFanPercentage, tableFanPercentage, roomCoolerPercentage, regrigeratorPercentage, tvPercentage, laptopPercentage, computerPercentage, printerSmallPercentage, microWavePercentage, juicerMixerPercentage, toasterPercentage, geyserPercentage, ac1TonPercentage, ac15TonPercentage, ac2TonPercentage, washingMachinePercentage, ironPercentage, vaccumCleanerPercentage, exhaustFansPercentage, phoneChargerPercentage, setTopBoxPercentage, wifiRouterPercentage, waterPurifierPercentage, airPurifierPercentage, hairAppliancePercentage, dishWasherPercentage, inductionCooktopPercentage, speakerPercentage, coffeeMakerPercentage, cctvCameraPercentage, blenderPercentage, kettlePercentage ]);
 
   // const calculatePercentageValue = (filteredData) => {
   //   const totalValue = filteredData.reduce((total, { value }) => total + value, 0);
@@ -128,15 +153,14 @@ export default function PieChartCalc({ airPercentage, geyserPercentage, washingP
   return (
 
     <Section>
-      <div className="py-20 box">
-        <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5 text-center mb-24">High Energy Consumption Wattage <br /> of the Devices</h1>
-
+      <div className="lg:py-20 py-8 lg:px-10 items-center box">
+        <h1 className="lg:text-5xl md:text-4xl font-semibold tracking-tight text-3xl text-white py-5 text-center lg:mb-24 mb-4">High Energy Consumption Wattage <br /> of the Devices</h1>
         <form onSubmit={handleSubmit}>
           <div className="container flex lg:flex-row  flex-col lg:mx-0 md:mx-auto mx-auto">
-            <div className='lg:max-w-2xl max-w-lg mx-auto mb-16'>
+            <div className='lg:max-w-2xl max-w-lg mx-auto mb-10'>
               <h2 className='lg:text-2xl md:text-xl text-lg leading-relaxed text-blue lg:text-left text-center px-6'>The pie chart helps identify the specific devices or appliances that contribute significantly to overall energy consumption. Devices with larger slices in the pie chart indicate higher energy consumption and may be good targets for energy efficiency improvements.</h2>
             </div>
-            <div className='lg:w-96 lg:h-96 w-[600px] h-80 flex justify-center items-center lg:pr-0 pr-16 md:mx-auto '>
+            <div className='lg:w-1/2 lg:h-96 w-[600px] h-80 flex justify-center items-center lg:pr-0 pr-36 md:mx-auto '>
               {chartData && (
                 <Pie
                   width={150}

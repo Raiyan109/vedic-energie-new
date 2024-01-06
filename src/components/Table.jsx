@@ -113,7 +113,7 @@ const Table = () => {
     const [tableFanSelectedConsumptionTime, setTableFanSelectedConsumptionTime] = useState("");
     const [roomCoolerSelectddWattage, setRoomCoolerSelectedWattage] = useState(250);
     const [roomCoolerSelectedLoads, setRoomCoolerSelectedLoads] = useState("");
-    const [roomCoolerSelectedConsumptionTime, setRoomCoolerSelectedConsumptionTime] = useState();
+    const [roomCoolerSelectedConsumptionTime, setRoomCoolerSelectedConsumptionTime] = useState("");
     const [refigeratorSelectddWattage, setRefigeratorSelectedWattage] = useState(500);
     const [refigeratorSelectedLoads, setRefigeratorSelectedLoads] = useState("");
     const [refigeratorSelectedConsumptionTime, setRefigeratorSelectedConsumptionTime] = useState("");
@@ -154,7 +154,7 @@ const Table = () => {
     const [washingMachineSelectedLoads, setWashingMachineSelectedLoads] = useState("");
     const [washingMachineSelectedConsumptionTime, setWashingMachineSelectedConsumption] = useState("");
     const [ironSelectedWattage, setIronSelectedWattage] = useState(1200);
-    const [ironSelectedConsumptionTime, setIronSelectedConsumption] = useState();
+    const [ironSelectedConsumptionTime, setIronSelectedConsumption] = useState("");
     const [ironSelectedLoads, setIronSelectedLoads] = useState("");
     const [vaccumCleanerSelectedWattage, setVaccumCleanerSelectedWattage] = useState(1400);
     const [vaccumCleanerSelectedConsumptionTime, setVaccumCleanerSelectedConsumption] = useState("");
@@ -835,6 +835,14 @@ const Table = () => {
     }, [kettleSelectedWattage, kettleSelectedLoads, kettleSelectedConsumptionTime]);
 
 
+
+    // const [tubelightpercentageValue, setTubelightPercentageValue]=useState();
+    // const handleTubelightPercentage=()=>{
+    //     const tubelightPercentage = (tubeLightTotal / 1200 * 100).toFixed(2);
+    //     setTubelightPercentageValue(tubelightPercentage)
+    // }
+
+
     const [rows, initRows] = useState([]);
     const addRowTable = () => {
         const data = {
@@ -850,12 +858,12 @@ const Table = () => {
 
 
     // The sum of total watt hours for all devices
-    // const totalWattHours = airTotal + geyserTotal + LEDTotal
+    const totalWattHours = tubeLightTotal + geyserTotal + LEDTotal
 
-    // Calculation of the percentages for each device
-    // const airPercentage = (airTotal / totalWattHours * 100).toFixed(2);
-    // const geyserPercentage = (geyserTotal / totalWattHours * 100).toFixed(2);
-    // const LEDPercentage = (LEDTotal / totalWattHours * 100).toFixed(2);
+    //  Calculation of the percentages for each device
+    //  const tubelightPercentage = (tubeLightTotal / totalWattHours * 100).toFixed(2);
+     const geyserPercentage = (geyserTotal / totalWattHours * 100).toFixed(2);
+     const LEDPercentage = (LEDTotal / totalWattHours * 100).toFixed(2);
 
     // Function for the final calculate button
     const handleFinalCalculateClick = () => {
@@ -875,31 +883,31 @@ const Table = () => {
             { label: 'Room Cooler', value: roomCoolerTotal },
             { label: 'Refigerator', value: refigeratorTotal },
             { label: 'TV', value: tvTotal },
-            { lable: 'Laptop', value: laptopTotal },
-            { lable: 'Computer', value: computerTotal },
-            { lable: 'Printer Small', value: printerSmallTotal },
-            { lable: 'Microwave', value: microWaveTotal },
-            { lable: 'Juicer Mixer Grinder', value: juicerMixerTotal },
-            { lable: 'Toaster', value: toasterTotal },
+            { label: 'Laptop', value: laptopTotal },
+            { label: 'Computer', value: computerTotal },
+            { label: 'Printer Small', value: printerSmallTotal },
+            { label: 'Microwave', value: microWaveTotal },
+            { label: 'Juicer Mixer Grinder', value: juicerMixerTotal },
+            { label: 'Toaster', value: toasterTotal },
             { label: 'Geyser', value: geyserTotal },
             { label: 'AC 1 Ton', value: ac1TonTotal },
             { label: 'AC 1.5 Ton', value: ac15TonTotal },
             { label: 'AC 2 Ton', value: ac2TonTotal },
             { label: 'Washing Machine', value: washingMachineTotal },
-            { lable: 'Iron', value: ironTotal },
-            { lable: 'Vaccum Cleaner', value: vaccumCleanerTotal },
-            { lable: 'Exhaust Fans', value: exhaustFansTotal },
-            { lable: 'Phone Charger', value: phoneChargerTotal },
-            { lable: 'Set Top Box', value: setTopBoxTotal },
-            { lable: 'Wifi Router', value: wifiRouterTotal },
-            { lable: 'Water Purifier', value: waterPurifierTotal },
-            { lable: 'Air Purifier', value: airPurifierTotal },
-            { lable: 'Hair Appliance', value: hairApplianceTotal },
-            { lable: 'Dish Washer', value: dishWasherTotal },
-            { lable: 'Induction Cooktop', value: inductionCooktopTotal },
-            { lable: 'Speaker', value: speakerTotal },
-            { lable: 'Coffee Maker', value: coffeeMakerTotal },
-            { lable: 'CCTV Camera', value: cctvCameraTotal },
+            { label: 'Iron', value: ironTotal },
+            { label: 'Vaccum Cleaner', value: vaccumCleanerTotal },
+            { label: 'Exhaust Fans', value: exhaustFansTotal },
+            { label: 'Phone Charger', value: phoneChargerTotal },
+            { label: 'Set Top Box', value: setTopBoxTotal },
+            { label: 'Wifi Router', value: wifiRouterTotal },
+            { labele: 'Water Purifier', value: waterPurifierTotal },
+            { label: 'Air Purifier', value: airPurifierTotal },
+            { label: 'Hair Appliance', value: hairApplianceTotal },
+            { label: 'Dish Washer', value: dishWasherTotal },
+            { label: 'Induction Cooktop', value: inductionCooktopTotal },
+            { label: 'Speaker', value: speakerTotal },
+            { label: 'Coffee Maker', value: coffeeMakerTotal },
+            { label: 'CCTV Camera', value: cctvCameraTotal },
             { label: 'Blender', value: blenderTotal },
             { label: 'Kettle', value: kettleTotal }
 
@@ -939,7 +947,10 @@ const Table = () => {
 
         }
     }
-
+    if(isTubelightOn && tubeLightTotal>0){
+        const tubePercentage=(tubeLightTotal/1200 * 100).toFixed(2);
+        console.log(tubePercentage)
+    }
 
     return (
         <div>
@@ -1353,7 +1364,7 @@ const Table = () => {
                                                     <span className={styles.toggleSwitchSlider}></span>
                                                 </label>
                                             </td>
-                                            <td >
+                                            <td>
                                                 {/* <AirConWatt /> */}
                                                 <Select>
                                                     <input name="watt"
@@ -3038,11 +3049,6 @@ const Table = () => {
                             <div className='py-20 flex justify-center items-center'>
                                 <FinalCalculate handleClick={handleFinalCalculateClick} />
                             </div>
-
-
-
-
-
                         </form>
 
                     </div>
@@ -3052,14 +3058,42 @@ const Table = () => {
             {
                 showPieChart && (
                     <PieChartCalc
-                        airPercentage={tubeLightTotal}
-                        geyserPercentage={geyserTotal}
+                        tubePercentage={tubeLightTotal}
+                        cflPercentage={cflTotal}
                         LEDPercentage={LEDTotal}
                         bulbPercentage={bulbTotal}
                         ceilingFanPercentage={ceilingFantotal}
+                        tableFanPercentage={tableFantotal}
+                        roomCoolerPercentage={roomCoolerTotal}
+                        regrigeratorPercentage={refigeratorTotal}
                         tvPercentage={tvTotal}
                         laptopPercentage={laptopTotal}
+                        computerPercentage={computerTotal}
+                        printerSmallPercentage={printerSmallTotal}
+                        microWavePercentage={microWaveTotal}
+                        juicerMixerPercentage={juicerMixerTotal}
+                        toasterPercentage={toasterTotal}
+                        geyserPercentage={geyserTotal}
+                        ac1TonPercentage={ac1TonTotal}
+                        ac15TonPercentage={ac15TonTotal}
+                        ac2TonPercentage={ac2TonTotal}
+                        washingMachinePercentage={washingMachineTotal}
                         ironPercentage={ironTotal}
+                        vaccumCleanerPercentage={vaccumCleanerTotal}
+                        exhaustFansPercentage={exhaustFansTotal}
+                        phoneChargerPercentage={phoneChargerTotal}
+                        setTopBoxPercentage={setTopBoxTotal}
+                        wifiRouterPercentage={wifiRouterTotal}
+                        waterPurifierPercentage={waterPurifierTotal}
+                        airPurifierPercentage={airPurifierTotal}
+                        hairAppliancePercentage={hairApplianceTotal}
+                        dishWasherPercentage={dishWasherTotal}
+                        inductionCooktopPercentage={inductionCooktopTotal}
+                        speakerPercentage={speakerTotal}
+                        coffeeMakerPercentage={coffeeMakerTotal}
+                        cctvCameraPercentage={cctvCameraTotal}
+                        blenderPercentage={blenderTotal}
+                        kettlePercentage={kettleTotal}
                     />
                 )
             }
