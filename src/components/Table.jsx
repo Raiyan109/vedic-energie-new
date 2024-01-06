@@ -960,23 +960,9 @@ const Table = () => {
                         <button type="button" className="rounded-full px-4 mr-2 bg-blue text-white p-2 leading-none flex items-center lg:hidden md:block">
                             Step 2
                         </button>
-                        <div className='w-full flex items-center justify-center gap-x-20 py-5'>
-                            <button
-                            // className={isTubelightOn ? `bg-lightBlue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-lightBlue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
-                            // onClick={handleSummerClick}
-                            >Summer</button>
-
-                            <button
-                            // className=
-                            //  {isCFLOn ? `
-                            // 'bg-lightBlue text-[#F0EFFF] py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium` : 'bg-[#F0EFFF] text-lightBlue py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium'}
-                            // onClick={handleWinterClick}
-                            >Winter</button>
-                        </div>
-
                         <form onSubmit={handleSubmit}>
                             <div className='overflow-x-auto'>
-                                <table className="w-full table-auto text-left border-separate border-spacing-y-3">
+                                <table className="w-full table-auto text-left border-separate border-spacing-y-3 pt-8">
                                     <thead className="text-blue uppercase font-medium bg-lightYellow">
                                         <tr>
                                             <th className="py-4 pr-6 pl-5">Appliances</th>
